@@ -2,6 +2,12 @@
 
 
 	$username = $_POST["username"];
+	$string = $_REQUEST['password'];
+
+	if(empty($string)){
+		echo"B&auml;&auml;&auml;hhh!!!";
+		exit;
+	}
 
 	$verbindung = mysql_connect("localhost", "root" , "1199Mtr3#")
 	or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
