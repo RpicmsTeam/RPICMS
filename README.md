@@ -1,4 +1,4 @@
 RPICMS
 ======
 
-A MS for the Raspberry Pi
+A CMS for the Raspberry Pi
