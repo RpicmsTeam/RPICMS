@@ -2,9 +2,13 @@
 
 
 	$username = $_POST["username"];
-	$string = $_REQUEST['password'];
+	$pw = $_REQUEST['password'];
 
-	if(empty($string)){
+	if(empty($pw)){
+		echo"B&auml;&auml;&auml;hhh!!!";
+		exit;
+	}
+	if(empty($username)){
 		echo"B&auml;&auml;&auml;hhh!!!";
 		exit;
 	}
