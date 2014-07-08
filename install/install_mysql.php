@@ -1,9 +1,9 @@
 <?php
 #Serverpfad
-$filename = '../core/inc/db_connect.inc.php.1';
+$filename = '../core/inc/db_connect.inc.php';
 $serverpfad = $_POST["serverpfad"];
 $var_str_sp = var_export($serverpfad, true);
-$var_sp = "<?php\n\n\$db_servername = $var_str_sp;\n\n";
+$var_sp = "<?php\n\n\$db_servername = $var_str_sp;\n";
 
 // Sichergehen, dass die Datei existiert und beschreibbar ist
 if (is_writable($filename)) {
@@ -31,10 +31,10 @@ if (is_writable($filename)) {
 }
 
 #Userame
-$filename = '../core/inc/db_connect.inc.php.1';
+$filename = '../core/inc/db_connect.inc.php';
 $username = $_POST["username"];
 $var_str_u = var_export($username, true);
-$var_u = "<?php\n\n\$db_username = $var_str_u;\n\n";
+$var_u = "\n\n\$db_username = $var_str_u;\n";
 
 // Sichergehen, dass die Datei existiert und beschreibbar ist
 if (is_writable($filename)) {
@@ -65,7 +65,7 @@ if (is_writable($filename)) {
 $filename = '../core/inc/db_connect.inc.php';
 $password = $_POST["password"];
 $var_str_pw = var_export($password, true);
-$var_pw = "\n\n\$password = $var_str_pw;\n\n";
+$var_pw = "\n\n\$db_password = $var_str_pw;\n";
 
 // Sichergehen, dass die Datei existiert und beschreibbar ist
 if (is_writable($filename)) {
@@ -96,7 +96,7 @@ if (is_writable($filename)) {
 $filename = '../core/inc/db_connect.inc.php';
 $db_name = $_POST["db_name"];
 $var_str_dbn = var_export($db_name, true);
-$var_dbn = "\n\n\$password = $var_str_dbn;\n\n";
+$var_dbn = "\n\n\$db_name = $var_str_dbn;\n\n";
 
 // Sichergehen, dass die Datei existiert und beschreibbar ist
 if (is_writable($filename)) {
@@ -125,7 +125,7 @@ if (is_writable($filename)) {
 
 #Funktion der Datenbank
 $filename = '../core/inc/db_connect.inc.php';
-$var_dbn = "$connection = mysql_connect($db_servername, $db_username, $db_password) or die ("<p>Verbindung war nicht m&ouml;glich</p>");\nmysql_select_db($db_name) or die ("<p>Die Datenbank ist nicht vorhanden</p>");";
+$var_dbn = '$connection = mysql_connect($db_servername, $db_username, $db_password) or die ("<p>Verbindung war nicht m&ouml;glich</p>"); mysql_select_db($db_name) or die ("<p>Die Datenbank ist nicht vorhanden</p>");';
 
 // Sichergehen, dass die Datei existiert und beschreibbar ist
 if (is_writable($filename)) {
