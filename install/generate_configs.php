@@ -112,7 +112,7 @@ if (is_writable($filename)) {
 }
 
 ?>
-<form action="generate_configs.php" method="post">
+<form action="add_database.php" method="post">
 	<table cellpadding="1" cellspacing="4">
 		<tr>
 			<td colspan="2"><input type="submit" name="send" value="Weiter" /></td>
