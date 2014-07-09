@@ -128,7 +128,7 @@ if (is_writable($filename)) {
 
 #Funktion der Datenbank
 $filename = '../core/inc/db_connect.inc.php';
-$var_dbn = '$connection = mysql_connect($db_servername, $db_username, $db_password) or die ("<p>Verbindung war nicht m&ouml;glich</p>"); mysql_select_db($db_name) or die ("<p>Die Datenbank ist nicht vorhanden</p>");';
+#$var_dbn = ('$connection = 'mysql_connect($db_servername, $db_username, $db_password) or die ("<p>Verbindung war nicht m&ouml;glich</p>"); mysql_select_db($db_name) or die ("<p>Die Datenbank ist nicht vorhanden</p>"');');
 
 // Sichergehen, dass die Datei existiert und beschreibbar ist
 if (is_writable($filename)) {
@@ -142,7 +142,7 @@ if (is_writable($filename)) {
     }
 
     // Schreibe $somecontent in die geöffnete Datei.
-    if (!fwrite($handle, $var_dbn)) {
+    if (!fwrite($handle, '$connection = mysqli_connect($db_servername, $db_username, $db_password) or die ("Verbindung war nicht m&ouml;glich");')) {
         print "Kann in die Datei $filename nicht schreiben";
         exit;
     }
@@ -159,9 +159,9 @@ if (is_writable($filename)) {
 ###################
 #Blog Name
 $filename = '../core/config/variables.config.php';
-$db_name = $_POST["db_name"];
-$var_str_dbn = var_export($db_name, true);
-$var_dbn = "\n\n\$db_name = $var_str_dbn;\n\n";
+$blog_name = $_POST["blog_name"];
+$var_str_bn = var_export($blog_name, true);
+$var_bn = "<?php\n\$blog_name = $var_str_bn;\n\n";
 
 // Sichergehen, dass die Datei existiert und beschreibbar ist
 if (is_writable($filename)) {
@@ -180,12 +180,14 @@ if (is_writable($filename)) {
         exit;
     }
 
-    print "Fertig, in Datei $filename wurde $var_dbn geschrieben";
+    print "Fertig, in Datei $filename wurde $var_bn geschrieben";
 
     fclose($handle);
 
 } else {
     print "Die Datei $filename ist nicht schreibbar";
 }
+sleep(5);
+header('Location: add_database.php');
 ?>
 

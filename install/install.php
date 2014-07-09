@@ -37,20 +37,21 @@
 	<table cellpadding="1" cellspacing="4">
 		<tr>
 			<td><p>Website Name: </p></td>
-			<td style="text-indent:25px;"><input type="name" name="name" required="required" placeholder="Datenbank Adresse" maxlength="255" /></td>
+			<td style="text-indent:40px;"><input type="name" name="blog_name" required="required" placeholder="Website Name" maxlength="255" /></td>
 		</tr>
 		<tr>
-			<td><p>Admin Name: </p></td>
-			<td style="text-indent:25px;"><input type="name" name="admin_username" required="required" placeholder="Nutzername" maxlength="255" /></td>
+			<td><p>Untertitel: </p></td>
+			<td style="text-indent:40px;"><input type="text" name="admin_username" required="required" placeholder="Untertitel" maxlength="255" /></td>
 		</tr>
 		<tr>
-			<td><p>Admin Passwort: </p></td>
-			<td style="text-indent:25px;"><input type="password" name="admin_password" required="required" placeholder="Passwort" maxlength="50" /></td>
+			<td><p>Schlagw&ouml;rter: </p></td>
+			<td style="text-indent:40px;"><input type="text" name="admin_password" required="required" placeholder="Schlagw&ouml;rter" maxlength="50" /></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" name="send" value="Weiter" /></td>
 		</tr>
 	</table>
 </form>
+<strong>Sollte ein Fehler auftreten einfach zurück gehen und nochmal ausführen.</strong>
 </body>
 </html>
