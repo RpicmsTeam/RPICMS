@@ -52,6 +52,6 @@
 		</tr>
 	</table>
 </form>
-<strong>Sollte ein Fehler auftreten einfach zurück gehen und nochmal ausführen.</strong>
+<strong>Sollte ein Fehler auftreten NICHT einfach zur&uuml;ck gehen und nochmal ausf&uuml;hren. Erst die Datei "db_connect.inc.php" im Ordner "core/inc/" und die Datei "variables.config.php" im Ordner "core/config/" leeren!! Nicht l&ouml;schen!!</strong>
 </body>
 </html>
