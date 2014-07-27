@@ -2,7 +2,7 @@
 	<table cellpadding="1" cellspacing="4">
 		<tr>
 			<td><strong>E-Mail-Adresse:</strong></td>
-			<td><input type="email" name="username" value="<?php echo $username; ?>" required="required" placeholder="E-Mail-Adresse" maxlength="255" /></td>
+			<td><input type="email" name="username" value="<?php echo $username; ?>" required="required" placeholder="E-Mail-Adresse" maxlength="255" title="Bitte gebe eine valide Email-Adresse ein (z.b.: example@email.com)" x-moz-errormessage="Bitte gebe eine valide Email-Adresse ein (z.b.: example@email.com)" /></td>
 		</tr>
 		<tr>
 			<td><strong>Passwort:</strong></td>
