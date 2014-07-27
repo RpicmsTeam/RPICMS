@@ -20,7 +20,7 @@
 		$aes = new AES($imputText, $imputKey, $blockSize);
 		$enc = $aes->encrypt();
 		$aes->setData($enc);
-		echo "After encryption: ".$enc."<br/>";
+		//echo "After encryption: ".$enc."<br/>";
 								
 		$Erstellt = date("Y-m-d H:i:s");
 		$Aktivierungscode = rand(1, 9999);
