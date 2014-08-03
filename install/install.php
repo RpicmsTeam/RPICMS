@@ -14,6 +14,18 @@
 ?>
 <h1>Installer</h1>
 <h3>MySQL</h3>
+<!-- Reset Configs -->
+<?php
+#################
+#Database Config#
+#################
+unlink('../core/inc/db_connect.inc.php');
+#################
+#Blog Basics Config#
+#################
+unlink('../core/config/variables.config.php');
+?>
+<!-- Form to give data to config-generator -->
 <form action="generate_configs.php" method="post">
 	<table cellpadding="1" cellspacing="4">
 		<tr>
@@ -52,6 +64,5 @@
 		</tr>
 	</table>
 </form>
-<strong>Sollte ein Fehler auftreten NICHT einfach zur&uuml;ck gehen und nochmal ausf&uuml;hren. Erst die Datei "db_connect.inc.php" im Ordner "core/inc/" und die Datei "variables.config.php" im Ordner "core/config/" leeren!! Nicht l&ouml;schen!!</strong>
 </body>
 </html>
