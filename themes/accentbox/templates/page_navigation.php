@@ -5,7 +5,7 @@
 						<li class="widget widget-sidebar">
 							<form method="get" id="searchform" class="search-form" _lpchecked="1">
 							<fieldset> 
-								<input name="s" id="s" value="Search this Site..." type="text"> 
+								<input name="s" id="s" name="Suche etwas..." placeholder="Suche etwas..." title="Suche etwas..." x-moz-errormessage="Suche etwas..." type="text"> 
 								<input id="search-image" class="sbutton" src="images/search.png" style="border: 0px none; vertical-align: top;" type="image">
 							</fieldset>
 							</form>

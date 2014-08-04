@@ -2,7 +2,10 @@
 		<div class="container">
 			<div class="footer-widgets">
 				<div class="f-widget">
-					<div class="widget"><h3>Lorem ipsum</h3>			
+					<div class='widget'>
+					<?php
+						echo "<h3>$name_themen</h3>";	
+					?>	
 						<div class="textwidget">
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a.</p>					
 						</div>
@@ -10,15 +13,19 @@
 				</div>
 				<div class="f-widget">
 					<div class="widget">
-						<h3>Consectetuer adipiscing</h3>
+						<?php
+							echo "<h3>$name_archiv</h3>";
+						?>
 						<div class="textwidget">
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <a href="#">Curabitur</a> quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a.</p>
 						</div>
 					</div>		
 				</div>
 				<div class="f-widget last">
-					<div class="widget">		
-						<h3>Recent Posts</h3>
+					<div class="widget">	
+						<?php	
+							echo "<h3>$name_meta</h3>";
+						?>	
 						<ul>
 							<li><a href="#">Porttitor Lectus Tincidunt Elementum Nascetur Montes</a></li>
 							<li><a href="#">Mauris Dictum Libero Id Justo Fusce In Est</a></li>

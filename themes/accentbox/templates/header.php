@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<?php
-			include('../../../core/config/variables.config.php');	
+			include('../../core/config/variables.config.php');	
 			echo "<title>$blog_name | $page</title>";
 		?>
 
