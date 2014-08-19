@@ -14,8 +14,9 @@
 		`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 		`text` TEXT NOT NULL ,
 		`title` TEXT NOT NULL ,
-		`name` TEXT NOT NULL ,
-		`time` DATETIME NOT NULL
+		`author` TEXT NOT NULL ,
+		`date` DATETIME NOT NULL ,
+		`categrory` TEXT NOT NULL
 		) ENGINE = MYISAM ;
 		";
 	$result = mysqli_query($connection, $sql)
