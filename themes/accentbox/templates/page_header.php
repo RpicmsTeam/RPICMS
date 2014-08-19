@@ -1,5 +1,5 @@
 <?php
-	include('../../../core/config/variables.config.php');
+	include('../../core/config/variables.config.php');
 ?>	
 	<body>
 		<header class="main-header">

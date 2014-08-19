@@ -1,8 +1,16 @@
 <?php
+/**
+* Generate Configs
+* 
+* This script generates the basic configs.
+*
+* @author	Marcel Radzio <info@nordgedanken.de>
+* @version	0.2 18/08/2014 18:48
+*/
+
 //###################
 //# MySQL           #
 //###################
-
 //#Serverpfad
 
 $filename = '../core/inc/db_connect.inc.php';

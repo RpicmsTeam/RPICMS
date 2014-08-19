@@ -1,3 +1,11 @@
+/**
+* Module Check
+* 
+* This script checks for requiered modules.
+*
+* @author	Marcel Radzio <info@nordgedanken.de>
+* @version	0.2 18/08/2014 18:45
+*/
 <!Doctype html>
 <html>
 <head>

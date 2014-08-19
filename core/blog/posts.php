@@ -1,50 +1,34 @@
 <?php
-	include('../inc/db_connect.inc.php');
-	#$query = 'SELECT * FROM posts';	
-	#$db_command = mysqli_query($query);
-
-	/*while($row = mysqli_fetch_object($db_command)){
-		echo '</br>';
-		echo '</br>';
-		echo '<h4>' . $row->title . '</h4>';
-		echo '</br>';
-		echo '<p>' . $row->text . '</p>';
-		echo '</br>';
-		echo '</br>';
-		echo '<p><i>Erstellt um: ' . $row->time . '</p></i>';
+/**
+* Get posts from Database
+* 
+* This script will the post variables with the database data.
+*
+* @author		Marcel Radzio <info@nordgedanken.de>
+* @version	0.2 17/08/2014 19:39
+*/
+	//Check if Database connection established
+	if (mysqli_connect_errno()) {
+		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
+		exit();
 	}
-						
-	while($row = mysqli_fetch_object($db_command)){
-		echo '</br>';
-		echo '</br>';
-		echo '<p><i>Erstellt von: ' . $row->name . '</p></i>';
-	}*/
 
-
-
-	if ($resultat = $db->query('SELECT * FROM posts')) {
-  		// Antwort der Datenbank in ein Objekt übergeben und
-  		// mithilfe der while-Schleife durchlaufen
+	//Check if Data in it
+	if ($resultat = $db_connection->query('SELECT * FROM posts')) {
+		 //Put database data in variables
  		 while($daten = $resultat->fetch_object() ){
-    				echo '</br>';
-				echo '</br>';
-				echo '<h4>' . $daten->title . '</h4>';
-				echo '</br>';
-				echo '<p>' . $daten->text . '</p>';
-				echo '</br>';
-				echo '</br>';
-				echo '<p><i>Erstellt um: ' . $daten->time . '</p></i>';
+				$post_title = $daten->title;
+				$post_text = $daten->text;
+				$post_author = $daten->name;
+				$post_date = $daten->time;
+				$post_categrory = $daten->category;
   			}  
-  		// Speicher freigeben
   		$resultat->close();
 	} else {
-  		// Sollten keine Datensätze enthalten sein, diese Meldung ausgeben
+  		//If no data in Database give error
   		echo "Es konnten keine Daten aus der Datenbank ausgelesen werden";
 	}
 
-// Verbindung zum Datenbankserver beenden
-$db->close();
+// Close database connection
+$db_connection->close();
 
-	if($db_command == 0){
-		print ("FEHLER");
-	};

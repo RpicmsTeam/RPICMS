@@ -1,0 +1,27 @@
+echo $username;
+echo $verbindung;
+echo $ergebnis;
+
+echo "<br/>";
+echo "-----------------------------";
+echo "<br/>";
+//echo $row[1];
+echo "<br/>";
+echo "-----------------------------";
+echo "<br/>";
+echo "Back aus include";
+echo $inputKey;
+echo "<br/>";
+echo $inputText;
+echo "<br/>";
+echo "<br/>";
+echo "-----------------------------";
+echo "<br/>";
+	echo "After decryption: ".$dec."<br/>";
+
+echo "<br/>";
+echo $_POST['password'];
+echo "<br/>";
+	echo $row->password;
+	echo "<br/>";
+	echo $encrypted_string;

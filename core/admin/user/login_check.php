@@ -1,9 +1,19 @@
 <?php
 
+/**
+* Check the User Datas
+* 
+* This script check if the data o the form is equal the data of the database. 
+*
+* @author		Marcel Radzio <info@nordgedanken.de>
+* @version	0.2 17/08/2014 19:39
+*/
 
+	//Fill variables
 	$username = $_POST["username"];
 	$pw = $_REQUEST['password'];
-
+	
+	//Check if the variables are empty
 	if(empty($pw)){
 		echo"B&auml;&auml;&auml;hhh!!!";
 		exit;
@@ -13,16 +23,18 @@
 		exit;
 	}
 
+	//Open DatabaseConnection
 	$verbindung = mysql_connect("localhost", "root" , "1199Mtr3#")
 	or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
 	mysql_select_db("blog") or die ("Datenbank konnte nicht ausgewaelt werden");
 	
+	//Request User Data from Database
 	$abfrage = "SELECT EMail, password FROM users WHERE EMail LIKE '$username' LIMIT 1";
 	$ergebnis = mysql_query($abfrage);
 	$row = mysql_fetch_object($ergebnis);
 
 
-	//secure
+	//Decrypt database password variable
 	include '../secure/aes.php';
 
 	$inputKey = '1554831687984849746489478';
@@ -37,7 +49,7 @@
 
 
 
-
+	//Check if Database password equal Form Password
 	if($dec == $_POST['password']){
     		ob_start();
     		$expire=time()+60*60*24*30;
@@ -49,35 +61,5 @@
 	else{
     		echo "Benutzername und/oder Passwort waren falsch.";
     	} 
-/*
-DEBUG
-----
-echo $username;
-echo $verbindung;
-echo $ergebnis;
 
-echo "<br/>";
-echo "-----------------------------";
-echo "<br/>";
-//echo $row[1];
-echo "<br/>";
-echo "-----------------------------";
-echo "<br/>";
-echo "Back aus include";
-echo $inputKey;
-echo "<br/>";
-echo $inputText;
-echo "<br/>";
-echo "<br/>";
-echo "-----------------------------";
-echo "<br/>";
-	echo "After decryption: ".$dec."<br/>";
-
-echo "<br/>";
-echo $_POST['password'];
-echo "<br/>";
-	echo $row->password;
-	echo "<br/>";
-	echo $encrypted_string;
-*/
 ?>
