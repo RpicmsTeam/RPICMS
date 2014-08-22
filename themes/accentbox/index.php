@@ -10,8 +10,8 @@
 			
 				<div class="post excerpt ">
 					<?php
-						include('../../core/inc/db_connect.inc.php');
-						include('../../core/blog/posts.php');
+						include('../core/inc/db_connect.inc.php');
+						include('../core/blog/posts.php');
 					?>
 					<header>
 					<div class="bubble"><a href="#">4</a></div>
