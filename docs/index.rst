@@ -5,7 +5,7 @@ RPICMS ist ein CMS welches für die wenige Leistung des Raspberry Pi ausgelegt i
 Es ist momentan in Entwicklung und wird fleißig entwickelt.
 
 
-User Documentation
+Nutzungs Anleitung
 ------------------
 
 .. toctree::
@@ -13,7 +13,7 @@ User Documentation
 
    user/getting_started
 
-Features
+Features/Funktionen
 --------
 
 .. toctree::
@@ -23,7 +23,7 @@ Features
    features/podcasts
    features/administration
 
-Developer Documentation
+Entwickler Dokumentation
 -----------------------
 
 .. toctree::
@@ -41,7 +41,7 @@ Releases
 
 
 
-License
+Lizenz
 -------
 
 You can use it but can't change code now. Better licence will come.
