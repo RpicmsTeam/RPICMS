@@ -3,9 +3,9 @@ Getting Started
 Benötigtes
 ---------------------
 
--Webserver
--PHP5
--MYSQL
+* Webserver
+* PHP5
+* MYSQL
 
 Downloaden
 ---------------------
