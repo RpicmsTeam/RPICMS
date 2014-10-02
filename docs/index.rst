@@ -30,15 +30,14 @@ Entwickler Dokumentation
    :maxdepth: 2
 
    dev/themes
-
+   special/to-do
 
 Releases
 --------
 
 .. toctree::
-   :maxdepth: 2
-   
-   special/to-do
+   :maxdepth: 1
+
 
 
 
