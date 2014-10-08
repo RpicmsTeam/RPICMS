@@ -16,11 +16,11 @@
 		`title` TEXT NOT NULL ,
 		`author` TEXT NOT NULL ,
 		`date` DATETIME NOT NULL ,
-		`categrory` TEXT NOT NULL
+		`category` TEXT NOT NULL
 		) ENGINE = MYISAM ;
 		";
 	$result = mysqli_query($connection, $sql)
-	or die("Anfrage fehlgeschlagen: " . mysql_error());
+	or die("Anfrage fehlgeschlagen: " . mysqli_error());
 	echo 'Erstellen erfolgreich';
 //User erstellen
 	require_once ('../core/inc/db_connect.inc.php');
@@ -32,10 +32,10 @@
 		`password` VARCHAR(50) NOT NULL ,
 		`registertime` TEXT NOT NULL ,
 		`activationcode` INT( 11 ) NOT NULL,
-		`acivated` TEXT NOT NULL
+		`activated` TEXT NOT NULL
 		) ENGINE = MYISAM ;
 		";
 	$result = mysqli_query($connection, $sql)
-	or die("Anfrage fehlgeschlagen: " . mysql_error());
+	or die("Anfrage fehlgeschlagen: " . mysqli_error());
 	echo 'Erstellen erfolgreich';
 ?>
