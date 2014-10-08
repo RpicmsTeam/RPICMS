@@ -1,3 +1,3 @@
 <?php
-$blog_name = 'CMS TEST';
+$blog_name = 'Test';
 

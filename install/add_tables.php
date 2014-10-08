@@ -20,7 +20,7 @@
 		) ENGINE = MYISAM ;
 		";
 	$result = mysqli_query($connection, $sql)
-	or die("Anfrage fehlgeschlagen: " . mysqli_error());
+	or die("Anfrage fehlgeschlagen: " . mysql_error());
 	echo 'Erstellen erfolgreich';
 //User erstellen
 	require_once ('../core/inc/db_connect.inc.php');
@@ -36,6 +36,6 @@
 		) ENGINE = MYISAM ;
 		";
 	$result = mysqli_query($connection, $sql)
-	or die("Anfrage fehlgeschlagen: " . mysqli_error());
+	or die("Anfrage fehlgeschlagen: " . mysql_error());
 	echo 'Erstellen erfolgreich';
 ?>
