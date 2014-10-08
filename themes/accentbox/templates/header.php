@@ -18,7 +18,7 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-		<script src="js/modernizr.js"></script>
+		<script src="js/modernizr.min.js"></script>
 		<script src="js/customscript.js" type="text/javascript"></script>
 	
 		<style type="text/css">

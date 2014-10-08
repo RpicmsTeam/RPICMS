@@ -11,17 +11,17 @@
 							</form>
 						</li>
 				
-						<li class="widget widget-sidebar">
+						<!--<li class="widget widget-sidebar">
 							<div class="ad-300">
 								<a href="#"><img src="images/stylishuserinterface300x250.jpg" height="250" width="300"></a>
 							</div>
-						</li>
+						</li>-->
 						<li class="widget widget-sidebar">
 							<h3>Our Sponsors</h3>
 							<div class="ad-125">
 								<ul>
 									<li class="oddad">
-										<a href="#"><img src="images/125x125.gif" height="125" width="125"></a>
+										<a href="http://nordgedanken.de"><img src="http://nordgedanken.oktarp.de/files/2013/07/nordgedankenlogo.png" height="125" width="125"></a>
 									</li>
 									<li class="evenad">
 										<a href="#"><img src="images/125x125.gif" height="125" width="125"></a>

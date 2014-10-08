@@ -16,7 +16,7 @@
 		`title` TEXT NOT NULL ,
 		`author` TEXT NOT NULL ,
 		`date` DATETIME NOT NULL ,
-		`categrory` TEXT NOT NULL
+		`category` TEXT NOT NULL
 		) ENGINE = MYISAM ;
 		";
 	$result = mysqli_query($connection, $sql)

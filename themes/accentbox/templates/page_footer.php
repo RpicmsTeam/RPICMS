@@ -4,7 +4,7 @@
 				<div class="f-widget">
 					<div class='widget'>
 					<?php
-						echo "<h3>$name_themen</h3>";	
+						echo "<h3>$name_themes</h3>";	
 					?>	
 						<div class="textwidget">
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur quam augue, vehicula quis, tincidunt vel, varius vitae, nulla. Sed convallis orci. Duis libero orci, pretium a.</p>					

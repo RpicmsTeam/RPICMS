@@ -126,11 +126,11 @@ margin:10px 0
 
 @font-face {
     font-family: 'BebasNeueRegular';
-    src: url('fonts/BebasNeue-webfont.eot');
-    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/BebasNeue-webfont.woff') format('woff'),
-         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
-         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    src: url('../fonts/BebasNeue-webfont.eot');
+    src: url('../fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BebasNeue-webfont.woff') format('woff'),
+         url('../fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('../fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -238,7 +238,7 @@ position: relative;
 float: left;
 width: 100%;
 z-index: 99;
-background-image: url(images/hbg.gif);
+background-image: url(../images/hbg.gif);
 border-bottom: 7px solid #5E5E5E;
 }
 #header{
@@ -674,7 +674,7 @@ display: block;
 overflow: hidden;
 list-style-type: none;
 padding-left: 20px;
-background: url(images/arrow.png) 0 5px no-repeat;
+background: url(../images/arrow.png) 0 5px no-repeat;
 }
 .widget h3 {
 font-size: 20px;
@@ -698,7 +698,7 @@ min-height:50px;
 overflow:hidden;
 margin-top: 0px;
 width: 100%;
-background: url(images/hbg.gif);  border-bottom: 7px solid   #5E5E5E;  border-top: 7px solid   #5E5E5E;
+background: url(../images/hbg.gif);  border-bottom: 7px solid   #5E5E5E;  border-top: 7px solid   #5E5E5E;
 padding-top: 25px;
 }
 body > footer .widget{
@@ -834,7 +834,7 @@ font-weight: bold;
 }
 .postauthor {
     padding: 1.5em 1.6em 0.5em;  
-    margin: 1.5em 0 1em 0; background-image: url(images/hbg.gif); border: 1px solid #D4CFC1; min-height: 100px;
+    margin: 1.5em 0 1em 0; background-image: url(../images/hbg.gif); border: 1px solid #D4CFC1; min-height: 100px;
 }
 .postauthor h4 {
 color: #666;
