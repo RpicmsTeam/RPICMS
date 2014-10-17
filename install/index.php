@@ -1,11 +1,11 @@
-/**
+<!--/**
 * Module Check
 * 
 * This script checks for requiered modules.
 *
 * @author	Marcel Radzio <info@nordgedanken.de>
 * @version	0.2 18/08/2014 18:45
-*/
+*/-->
 <!Doctype html>
 <html>
 <head>
@@ -17,7 +17,9 @@
 		if (!dl('mysql.so')) {
 			print ("MySQL is not installed! Please install this module!");
 			exit;
-		}else{print("MySQL has been successfully loaded");}
+		}else{
+			print("MySQL has been successfully loaded");
+		}
 	}
 ?>
 <h1>Installer</h1>
@@ -61,10 +63,18 @@ unlink('../core/config/variables.config.php');
 		</tr>
 		<tr>
 			<td><p>Untertitel: </p></td>
-			<td style="text-indent:40px;"><input type="text" name="admin_username" required="required" placeholder="Untertitel" maxlength="255" /></td>
+			<td style="text-indent:40px;"><input type="text" name="undertitle" required="required" placeholder="Untertitel" maxlength="255" /></td>
 		</tr>
 		<tr>
 			<td><p>Schlagw&ouml;rter: </p></td>
+			<td style="text-indent:40px;"><input type="text" name="keywords" required="required" placeholder="Schlagw&ouml;rter" maxlength="50" /></td>
+		</tr>
+		<tr>
+			<td><p>Admin Username: </p></td>
+			<td style="text-indent:40px;"><input type="text" name="admin_username" required="required" placeholder="Untertitel" maxlength="255" /></td>
+		</tr>
+		<tr>
+			<td><p>Admin Password: </p></td>
 			<td style="text-indent:40px;"><input type="text" name="admin_password" required="required" placeholder="Schlagw&ouml;rter" maxlength="50" /></td>
 		</tr>
 		<tr>
