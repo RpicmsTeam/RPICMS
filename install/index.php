@@ -23,7 +23,6 @@
 	}
 ?>
 <h1>Installer</h1>
-<h3>MySQL</h3>
 <!-- Reset Configs -->
 <?php
 #################
@@ -38,17 +37,18 @@ unlink('../core/config/variables.config.php');
 <!-- Form to give data to config-generator -->
 <form action="generate_configs.php" method="post">
 	<table cellpadding="1" cellspacing="4">
+	<h3>MySQL</h3>
 		<tr>
 			<td><p>Datenbank Adresse: </p></td>
-			<td><input type="name" name="serverpfad" required="required" placeholder="Datenbank Adresse" maxlength="255" /></td>
+			<td><input type="name" name="db_address" required="required" placeholder="Datenbank Adresse" maxlength="255" /></td>
 		</tr>
 		<tr>
 			<td><p>Nutzername: </p></td>
-			<td><input type="name" name="username" required="required" placeholder="Nutzername" maxlength="255" /></td>
+			<td><input type="name" name="db_username" required="required" placeholder="Nutzername" maxlength="255" /></td>
 		</tr>
 		<tr>
 			<td><p>Passwort: </p></td>
-			<td><input type="password" name="password" required="required" placeholder="Passwort" maxlength="50" /></td>
+			<td><input type="password" name="db_password" required="required" placeholder="Passwort" maxlength="50" /></td>
 		</tr>
 		<tr>
 			<td><p>Datenbank Name:    </p></td>

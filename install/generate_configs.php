@@ -27,8 +27,8 @@ if (is_writable($filename)) {
     }
 
 //	#Serverpfad
-	$serverpfad = $_POST["serverpfad"];
-	$var_str_sp = var_export($serverpfad, true);
+	$db_address = $_POST["db_address"];
+	$var_str_sp = var_export($db_address, true);
 	$var_sp = "<?php\n\n\$db_servername = $var_str_sp;\n";
 
     		// Schreibe $somecontent in die geöffnete Datei.
@@ -41,8 +41,8 @@ if (is_writable($filename)) {
     		print "Fertig, in Datei $filename wurde $var_str_sp geschrieben";
 		print "</br>";
 //	#Userame
-	$username = $_POST["username"];
-	$var_str_u = var_export($username, true);
+	$db_username = $_POST["db_username"];
+	$var_str_u = var_export($db_username, true);
 	$var_u = "\n\n\$db_username = $var_str_u;\n";
     
     		if (!fwrite($handle, $var_u)) {
@@ -54,8 +54,8 @@ if (is_writable($filename)) {
     		print "Fertig, in Datei $filename wurde $var_str_u geschrieben";
 		print "</br>";
 //	#Passwort
-	$password = $_POST["password"];
-	$var_str_pw = var_export($password, true);
+	$db_password = $_POST["db_password"];
+	$var_str_pw = var_export($db_password, true);
 	$var_pw = "\n\n\$db_password = $var_str_pw;\n";
 		if (!fwrite($handle, $var_pw)) {
        			print "Kann in die Datei $filename nicht schreiben";
