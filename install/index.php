@@ -29,10 +29,14 @@
 #Database Config#
 #################
 unlink('../core/inc/db_connect.inc.php');
-#################
-#Blog Basics Config#
-#################
+######################
+#Blog Basics Config  #
+######################
 unlink('../core/config/variables.config.php');
+######################
+#temp pass           #
+######################
+unlink('../core/config/pass.tmp.php')
 ?>
 <!-- Form to give data to config-generator -->
 <form action="generate_configs.php" method="post">
@@ -67,7 +71,7 @@ unlink('../core/config/variables.config.php');
 		</tr>
 		<tr>
 			<td><p>Schlagw&ouml;rter: </p></td>
-			<td style="text-indent:40px;"><input type="text" name="keywords" required="required" placeholder="Schlagw&ouml;rter" maxlength="50" /></td>
+			<td style="text-indent:40px;"><input type="text" name="keywords" placeholder="Schlagw&ouml;rter" maxlength="50" /></td>
 		</tr>
 		<tr>
 			<td><p>Admin Username: </p></td>

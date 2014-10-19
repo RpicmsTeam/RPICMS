@@ -93,9 +93,7 @@ if (is_writable($filename)) {
 //###################
 //#Blog Name
 $filename = '../core/config/variables.config.php';
-$blog_name = $_POST["blog_name"];
-$var_str_bn = var_export($blog_name, true);
-$var_bn = "<?php\n\$blog_name = $var_str_bn;\n\n";
+
 
 // Sichergehen, dass die Datei existiert und beschreibbar ist
 if (is_writable($filename)) {
@@ -108,8 +106,28 @@ if (is_writable($filename)) {
          exit;
     }
 
-    // Schreibe $somecontent in die geöffnete Datei.
+    // Blogname
+    $blog_name = $_POST["blog_name"];
+    $var_str_bn = var_export($blog_name, true);
+    $var_bn = "<?php\n\$blog_name = $var_str_bn;\n\n";
     if (!fwrite($handle, $var_bn)) {
+        print "Kann in die Datei $filename nicht schreiben";
+        exit;
+    }
+
+    //undertitle
+    $undertitle = $_POST["undertitle"];
+    $var_str_ut = var_export($undertitle, true);
+    $var_ut = "<?php\n\$undertitle = $var_str_ut;\n\n";
+    if (!fwrite($handle, $var_ut)) {
+        print "Kann in die Datei $filename nicht schreiben";
+        exit;
+    }
+
+    $keywords = $_POST["keywords"];
+    $var_str_kw = var_export($keywords, true);
+    $var_kw = "<?php\n\$keywords = $var_str_kw;\n\n";
+    if (!fwrite($handle, $var_kw)) {
         print "Kann in die Datei $filename nicht schreiben";
         exit;
     }
@@ -121,6 +139,51 @@ if (is_writable($filename)) {
 } else {
     print "Die Datei $filename ist nicht schreibbar";
 }
+
+//############################
+//# Pass zwischenspeicherung #
+//############################
+
+$filename = '../core/config/pass.tmp.php';
+
+
+// Sichergehen, dass die Datei existiert und beschreibbar ist
+if (is_writable($filename)) {
+
+    // Wir öffnen $filename im "Anhänge" - Modus.
+    // Der Dateizeiger befindet sich am Ende der Datei, und
+    // dort wird $somecontent später mit fwrite() geschrieben.
+    if (!$handle = fopen($filename, "a")) {
+         print "Kann die Datei $filename nicht öffnen";
+         exit;
+    }
+
+    // admin_username
+    $admin_username = $_POST["admin_username"];
+    $var_str_au = var_export($admin_username, true);
+    $var_au = "<?php\n\$admin_username = $var_str_au;\n\n";
+    if (!fwrite($handle, $var_au)) {
+        print "Kann in die Datei $filename nicht schreiben";
+        exit;
+    }
+
+    //admin_password
+    $admin_password = $_POST["admin_password"];
+    $var_str_ap = var_export($admin_password, true);
+    $var_ap = "<?php\n\$admin_password = $var_str_ap;\n\n";
+    if (!fwrite($handle, $var_ap)) {
+        print "Kann in die Datei $filename nicht schreiben";
+        exit;
+    }
+
+    print "Fertig, in Datei $filename wurde $var_str_bn geschrieben";
+        print "</br>";
+    fclose($handle);
+
+} else {
+    print "Die Datei $filename ist nicht schreibbar";
+}
+
 
 ?>
 <form action="add_database.php" method="post">
