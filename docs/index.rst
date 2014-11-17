@@ -22,6 +22,7 @@ Features/Funktionen
    features/posts
    features/podcasts
    features/administration
+   features/themes
 
 Entwickler Dokumentation
 -----------------------
