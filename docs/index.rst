@@ -1,6 +1,10 @@
 Willkommen zum RPICMS
 ================
 
+
+WICHTIG ES IST WORK IN PROGRESS. INSTALLIEREN NUR MIT VORWISSEN ZU EMPFEHLEN.
+=============================================================================
+
 RPICMS ist ein CMS welches für die wenige Leistung des Raspberry Pi ausgelegt ist.
 Es ist momentan in Entwicklung und wird fleißig entwickelt.
 
