@@ -8,7 +8,7 @@
 * @version	0.2 18/08/2014 18:49
 */
 //Posts erstellen
-	require_once ('../core/inc/db_connect.inc.php');
+	require_once ('../core/config/connect.db.inc.php');
 	$sql = "
 		 CREATE TABLE `posts` (
 		`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
@@ -23,7 +23,7 @@
 	or die("Anfrage fehlgeschlagen: " . mysql_error());
 	echo 'Erstellen erfolgreich';
 //User erstellen
-	require_once ('../core/inc/db_connect.inc.php');
+	require_once ('../core/config/connect.db.inc.php');
 	$sql = "
 		 CREATE TABLE `users` (
 		`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
@@ -38,4 +38,7 @@
 	$result = mysqli_query($connection, $sql)
 	or die("Anfrage fehlgeschlagen: " . mysql_error());
 	echo 'Erstellen erfolgreich';
+	//header("HTTP/1.1 301 Moved Permanently");
+	//header("Location:../");
+	exit;
 ?>

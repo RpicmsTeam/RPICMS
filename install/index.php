@@ -28,7 +28,7 @@
 #################
 #Database Config#
 #################
-unlink('../core/inc/db_connect.inc.php');
+unlink('../core/config/connect.db.inc.php');
 ######################
 #Blog Basics Config  #
 ######################
