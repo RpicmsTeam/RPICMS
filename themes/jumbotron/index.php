@@ -66,15 +66,17 @@
           ?>
             <h1>
               <?php
-                echo "<a href='#' rel='bookmark'> $post_title </a></br></br>";
+                echo "<a href='#' rel='bookmark'> $post_title </a></br>";
               ?>
             </h1>
             <div>
+            <h2>
               <?php
                 echo "<span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | ";
                 echo "<time>$post_date</time> | ";
                 echo "<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>";
               ?>
+            </h2>
             </div>
           <div class="post-content image-caption-format-1">
             </a>
