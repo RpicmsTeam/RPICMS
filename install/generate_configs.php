@@ -115,6 +115,14 @@ $filename = '../core/config/variables.config.php';
         exit;
     }
 
+    $theme = $_POST["theme"];
+    $var_str_th = var_export($theme, true);
+    $var_th = "\$theme = $var_str_th;\n\n";
+    if (!fwrite($handle, $var_th)) {
+        print "Kann in die Datei $filename nicht schreiben";
+        exit;
+    }
+
     print "Fertig, in Datei $filename wurde $var_str_bn geschrieben";
         print "</br>";
     fclose($handle);

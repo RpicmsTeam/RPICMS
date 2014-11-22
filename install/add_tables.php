@@ -38,7 +38,7 @@
 	$result = mysqli_query($connection, $sql)
 	or die("Anfrage fehlgeschlagen: " . mysql_error());
 	echo 'Erstellen erfolgreich';
-	//header("HTTP/1.1 301 Moved Permanently");
-	//header("Location:../");
+	header("HTTP/1.1 301 Moved Permanently");
+	header("Location:../");
 	exit;
 ?>

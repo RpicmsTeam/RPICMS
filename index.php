@@ -13,7 +13,7 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 			header("HTTP/1.1 301 Moved Permanently");
 			header("Location:themes/$theme");
 		}else{
-			require('core/config/variables.config.php');
+			require_once('core/config/variables.config.php');
 			header("HTTP/1.1 301 Moved Permanently");
 			header("Location:themes/$theme");
 		}

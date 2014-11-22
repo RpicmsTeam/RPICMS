@@ -75,16 +75,31 @@ unlink('../core/config/pass.tmp.php')
 		</tr>
 		<tr>
 			<td><p>Admin Username: </p></td>
-			<td style="text-indent:40px;"><input type="text" name="admin_username" required="required" placeholder="Untertitel" maxlength="255" /></td>
+			<td style="text-indent:40px;"><input type="text" name="admin_username" required="required" placeholder="Admin Username" maxlength="255" /></td>
 		</tr>
 		<tr>
 			<td><p>Admin Password: </p></td>
-			<td style="text-indent:40px;"><input type="text" name="admin_password" required="required" placeholder="Schlagw&ouml;rter" maxlength="50" /></td>
+			<td style="text-indent:40px;"><input type="text" name="admin_password" required="required" placeholder="Admin Password" maxlength="50" /></td>
+		</tr>
+	</table>
+<h3>Design</h3>
+	<table cellpadding="1" cellspacing="4">
+		<tr>
+			<td><p>Theme</p></td>
+			<td style="text-indent:40px;">
+				<select name="theme" size="3">
+					<option>accentbox</option>
+					<option>jumbotron</option>
+					<option>parkzone</option>
+					<option>zResponsive</option>
+				</select>
+			</td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" name="send" value="Weiter" /></td>
 		</tr>
 	</table>
+
 </form>
 </body>
 </html>
