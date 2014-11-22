@@ -40,7 +40,7 @@
 			
 				<div class="post excerpt ">
 					<?php
-						require('../../core/blog/posts.php');
+						require('../../core/backend/blog/posts.php');
 					?>
 					<header>
 					<div class="bubble"><a href="#">4</a></div>
