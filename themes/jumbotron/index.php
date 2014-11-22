@@ -81,7 +81,7 @@
           <div class="post-content image-caption-format-1">
             </a>
             <?php
-              echo "$post_text</br>";
+              echo "$post_text</br></br></br>";
             ?>
           </div>
         <p><a class="btn btn-primary btn-lg" href="http://rpicms.readthedocs.org/de/develop/features/themes.html" role="button">Learn more &raquo;</a></p>
