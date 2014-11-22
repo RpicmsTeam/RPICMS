@@ -20,7 +20,7 @@
  		 while($daten = $resultat->fetch_object() ){
 				$post_title = $daten->title;
 				$post_text = $daten->text;
-				$post_author = $daten->name;
+				$post_author = $daten->author;
 				$post_date = $daten->date;
 				$post_categrory = $daten->category;
   			}  
