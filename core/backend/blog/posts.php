@@ -7,7 +7,7 @@
 * @author		Marcel Radzio <info@nordgedanken.de>
 * @version	0.2 17/08/2014 19:39
 */
-	include('../../config/connect.db.inc.php');
+	include('../../core/config/connect.db.inc.php');
 	//Check if Database connection established
 	if (mysqli_connect_errno()) {
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
