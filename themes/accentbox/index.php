@@ -1,4 +1,12 @@
 <?php
+#######################
+# flush browser cache #
+#######################
+header("Cache-Control: no-cache, must-revalidate, no-store");
+
+################
+# lang support #
+################
     function getBrowserLangs() {  
         $langs[0] = $langs[1] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);  
         $langs[0] = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);  

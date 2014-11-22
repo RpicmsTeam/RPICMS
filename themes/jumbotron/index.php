@@ -61,8 +61,33 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a example template for the RPICMS based on Bootstrap. Bootstrap can be found under the Theme_engine directory in themes.</p>
+        <?php
+            require('../../core/backend/blog/posts.php');
+          ?>
+          <header>
+          <div class="bubble"><a href="#">4</a></div>
+            <h2 class="title">
+              <?php
+                echo "<a href='#' rel='bookmark'> $post_title </a>";
+              ?>
+            </h2>
+            <div class="post-info">
+              <?php
+                echo "<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>";
+                echo "<time>$post_date</time>";
+                echo "<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span>";
+              ?>
+            </div>
+          </header><!--.header-->
+          <div class="post-content image-caption-format-1">
+            <a href="#" rel="nofollow" id="featured-thumbnail">
+             
+            <div class="featured-thumbnail"><img src="images/2457315858_32ffd98aec_n-150x150.jpg" class="attachment-featured wp-post-image" height="150" width="150"><div>
+            </a>
+            <?php
+              echo "$post_text";
+            ?>
+          </div>
         <p><a class="btn btn-primary btn-lg" href="http://rpicms.readthedocs.org/de/develop/features/themes.html" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
