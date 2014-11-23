@@ -40,19 +40,21 @@
 			}  
   			$resultat->close();
 		} else {
-			$daten = $resultat->fetch_object();
-  			//If no data in Database give error
-  			echo 'SELECT * FROM posts WHERE id LIKE '.$id;
-  			var_dump ($daten);
-  			global $error;
-  			$error = "1";
-  			echo "Nothing to read from Database!";
-  			$post_id = "Database error!";
-			$post_title = "Database error!";
-			$post_text = "Database error!";
-			$post_author = "Database error!";
-			$post_date = "Database error!";
-			$post_categrory = "Database error!";
+			while($daten = $resultat->fetch_object() ){
+  				//If no data in Database give error
+  				echo 'SELECT * FROM posts WHERE id LIKE '.$id;
+  				var_dump ($daten);
+  				global $error;
+  				$error = "1";
+  				echo "Nothing to read from Database!";
+  				$post_id = "Database error!";
+				$post_title = "Database error!";
+				$post_text = "Database error!";
+				$post_author = "Database error!";
+				$post_date = "Database error!";
+				$post_categrory = "Database error!";
+			}  
+  			$resultat->close();
 		}
 		if ($read != 0){
 			read();
