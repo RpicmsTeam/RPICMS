@@ -49,7 +49,8 @@ if (!$empty){
 ?>
 <div id="page">
 	<div class="content">
-		
+		<article class='article'>
+			<div id='content_box'>
       		<?php
         		$x = 1;
         		if ($empty){
@@ -58,9 +59,7 @@ if (!$empty){
           			while ($x < $post_id_clean+1){
             			include('../../core/config/connect.db.inc.php');
             			echo "
-            				<article class='article'>
-								<div id='content_box'>
-									<div class='post excerpt'>
+            					<div class='post excerpt'>
               							<header>
 										<div class='bubble'><a href='#'>4</a></div>
 											<h2 class='title'>
@@ -87,8 +86,6 @@ if (!$empty){
         		}else{
             		include('../../core/backend/blog/posts.php');
         			echo "
-        				<article class='article'>
-        					<div id='content_box'>
 								<div class='post excerpt'>
               						<header>
 									<div class='bubble'><a href='#'>4</a></div>
