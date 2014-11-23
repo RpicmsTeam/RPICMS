@@ -12,7 +12,7 @@
     }
     include('../../core/backend/blog/posts.php');
     include('../../core/config/variables.config.php')
-    $read = 0;
+    $read = "0";
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +86,7 @@
                 if ($empty){
                   if ($post_title != "Database Error!"){
                     while (!empty($post_title)){
-                      $read = 1;
+                      $read = "1"";
                       $id = $x;
                       echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
                       $x = $x+1;
