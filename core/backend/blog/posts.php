@@ -7,7 +7,12 @@
 * @author		Marcel Radzio <info@nordgedanken.de>
 * @version	0.2 17/08/2014 19:39
 */
-
+	include('../../core/config/connect.db.inc.php');
+	//Check if Database connection established
+	if (mysqli_connect_errno()) {
+		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
+		exit();
+	}
 	#if ($empty){
 	#	$post_id = "bug?";
 	#	$post_title = "bug?";
@@ -19,12 +24,7 @@
 		//Check if Data in it
 	read();
 	function read(){
-		include('../../core/config/connect.db.inc.php');
-		//Check if Database connection established
-		if (mysqli_connect_errno()) {
-			printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
-			exit();
-		}
+		global $id, $connection, $read;
 		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 			echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
