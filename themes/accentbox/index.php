@@ -76,8 +76,8 @@ if (!$empty){
 											<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
 											</a>
                								$post_text_short
-               							</div>
-									</div></br>
+               							</div></br>x
+									</div>y
            				";
             			$x = $x+1;
             			$id = $id+1;
@@ -103,8 +103,8 @@ if (!$empty){
 										<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
 										</a>
                   						$post_text_short
-                						</div>
-									</div></br>
+                						</div></br>x
+									</div>y
            			";
         		}
 			?>						
