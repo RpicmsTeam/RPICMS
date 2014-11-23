@@ -1,3 +1,14 @@
+  <?php 
+    #######################
+    # flush browser cache #
+    #######################
+    header("Cache-Control: no-cache, must-revalidate, no-store");
+    ##########################
+    # include required files #
+    ##########################
+    require('../../core/backend/blog/posts.php');
+    require('../../core/config/variables.config.php')
+  ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,17 +41,7 @@
   </head>
 
   <body>
-  <?php 
-    #######################
-    # flush browser cache #
-    #######################
-    header("Cache-Control: no-cache, must-revalidate, no-store");
-    ##########################
-    # include required files #
-    ##########################
-    require('../../core/backend/blog/posts.php');
-    require('../../core/config/variables.config.php')
-  ?>
+
 
 
 
