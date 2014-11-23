@@ -73,10 +73,8 @@
 				}
   				$resultat->close();
 			}  	
-		if ($read != 0){
 			read();
 			alles();
-		}
 	}
 
 
