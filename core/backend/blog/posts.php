@@ -41,6 +41,8 @@
   			$resultat->close();
 		} else {
   			//If no data in Database give error
+  			global $error;
+  			$error = "1";
   			echo "Nothing to read from Database!";
   			$post_id = "Database error!";
 			$post_title = "Database error!";

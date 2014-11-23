@@ -6,6 +6,7 @@
     ##########################
     # include required files #
     ##########################
+    $error = "0";
     $empty = empty($_GET["id"]);
     if (!$empty){
       $id = $_GET["id"];
@@ -84,15 +85,19 @@
               <?php
                 $x = 1;
                 if ($empty){
+                  if (!$error = "1"){
                     while ($x < 10){
                       $read = "1";
                       $id = $x;
                       echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
                       $x = $x+1;
                     }
+                  }else{
+                      echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>";
+                  }
                 }else{
                       echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>";
-                    }
+                }
               ?>
             </h1>
             <div>
