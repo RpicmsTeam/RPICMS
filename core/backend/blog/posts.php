@@ -13,15 +13,13 @@
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 		exit();
 	}
-	#if ($empty){
-	#	$post_id = "bug?";
-	#	$post_title = "bug?";
-	#	$post_text = "bug?";
-	#	$post_author = "bug?";
-	#	$post_date = "bug?";
-	#	$post_categrory = "bug?";
-	#}else{
-		//Check if Data in it
+	if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
+		while($daten = $resultat->fetch_object() ){
+ 			$post_id_clean = $daten->id;
+		}
+  		$resultat->close();
+	}  	
+	
 	alles();
 	function read(){
 		global $id, $connection, $read;
@@ -64,18 +62,7 @@
 			read();
 		}
 	}
-	function alles(){
-			global $id, $connection, $read;
-			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory, $post_id_clean;
-			if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
-				while($daten = $resultat->fetch_object() ){
- 					$post_id_clean = $daten->id;
-				}
-  				$resultat->close();
-			}  	
-			read();
-			alles();
-	}
+
 
 
 
