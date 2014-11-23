@@ -18,7 +18,7 @@
  				$post_id_clean = $daten->id;
  				#var_dump($daten);
 			}
-  			$resultat->close();
+  			#$resultat->close();
 		}
 	next_id();
 	function next_id(){
