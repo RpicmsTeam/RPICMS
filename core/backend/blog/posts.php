@@ -36,6 +36,12 @@
   		#	//If no data in Database give error
   		#	echo "Es konnten keine Daten aus der Datenbank ausgelesen werden";
 		#}
+		$post_id = "bug?";
+		$post_title = "bug?";
+		$post_text = "bug?";
+		$post_author = "bug?";
+		$post_date = "bug?";
+		$post_categrory = "bug?";
 		echo "<b>bug?</b>";
 	}else{
 		//Check if Data in it
