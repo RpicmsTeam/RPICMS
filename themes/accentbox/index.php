@@ -58,8 +58,8 @@ if (!$empty){
           			while ($x < $post_id_clean+1){
             			include('../../core/config/connect.db.inc.php');
             			echo "
-							<div id='content_box'>
-								<article class='article'>
+            				<article class='article'>
+								<div id='content_box'>
 									<div class='post excerpt'>
               							<header>
 										<div class='bubble'><a href='#'>4</a></div>
@@ -96,8 +96,8 @@ if (!$empty){
         		}else{
             		include('../../core/backend/blog/posts.php');
         			echo "
-        				<div id='content_box'>
-        					<article class='article'>
+        				<article class='article'>
+        					<div id='content_box'>
 								<div class='post excerpt'>
               						<header>
 									<div class='bubble'><a href='#'>4</a></div>
