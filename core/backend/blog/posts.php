@@ -26,7 +26,7 @@
 	function read(){
 		global $id, $connection, $read, $post_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
-		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE $id')) {
+		if ($resultat = $connection->query("SELECT * FROM posts WHERE id LIKE '$id'")) {
 			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
@@ -42,11 +42,6 @@
 		} else {
 			global $id, $connection, $read, $post_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
-			if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE $id')) {
-				while($daten = $resultat->fetch_object() ){
-  					//If no data in Database give error
-  					echo 'SELECT * FROM posts WHERE id LIKE '.$id;
-  					var_dump ($daten);
   					global $error;
   					$error = "1";
   					echo "Nothing to read from Database!";
@@ -56,9 +51,6 @@
 					$post_author = "Database error!";
 					$post_date = "Database error!";
 					$post_categrory = "Database error!";
-				}
-  				$resultat->close();
-			}  	
 		}
 		if ($read != 0 && $id < $post_id_clean){
 			read();
