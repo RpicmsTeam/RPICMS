@@ -92,7 +92,9 @@
                   }else{
                       echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
                     }
-                }
+                }else{
+                      echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>";
+                    }
               ?>
             </h1>
             <div>
