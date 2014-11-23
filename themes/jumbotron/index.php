@@ -87,7 +87,7 @@
                     $id = 1;
                     include('../../core/backend/blog/posts.php');
                     echo $post_id_clean;
-                    while ($x < $post_id_clean){
+                    while ($x < $post_id_clean+1){
                       echo "LOOP!!!!!!";
                       $read = "1";
                       echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>";
