@@ -1,17 +1,49 @@
-  <?php 
-    #######################
-    # flush browser cache #
-    #######################
-    header("Cache-Control: no-cache, must-revalidate, no-store");
-    ##########################
-    # include required files #
-    ##########################
-    $error = "0";
-    $empty = empty($_GET["id"]);
-    if (!$empty){
-      $id = $_GET["id"];
-    }
-    include('../../core/config/variables.config.php');
+<?php 
+  #######################
+  # flush browser cache #
+  #######################
+  header("Cache-Control: no-cache, must-revalidate, no-store");
+  ##########################
+  # include required files #
+  ##########################
+  $error = "0";
+  $empty = empty($_GET["id"]);
+  if (!$empty){
+    $id = $_GET["id"];
+  }
+  include('../../core/config/variables.config.php');
+
+  ################
+  # lang support #
+  ################
+  function getBrowserLangs() {  
+    $langs[0] = $langs[1] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);  
+    $langs[0] = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);  
+    foreach($langs[0] as $l) {  
+      $q = explode(';', $l);  
+      $lang = substr($q[0], 0, 2);  
+      $q = (isset($q[1])) ? (float)substr($q[1], 2) : 1;  
+      $result[$lang] = $q;   
+    }  
+    if(isset($result) && is_array($result)) {  
+      arsort($result, SORT_NUMERIC);    
+      return $result;  
+    }   
+      return $result[$langs[1]] = 1;    
+  }  
+
+    $langs = getBrowserLangs();  
+    foreach($langs as $prio => $lang) {  
+      if($lang = 'de') {  
+        include('lang/de-DE.php');  
+        break;  
+      } elseif($lang = 'en') {  
+        include('lang/en-US.php');  
+        break;   
+      }   
+       // AND SO ON .................  
+    }  
+
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,20 +169,24 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <?php
+          echo "
+            <div class='col-md-4'>
+              <h2>$name_themes</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class='btn btn-default' href='#' role='button'>View details &raquo;</a></p>
+            </div>
+            <div class='col-md-4'>
+              <h2>$name_archiv</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class='btn btn-default' href='#' role='button'>View details &raquo;</a></p>
+            </div>
+            <div class='col-md-4'>
+              <h2>'$name_meta'</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <p><a class='btn btn-default' href='#' role='button'>View details &raquo;</a></p>
+          ";
+          ?>
         </div>
       </div>
 
