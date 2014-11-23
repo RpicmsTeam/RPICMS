@@ -14,28 +14,6 @@
 		exit();
 	}
 	if (empty($_GET["post_id"])){
-		#//Check if Data in it
-		#if ($resultat = $connection->query('SELECT * FROM posts')) {
-		#	//Put database data in variables
- 		#	while($daten = $resultat->fetch_object() ){
- 		#	 		$post_id_clean = $daten->id;
-		#			$post_title_clean = $daten->title;
-		#			$post_text_clean = $daten->text;
-		#			$post_author_clean = $daten->author;
-		#			$post_date_clean = $daten->date;
-		#			$post_categrory_clean = $daten->category;
-
-		#			$post_id = [
-		#				$post_id_clean => $post_id_clean,
-		#				];
-
-
-  		#		}  
-  		#	$resultat->close();
-		#} else {
-  		#	//If no data in Database give error
-  		#	echo "Es konnten keine Daten aus der Datenbank ausgelesen werden";
-		#}
 		$post_id = "bug?";
 		$post_title = "bug?";
 		$post_text = "bug?";

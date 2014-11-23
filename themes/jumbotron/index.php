@@ -77,7 +77,11 @@
       <div class="container">
             <h1>
               <?php
-                echo "<a href='index.php?id=$post_id' rel='bookmark'> $post_title </a>";
+              $x = 1;
+              while (!empty($post_title)){
+                echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
+                $x = $x+1;
+              }
               ?>
             </h1>
             <div>
