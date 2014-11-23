@@ -23,8 +23,8 @@
 	#}else{
 		//Check if Data in it
 		function read()
-		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)){
-			echo 'SELECT * FROM posts WHERE id LIKE '.$id;
+		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE $id')) {
+			echo 'SELECT * FROM posts WHERE id LIKE $id';
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
  			 		$post_id = $daten->id;
