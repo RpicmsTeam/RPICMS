@@ -88,6 +88,8 @@
                       $id = $x;
                       echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
                       $x = $x+1;
+                    }else{
+                      echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
                     }
                   }
                 }
