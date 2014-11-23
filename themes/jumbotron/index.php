@@ -81,7 +81,7 @@
           <div>
             <p>
             <?php
-              echo "$post_text</br></br>";
+              echo "$post_text</br>";
             ?>
             </p>
           </div>
