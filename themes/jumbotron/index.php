@@ -87,7 +87,19 @@
                     include('../../core/backend/blog/posts.php');
                     while ($x < $post_id_clean+1){
                       include('../../core/config/connect.db.inc.php');
-                      echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>";
+                      echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+                      </h1>
+                      <div>
+                      <h4>
+                      <span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
+                      <time>$post_date</time> | 
+                      <span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
+                      </h4>
+                      </div>
+                      <div>
+                      <p>
+                      $post_text</br>
+                      </p>";
                       $x = $x+1;
                       $id = $id+1;
                       next_id();
@@ -96,22 +108,22 @@
                       echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>";
                 }
               ?>
-            </h1>
+            <!--</h1>
             <div>
             <h4>
               <?php
-                echo "<span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | ";
-                echo "<time>$post_date</time> | ";
-                echo "<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>";
+               // echo "<span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | ";
+               // echo "<time>$post_date</time> | ";
+               // echo "<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>";
               ?>
             </h4>
             </div>
           <div>
             <p>
             <?php
-              echo "$post_text</br>";
+              //echo "$post_text</br>";
             ?>
-            </p>
+            </p>-->
           </div>
         <p><a class="btn btn-primary btn-lg" href="http://rpicms.readthedocs.org/de/develop/features/themes.html" role="button">Learn more &raquo;</a></p>
       </div>
