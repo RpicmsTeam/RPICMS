@@ -74,10 +74,10 @@ if (!$empty){
 										<div class='post-content image-caption-format-1'>
 											<a href='#' rel='nofollow' id='featured-thumbnail'>
 											<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
-											</a></br>
+											</a>
                								$post_text_short
                							</div>
-									</div>
+									</div></br>
            				";
             			$x = $x+1;
             			$id = $id+1;
@@ -101,10 +101,10 @@ if (!$empty){
 									<div class='post-content image-caption-format-1'>
 										<a href='#' rel='nofollow' id='featured-thumbnail'>
 										<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
-										</a></br>
+										</a>
                   						$post_text_short
                 						</div>
-									</div>
+									</div></br>
            			";
         		}
 			?>						
