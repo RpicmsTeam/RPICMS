@@ -78,7 +78,7 @@
             <h1>
               <?php
               $x = 1;
-              while (!empty($post_title OR $post_title = "bug?")){
+              while (!empty($post_title) OR $post_title = "bug?"){
                 echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
                 $x = $x+1;
               }
