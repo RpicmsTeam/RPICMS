@@ -85,16 +85,12 @@
               <?php
                 $x = 1;
                 if ($empty){
-                  if (!$error = "1"){
                     while ($x < $post_id_clean){
                       $read = "1";
                       $id = 1;
                       echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
                       $x = $x+1;
                     }
-                  }else{
-                      echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>";
-                  }
                 }else{
                       echo "<a href='index.php?id=$id' rel='bookmark'> $post_title </a>";
                 }
