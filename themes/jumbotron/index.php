@@ -78,11 +78,12 @@
               ?>
             </h4>
             </div>
-          <div class="post-content image-caption-format-1">
-            </a>
+          <div>
+            <p>
             <?php
               echo "$post_text</br></br>";
             ?>
+            </p>
           </div>
         <p><a class="btn btn-primary btn-lg" href="http://rpicms.readthedocs.org/de/develop/features/themes.html" role="button">Learn more &raquo;</a></p>
       </div>
