@@ -7,8 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
-
-    <title>RPICMS EXAMPLE THEME - Jumbotron Template</title>
+    
+    <?php
+    echo "<title>$blog_name</title>";
+    ?>
 
     <!-- Bootstrap core CSS -->
     <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +31,13 @@
 
   <body>
   <?php 
+    #######################
+    # flush browser cache #
+    #######################
+    header("Cache-Control: no-cache, must-revalidate, no-store");
+    ##########################
+    # include required files #
+    ##########################
     require('../../core/backend/blog/posts.php');
     require('../../core/config/variables.config.php')
   ?>
@@ -67,7 +76,7 @@
       <div class="container">
             <h1>
               <?php
-                echo "<a href='#?id=$post_id' rel='bookmark'> $post_title </a>";
+                echo "<a href='index.php?id=$post_id' rel='bookmark'> $post_title </a>";
               ?>
             </h1>
             <div>
