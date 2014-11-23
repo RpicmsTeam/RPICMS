@@ -18,6 +18,7 @@
 	if ($resultat = $connection->query('SELECT * FROM posts')) {
 		 //Put database data in variables
  		 while($daten = $resultat->fetch_object() ){
+ 		 		$post_id = $daten->id;
 				$post_title = $daten->title;
 				$post_text = $daten->text;
 				$post_author = $daten->author;

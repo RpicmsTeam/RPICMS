@@ -49,7 +49,7 @@
           ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form" action="../../core/admin/user/login_check.php" method="post">
+          <form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
             <div class="form-group">
               <input type="email" placeholder="Email" class="form-control" name="username" required="required" title="Please insert a valid Email (example@email.com)" x-moz-errormessage="Please insert a valid Email (example@email.com)">
             </div>
@@ -67,7 +67,7 @@
       <div class="container">
             <h1>
               <?php
-                echo "<a href='#' rel='bookmark'> $post_title </a>";
+                echo "<a href='#?id=$post_id rel='bookmark'> $post_title </a>";
               ?>
             </h1>
             <div>
