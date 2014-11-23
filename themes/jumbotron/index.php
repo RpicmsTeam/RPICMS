@@ -79,7 +79,7 @@
               <?php
               $x = 1;
               while ($x < $post_id_clean){
-                print_r ($post_id[$x]);
+                echo "{($post_id[1]}";
                 #echo "<a href='index.php?id=".$post_id[$x]."' rel='bookmark'> $post_title </a>";
                 $x = $x + 1;
               }
