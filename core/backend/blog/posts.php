@@ -61,7 +61,7 @@
   				$resultat->close();
 			}  	
 		}
-		if ($read != 0){
+		if ($read != 0 && $id < $post_id_clean){
 			read();
 		}
 	}
