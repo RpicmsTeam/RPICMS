@@ -21,7 +21,7 @@
   			$resultat->close();
 		}
 	
-		read();
+		#read();
 
 	function read(){
 		global $id, $connection, $read, $post_id_clean;
@@ -52,11 +52,9 @@
 					$post_date = "Database error!";
 					$post_categrory = "Database error!";
 		}
-		if ($id < $post_id_clean){
-			read();
-		}else{
-			exit;
-		}
+		#if ($id < $post_id_clean+1){
+		#	read();
+		#}
 	}
 
 
