@@ -76,22 +76,13 @@ if (!$empty){
 											<a href='#' rel='nofollow' id='featured-thumbnail'>
 											<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
 											</a>
-               								$post_text_short</br>
+               								$post_text_short
                							</div>
 									</div>
            				";
             			$x = $x+1;
             			$id = $id+1;
             			next_id();
-            			echo "
-            						<div class='pnavigation2'>
-										<div class='nav-previous left'><a href='#'><span class='meta-nav'>←</span> Older posts</a></div>
-										<div class='nav-next right'></div>
-									</div>
-            					</div>
-							</article>
-            			";
-
           			}
         		}else{
             		include('../../core/backend/blog/posts.php');
@@ -114,18 +105,18 @@ if (!$empty){
 										<a href='#' rel='nofollow' id='featured-thumbnail'>
 										<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
 										</a>
-                  						$post_text_short</br>
+                  						$post_text_short
                 						</div>
 									</div>
-            						<div class='pnavigation2'>
-										<div class='nav-previous left'><a href='#'><span class='meta-nav'>←</span> Older posts</a></div>
-										<div class='nav-next right'></div>
-									</div>
-            					</div>
-							</article>
            			";
         		}
-			?>												
+			?>						
+				<div class='pnavigation2'>
+					<div class='nav-previous left'><a href='#'><span class='meta-nav'>←</span> Older posts</a></div>
+					<div class='nav-next right'></div>
+				</div>
+       		</div>
+		</article>						
 		
 <?php
 	include('templates/page_navigation.php');
