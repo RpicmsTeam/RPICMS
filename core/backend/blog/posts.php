@@ -54,6 +54,8 @@
 		}
 		if ($id < $post_id_clean){
 			read();
+		}else{
+			exit;
 		}
 	}
 
