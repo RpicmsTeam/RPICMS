@@ -60,7 +60,7 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 											<h2 class='title'>
                 								<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
               								</h2>
-											<div class="post-info">
+											<div class='post-info'>
                   								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
                   								<time>$post_date</time> | 
                   								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
@@ -86,7 +86,7 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 											<h2 class='title'>
                 								<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
               								</h2>
-											<div class="post-info">
+											<div class='post-info'>
                   								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
                   								<time>$post_date</time> | 
                   								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
