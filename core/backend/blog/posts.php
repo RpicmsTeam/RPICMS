@@ -27,7 +27,7 @@
 
 					$post_id = [
 						"$post_id_clean" => "$post_id_clean"
-						]
+						];
 
 
   				}  
