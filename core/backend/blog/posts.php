@@ -32,11 +32,11 @@
 
   		#		}  
   		#	$resultat->close();
+		#} else {
+  		#	//If no data in Database give error
+  		#	echo "Es konnten keine Daten aus der Datenbank ausgelesen werden";
+		#}
 		echo "<b>bug?</b>";
-		} else {
-  			//If no data in Database give error
-  			echo "Es konnten keine Daten aus der Datenbank ausgelesen werden";
-		}
 	}else{
 		//Check if Data in it
 		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE $post_id')) {
