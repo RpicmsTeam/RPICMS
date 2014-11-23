@@ -38,7 +38,7 @@
 				$post_author = $daten->author;
 				$post_date = $daten->date;
 				$post_categrory = $daten->category;
-				$post_text_short = shortText($post_text,140);
+				$post_text_short = shortText($post_text,300);
 			}  
   			$resultat->close();
 		} else {
