@@ -18,12 +18,18 @@
 		if ($resultat = $connection->query('SELECT * FROM posts')) {
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
- 			 		$post_id = $daten->id;
-					$post_title = $daten->title;
-					$post_text = $daten->text;
-					$post_author = $daten->author;
-					$post_date = $daten->date;
-					$post_categrory = $daten->category;
+ 			 		$post_id_clean = $daten->id;
+					$post_title_clean = $daten->title;
+					$post_text_clean = $daten->text;
+					$post_author_clean = $daten->author;
+					$post_date_clean = $daten->date;
+					$post_categrory_clean = $daten->category;
+
+					$post_id = [
+						"$post_id_clean" => "$post_id_clean"
+						]
+
+
   				}  
   			$resultat->close();
 		} else {
