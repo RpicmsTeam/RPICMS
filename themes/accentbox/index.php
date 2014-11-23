@@ -59,25 +59,27 @@ if (!$empty){
           			while ($x < $post_id_clean+1){
             			include('../../core/config/connect.db.inc.php');
             			echo "
+            				<div>
             					<div class='post excerpt'>
-              							<header>
-										<div class='bubble'><a href='#'>4</a></div>
-											<h2 class='title'>
-           										<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
-        									</h2>
-											<div class='post-info'>
-            									<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
-            									<time>$post_date</time>
-            									<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
-            								</div>
-										</header>
-										<div class='post-content image-caption-format-1'>
-											<a href='#' rel='nofollow' id='featured-thumbnail'>
-											<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
-											</a>w
-               								$post_text_short z
-               							</div></br>x
-									</div>y
+              						<header>
+									<div class='bubble'><a href='#'>4</a></div>
+										<h2 class='title'>
+           									<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+        								</h2>
+										<div class='post-info'>
+            								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
+            								<time>$post_date</time>
+            								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
+	            						</div>
+									</header>
+									<div class='post-content image-caption-format-1'>
+										<a href='#' rel='nofollow' id='featured-thumbnail'>
+										<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
+										</a>
+               							$post_text_short 
+               						</div>
+								</div>
+							</div></br>
            				";
             			$x = $x+1;
             			$id = $id+1;
@@ -86,25 +88,28 @@ if (!$empty){
         		}else{
             		include('../../core/backend/blog/posts.php');
         			echo "
-								<div class='post excerpt'>
-              						<header>
-									<div class='bubble'><a href='#'>4</a></div>
-										<h2 class='title'>
-                							<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
-              							</h2>
-										<div class='post-info'>
-                							<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
-                  							<time>$post_date</time>
-                  							<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
-                						</div>
-									</header>
-									<div class='post-content image-caption-format-1'>
-										<a href='#' rel='nofollow' id='featured-thumbnail'>
-										<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
-										</a>w
-                  						$post_text z
-                						</div></br>x
-									</div>y
+        				<div>
+							<div class='post excerpt'>
+              					<header>
+								<div class='bubble'><a href='#'>4</a></div>
+									<h2 class='title'>
+                						<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+              						</h2>
+									<div class='post-info'>
+                						<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
+                  						<time>$post_date</time>
+                  						<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
+                					</div>
+								</header>
+								<div class='post-content image-caption-format-1'>
+									<a href='#' rel='nofollow' id='featured-thumbnail'>
+									<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
+									</a>
+                  					$post_text
+                					</div>
+								</div>
+							</div>
+						</div></br>
            			";
         		}
 			?>						
