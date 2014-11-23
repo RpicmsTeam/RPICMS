@@ -37,12 +37,12 @@
 		} else {
   			//If no data in Database give error
   			echo "Nothing to read from Database!";
-  			$post_id = "Database error!";
+  			/*$post_id = "Database error!";
 			$post_title = "Database error!";
 			$post_text = "Database error!";
 			$post_author = "Database error!";
 			$post_date = "Database error!";
-			$post_categrory = "Database error!";
+			$post_categrory = "Database error!";*/
 		}
 
 
