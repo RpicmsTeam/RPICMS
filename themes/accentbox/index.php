@@ -71,14 +71,14 @@ if (!$empty){
                   								<time>$post_date</time>
                   								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
                 							</div>
-									</header><!--.header
+									</header>
 									<div class='post-content image-caption-format-1'>
 										<a href='#' rel='nofollow' id='featured-thumbnail'>
 										<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
 										</a>
                   						$post_text_short</br>
                 						</div>
-									</div><!--.post excerpt-->
+									</div>
            						";
             					$x = $x+1;
             					$id = $id+1;
@@ -88,23 +88,23 @@ if (!$empty){
             				include('../../core/backend/blog/posts.php');
             				echo "
               					<header>
-										<div class='bubble'><a href='#'>4</a></div>
-											<h2 class='title'>
-                								<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
-              								</h2>
-											<div class='post-info'>
-                  								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
-                  								<time>$post_date</time>
-                  								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
-                							</div>
-									</header><!--.header
-									<div class='post-content image-caption-format-1'>
-										<a href='#' rel='nofollow' id='featured-thumbnail'>
-										<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
-										</a>
-                  						$post_text_short</br>
+									<div class='bubble'><a href='#'>4</a></div>
+										<h2 class='title'>
+                							<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+              							</h2>
+										<div class='post-info'>
+                  							<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
+                  							<time>$post_date</time>
+                  							<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
                 						</div>
-									</div><!--.post excerpt-->
+								</header>
+								<div class='post-content image-caption-format-1'>
+									<a href='#' rel='nofollow' id='featured-thumbnail'>
+									<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
+									</a>
+                  					$post_text_short</br>
+                					</div>
+								</div>
            					 ";
         				}
       				?>												
