@@ -77,7 +77,7 @@
       <div class="container">
             <h1>
               <?php
-              $x = 0;
+              $x = 1;
               while ($x < $post_id_clean){
                 echo "<a href='index.php?id=".var_dump($post_id[$x])."' rel='bookmark'> $post_title </a>";
                 $x = $x + 1;
