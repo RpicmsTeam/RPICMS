@@ -16,6 +16,7 @@
 		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 			while($daten = $resultat->fetch_object() ){
  				$post_id_clean = $daten->id;
+ 				var_dump($daten);
 			}
   			$resultat->close();
 		}
