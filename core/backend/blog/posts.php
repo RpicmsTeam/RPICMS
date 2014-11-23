@@ -25,6 +25,7 @@
 	read();
 	function read(){
 		global $id, $connection, $read;
+		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
 		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 			echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
@@ -35,13 +36,7 @@
 					$post_author = $daten->author;
 					$post_date = $daten->date;
 					$post_categrory = $daten->category;
-					echo $post_id;
-					echo $post_title;
-					echo $post_text;
-					echo $post_author;
-					echo $post_date;
-					echo $post_categrory;
-
+					
 
   				}  
   			$resultat->close();
