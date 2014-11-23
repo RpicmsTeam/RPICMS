@@ -40,7 +40,7 @@
 			}  
   			$resultat->close();
 		} else {
-			$daten = $resultat->fetch_object()
+			$daten = $resultat->fetch_object();
   			//If no data in Database give error
   			echo 'SELECT * FROM posts WHERE id LIKE '.$id;
   			var_dump ($daten);
