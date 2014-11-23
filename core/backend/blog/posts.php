@@ -22,6 +22,7 @@
 	#	$post_categrory = "bug?";
 	#}else{
 		//Check if Data in it
+	read();
 	function read(){
 		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 			echo 'SELECT * FROM posts WHERE id LIKE '.$id;
