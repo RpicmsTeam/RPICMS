@@ -52,7 +52,7 @@
 					$post_date = "Database error!";
 					$post_categrory = "Database error!";
 		}
-		if ($read != 0 && $id < $post_id_clean){
+		if ($id < $post_id_clean){
 			read();
 		}
 	}
