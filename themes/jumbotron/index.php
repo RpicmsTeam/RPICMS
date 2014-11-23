@@ -77,9 +77,9 @@
       <div class="container">
             <h1>
               <?php
-              echo $post_id[$x];
               $x = 1;
               while ($x < $post_id_clean){
+                echo $post_id[$x];
                 echo "<a href='index.php?id=".$post_id[$x]."' rel='bookmark'> $post_title </a>";
                 $x = $x + 1;
               }
