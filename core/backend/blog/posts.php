@@ -13,16 +13,15 @@
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 		exit();
 	}
-	if ($empty){
-		$post_id = "bug?";
-		$post_title = "bug?";
-		$post_text = "bug?";
-		$post_author = "bug?";
-		$post_date = "bug?";
-		$post_categrory = "bug?";
-	}else{
+	#if ($empty){
+	#	$post_id = "bug?";
+	#	$post_title = "bug?";
+	#	$post_text = "bug?";
+	#	$post_author = "bug?";
+	#	$post_date = "bug?";
+	#	$post_categrory = "bug?";
+	#}else{
 		//Check if Data in it
-		echo $id;
 		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
@@ -46,7 +45,7 @@
 		}
 
 
-	}
+	#}
 
 
 
