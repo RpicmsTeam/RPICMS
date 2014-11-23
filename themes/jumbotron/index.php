@@ -6,8 +6,8 @@
     ##########################
     # include required files #
     ##########################
-    require('../../core/backend/blog/posts.php');
-    require('../../core/config/variables.config.php')
+    include('../../core/backend/blog/posts.php');
+    include('../../core/config/variables.config.php')
   ?>
 <!DOCTYPE html>
 <html lang="en">
