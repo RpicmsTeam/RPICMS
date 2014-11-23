@@ -40,6 +40,8 @@
 			}  
   			$resultat->close();
 		} else {
+			global $id, $connection, $read;
+			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
 			if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 				while($daten = $resultat->fetch_object() ){
   					//If no data in Database give error
