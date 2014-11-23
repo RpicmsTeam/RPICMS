@@ -38,7 +38,6 @@
 				$post_author = $daten->author;
 				$post_date = $daten->date;
 				$post_categrory = $daten->category;
-				echo $post_title;
 			}  
   			$resultat->close();
 		} else {
