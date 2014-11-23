@@ -130,7 +130,7 @@
             ";
         }
       ?>
-      <p class='btn-primary btn-lg'></p>
+      <p class='btn btn-primary'></p>
       </div>
     </div>
 
