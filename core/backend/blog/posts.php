@@ -21,7 +21,7 @@
   			$resultat->close();
 		}
 	
-		#read();
+		read();
 
 	function read(){
 		global $id, $connection, $read, $post_id_clean;
