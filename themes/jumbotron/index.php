@@ -127,10 +127,12 @@
               <p>
                 $post_text</br>
               </p>
+              <p>
+                <a class='btn btn-primary btn-lg' type='hidden' href='index.php?id=$id' role='button'>Learn more &raquo;</a>
+              </p>
             ";
         }
       ?>
-      <p class='btn btn-primary'></p>
       </div>
     </div>
 
