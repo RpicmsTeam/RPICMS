@@ -66,7 +66,7 @@
 	}
 	function alles(){
 			global $id, $connection, $read;
-			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
+			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory, $post_id_clean;
 			if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 				while($daten = $resultat->fetch_object() ){
  					$post_id_clean = $daten->id;
