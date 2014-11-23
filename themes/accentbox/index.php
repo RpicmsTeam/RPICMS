@@ -4,6 +4,12 @@
 #######################
 header("Cache-Control: no-cache, must-revalidate, no-store");
 
+$error = "0";
+$empty = empty($_GET["id"]);
+if (!$empty){
+  $id = $_GET["id"];
+}
+
 ################
 # lang support #
 ################
