@@ -124,12 +124,10 @@
                 </h4>
               </div>
               <div>
-              <p>
-                $post_text</br>
-              </p>
-              <p>
-                <a class='btn btn-primary btn-lg' type='hidden' href='index.php?id=$id' role='button'>Learn more &raquo;</a>
-              </p>
+                <p>
+                  $post_text</br>
+                </p>
+              </div>
             ";
         }
       ?>
