@@ -35,6 +35,14 @@
 					$post_author = $daten->author;
 					$post_date = $daten->date;
 					$post_categrory = $daten->category;
+					echo $post_id;
+					echo $post_title;
+					echo $post_text;
+					echo $post_author;
+					echo $post_date;
+					echo $post_categrory;
+
+
   				}  
   			$resultat->close();
 		} else {
