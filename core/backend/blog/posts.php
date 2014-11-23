@@ -41,6 +41,8 @@
   			$resultat->close();
 		} else {
   			//If no data in Database give error
+  			echo 'SELECT * FROM posts WHERE id LIKE '.$id;
+  			var_dump ($daten);
   			global $error;
   			$error = "1";
   			echo "Nothing to read from Database!";
