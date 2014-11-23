@@ -31,13 +31,14 @@
 			echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
- 				var_dump ($daten);
+ 				//var_dump ($daten);
  			 	$post_id = $daten->id;
 				$post_title = $daten->title;
 				$post_text = $daten->text;
 				$post_author = $daten->author;
 				$post_date = $daten->date;
 				$post_categrory = $daten->category;
+				echo $post_title;
 			}  
   			$resultat->close();
 		} else {
