@@ -79,7 +79,7 @@
               <?php
               $x = 0;
               while ($x < $post_id){
-                echo "<a href='index.php?".var_dump(id=$post_id[$x])."' rel='bookmark'> $post_title </a>";
+                echo "<a href='index.php?id=".var_dump($post_id[$x])."' rel='bookmark'> $post_title </a>";
                 $x = $x + 1;
               }
               ?>
