@@ -98,8 +98,12 @@
                 </h4>
               </div>
               <div>
+                <p>
+                  $post_text</br>
+                </p>
+              </div>
               <p>
-                $post_text</br>
+                <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>Learn more &raquo;</a>
               </p>
             ";
             $x = $x+1;
@@ -126,12 +130,6 @@
             ";
         }
       ?>
-          </div>
-        <p>
-        <?php
-          echo "<a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>Learn more &raquo;</a>";
-        ?>
-        </p>
       </div>
     </div>
 
