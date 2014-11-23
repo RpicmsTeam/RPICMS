@@ -77,10 +77,10 @@
       <div class="container">
             <h1>
               <?php
-              $x = 1;
+              $x = 0;
               while ($x < $post_id_clean){
-                echo $post_id[$x];
-                echo "<a href='index.php?id=".$post_id[$x]."' rel='bookmark'> $post_title </a>";
+                echo "$post_id[$x]";
+                #echo "<a href='index.php?id=".$post_id[$x]."' rel='bookmark'> $post_title </a>";
                 $x = $x + 1;
               }
               ?>
