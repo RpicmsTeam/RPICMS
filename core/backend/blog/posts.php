@@ -69,7 +69,7 @@
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
 			if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 				while($daten = $resultat->fetch_object() ){
- 					$post_id = $daten->id;
+ 					$post_id_clean = $daten->id;
 				}
   				$resultat->close();
 			}  	

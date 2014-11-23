@@ -86,7 +86,7 @@
                 $x = 1;
                 if ($empty){
                   if (!$error = "1"){
-                    while ($x < $post_id){
+                    while ($x < $post_id_clean){
                       $read = "1";
                       $id = 1;
                       echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
