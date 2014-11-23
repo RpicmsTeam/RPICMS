@@ -55,8 +55,8 @@
 					$post_date = "Database error!";
 					$post_categrory = "Database error!";
 				}
+  				$resultat->close();
 			}  	
-  			$resultat->close();
 		}
 		if ($read != 0){
 			read();
