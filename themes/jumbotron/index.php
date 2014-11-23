@@ -85,7 +85,7 @@
                 $x = 1;
                 if ($empty){
                   if ($post_title != "Database Error!"){
-                    while (!$empty)){
+                    while (!$empty){
                       $read = "1";
                       $id = $x;
                       echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
