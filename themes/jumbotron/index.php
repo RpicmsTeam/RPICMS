@@ -86,6 +86,7 @@
                 if ($empty){
                     $id = 1;
                     include('../../core/backend/blog/posts.php');
+                    echo $post_id_clean;
                     while ($x < $post_id_clean){
                       echo "LOOP!!!!!!";
                       $read = "1";
