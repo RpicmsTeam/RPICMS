@@ -26,7 +26,7 @@
 					$post_categrory_clean = $daten->category;
 
 					$post_id = [
-						$post_id_clean => $post_id_clean
+						$post_id_clean => $post_id_clean,
 						];
 
 
