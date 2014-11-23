@@ -38,6 +38,7 @@
 				$post_author = $daten->author;
 				$post_date = $daten->date;
 				$post_categrory = $daten->category;
+				$post_text_short = shortText($post_text,70);
 			}  
   			$resultat->close();
 		} else {
@@ -54,6 +55,20 @@
 					$post_categrory = "Database error!";
 		}
 	}
+
+
+
+function shortText($string,$lenght) {
+    if(strlen($string) > $lenght) {
+        $string = substr($string,0,$lenght)."...";
+        $string_ende = strrchr($string, " ");
+        $string = str_replace($string_ende," ...", $string);
+    }
+    return $string;
+}
+//$longtext = $post_text;
+
+
 
 
 
