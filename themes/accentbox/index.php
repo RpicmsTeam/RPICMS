@@ -50,50 +50,59 @@ if (!$empty){
 <div id="page">
 	<div class="content">
 		<article class="article">
-			<div id="content_box">
-			
-				<div class="post excerpt ">
-      				<?php
-        				$x = 1;
-        				if ($empty){
-          					$id = 1;
-          					include('../../core/backend/blog/posts.php');
-          					while ($x < $post_id_clean+1){
-            					include('../../core/config/connect.db.inc.php');
-            					echo "
+      		<?php
+        		$x = 1;
+        		if ($empty){
+          			$id = 1;
+          			include('../../core/backend/blog/posts.php');
+          			while ($x < $post_id_clean+1){
+            			include('../../core/config/connect.db.inc.php');
+            			echo "
+							<div id='content_box'>
+								<div class='post excerpt'>
               						<header>
 										<div class='bubble'><a href='#'>4</a></div>
-											<h2 class='title'>
-                								<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
-              								</h2>
-											<div class='post-info'>
-                  								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
-                  								<time>$post_date</time>
-                  								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
-                							</div>
+										<h2 class='title'>
+           									<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+        								</h2>
+										<div class='post-info'>
+            								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
+            								<time>$post_date</time>
+            								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
+            							</div>
 									</header>
-									<div class='post-content image-caption-format-1'>
-										<a href='#' rel='nofollow' id='featured-thumbnail'>
-										<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
-										</a>
-                  						$post_text_short</br>
-                						</div>
+										<div class='post-content image-caption-format-1'>
+											<a href='#' rel='nofollow' id='featured-thumbnail'>
+											<div class='featured-thumbnail'><img src='images/2457315858_32ffd98aec_n-150x150.jpg' class='attachment-featured wp-post-image' height='150' width='150'><div>
+											</a>
+               								$post_text_short</br>
+               							</div>
 									</div>
-           						";
-            					$x = $x+1;
-            					$id = $id+1;
-            					next_id();
-          					}
-        				}else{
-            				include('../../core/backend/blog/posts.php');
-            				echo "
+           				";
+            			$x = $x+1;
+            			$id = $id+1;
+            			next_id();
+            			echo "
+            				<div class='pnavigation2'>
+								<div class='nav-previous left'><a href='#'><span class='meta-nav'>←</span> Older posts</a></div>
+								<div class='nav-next right'></div>
+							</div>
+            			</div>
+            			";
+
+          			}
+        		}else{
+            		include('../../core/backend/blog/posts.php');
+        			echo "
+        				<div id='content_box'>
+							<div class='post excerpt'>
               					<header>
 									<div class='bubble'><a href='#'>4</a></div>
 										<h2 class='title'>
                 							<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
               							</h2>
 										<div class='post-info'>
-                  							<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
+                							<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
                   							<time>$post_date</time>
                   							<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
                 						</div>
@@ -105,15 +114,15 @@ if (!$empty){
                   					$post_text_short</br>
                 					</div>
 								</div>
-           					 ";
-        				}
-      				?>												
-				<div class="pnavigation2">
-					<div class="nav-previous left"><a href="#"><span class="meta-nav">←</span> Older posts</a></div>
-					<div class="nav-next right"></div>
-				</div>
+            						<div class='pnavigation2'>
+										<div class='nav-previous left'><a href='#'><span class='meta-nav'>←</span> Older posts</a></div>
+										<div class='nav-next right'></div>
+									</div>
+            					</div>
+           			";
+        		}
+			?>												
 
-			</div>
 		</article>
 		
 <?php
