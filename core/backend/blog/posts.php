@@ -32,7 +32,7 @@
 
   		#		}  
   		#	$resultat->close();
-		echo "<b>bug?</b>"
+		echo "<b>bug?</b>";
 		} else {
   			//If no data in Database give error
   			echo "Es konnten keine Daten aus der Datenbank ausgelesen werden";
