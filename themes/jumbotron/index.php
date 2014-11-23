@@ -7,7 +7,9 @@
     # include required files #
     ##########################
     $empty = empty($_GET["id"]);
-    $id = $_GET["id"];
+    if (!$empty){
+      $id = $_GET["id"];
+    }
     include('../../core/backend/blog/posts.php');
     include('../../core/config/variables.config.php')
   ?>
