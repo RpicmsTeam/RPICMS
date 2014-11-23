@@ -42,7 +42,6 @@
 		$post_author = "bug?";
 		$post_date = "bug?";
 		$post_categrory = "bug?";
-		echo "<b>bug?</b>";
 	}else{
 		//Check if Data in it
 		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE $post_id')) {

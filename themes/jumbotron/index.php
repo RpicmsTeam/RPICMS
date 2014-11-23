@@ -77,7 +77,7 @@
       <div class="container">
             <h1>
               <?php
-                echo "<a href='index.php?id=".$post_id."' rel='bookmark'> $post_title </a>";
+                echo "<a href='index.php?id=$post_id' rel='bookmark'> $post_title </a>";
               ?>
             </h1>
             <div>
