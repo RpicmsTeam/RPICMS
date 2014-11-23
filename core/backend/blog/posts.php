@@ -13,7 +13,7 @@
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 		exit();
 	}
-	if (empty($_GET["post_id"])){
+	if ($empty){
 		$post_id = "bug?";
 		$post_title = "bug?";
 		$post_text = "bug?";
