@@ -84,6 +84,7 @@
               <?php
                 $x = 1;
                 if ($empty){
+                    $id = 1;
                     $read = "1";
                     include('../../core/backend/blog/posts.php');
                     while ($x < $post_id_clean){
