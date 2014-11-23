@@ -60,6 +60,7 @@ if (!$empty){
             			include('../../core/config/connect.db.inc.php');
             			echo "
             				<div>
+            					<div class='post excerpt'>
               						<header>
 									<div class='bubble'><a href='#'>4</a></div>
 										<h2 class='title'>
@@ -77,6 +78,7 @@ if (!$empty){
 										</a>
                							$post_text_short 
                						</div>
+								</div>
 							</div></br>
            				";
             			$x = $x+1;
@@ -87,6 +89,7 @@ if (!$empty){
             		include('../../core/backend/blog/posts.php');
         			echo "
         				<div>
+							<div class='post excerpt'>
               					<header>
 								<div class='bubble'><a href='#'>4</a></div>
 									<h2 class='title'>
@@ -105,6 +108,7 @@ if (!$empty){
                   					$post_text
                 					</div>
 								</div>
+							</div>
 						</div></br>
            			";
         		}
