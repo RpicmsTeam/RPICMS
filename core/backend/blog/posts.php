@@ -23,7 +23,7 @@
 	}else{
 		//Check if Data in it
 		echo $id;
-		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE $id')) {
+		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
  			 		$post_id = $daten->id;
@@ -37,12 +37,12 @@
 		} else {
   			//If no data in Database give error
   			echo "Nothing to read from Database!";
-  			/*$post_id = "Database error!";
+  			$post_id = "Database error!";
 			$post_title = "Database error!";
 			$post_text = "Database error!";
 			$post_author = "Database error!";
 			$post_date = "Database error!";
-			$post_categrory = "Database error!";*/
+			$post_categrory = "Database error!";
 		}
 
 
