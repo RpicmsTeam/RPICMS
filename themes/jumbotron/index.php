@@ -29,6 +29,8 @@
 
   <body>
   <?php 
+    require('../../core/backend/blog/posts.php');
+    require('../../core/config/variables.config.php')
   ?>
 
 
@@ -42,7 +44,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">RPICMS EXAMPLE THEME</a>
+          <?php
+          echo '<a class="navbar-brand" href="#">'.$blog_name.'</a>';
+          ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form" action="../../core/admin/user/login_check.php" method="post">
@@ -61,9 +65,6 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <?php
-            require('../../core/backend/blog/posts.php');
-          ?>
             <h1>
               <?php
                 echo "<a href='#' rel='bookmark'> $post_title </a>";
