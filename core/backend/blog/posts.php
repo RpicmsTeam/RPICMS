@@ -23,7 +23,6 @@
 	#}else{
 		//Check if Data in it
 	alles();
-	read();
 	function read(){
 		global $id, $connection, $read;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
@@ -75,8 +74,8 @@
   				$resultat->close();
 			}  	
 		if ($read != 0){
-			alles();
 			read();
+			alles();
 		}
 	}
 
