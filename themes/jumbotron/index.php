@@ -59,7 +59,7 @@
             <span class="icon-bar"></span>
           </button>
           <?php
-          echo '<a class="navbar-brand" href="#">'.$blog_name.'</a>';
+          echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -127,7 +127,11 @@
         }
       ?>
           </div>
-        <p><a class="btn btn-primary btn-lg" href="http://rpicms.readthedocs.org/de/develop/features/themes.html" role="button">Learn more &raquo;</a></p>
+        <p>
+        <?php
+          echo "<a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>Learn more &raquo;</a>";
+        ?>
+        </p>
       </div>
     </div>
 
