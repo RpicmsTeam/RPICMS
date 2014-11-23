@@ -99,7 +99,7 @@
               </div>
               <div>
                 <p>
-                  $post_text_short [...]</br>
+                  $post_text_short</br>
                 </p>
               </div>
               <p>
