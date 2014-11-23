@@ -13,7 +13,7 @@
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 		exit();
 	}
-		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE '.$id)) {
+		if ($resultat = $connection->query('SELECT * FROM posts')) {
 			while($daten = $resultat->fetch_object() ){
  				$post_id_clean = $daten->id;
  				var_dump($daten);
