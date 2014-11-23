@@ -74,18 +74,10 @@
 				}
   				$resultat->close();
 			}  	
-		}
 		if ($read != 0){
 			alles();
 			read();
 		}
-
-
-
-
-
-
-
 	}
 
 
