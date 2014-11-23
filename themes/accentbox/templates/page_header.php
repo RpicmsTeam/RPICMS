@@ -24,7 +24,7 @@
 			<div class="secondary-navigation">
 				<nav id="navigation">
 					<ul class="menu">
-						<li class="menu-item"><a href="#">Home</a></li>
+						<li class="menu-item"><a href="index.php">Home</a></li>
 						<?php echo "<li class='menu-item'><a href='#'>$name_contact</a></li>"; ?>
 					</ul>									
 					<select>
