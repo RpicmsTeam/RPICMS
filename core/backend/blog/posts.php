@@ -22,7 +22,7 @@
 		$post_categrory = "bug?";
 	}else{
 		//Check if Data in it
-		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE $post_id')) {
+		if ($resultat = $connection->query('SELECT * FROM posts WHERE id LIKE $id')) {
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
  			 		$post_id = $daten->id;
