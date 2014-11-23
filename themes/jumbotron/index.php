@@ -11,7 +11,6 @@
     if (!$empty){
       $id = $_GET["id"];
     }
-    include('../../core/backend/blog/posts.php');
     include('../../core/config/variables.config.php');
     $read = "0";
   ?>
@@ -86,6 +85,7 @@
                 $x = 1;
                 if ($empty){
                     $read = "1";
+                    include('../../core/backend/blog/posts.php');
                     while ($x < $post_id_clean){
                       $id = $x;
                       echo "<a href='index.php?id=$x' rel='bookmark'> $post_title </a>";
