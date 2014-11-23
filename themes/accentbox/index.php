@@ -67,8 +67,8 @@ if (!$empty){
                 								<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
               								</h2>
 											<div class='post-info'>
-                  								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
-                  								<time>$post_date</time> | 
+                  								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
+                  								<time>$post_date</time>
                   								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
                 							</div>
 									</header><!--.header
@@ -93,8 +93,8 @@ if (!$empty){
                 								<a href='index.php?id=$id' rel='bookmark'> $post_title </a>
               								</h2>
 											<div class='post-info'>
-                  								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
-                  								<time>$post_date</time> | 
+                  								<span class='theauthor'><a href='#' rel='author'>$post_author</a></span>
+                  								<time>$post_date</time>
                   								<span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
                 							</div>
 									</header><!--.header
