@@ -107,6 +107,7 @@
             next_id();
           }
         }else{
+            include('../../core/backend/blog/posts.php');
             echo "
               <h1>
                 <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
