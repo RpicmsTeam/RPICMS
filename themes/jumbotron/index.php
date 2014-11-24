@@ -74,6 +74,28 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+<script type="text/javascript">
+function Go (select) {
+  var wert = select.options[select.options.selectedIndex].value;
+  if (wert == "leer") {
+    select.form.reset();
+    parent.frames["unten"].focus();
+    return;
+  } else {
+    if (wert == "ende") {
+      top.location.href = parent.frames[1].location.href;
+    } else {
+      parent.frames["unten"].location.href = wert;
+      select.form.reset();
+      parent.frames["unten"].focus();
+    }
+  }
+}
+</script>
+
+
+
   </head>
 
   <body>
@@ -173,7 +195,16 @@
           echo "
             <div class='col-md-4'>
               <h2>$name_themes</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <form action="">
+                <p><select size='1' name='Auswahl' onchange='Go(this)' width='100%''>
+                  <option value='leer' selected='selected'>[ bitte auswählen! ]</option>
+                  <option value='leer'>------------------------</option>
+                  <option value='../jumbotron'>Jumbotron</option>
+                  <option value='../accentbox'>Accentbox</option>
+                  <option value="../parkzone">ParkZone</option>
+                  <option value="../zResponsiv">zResponsiv</option>
+                </select></p>
+              </form>
               <p><a class='btn btn-default' href='#' role='button'>$name_details &raquo;</a></p>
             </div>
             <div class='col-md-4'>
