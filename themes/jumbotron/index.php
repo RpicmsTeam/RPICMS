@@ -201,8 +201,8 @@ function Go (select) {
                   <option value='leer'>------------------------</option>
                   <option value='../jumbotron'>Jumbotron</option>
                   <option value='../accentbox'>Accentbox</option>
-                  <option value="../parkzone">ParkZone</option>
-                  <option value="../zResponsiv">zResponsiv</option>
+                  <option value='../parkzone'>ParkZone</option>
+                  <option value='../zResponsiv'>zResponsiv</option>
                 </select></p>
               </form>
               <p><a class='btn btn-default' href='#' role='button'>$name_details &raquo;</a></p>
