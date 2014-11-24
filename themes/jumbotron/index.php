@@ -75,24 +75,24 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<script type="text/javascript">
-function Go (select) {
-  var wert = select.options[select.options.selectedIndex].value;
-  if (wert == "leer") {
-    select.form.reset();
-    parent.frames["unten"].focus();
-    return;
-  } else {
-    if (wert == "ende") {
-      top.location.href = parent.frames[1].location.href;
-    } else {
-      parent.frames["unten"].location.href = wert;
-      select.form.reset();
-      parent.frames["unten"].focus();
-    }
-  }
-}
-</script>
+    <script type="text/javascript">
+      function Go (select) {
+        var wert = select.options[select.options.selectedIndex].value;
+        if (wert == "leer") {
+          select.form.reset();
+          parent.frames["unten"].focus();
+          return;
+        } else {
+          if (wert == "ende") {
+            top.location.href = parent.frames[1].location.href;
+          } else {
+            parent.frames["unten"].location.href = wert;
+           select.form.reset();
+          parent.frames["unten"].focus();
+          }
+        }
+      }
+    </script>
 
 
 
@@ -203,6 +203,7 @@ function Go (select) {
                   <option value='../accentbox'>Accentbox</option>
                   <option value='../parkzone'>ParkZone</option>
                   <option value='../zResponsiv'>zResponsiv</option>
+                  <option value='ende'>Beenden</option>
                 </select></p>
               </form>
               <p><a class='btn btn-default' href='#' role='button'>$name_details &raquo;</a></p>
