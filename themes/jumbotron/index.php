@@ -86,7 +86,6 @@
           if (wert == "ende") {
             top.location.href = location.href;
           } else {
-            alert(wert);
             location.href = wert;
 
           } 
