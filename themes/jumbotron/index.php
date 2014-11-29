@@ -77,7 +77,8 @@
 
     <script type="text/javascript">
       function Go (select) {
-        var wert = select.options[select.selectedIndex].value;
+        var wert = select.options[select.options.selectedIndex].value;
+        alert(wert);
         if (wert == "leer") {
           select.form.reset();
           parent.frames["unten"].focus();
@@ -91,7 +92,6 @@
           parent.frames["unten"].focus();
           }
         }
-        alert(wert);
       }
     </script>
   </head>
