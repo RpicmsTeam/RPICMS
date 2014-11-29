@@ -84,12 +84,11 @@
           return;
         } else {
           if (wert == "ende") {
-            top.location.href = parent.frames[1].location.href;
+            top.location.href = location.href;
           } else {
             alert(wert);
-            parent.frames["unten"].location.href = wert;
-            select.form.reset();
-            parent.frames["unten"].focus();
+            location.href = wert;
+
           } 
         }
       }
