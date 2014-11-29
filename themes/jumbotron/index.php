@@ -93,16 +93,8 @@
         }
       }
     </script>
-
-
-
   </head>
-
   <body>
-
-
-
-
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -195,7 +187,7 @@
           echo '
             <div class="col-md-4">
               <h2>'.$name_themes.'</h2>
-              <form action="">
+              <form action=".">
                 <p><select size="1" name="Auswahl" onchange="Go(this)" width="100%"">
                   <option value="leer" selected="selected">[ bitte auswählen! ]</option>
                   <option value="leer">------------------------</option>
