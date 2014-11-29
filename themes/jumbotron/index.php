@@ -78,7 +78,6 @@
     <script type="text/javascript">
       function Go (select) {
         var wert = select.options[select.options.selectedIndex].value;
-        alert(wert);
         if (wert == "leer") {
           select.form.reset();
           parent.frames["unten"].focus();
@@ -88,9 +87,11 @@
             top.location.href = parent.frames[1].location.href;
           } else {
             parent.frames["unten"].location.href = wert;
-           select.form.reset();
-          parent.frames["unten"].focus();
-          }
+            select.form.reset();
+            parent.frames["unten"].focus();
+          } else {
+            location.href = wert;
+            }
         }
       }
     </script>
