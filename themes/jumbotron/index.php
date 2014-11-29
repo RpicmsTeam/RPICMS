@@ -86,13 +86,11 @@
           if (wert == "ende") {
             top.location.href = parent.frames[1].location.href;
           } else {
+            alert(wert);
             parent.frames["unten"].location.href = wert;
             select.form.reset();
             parent.frames["unten"].focus();
-          } else {
-            alert(wert);
-            self.location.href=wert;
-            }
+          } 
         }
       }
     </script>
