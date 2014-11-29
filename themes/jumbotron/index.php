@@ -189,7 +189,7 @@
             <div class="col-md-4">
               <h2>'.$name_themes.'</h2>
               <form action=".">
-                <p><select size="1" name="Auswahl" onchange="Go(this)" width="100%"">
+                <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%"">
                   <option value="leer" selected="selected">[ bitte auswählen! ]</option>
                   <option value="leer">------------------------</option>
                   <option value="../jumbotron">Jumbotron</option>
