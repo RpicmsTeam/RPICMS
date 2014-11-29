@@ -90,7 +90,7 @@
             select.form.reset();
             parent.frames["unten"].focus();
           } else {
-            window.document.location.href = wert;
+            self.location.href=wert;
             }
         }
       }
