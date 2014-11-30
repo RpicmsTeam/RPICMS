@@ -23,7 +23,7 @@
 	$hash=hash('sha512',$_SERVER['HTTP_USER_AGENT'].$ip);
 	$abfrage = "SELECT id, hash,vaildtime,userid FROM cookiedata WHERE hash = '$hash'";
 	$ergebnis = mysqli_query($connection, $abfrage);
-	while($row = mysqli_fetch_object($connection, $ergebnis)){
+	while($row = mysqli_fetch_object($ergebnis)){
 		if ($row->hash == $hash){
 			$id_db = $row->id;	
 			$expirtaion_time=$row->vaildtime;
