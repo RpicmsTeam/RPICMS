@@ -19,7 +19,7 @@
  	$abfrage = "SELECT time,vaild_sec,token FROM hashtoken WHERE token = '$token'"; 
  	$ergebnis = mysqli_query($connection, $abfrage);
  
- 	while($row = mysqli_fetch_object($connection, $ergebnis)){
+ 	while($row = mysqli_fetch_object($ergebnis)){
    		$token_vaild = true;
 		$creat_time = $row->time;
 		$vaild_sec = $row->vaild_sec;
@@ -36,7 +36,7 @@
 	$user_exist = false;
 	$abfrage = "SELECT name,passwdhash,id,ga_secret FROM user WHERE name = '$user'"; 
 	$ergebnis = mysqli_query($connection, $abfrage);
-	while($row = mysqli_fetch_object($connection, $ergebnis)){
+	while($row = mysqli_fetch_object($ergebnis)){
 		$user_exist = true;
 		$passwdhash = $row->passwdhash;
 		$userid = $row->id;
@@ -65,7 +65,7 @@
 
 	$abfrage = "SELECT id, hash FROM cookiedata WHERE hash = '$hash'";
 	$ergebnis = mysqli_query($connection, $abfrage);
-	while($row = mysqli_fetch_object($connection, $ergebnis)){
+	while($row = mysqli_fetch_object($ergebnis)){
    		if ($row->hash == $hash){
    			$id_cookie = $row->id;	
    			$vorhanden =true;

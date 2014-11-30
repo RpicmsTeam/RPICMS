@@ -20,7 +20,7 @@
  	$user_exist = false;
 	$abfrage = "SELECT name,ga_secret FROM user WHERE id = '$authinfo'"; 
 	$ergebnis = mysqli_query($connection, $abfrage);
-	while($row = mysqli_fetch_object($connection, $ergebnis)){
+	while($row = mysqli_fetch_object($ergebnis)){
 		$user_exist = true;
 		$username = $row->name;
 		$ga_secret = $row->ga_secret;

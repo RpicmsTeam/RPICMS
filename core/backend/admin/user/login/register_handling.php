@@ -3,7 +3,7 @@
 
 	include_once('./navi.php');
 	if (isset($_POST['go'])) {
-		include_once('./GoogleAuthenticator.php');
+		include_once('../../../../libs/GA/GoogleAuthenticator.php');
 		$g = new GoogleAuthenticator();
 		$ga_secret = $g->generateSecret();
 		$username = $_POST['username'];
