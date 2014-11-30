@@ -1,8 +1,12 @@
 <?php
 	$token = $_GET['token'];
-	$verbindung = mysql_connect ("localhost","db_acess", "raspberry") or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
- 	mysql_select_db("login_sec") or die("db geht nicht");
+	include('../../../../config/connect.db.inc.php');
+	//Check if Database connection established
+	if (mysqli_connect_errno()) {
+		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
+		exit();
+	}
  	$loeschen = "DELETE FROM hashtoken WHERE token = '$token'";
-	$loesch = mysql_query($loeschen);
+	$loesch = mysqli_query($connection, $loeschen);
 	header("Location: ./login.php"); 
 ?>

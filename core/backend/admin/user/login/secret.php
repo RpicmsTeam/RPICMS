@@ -11,12 +11,16 @@
 	}
 	include_once('./GoogleAuthenticator.php');
 	$g = new GoogleAuthenticator();
-	$verbindung = mysql_connect ("localhost","db_acess", "raspberry") or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
- 	mysql_select_db("login_sec") or die("db geht nicht");
+	include('../../../../config/connect.db.inc.php');
+	//Check if Database connection established
+	if (mysqli_connect_errno()) {
+		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
+		exit();
+	}
  	$user_exist = false;
 	$abfrage = "SELECT name,ga_secret FROM user WHERE id = '$authinfo'"; 
-	$ergebnis = mysql_query($abfrage);
-	while($row = mysql_fetch_object($ergebnis)){
+	$ergebnis = mysqli_query($connection, $abfrage);
+	while($row = mysqli_fetch_object($connection, $ergebnis)){
 		$user_exist = true;
 		$username = $row->name;
 		$ga_secret = $row->ga_secret;

@@ -9,13 +9,17 @@
 	$user = $_GET['username'];
 	$hash = $_GET['hash'];
 	$ga_token_input = $_GET['ga_token'];
-	$verbindung = mysql_connect ("localhost","db_acess", "raspberry") or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
- 	mysql_select_db("login_sec") or die("db geht nicht");
+	include('../../../../config/connect.db.inc.php');
+	//Check if Database connection established
+	if (mysqli_connect_errno()) {
+		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
+		exit();
+	}
  	$token_vaild = false;
  	$abfrage = "SELECT time,vaild_sec,token FROM hashtoken WHERE token = '$token'"; 
- 	$ergebnis = mysql_query($abfrage);
+ 	$ergebnis = mysqli_query($connection, $abfrage);
  
- 	while($row = mysql_fetch_object($ergebnis)){
+ 	while($row = mysqli_fetch_object($connection, $ergebnis)){
    		$token_vaild = true;
 		$creat_time = $row->time;
 		$vaild_sec = $row->vaild_sec;
@@ -28,11 +32,11 @@
 		die_back('timeout');
 	}
 	$loeschen = "DELETE FROM hashtoken WHERE token = '$token'";
-	$loesch = mysql_query($loeschen);
+	$loesch = mysqli_query($connection, $loeschen);
 	$user_exist = false;
 	$abfrage = "SELECT name,passwdhash,id,ga_secret FROM user WHERE name = '$user'"; 
-	$ergebnis = mysql_query($abfrage);
-	while($row = mysql_fetch_object($ergebnis)){
+	$ergebnis = mysqli_query($connection, $abfrage);
+	while($row = mysqli_fetch_object($connection, $ergebnis)){
 		$user_exist = true;
 		$passwdhash = $row->passwdhash;
 		$userid = $row->id;
@@ -60,8 +64,8 @@
 	$vorhanden = false;
 
 	$abfrage = "SELECT id, hash FROM cookiedata WHERE hash = '$hash'";
-	$ergebnis = mysql_query($abfrage);
-	while($row = mysql_fetch_object($ergebnis)){
+	$ergebnis = mysqli_query($connection, $abfrage);
+	while($row = mysqli_fetch_object($connection, $ergebnis)){
    		if ($row->hash == $hash){
    			$id_cookie = $row->id;	
    			$vorhanden =true;
@@ -72,11 +76,11 @@
 	$cookie = hash('sha512',$hash.$userid.$expiration_time);
  	if ($vorhanden){
 		$aendern = "UPDATE cookiedata Set hash = '$hash', userid = '$userid', vaildtime = '$expiration_time' cookie_hash = '$cookie' WHERE id = '$id_cookie'";
-		$update = mysql_query($aendern);
+		$update = mysqli_query($connection, $aendern);
 		print("update");
 	} else {
 		$eintrag = "INSERT INTO cookiedata (hash, userid, vaildtime, cookie_hash) VALUES ('$hash', '$userid', '$expiration_time', '$cookie')";
-		$eintragen = mysql_query($eintrag);
+		$eintragen = mysqli_query($connection, $eintrag);
 		print("new");
 	}
 

@@ -30,12 +30,16 @@
 	<body>
 		<div id='token' style="display:none">
 			<?php
-				$verbindung = mysql_connect ("localhost","db_acess", "localhost") or die ("keine Verbindung möglich. Benutzername oder Passwort sind falsch");
- 				mysql_select_db("login_sec") or die("db geht nicht");
+				include('../../../../config/connect.db.inc.php');
+				//Check if Database connection established
+				if (mysqli_connect_errno()) {
+					printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
+					exit();
+				}
 				$token = hash('sha512',rand().time());
  				$time = time();
  				$eintrag = "INSERT INTO hashtoken(token, time)VALUES('$token', '$time')";
-				$eintragen = mysql_query($eintrag);
+				$eintragen = mysqli_query($connection, $eintrag);
 				print($token);
 			?>
 		</div>

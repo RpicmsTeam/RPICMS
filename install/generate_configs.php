@@ -23,7 +23,7 @@ $filename = '../core/config/connect.db.inc.php';
 //  #Serverpfad
     $db_address = $_POST["db_address"];
     $var_str_sp = var_export($db_address, true);
-    $var_sp = "<?php\n\n\$db_servername = $var_str_sp;\n";
+    $var_sp = "<?php\n\n\$db_serveraddress = $var_str_sp;\n";
 
             // Schreibe $somecontent in die geöffnete Datei.
             if (!fwrite($handle, $var_sp)) {
@@ -71,7 +71,7 @@ $filename = '../core/config/connect.db.inc.php';
             print "Fertig, in Datei $filename wurde $var_str_dbn geschrieben";
         print "</br>";
 //  #Funktion der Datenbank
-            if (!fwrite($handle, '$connection = mysqli_connect($db_servername, $db_username, $db_password) or die ("Verbindung war nicht m&ouml;glich");')) {
+            if (!fwrite($handle, '$connection = mysqli_connect($db_serveraddress, $db_username, $db_password) or die ("Verbindung war nicht m&ouml;glich");')) {
                 print "Kann in die Datei $filename nicht schreiben";
                 exit;
             }
