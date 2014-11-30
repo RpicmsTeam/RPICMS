@@ -42,7 +42,7 @@
 		$userid = $row->id;
 		$ga_secret = $row->ga_secret;
 	}
-	if (!userexist) {
+	if (!$user_exist) {
 		die_back('unbekanter benutzername');
 	}
 	$hash_db = hash('sha512',$passwdhash.$token);
