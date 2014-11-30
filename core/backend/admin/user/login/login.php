@@ -3,7 +3,7 @@
 		<title>login</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>!-->
-		<script type="text/javascript" src="../../../../libs/secure/sha.js"></script>
+		<script type="text/javascript" src="../../../../libs/security/sha.js"></script>
 		<script type="text/javascript">
 			window.setTimeout("reload_timeout()", 295000);
 			function reload_timeout() {
@@ -22,7 +22,7 @@
 				var hash = shaObj1.getHash("SHA-512", "HEX");
 				//document.write('<br/>');
 				//document.write(hash);
-				alert(token);
+				alert("test")
 				var anfragestr = './login_handling.php?username='+username+'&token='+token+'&hash='+hash+'&ga_token='+ga_token;
 				self.location.href=anfragestr;
 			}
@@ -60,6 +60,6 @@
 		<br/>
 		<input type="text" id='ga_token' name="ga_token"/>
 		<br/>
-		<input type='submit' name="go" value="go" onClick="go();"/>
+		<input type='submit' name="go" value="go" onClick='go()'/>
 	</body>
 </html>
