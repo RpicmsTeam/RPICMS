@@ -1,16 +1,16 @@
 Getting Started
 ===============
-Benötigtes
+Needed
 ---------------------
 
-* Webserver
+* Webserver (Tested with apache2 and nginx)
 * PHP5
 * MYSQL
 
-Downloaden
+Download
 ---------------------
 
-Zum runterladen der aktuellsten Version musst du folgenden Befehl in dem Ordner deines Webservers ausführen:
+To download it you only need to run this command in the directory where RPICMS should run.
 
 ::
 
@@ -20,4 +20,4 @@ Zum runterladen der aktuellsten Version musst du folgenden Befehl in dem Ordner 
 Installation
 ---------------------
 
-Zur Installation musst du mit dem Browser den Ordner "install" aufrufen. Hiermit richtest du dein CMS ein. Es werden Datenbanken und Configs generiert.
+Now you need to open a web browser an go on your webserver you need to fill everything. Next steps are automatic.

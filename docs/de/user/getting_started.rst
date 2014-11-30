@@ -3,7 +3,7 @@ Getting Started
 Benötigtes
 ---------------------
 
-* Webserver
+* Webserver (Mit apache2 und nginx getestet)
 * PHP5
 * MYSQL
 
@@ -20,4 +20,4 @@ Zum runterladen der aktuellsten Version musst du folgenden Befehl in dem Ordner 
 Installation
 ---------------------
 
-Zur Installation musst du mit dem Browser den Ordner "install" aufrufen. Hiermit richtest du dein CMS ein. Es werden Datenbanken und Configs generiert.
+Zur Installation musst du mit einem WebBrowser deine Webseite wo du es gedownloaded hast aufrufen anschliessend müssen alle felder gefühlt werden. der rest geht automatisch

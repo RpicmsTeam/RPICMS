@@ -49,7 +49,7 @@ Releases
 Lizenz
 -------
 
-You can use it but can't change code now. Better licence will come.
+Du kannst es verwenden aber keinen Code nutzen. Genaueres kommt mit v1.0
 
 Indices and tables
 ==================

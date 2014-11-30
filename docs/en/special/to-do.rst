@@ -1,6 +1,8 @@
 TO-DO
 ===============
 
+(This is not sorted)
+
 * Rest API
 * Android App
 * Comment System
