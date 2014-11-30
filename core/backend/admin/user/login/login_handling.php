@@ -1,6 +1,6 @@
 <?php
 	include_once('./navi.php');
-	include_once('./GoogleAuthenticator.php');
+	include_once('../../../../libs/GA/GoogleAuthenticator.php');
 	$g = new GoogleAuthenticator();
 	function die_back($str) {
 		die ($str.'<br/><a href="./login.php">back</a>');
