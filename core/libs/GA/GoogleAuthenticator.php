@@ -16,7 +16,7 @@
 //Now it also use the API form goqr.me
 
 
-include_once("FixedByteNotation.php");
+include_once("../helpers/FixedByteNotation.php");
 
 
 class GoogleAuthenticator {
