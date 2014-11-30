@@ -22,6 +22,7 @@
 				var hash = shaObj1.getHash("SHA-512", "HEX");
 				//document.write('<br/>');
 				//document.write(hash);
+				alert("test");
 				var anfragestr = './login_handling.php?username='+username+'&token='+token+'&hash='+hash+'&ga_token='+ga_token;
 				self.location.href=anfragestr;
 			}
