@@ -60,6 +60,6 @@
 		<br/>
 		<input type="text" id='ga_token' name="ga_token"/>
 		<br/>
-		<input type='submit' name="go" value="go" onClick='go();'/>
+		<input type='submit' name="go" value="go" onClick="go();"/>
 	</body>
 </html>
