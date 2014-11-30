@@ -5,7 +5,7 @@
 	function die_back($str) {
 		die ($str.'<br/><a href="./login.php">back</a>');
 	}
-	$token = $_GET['token'];
+	$token = $_GET['ga_token'];
 	$user = $_GET['username'];
 	$hash = $_GET['hash'];
 	$ga_token_input = $_GET['ga_token'];
@@ -47,7 +47,7 @@
 	}
 	$hash_db = hash('sha512',$passwdhash.$token);
 	if ($hash_db == $hash) {
-		//print("du bist eingelogt");
+		print("du bist eingelogt");
 	} else {
 		die_back('falsches passwort');
 	}
