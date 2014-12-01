@@ -1,4 +1,11 @@
 <?php 
+/**
+* Jumbotron Theme for RPICMS
+*
+* @author Marcel Radzio <info@nordgedanken.de>
+* @version  1.0dev 1/12/2014 17:16
+*/
+
   #######################
   # flush browser cache #
   #######################
@@ -153,7 +160,7 @@
             ";
             $x = $x+1;
             $id = $id+1;
-            next_id();
+            next_id_only();
           }
         }else{
             include('../../core/backend/blog/posts.php');

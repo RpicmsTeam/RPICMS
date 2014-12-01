@@ -4,8 +4,8 @@
 * 
 * This script will the post variables with the database data.
 *
-* @author		Marcel Radzio <info@nordgedanken.de>
-* @version	0.2 17/08/2014 19:39
+* @author	Marcel Radzio <info@nordgedanken.de>
+* @version	1.0dev 1/12/2014 17:16
 */
 	include('../../core/config/connect.db.inc.php');
 	//Check if Database connection established
@@ -21,10 +21,10 @@
   			#$resultat->close();
 		}
 	next_id();
-	function next_id(){
+	function next_id_only(){
 		read();
 		}
-	function read(){
+	function read_only(){
 		global $id, $connection, $read, $post_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory, $post_text_short;
 		if ($resultat = $connection->query("SELECT * FROM posts WHERE id LIKE '$id'")) {
