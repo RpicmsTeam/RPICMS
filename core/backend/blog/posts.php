@@ -22,7 +22,7 @@
 		}
 	next_id_only();
 	function next_id_only(){
-		read();
+		read_only();
 		}
 	function read_only(){
 		global $id, $connection, $read, $post_id_clean;
