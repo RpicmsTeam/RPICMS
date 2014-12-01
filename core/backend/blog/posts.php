@@ -20,7 +20,7 @@
 			}
   			#$resultat->close();
 		}
-	next_id();
+	next_id_only();
 	function next_id_only(){
 		read();
 		}
