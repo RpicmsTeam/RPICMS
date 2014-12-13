@@ -13,21 +13,21 @@
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 		exit();
 	}
-		if ($resultat = $connection->query('SELECT * FROM posts')) {
+		if ($resultat = $connection->query('SELECT id FROM posts')) {
 			while($daten = $resultat->fetch_object() ){
  				$post_id_clean = $daten->id;
  				#var_dump($daten);
 			}
   			#$resultat->close();
 		}
-		if ($resultat = $connection->query("SELECT * FROM posts WHERE category LIKE '$category'")) {
+		if ($resultat = $connection->query("SELECT id FROM posts WHERE category LIKE '$category'")) {
 			while($daten = $resultat->fetch_object() ){
  				$category_id_clean = $daten->id;
  				#var_dump($daten);
 			}
   			#$resultat->close();
 		}
-		if ($resultat = $connection->query("SELECT * FROM posts WHERE author LIKE '$author'")) {
+		if ($resultat = $connection->query("SELECT id FROM posts WHERE author LIKE '$author'")) {
 			while($daten = $resultat->fetch_object() ){
  				$author_id_clean = $daten->id;
  				#var_dump($daten);
@@ -81,7 +81,7 @@
 	function read_category(){
 		global $id, $category, $connection, $read, $category_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
-		if ($resultat = $connection->query("SELECT * FROM posts WHERE category LIKE '$category' AND id LIKE '$id'")) {
+		if ($resultat = $connection->query("SELECT id,title,text,author,category,date FROM posts WHERE category LIKE '$category' AND id LIKE '$id'")) {
 			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
@@ -113,7 +113,7 @@
 function read_author(){
 		global $id, $author, $connection, $read, $author_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
-		if ($resultat = $connection->query("SELECT * FROM posts WHERE author LIKE '$author' AND id LIKE '$id'")) {
+		if ($resultat = $connection->query("SELECT id,title,text,author,category,date FROM posts WHERE author LIKE '$author' AND id LIKE '$id'")) {
 			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
