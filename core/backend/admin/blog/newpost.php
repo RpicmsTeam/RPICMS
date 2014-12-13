@@ -1,6 +1,7 @@
 <?php
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-echo "$root\n";
+echo $root . "\n";
+echo getcwd() . "\n";
 echo get_include_path();
 include('/core/config/variables.config.php');
 
