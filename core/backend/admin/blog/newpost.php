@@ -1,6 +1,6 @@
 <?php
-$uri = $_SERVER['HTTP_HOST'];
-$ssl = $_SERVER['HTTPS'];
+$uri = (string)$_SERVER['HTTP_HOST'];
+$ssl = (string)$_SERVER['HTTPS'];
 if (empty($ssl)) {
   $http = "http://";
 }else{
