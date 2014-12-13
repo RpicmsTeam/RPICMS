@@ -150,7 +150,7 @@
                 <h4>
                   <span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
                   <time>$post_date</time> | 
-                  <span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
+                  <span class='thecategory'><a href='index.php?categrory=$post_categrory' rel='category tag'>$post_categrory</a></span></br>
                 </h4>
               </div>
               <div>
@@ -180,7 +180,7 @@
                   <h4>
                     <span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
                     <time>$post_date</time> | 
-                    <span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
+                    <span class='thecategory'><a href='index.php?categrory=$post_categrory' rel='category tag'>$post_categrory</a></span></br>
                   </h4>
                 </div>
                 <div>
@@ -206,7 +206,7 @@
                 <h4>
                   <span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
                   <time>$post_date</time> | 
-                  <span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
+                  <span class='thecategory'><a href='index.php?categrory=$post_categrory' rel='category tag'>$post_categrory</a></span></br>
                 </h4>
               </div>
               <div>
