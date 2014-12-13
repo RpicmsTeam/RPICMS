@@ -1,5 +1,12 @@
 <?php
-include('../../core/config/variables.config.php');
+$uri = $_SERVER['HTTP_HOST'];
+$ssl = $_SERVER['HTTPS'];
+if (empty($ssl)) {
+  $http = "http://";
+}else{
+  $http = "https://";
+}
+include("$uri$httpcore/config/variables.config.php");
 
 ################
 # lang support #
@@ -31,6 +38,5 @@ foreach($langs as $prio => $lang) {
   }   
   // AND SO ON .................  
 }  
-$uri = $_SERVER['HTTP_HOST'];
-echo "$uri";
+
 ?>
