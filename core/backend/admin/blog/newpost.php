@@ -5,7 +5,7 @@ echo " x ";
 $currentdir = getcwd();
 echo getcwd();
 echo " x ";
-$root_2 = str_replace($currentdir, '', $root_1);
+$root_2 = str_replace('', $currentdir, $root_1);
 echo $root_2;
 include('/core/config/variables.config.php');
 
