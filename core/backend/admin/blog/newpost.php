@@ -3,6 +3,8 @@ $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
 echo $root_1;
 echo " x ";
 $currentdir = getcwd();
+echo getcwd();
+echo " x ";
 $root_2 = trim($currentdir, $root_1);
 echo $root_2;
 include('/core/config/variables.config.php');
