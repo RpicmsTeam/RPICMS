@@ -2,7 +2,7 @@
 $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
 $currentdir = getcwd();
 $root_2 = trim($currentdir, $root);
-echo $root_2
+echo $root_2;
 echo get_include_path();
 include('/core/config/variables.config.php');
 
