@@ -1,14 +1,7 @@
 <?php
-$uri = (string)$_SERVER['HTTP_HOST'];
-$ssl = (string)$_SERVER['HTTPS'];
-if (empty($ssl)) {
-  $http = "http://";
-}else{
-  $http = "https://";
-}
-echo "$uri";
-echo "$http";
-include($http.$uri.'/core/config/variables.config.php');
+$old_include = get_include_path();
+echo $old_include;
+include('/core/config/variables.config.php');
 
 ################
 # lang support #
