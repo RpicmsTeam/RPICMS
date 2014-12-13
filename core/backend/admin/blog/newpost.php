@@ -7,7 +7,7 @@ $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
 $currentdir = getcwd();
 $root_2 = str_replace($root_1, '', $currentdir);
 echo $root_2;
-$root = preg_match('~/(.*?)]/', $root_2);
+$root = preg_match('~/(.*?)]/~', $root_2);
 echo " x ";
 echo $root;
 include('/core/config/variables.config.php');
