@@ -4,11 +4,7 @@
 #######################
 header("Cache-Control: no-cache, must-revalidate, no-store");
 $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
-echo $root_1;
-echo " x ";
 $currentdir = getcwd();
-echo getcwd();
-echo " x ";
 $root_2 = str_replace($currentdir, '', $root_1);
 echo $root_2;
 include('/core/config/variables.config.php');
