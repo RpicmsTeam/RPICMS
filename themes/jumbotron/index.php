@@ -20,7 +20,7 @@
     $id = $_GET["id"];
   }
   if (!$empty_category){
-    $id = $_GET["category"];
+    $category = $_GET["category"];
   }
   include('../../core/config/variables.config.php');
 
@@ -167,6 +167,9 @@
             next_id_only();
           }
         }else{
+          if ($category){
+            echo "test";
+          }else{
             include('../../core/backend/blog/posts.php');
             echo "
               <h1>
@@ -185,6 +188,7 @@
                 </p>
               </div>
             ";
+          }
         }
       ?>
       </div>
