@@ -1,5 +1,5 @@
 <?php
-include('../../../../include.php')
+include('../../../../include.php');
 echo get_include_path();
 include('/core/config/variables.config.php');
 
