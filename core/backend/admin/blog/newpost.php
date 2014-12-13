@@ -1,5 +1,7 @@
 <?php
 $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
+echo $root_1;
+echo " x ";
 $currentdir = getcwd();
 $root_2 = trim($currentdir, $root_1);
 echo $root_2;
