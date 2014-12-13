@@ -170,7 +170,7 @@
           if ($category){
             #$id = 1;
             include('../../core/backend/blog/posts.php');
-            while ($x < $post_id_clean+1){
+            while ($x < $category_id_clean+1){
               include('../../core/config/connect.db.inc.php');
               echo "
                 <h1>
