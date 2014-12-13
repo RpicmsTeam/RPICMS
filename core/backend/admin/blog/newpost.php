@@ -8,7 +8,6 @@ $currentdir = getcwd();
 $root_2 = str_replace($root_1, '', $currentdir);
 echo $root_2;
 #$root_3 = preg_match('~/(.*?)]/~', $root_2, $root);
-$String = [modid=256];
 
 $First = "/";
 $Second = "/";
@@ -16,7 +15,7 @@ $Second = "/";
 $Firstpos=strpos($String, $First);
 $Secondpos=strpos($String, $Second);
 
-$root = substr($String , $Firstpos, $Secondpos);
+$root = substr($root_2 , $Firstpos, $Secondpos);
 echo " x ";
 echo $root;
 include('/core/config/variables.config.php');
