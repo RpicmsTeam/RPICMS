@@ -9,7 +9,7 @@ $root_2 = str_replace($root_1, '', $currentdir);
 echo $root_2;
 $root_3 = preg_match('~/(.*?)]/~', $root_2, $root);
 echo " x ";
-printf $root;
+print_r($root);
 include('/core/config/variables.config.php');
 
 ################
