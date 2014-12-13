@@ -208,17 +208,11 @@
             }  
           }else{
             if ($author){
-              $post_id_empty = empty($post_id);
-              $post_title_empty = empty($post_title);
-              $post_author_empty = empty($post_author);
-              $post_date_empty = empty($post_date);
-              $post_category_empty = empty($post_category);
-              $post_text_short_empty = empty($post_text_short);
               $id = 1;
               include('../../core/backend/blog/posts.php');
              while ($x < $author_id_clean+1){
                 include('../../core/config/connect.db.inc.php');
-                if($post_id_empty or $post_title_empty or $post_author_empty or $post_date_empty or $post_category_empty or $post_text_short_empty){
+                if($post_author != $author){
                   $x = $x+1;
                   $id = $id+1;
                   next_id_author();
