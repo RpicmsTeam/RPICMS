@@ -7,7 +7,15 @@
 * @author	Marcel Radzio <info@nordgedanken.de>
 * @version	1.0dev 1/12/2014 17:16
 */
-	include('../../core/config/connect.db.inc.php');
+###############################
+# include files from root dir #
+###############################
+$root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
+$currentdir = getcwd();
+$root_2 = str_replace($root_1, '', $currentdir);
+$root = explode("/", $root_2);
+
+	include($root_1 . '/' . $root[1] . '../../core/config/connect.db.inc.php');
 	//Check if Database connection established
 	if (mysqli_connect_errno()) {
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
