@@ -48,7 +48,7 @@
 	function read_only(){
 		global $id, $connection, $read, $post_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
-		if ($resultat = $connection->query("SELECT * FROM posts WHERE id LIKE '$id'")) {
+		if ($resultat = $connection->query("SELECT id,title,text,author,category,date, FROM posts WHERE id LIKE '$id'")) {
 			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
