@@ -12,8 +12,8 @@ echo $root_2;
 $First = "/";
 $Second = "/";
 
-$Firstpos=strpos($String, $First);
-$Secondpos=strpos($String, $Second);
+$Firstpos=strpos($root_2, $First);
+$Secondpos=strpos($root_2, $Second);
 
 $root = substr($root_2 , $Firstpos, $Secondpos);
 echo " x ";
