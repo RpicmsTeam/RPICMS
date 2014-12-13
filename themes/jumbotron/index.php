@@ -194,7 +194,7 @@
               ";
               $x = $x+1;
               $id = $id+1;
-              next_id_only();
+              next_id_category();
             }  
           }else{
             include('../../core/backend/blog/posts.php');
