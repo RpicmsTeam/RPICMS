@@ -6,12 +6,8 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
 $currentdir = getcwd();
 $root_2 = str_replace($root_1, '', $currentdir);
-echo $root_2;
-#$root_3 = preg_match('~/(.*?)]/~', $root_2, $root);
 $root = explode("/", $root_2);
-echo " x ";
-print_r($root);
-include('/core/config/variables.config.php');
+include($root_1 . $root[1] . '/core/config/variables.config.php');
 
 ################
 # lang support #
