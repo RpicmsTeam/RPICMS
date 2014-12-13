@@ -14,9 +14,13 @@
   # include required files #
   ##########################
   $error = "0";
-  $empty = empty($_GET["id"]);
-  if (!$empty){
+  $empty_id = empty($_GET["id"]);
+  $empty_category = empty($_GET["category"]);
+  if (!$empty_id){
     $id = $_GET["id"];
+  }
+  if (!$empty_category){
+    $id = $_GET["category"];
   }
   include('../../core/config/variables.config.php');
 
