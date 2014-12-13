@@ -18,9 +18,13 @@
   $empty_category = empty($_GET["category"]);
   if (!$empty_id){
     $id = $_GET["id"];
+  }else{
+    $id = 1;
   }
   if (!$empty_category){
     $category = $_GET["category"];
+  }else{
+    $category = "";
   }
   include('../../core/config/variables.config.php');
 
@@ -138,7 +142,7 @@
       <?php
         $x = 1;
         if ($empty_id && $empty_category){
-          $id = 1;
+          #$id = 1;
           include('../../core/backend/blog/posts.php');
           while ($x < $post_id_clean+1){
             include('../../core/config/connect.db.inc.php');
