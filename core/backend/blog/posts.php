@@ -37,7 +37,7 @@
 	}
 	function read_only(){
 		global $id, $connection, $read, $post_id_clean;
-		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory, $post_text_short;
+		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
 		if ($resultat = $connection->query("SELECT * FROM posts WHERE id LIKE '$id'")) {
 			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
@@ -48,13 +48,13 @@
 				$post_text = $daten->text;
 				$post_author = $daten->author;
 				$post_date = $daten->date;
-				$post_categrory = $daten->category;
+				$post_category = $daten->category;
 				$post_text_short = shortText($post_text,300);
 			}  
   			$resultat->close();
 		} else {
 			global $id, $connection, $read, $post_id_clean;
-			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
+			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
   					global $error;
   					$error = "1";
   					echo "Nothing to read from Database!";
@@ -63,14 +63,14 @@
 					$post_text = "Database error!";
 					$post_author = "Database error!";
 					$post_date = "Database error!";
-					$post_categrory = "Database error!";
+					$post_category = "Database error!";
 		}
 	}
 
 
 	function read_category(){
 		global $category, $connection, $read, $category_id_clean;
-		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory, $post_text_short;
+		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
 		if ($resultat = $connection->query("SELECT * FROM posts WHERE category LIKE '$category' ")) {
 			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
@@ -81,13 +81,13 @@
 				$post_text = $daten->text;
 				$post_author = $daten->author;
 				$post_date = $daten->date;
-				$post_categrory = $daten->category;
+				$post_category = $daten->category;
 				$post_text_short = shortText($post_text,300);
 			}  
   			$resultat->close();
 		} else {
 			global $category, $connection, $read, $category_id_clean;
-			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_categrory;
+			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
   					global $error;
   					$error = "1";
   					echo "Nothing to read from Database!";
@@ -96,7 +96,7 @@
 					$post_text = "Database error!";
 					$post_author = "Database error!";
 					$post_date = "Database error!";
-					$post_categrory = "Database error!";
+					$post_category = "Database error!";
 		}
 	}
 
