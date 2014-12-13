@@ -10,7 +10,7 @@ echo $root_2;
 #$root_3 = preg_match('~/(.*?)]/~', $root_2, $root);
 preg_match_all("/\/((?:.(?!\/))*)/s", $root_2, $root); 
 echo " x ";
-echo $root[0];
+echo $root[1];
 include('/core/config/variables.config.php');
 
 ################
