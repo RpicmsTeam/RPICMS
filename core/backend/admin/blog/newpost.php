@@ -6,7 +6,9 @@ if (empty($ssl)) {
 }else{
   $http = "https://";
 }
-include($http+$uri+'/core/config/variables.config.php');
+echo "$uri";
+echo "$http";
+include($http.$uri.'/core/config/variables.config.php');
 
 ################
 # lang support #
