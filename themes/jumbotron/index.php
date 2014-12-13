@@ -16,6 +16,7 @@
   $error = "0";
   $empty_id = empty($_GET["id"]);
   $empty_category = empty($_GET["category"]);
+  $empty_author = empty($_GET["author"]);
   if (!$empty_id){
     $id = $_GET["id"];
   }else{
@@ -25,6 +26,11 @@
     $category = $_GET["category"];
   }else{
     $category = "";
+  }
+  if (!$empty_author){
+    $author = $_GET["author"];
+  }else{
+    $author = "";
   }
   include('../../core/config/variables.config.php');
 
@@ -141,7 +147,7 @@
       <div class="container">
       <?php
         $x = 1;
-        if ($empty_id && $empty_category){
+        if ($empty_id && $empty_category && $empty_author){
           #$id = 1;
           include('../../core/backend/blog/posts.php');
           while ($x < $post_id_clean+1){
@@ -152,7 +158,7 @@
               </h1>
               <div>
                 <h4>
-                  <span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
+                  <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | 
                   <time>$post_date</time> | 
                   <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
                 </h4>
@@ -182,7 +188,7 @@
                 </h1>
                 <div>
                   <h4>
-                    <span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
+                    <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | 
                     <time>$post_date</time> | 
                     <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
                   </h4>
@@ -201,24 +207,55 @@
               next_id_category();
             }  
           }else{
-            include('../../core/backend/blog/posts.php');
-            echo "
-              <h1>
-                <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
-              </h1>
-              <div>
-                <h4>
-                  <span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
-                  <time>$post_date</time> | 
-                  <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
-                </h4>
-              </div>
-              <div>
-                <p>
-                  $post_text</br>
-                </p>
-              </div>
-            ";
+            if ($author){
+              $id = 1;
+              include('../../core/backend/blog/posts.php');
+             while ($x < $author_id_clean+1){
+                include('../../core/config/connect.db.inc.php');
+                echo "
+                  <h1>
+                    <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+                  </h1>
+                  <div>
+                    <h4>
+                      <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | 
+                      <time>$post_date</time> | 
+                      <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
+                    </h4>
+                  </div>
+                  <div>
+                    <p>
+                      $post_text_short</br>
+                    </p>
+                  </div>
+                  <p>
+                    <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
+                  </p>
+                ";
+                $x = $x+1;
+                $id = $id+1;
+                next_id_author();
+              }
+            }else{  
+              include('../../core/backend/blog/posts.php');
+              echo "
+                <h1>
+                  <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+                </h1>
+                <div>
+                  <h4>
+                    <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | 
+                    <time>$post_date</time> | 
+                    <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
+                  </h4>
+                </div>
+                <div>
+                  <p>
+                    $post_text</br>
+                  </p>
+                </div>
+              ";
+            }
           }
         }
       ?>
