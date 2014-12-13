@@ -1,4 +1,8 @@
 <?php
+#######################
+# flush browser cache #
+#######################
+header("Cache-Control: no-cache, must-revalidate, no-store");
 $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
 echo $root_1;
 echo " x ";
