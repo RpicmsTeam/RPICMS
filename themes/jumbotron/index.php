@@ -137,7 +137,7 @@
       <div class="container">
       <?php
         $x = 1;
-        if ($empty){
+        if ($empty_id){
           $id = 1;
           include('../../core/backend/blog/posts.php');
           while ($x < $post_id_clean+1){
