@@ -168,7 +168,33 @@
           }
         }else{
           if ($category){
-            echo "test";
+          #$id = 1;
+          include('../../core/backend/blog/posts.php');
+          while ($x < $post_id_clean+1){
+            include('../../core/config/connect.db.inc.php');
+            echo "
+              <h1>
+                <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+              </h1>
+              <div>
+                <h4>
+                  <span class='theauthor'><a href='#' rel='author'>$post_author</a></span> | 
+                  <time>$post_date</time> | 
+                  <span class='thecategory'><a href='#' rel='category tag'>$post_categrory</a></span></br>
+                </h4>
+              </div>
+              <div>
+                <p>
+                  $post_text_short</br>
+                </p>
+              </div>
+              <p>
+                <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
+              </p>
+            ";
+            $x = $x+1;
+            #$id = $id+1;
+            next_id_only();
           }else{
             include('../../core/backend/blog/posts.php');
             echo "
