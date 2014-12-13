@@ -31,6 +31,6 @@ foreach($langs as $prio => $lang) {
   }   
   // AND SO ON .................  
 }  
-$uri = $_SERVER['REQUEST_URI'];
+$uri = $_SERVER['HTTP_HOST'];
 echo "$uri";
 ?>
