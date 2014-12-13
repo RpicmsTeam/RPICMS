@@ -1,6 +1,6 @@
 <?php
-$old_include = get_include_path();
-echo $old_include;
+include('../../../../include.php')
+echo get_include_path();
 include('/core/config/variables.config.php');
 
 ################
