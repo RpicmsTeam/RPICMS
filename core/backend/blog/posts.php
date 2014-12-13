@@ -69,7 +69,7 @@
 
 
 	function read_category(){
-		global $category, $connection, $read, $category_id_clean;
+		global $id, $category, $connection, $read, $category_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
 		if ($resultat = $connection->query("SELECT * FROM posts WHERE category LIKE '$category' AND LIKE '$id'")) {
 			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
@@ -86,7 +86,7 @@
 			}  
   			$resultat->close();
 		} else {
-			global $category, $connection, $read, $category_id_clean;
+			global $id, $category, $connection, $read, $category_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
   					global $error;
   					$error = "1";
