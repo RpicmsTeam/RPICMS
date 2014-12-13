@@ -28,11 +28,7 @@
   			#$resultat->close();
 		}
 		if ($resultat = $connection->query("SELECT * FROM posts WHERE author LIKE '$author'")) {
-			while($daten = $resultat->fetch_object() ){
- 				$author_id_clean = $daten->id;
- 				#var_dump($daten);
-			}
-  			#$resultat->close();
+				$author_id_clean = mysql_num_rows($resultat);
 		}
 	next_id_only();
 	next_id_category();
