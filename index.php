@@ -1,5 +1,4 @@
 <?php
-include('include.php');
 header("Cache-Control: no-cache, must-revalidate, no-store");
 //$root = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 echo $root;

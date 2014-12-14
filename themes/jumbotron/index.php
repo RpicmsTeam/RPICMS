@@ -70,7 +70,8 @@
 $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
 $currentdir = getcwd();
 $root_2 = str_replace($root_1, '', $currentdir);
-$root = explode("/", $root_2);
+$root_3 = explode("/", $root_2);
+$root = $root_1 . '/' . $root_3[1];
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,22 +82,22 @@ $root = explode("/", $root_2);
     <meta name="description" content="">
     <meta name="author" content="">
     <?php
-    echo '<link rel="icon" href="' . $root_1 . '/' . $root[1] . '/core/libs/theme_engine/BootStrap/favicon.ico">';
+    echo '<link rel="icon" href="' . $root . '/core/libs/theme_engine/BootStrap/favicon.ico">';
     
     echo "<title>$blog_name</title>";
     ?>
 
     <!-- Bootstrap core CSS -->
     <?php
-    echo '<link href="' . $root_1 . '/' . $root[1] . '/core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">';
+    echo '<link href="' . $root . '/core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">';
     ?>
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <?php
-    echo '<!--[if lt IE 9]><script src="' . $root_1 . '/' . $root[1] . '/core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->';
-    echo '<script src="' . $root_1 . '/' . $root[1] . '/core/libs/theme_engine/BootStrap/js/ie-emulation-modes-warning.js"></script>';
+    echo '<!--[if lt IE 9]><script src="' . $root . '/core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->';
+    echo '<script src="' . $root . '/core/libs/theme_engine/BootStrap/js/ie-emulation-modes-warning.js"></script>';
     ?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -139,7 +140,7 @@ $root = explode("/", $root_2);
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         <?php
-          echo'<form class="navbar-form navbar-right" role="form" action="' . $root_1 . '/' . $root[1] . '/core/backend/admin/user/login_check.php" method="post">';
+          echo'<form class="navbar-form navbar-right" role="form" action="' . $root . '/core/backend/admin/user/login_check.php" method="post">';
         ?>
             <div class="form-group">
               <input type="email" placeholder="Email" class="form-control" name="username" required="required" title="Please insert a valid Email (example@email.com)" x-moz-errormessage="Please insert a valid Email (example@email.com)">
@@ -160,7 +161,7 @@ $root = explode("/", $root_2);
         $x = 1;
         if ($empty_id && $empty_category && $empty_author){
           #$id = 1;
-          include($root_1 . '/' . $root[1] . '/core/backend/blog/posts.php');
+          include($root . '/core/backend/blog/posts.php');
           while ($x < $post_id_clean+1){
             echo "
               <h1>
@@ -189,9 +190,8 @@ $root = explode("/", $root_2);
         }else{
           if ($category){
             $id = 1;
-            include('../../core/backend/blog/posts.php');
+            include($root . '/core/backend/blog/posts.php');
             while ($x < $category_id_clean+1){
-              include('../../core/config/connect.db.inc.php');
               if($post_category != $category){
                 $x = $x+1;
                 $id = $id+1;
@@ -225,9 +225,8 @@ $root = explode("/", $root_2);
           }else{
             if ($author){
               $id = 1;
-              include('../../core/backend/blog/posts.php');
+              include($root . '/core/backend/blog/posts.php');
              while ($x < $author_id_clean+1){
-                include('../../core/config/connect.db.inc.php');
                 if($post_author != $author){
                   $x = $x+1;
                   $id = $id+1;
@@ -259,7 +258,7 @@ $root = explode("/", $root_2);
                 }
               }
             }else{  
-              include('../../core/backend/blog/posts.php');
+              include($root . '/core/backend/blog/posts.php');
               echo "
                 <h1>
                   <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
@@ -295,10 +294,10 @@ $root = explode("/", $root_2);
                 <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%"">
                   <option value="leer" selected="selected">[ bitte auswählen! ]</option>
                   <option value="leer">------------------------</option>
-                  <option value="../jumbotron">Jumbotron</option>
-                  <option value="../accentbox">Accentbox</option>
-                  <option value="../parkzone">ParkZone</option>
-                  <option value="../zResponsiv">zResponsiv</option>
+                  <option value="' . $root . '/jumbotron">Jumbotron</option>
+                  <option value="' . $root . '/accentbox">Accentbox</option>
+                  <option value="' . $root . '/parkzone">ParkZone</option>
+                  <option value="' . $root . '/zResponsiv">zResponsiv</option>
                   <option value="ende">Beenden</option>
                 </select></p>
               </form>
@@ -330,8 +329,12 @@ $root = explode("/", $root_2);
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
+    <?php
+    echo '<script src="' . $root . '/core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>';
+    ?>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../core/libs/theme_engine/BootStrap/js/ie10-viewport-bug-workaround.js"></script>
+    <?php
+    echo '<script src="' . $root . '/core/libs/theme_engine/BootStrap/js/ie10-viewport-bug-workaround.js"></script>';
+    ?>
   </body>
 </html>
