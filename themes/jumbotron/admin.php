@@ -135,7 +135,7 @@ foreach($langs as $prio => $lang) {
 		}
 		.tabs label {
   			display: block;
-  			padding: -14px -21px;
+  			padding: -14px 21px;
   			border-radius: 2px 2px 0 0;
   			font-size: 20px;
   			font-weight: normal;
