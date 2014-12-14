@@ -13,9 +13,13 @@
 $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
 $currentdir = getcwd();
 $root_2 = str_replace($root_1, '', $currentdir);
-$root = explode("/", $root_2);
+$root_3 = explode("/", $root_2);
+if ($root_3[1] = "core" or $root_3[1] = "themes" or $root_3[1] = "install") {
+	$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+}else{
+	$root = $root_1 . '/' . $root_3[1];
+}
 
-	include($root_1 . '/' . $root[1] . '/core/config/connect.db.inc.php');
 	//Check if Database connection established
 	if (mysqli_connect_errno()) {
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
@@ -45,12 +49,15 @@ $root = explode("/", $root_2);
 	next_id_category();
 	next_id_author();
 	function next_id_category(){
+		include($root . '/core/config/connect.db.inc.php');
 		read_category();
 	}
 	function next_id_author(){
+		include($root . '/core/config/connect.db.inc.php');
 		read_author();
 	}
 	function next_id_only(){
+		include($root . '/core/config/connect.db.inc.php');
 		read_only();
 	}
 	function read_only(){
