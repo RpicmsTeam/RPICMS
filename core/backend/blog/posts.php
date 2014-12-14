@@ -19,7 +19,7 @@ if ($root_3[1] = "core" or $root_3[1] = "themes" or $root_3[1] = "install") {
 }else{
 	$root = $root_1 . '/' . $root_3[1];
 }
-echo $root_3[1];
+print($root_3[1]);
 
 	//Check if Database connection established
 	if (mysqli_connect_errno()) {
