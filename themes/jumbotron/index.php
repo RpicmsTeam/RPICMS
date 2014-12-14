@@ -9,14 +9,10 @@
 # include files from root dir #
 ###############################
 $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
-echo "$root_1\n";
 $currentdir = getcwd();
-echo "$currentdir\n";
 $root_2 = str_replace($root_1, '', $currentdir);
-echo "$root_2\n";
 $root_3 = explode("/", $root_2);
-print_r($root_3);
-if ($root_3[1] = "core") {
+if ($root_3[1] = 'core') {
   echo $root_3[1];
   $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 }else{
