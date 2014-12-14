@@ -81,24 +81,21 @@ $root = $root_1 . '/' . $root_3[1];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <?php
-    echo '<link rel="icon" href="' . $root . '/core/libs/theme_engine/BootStrap/favicon.ico">';
     
+    <link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
+    <?php
     echo "<title>$blog_name</title>";
     ?>
 
     <!-- Bootstrap core CSS -->
-    <?php
-    echo '<link href="' . $root . '/core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">';
-    ?>
+    <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <?php
-    echo '<!--[if lt IE 9]><script src="' . $root . '/core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->';
-    echo '<script src="' . $root . '/core/libs/theme_engine/BootStrap/js/ie-emulation-modes-warning.js"></script>';
-    ?>
+    
+    <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../core/libs/theme_engine/BootStrap/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -139,9 +136,7 @@ $root = $root_1 . '/' . $root_3[1];
           ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        <?php
-          echo'<form class="navbar-form navbar-right" role="form" action="' . $root . '/core/backend/admin/user/login_check.php" method="post">';
-        ?>
+        <form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
             <div class="form-group">
               <input type="email" placeholder="Email" class="form-control" name="username" required="required" title="Please insert a valid Email (example@email.com)" x-moz-errormessage="Please insert a valid Email (example@email.com)">
             </div>
@@ -294,10 +289,10 @@ $root = $root_1 . '/' . $root_3[1];
                 <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%"">
                   <option value="leer" selected="selected">[ bitte auswählen! ]</option>
                   <option value="leer">------------------------</option>
-                  <option value="' . $root . '/jumbotron">Jumbotron</option>
-                  <option value="' . $root . '/accentbox">Accentbox</option>
-                  <option value="' . $root . '/parkzone">ParkZone</option>
-                  <option value="' . $root . '/zResponsiv">zResponsiv</option>
+                  <option value="../jumbotron">Jumbotron</option>
+                  <option value="../accentbox">Accentbox</option>
+                  <option value="../parkzone">ParkZone</option>
+                  <option value="../zResponsiv">zResponsiv</option>
                   <option value="ende">Beenden</option>
                 </select></p>
               </form>
@@ -329,12 +324,8 @@ $root = $root_1 . '/' . $root_3[1];
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <?php
-    echo '<script src="' . $root . '/core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>';
-    ?>
+    <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <?php
-    echo '<script src="' . $root . '/core/libs/theme_engine/BootStrap/js/ie10-viewport-bug-workaround.js"></script>';
-    ?>
+    <script src="../../core/libs/theme_engine/BootStrap/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
