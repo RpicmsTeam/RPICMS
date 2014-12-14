@@ -212,24 +212,24 @@ foreach($langs as $prio => $lang) {
       <div class="container">
       	<div class="tabs">
 		<!--<ul class="tabs">-->
-    		<li>
+    		<div>
        			<input type="radio" name="tabs" id="tab1" checked />
         		<label for="tab1">1</label>
         		<div id="tab-content1" class="tab-content">
           			<p>1</p>
         		</div>
-    		</li>
+    		</div>
   
-    		<li>
+    		<div>
         		<input type="radio" name="tabs" id="tab2" />
         		<label for="tab2">2</label>
         		<div id="tab-content2" class="tab-content">
           			<p>2</p>
         		</div>
-    		</li>
+    		</div>
 		<!--</ul>-->
 		</div>
-		<!--<br style="clear: both;" />-->
+		<br style="clear: both;" />
 
 
 
