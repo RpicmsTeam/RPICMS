@@ -125,7 +125,7 @@ foreach($langs as $prio => $lang) {
   			float: none;
   			list-style: none;
   			position: relative;
-  			margin: 80px 0 0 10px;
+  			margin: 0 0 0 10px;
   			text-align: left;
 		}
 		.tabs li {
@@ -133,9 +133,9 @@ foreach($langs as $prio => $lang) {
   			display: block;
 		}
 		.tabs input[type="radio"] {
-  			/*position: absolute;
+  			position: absolute;
   			top: -9999px;
-  			left: -9999px;*/
+  			left: -9999px;
 		}
 		.tabs label {
   			display: block;
