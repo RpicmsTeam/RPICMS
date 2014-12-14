@@ -162,6 +162,7 @@ if ($root_3[1] == 'core') {
           #$id = 1;
           include($root . '/core/backend/blog/posts.php');
           while ($x < $post_id_clean+1){
+            include($root . '/core/config/connect.db.inc.php');
             echo "
               <h1>
                 <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
@@ -191,6 +192,7 @@ if ($root_3[1] == 'core') {
             $id = 1;
             include($root . '/core/backend/blog/posts.php');
             while ($x < $category_id_clean+1){
+              include($root . '/core/config/connect.db.inc.php');
               if($post_category != $category){
                 $x = $x+1;
                 $id = $id+1;
@@ -226,6 +228,7 @@ if ($root_3[1] == 'core') {
               $id = 1;
               include($root . '/core/backend/blog/posts.php');
              while ($x < $author_id_clean+1){
+              include($root . '/core/config/connect.db.inc.php');
                 if($post_author != $author){
                   $x = $x+1;
                   $id = $id+1;

@@ -49,18 +49,12 @@ if ($root_3[1] == 'core') {
 	next_id_category();
 	next_id_author();
 	function next_id_category(){
-		global $root;
-		include($root . '/core/config/connect.db.inc.php');
 		read_category();
 	}
 	function next_id_author(){
-		global $root;
-		include($root . '/core/config/connect.db.inc.php');
 		read_author();
 	}
 	function next_id_only(){
-		global $root;
-		include($root . '/core/config/connect.db.inc.php');
 		read_only();
 	}
 	function read_only(){
@@ -92,6 +86,7 @@ if ($root_3[1] == 'core') {
 					$post_author = "Database error!";
 					$post_date = "Database error!";
 					$post_category = "Database error!";
+					$post_text_short =  "Database error!";
 		}
 	}
 
@@ -125,6 +120,7 @@ if ($root_3[1] == 'core') {
 					$post_author = "Database error!";
 					$post_date = "Database error!";
 					$post_category = "Database error!";
+					$post_text_short =  "Database error!";
 		}
 	}
 
@@ -157,6 +153,7 @@ function read_author(){
 					$post_author = "Database error!";
 					$post_date = "Database error!";
 					$post_category = "Database error!";
+					$post_text_short =  "Database error!";
 		}
 	}
 
