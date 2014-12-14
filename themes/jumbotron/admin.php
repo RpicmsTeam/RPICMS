@@ -105,6 +105,75 @@ foreach($langs as $prio => $lang) {
         }
       }
     </script>
+    <style type="text/css">
+		@import url("http://fonts.googleapis.com/css?family=Lato");
+		* {
+  			margin: 0;
+  			padding: 0; 
+  			@include box-sizing(border-box);
+			}
+		body {
+  			padding: 20px;
+  			text-align: left;
+  			font-family: Lato;
+  			color: #fff; 
+		}
+		.tabs {
+  			width: 650px;  
+  			float: none;
+  			list-style: none;
+  			position: relative;
+  			margin: 80px 0 0 10px;
+  			text-align: left;
+  			li {
+    			float: left;
+    			display: block;
+  			}
+  			input[type="radio"] {
+    			position: absolute;
+    			top: -9999px;
+    			left: -9999px;
+  			}
+  			label {
+    			display: block;
+    			padding: 14px 21px;
+    			border-radius: 2px 2px 0 0;
+    			font-size: 20px;
+    			font-weight: normal;
+    			text-transform: uppercase;
+    			background: lightgrey;
+    			cursor: pointer;
+    			position: relative;
+    			top: 4px; 
+    			@include transition(all 0.2s ease-in-out);
+    			&:hover {
+      				background: darken(lightgrey, 10);
+    			}
+  			}
+  			.tab-content{
+    			z-index: 2;
+    			display: none; 
+    			overflow: hidden;
+    			width: 100%;
+    			font-size: 17px;
+    			line-height: 25px;
+    			padding: 25px;  
+    			position: absolute;
+    			top: 53px;
+    			left: 0; 
+    			background: darken(lightgrey, 15);
+  			}
+  			//The Magic
+  			[id^="tab"]:checked + label { 
+    			top: 0;
+    			padding-top: 17px; 
+    			background: darken(grey, 15); 
+  			}
+  			id^="tab"]:checked ~ [id^="tab-content"] {
+    			display: block;
+  			}
+		}
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -137,7 +206,25 @@ foreach($langs as $prio => $lang) {
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
+		<ul class="tabs">
+    		<li>
+       			<input type="radio" name="tabs" id="tab1" checked />
+        		<label for="tab1">1</label>
+        		<div id="tab-content1" class="tab-content">
+          			<p>1</p>
+        		</div>
+    		</li>
+  
+    		<li>
+        		<input type="radio" name="tabs" id="tab2" />
+        		<label for="tab2">2</label>
+        		<div id="tab-content2" class="tab-content">
+          			<p>2</p>
+        		</div>
+    		</li>
+		</ul>
 
+		<br style="clear: both;" />
 
 
 
