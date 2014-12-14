@@ -107,71 +107,77 @@ foreach($langs as $prio => $lang) {
     </script>
     <style type="text/css">
 		/*@import url("http://fonts.googleapis.com/css?family=Lato");
+		
 		* {
   			margin: 0;
-  			padding: 0; 
-  			@include box-sizing(border-box);
-			}
+  			padding: 0;
+  			-moz-box-sizing: border-box;
+  			-webkit-box-sizing: border-box;
+  			box-sizing: border-box;
+		}
+
 		body {
   			padding: 20px;
   			text-align: left;
   			font-family: Lato;
-  			color: #fff; 
+  			color: #fff;
 		}*/
 		.tabs {
-  			width: 650px;  
+  			width: 650px;
   			float: none;
   			list-style: none;
   			position: relative;
   			margin: 80px 0 0 10px;
   			text-align: left;
-  			li {
-    			float: left;
-    			display: block;
-  			}
-  			input[type="radio"] {
-    			position: absolute;
-    			top: -9999px;
-    			left: -9999px;
-  			}
-  			label {
-    			display: block;
-    			padding: 14px 21px;
-    			border-radius: 2px 2px 0 0;
-    			font-size: 20px;
-    			font-weight: normal;
-    			text-transform: uppercase;
-    			background: lightgrey;
-    			cursor: pointer;
-    			position: relative;
-    			top: 4px; 
-    			@include transition(all 0.2s ease-in-out);
-    			&:hover {
-      				background: darken(lightgrey, 10);
-    			}
-  			}
-  			.tab-content{
-    			z-index: 2;
-    			display: none; 
-    			overflow: hidden;
-    			width: 100%;
-    			font-size: 17px;
-    			line-height: 25px;
-    			padding: 25px;  
-    			position: absolute;
-    			top: 53px;
-    			left: 0; 
-    			background: darken(lightgrey, 15);
-  			}
-  			//The Magic
-  			[id^="tab"]:checked + label { 
-    			top: 0;
-    			padding-top: 17px; 
-    			background: darken(grey, 15); 
-  			}
-  			id^="tab"]:checked ~ [id^="tab-content"] {
-    			display: block;
-  			}
+		}
+		.tabs li {
+  			float: left;
+  			display: block;
+		}
+		.tabs input[type="radio"] {
+  			position: absolute;
+  			top: -9999px;
+  			left: -9999px;
+		}
+		.tabs label {
+  			display: block;
+  			padding: 14px 21px;
+  			border-radius: 2px 2px 0 0;
+  			font-size: 20px;
+  			font-weight: normal;
+  			text-transform: uppercase;
+  			background: lightgrey;
+  			cursor: pointer;
+  			position: relative;
+  			top: 4px;
+  			-moz-transition: all 0.2s ease-in-out;
+  			-o-transition: all 0.2s ease-in-out;
+  			-webkit-transition: all 0.2s ease-in-out;
+  			transition: all 0.2s ease-in-out;
+		}
+		.tabs label:hover {
+  			background: #b9b9b9;
+		}
+		.tabs .tab-content {
+  			z-index: 2;
+  			display: none;
+  			overflow: hidden;
+  			width: 100%;
+  			font-size: 17px;
+  			line-height: 25px;
+  			padding: 25px;
+  			position: absolute;
+  			top: 53px;
+  			left: 0;
+  			background: #adadad;
+		}
+		.tabs [id^="tab"]:checked + label {
+ 			top: 0;
+  			padding-top: 17px;
+  			background: #5a5a5a;
+		}
+		.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+  			display: block;
 		}
     </style>
   </head>
