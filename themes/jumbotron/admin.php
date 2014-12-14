@@ -116,12 +116,11 @@ foreach($langs as $prio => $lang) {
   			box-sizing: border-box;
 		}
 
-		/*body {
+		body {
   			padding: 20px;
   			text-align: left;
-  			font-family: Lato;
   			color: #fff;
-		}*/
+		}
 		.tabs {
   			width: 650px;
   			float: none;
