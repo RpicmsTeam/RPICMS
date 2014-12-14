@@ -135,15 +135,15 @@ foreach($langs as $prio => $lang) {
 		}
 		.tabs label {
   			display: block;
-  			padding: -14px 21px;
+  			/*padding: 14px 21px;*/
   			border-radius: 2px 2px 0 0;
   			font-size: 20px;
   			font-weight: normal;
   			text-transform: uppercase;
   			background: lightgrey;
   			cursor: pointer;
-  			/*position: relative;
-  			top: 4px;-->*/
+  			position: relative;
+  			top: 4px;
   			-moz-transition: all 0.2s ease-in-out;
   			-o-transition: all 0.2s ease-in-out;
   			-webkit-transition: all 0.2s ease-in-out;
