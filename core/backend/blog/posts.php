@@ -20,7 +20,7 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-
+	include($root . '/core/config/connect.db.inc.php');
 	//Check if Database connection established
 	if (mysqli_connect_errno()) {
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());

@@ -44,7 +44,7 @@ if ($root_3[1] == 'core') {
   }else{
     $author = "";
   }
-  include('../../core/config/variables.config.php');
+  include($root . '/core/config/variables.config.php');
 
   ################
   # lang support #
