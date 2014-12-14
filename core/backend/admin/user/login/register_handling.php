@@ -1,14 +1,25 @@
 <?php
 	//<body onload="document.getElementById('qr_code').style.visibility='hidden'; document.getElementById('secret').style.visibility='hidden';">
-
+	###############################
+	# include files from root dir #
+	###############################
+	$root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
+	$currentdir = getcwd();
+	$root_2 = str_replace($root_1, '', $currentdir);
+	$root_3 = explode("/", $root_2);
+	if ($root_3[1] == 'core') {
+  		$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+	}else{
+  		$root = $root_1 . '/' . $root_3[1];
+	}
 	include_once('./navi.php');
 	if (isset($_POST['go'])) {
-		include_once('../../../../libs/GA/GoogleAuthenticator.php');
+		include_once($root . '/core/libs/GA/GoogleAuthenticator.php');
 		$g = new GoogleAuthenticator();
 		$ga_secret = $g->generateSecret();
 		$username = $_POST['username'];
 		$passwdhash = hash('sha512',$_POST['passwd'].$username);
-		include('../../../../config/connect.db.inc.php');
+		include($root . '/core/config/connect.db.inc.php');
 		//Check if Database connection established
 		if (mysqli_connect_errno()) {
 			printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());

@@ -15,8 +15,19 @@
 //the & in the string for the QR-Code isnt good for HTTP-GET
 //Now it also use the API form goqr.me
 
-
-include_once("../../../../libs/helpers/FixedByteNotation.php");
+###############################
+# include files from root dir #
+###############################
+$root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
+$currentdir = getcwd();
+$root_2 = str_replace($root_1, '', $currentdir);
+$root_3 = explode("/", $root_2);
+if ($root_3[1] == 'core') {
+  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+}else{
+  $root = $root_1 . '/' . $root_3[1];
+}
+include_once($root . '/core/libs/helpers/FixedByteNotation.php');
 
 
 class GoogleAuthenticator {
