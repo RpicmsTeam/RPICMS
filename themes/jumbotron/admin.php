@@ -114,8 +114,8 @@ foreach($langs as $prio => $lang) {
   			color: #fff;
 		}
 		.tabs {
-			padding-right: 15px;
-  			padding-left: 15px;
+			padding-top: 31px;
+  			padding-bottom: 31px;
   			width: 100%;
   			height: auto;
   			float: none;
