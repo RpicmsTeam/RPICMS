@@ -106,7 +106,7 @@ foreach($langs as $prio => $lang) {
       }
     </script>
     <style type="text/css">
-		/*@import url("http://fonts.googleapis.com/css?family=Lato");
+		/*@import url("http://fonts.googleapis.com/css?family=Lato");*/
 		
 		* {
   			margin: 0;
@@ -116,7 +116,7 @@ foreach($langs as $prio => $lang) {
   			box-sizing: border-box;
 		}
 
-		body {
+		/*body {
   			padding: 20px;
   			text-align: left;
   			font-family: Lato;
