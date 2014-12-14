@@ -5,7 +5,23 @@
 * @author Marcel Radzio <info@nordgedanken.de>
 * @version  1.0dev 1/12/2014 17:16
 */
-
+###############################
+# include files from root dir #
+###############################
+$root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
+echo "$root_1\n";
+$currentdir = getcwd();
+echo "$currentdir\n";
+$root_2 = str_replace($root_1, '', $currentdir);
+echo "$root_2\n";
+$root_3 = explode("/", $root_2);
+print_r($root_3);
+if ($root_3[1] = "core") {
+  echo $root_3[1];
+  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+}else{
+  $root = $root_1 . '/' . $root_3[1];
+}
   #######################
   # flush browser cache #
   #######################
@@ -64,20 +80,6 @@
       }   
        // AND SO ON .................  
     }  
-###############################
-# include files from root dir #
-###############################
-$root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
-$currentdir = getcwd();
-$root_2 = str_replace($root_1, '', $currentdir);
-$root_3 = explode("/", $root_2);
-print_r($root_3);
-if ($root_3[1] = "core") {
-  echo $root_3[1];
-  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-}else{
-  $root = $root_1 . '/' . $root_3[1];
-}
   ?>
 <!DOCTYPE html>
 <html lang="en">
