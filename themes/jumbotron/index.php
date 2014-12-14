@@ -76,6 +76,7 @@ if ($root_3[1] = "core" or $root_3[1] = "themes" or $root_3[1] = "install") {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
+print_r($root_3);
   ?>
 <!DOCTYPE html>
 <html lang="en">
