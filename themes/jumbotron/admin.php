@@ -124,7 +124,7 @@ foreach($langs as $prio => $lang) {
   			margin: 0 0 0 10px;
   			text-align: left;
 		}
-		.tabs li {
+		.tabs .li {
   			float: left;
   			display: block;
 		}
@@ -205,32 +205,32 @@ foreach($langs as $prio => $lang) {
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <!--<div class="container">-->
+      <div class="container">
       	<h1>Administration</h1>
       	<div class="tabs">
 		<!--<ul class="tabs">-->
-    		<li>
+    		<div class="li">
        			<input type="radio" name="tabs" id="tab1" checked />
         		<label for="tab1">1</label>
         		<div id="tab-content1" class="tab-content">
           			<p>1</p>
         		</div>
-    		</li>
+    		</div>
   
-    		<li>
+    		<div class="li">
         		<input type="radio" name="tabs" id="tab2" />
         		<label for="tab2">2</label>
         		<div id="tab-content2" class="tab-content">
           			<p>2</p>
         		</div>
-    		</li>
+    		</div>
 		<!--</ul>-->
 		</div>
 		<br style="clear: both;" />
 
 
 
-      <!--</div>-->
+      </div>
     </div>
     <div class="container">
       <!-- Example row of columns -->
