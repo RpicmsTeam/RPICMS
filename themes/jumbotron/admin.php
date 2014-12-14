@@ -109,8 +109,8 @@ foreach($langs as $prio => $lang) {
 		/*@import url("http://fonts.googleapis.com/css?family=Lato");*/
 		
 		* {
-  			margin: 0;
-  			padding: 0;
+  			/*margin: 0;
+  			padding: 0;*/
   			-moz-box-sizing: border-box;
   			-webkit-box-sizing: border-box;
   			box-sizing: border-box;
