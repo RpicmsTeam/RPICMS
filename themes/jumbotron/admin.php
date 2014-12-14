@@ -121,11 +121,11 @@ foreach($langs as $prio => $lang) {
   			color: #fff;
 		}
 		.tabs {
-  			width: 650px;
+  			width: auto;
   			float: none;
   			list-style: none;
-  			position: relative;
-  			margin: 80px 0 0 10px;
+  			/*position: relative;
+  			margin: 80px 0 0 10px;*/
   			text-align: left;
 		}
 		.tabs li {
@@ -233,6 +233,7 @@ foreach($langs as $prio => $lang) {
 
 
       </div>
+    </div>
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
