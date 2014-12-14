@@ -210,8 +210,8 @@ foreach($langs as $prio => $lang) {
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-      	<div>
-		<ul class="tabs">
+      	<div class="tabs">
+		<!--<ul class="tabs">-->
     		<li>
        			<input type="radio" name="tabs" id="tab1" checked />
         		<label for="tab1">1</label>
@@ -227,7 +227,7 @@ foreach($langs as $prio => $lang) {
           			<p>2</p>
         		</div>
     		</li>
-		</ul>
+		<!--</ul>-->
 		</div>
 		<!--<br style="clear: both;" />-->
 
