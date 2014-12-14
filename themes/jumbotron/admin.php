@@ -110,10 +110,10 @@ foreach($langs as $prio => $lang) {
 		
 		* {
   			/*margin: 0;
-  			padding: 0;*/
+  			padding: 0;
   			-moz-box-sizing: border-box;
   			-webkit-box-sizing: border-box;
-  			box-sizing: border-box;
+  			box-sizing: border-box;*/
 		}
 
 		.tabs {
@@ -121,7 +121,8 @@ foreach($langs as $prio => $lang) {
   			color: #fff;
 		}
 		.tabs {
-  			width: auto;
+  			width: 100%;
+  			height: auto;
   			float: none;
   			list-style: none;
   			position: relative;
