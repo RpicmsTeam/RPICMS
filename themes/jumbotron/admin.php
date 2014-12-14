@@ -125,7 +125,7 @@ foreach($langs as $prio => $lang) {
   			float: none;
   			list-style: none;
   			position: relative;
-  			margin: 80px 0 0 10px;
+  			margin: 80px 0 0 0;
   			text-align: left;
 		}
 		.tabs li {
