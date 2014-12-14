@@ -49,14 +49,17 @@ if ($root_3[1] == "core") {
 	next_id_category();
 	next_id_author();
 	function next_id_category(){
+		global $root;
 		include($root . '/core/config/connect.db.inc.php');
 		read_category();
 	}
 	function next_id_author(){
+		global $root;
 		include($root . '/core/config/connect.db.inc.php');
 		read_author();
 	}
 	function next_id_only(){
+		global $root;
 		include($root . '/core/config/connect.db.inc.php');
 		read_only();
 	}
