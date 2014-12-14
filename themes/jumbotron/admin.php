@@ -106,7 +106,7 @@ foreach($langs as $prio => $lang) {
       }
     </script>
     <style type="text/css">
-		@import url("http://fonts.googleapis.com/css?family=Lato");
+		/*@import url("http://fonts.googleapis.com/css?family=Lato");
 		* {
   			margin: 0;
   			padding: 0; 
@@ -117,7 +117,7 @@ foreach($langs as $prio => $lang) {
   			text-align: left;
   			font-family: Lato;
   			color: #fff; 
-		}
+		}*/
 		.tabs {
   			width: 650px;  
   			float: none;
