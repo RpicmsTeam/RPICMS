@@ -18,4 +18,19 @@ if ($root_3[1] == 'core') {
 }
 include($root . '/core/config/variables.config.php');
 
+if ($resultat = $connection->query('SELECT id FROM posts')) {
+	while($daten = $resultat->fetch_object() ){
+ 		$post_id_clean = $daten->id;
+ 		$ids = $post_id_clean+1;
+ 		#var_dump($daten);
+	}
+  	#$resultat->close();
+}
+
+$author = "not implemented yet";
+
+if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', '$date', '$category')")) {
+  	$resultat->close();
+}
+
 ?>
