@@ -133,9 +133,9 @@ foreach($langs as $prio => $lang) {
   			display: block;
 		}
 		.tabs input[type="radio"] {
-  			position: absolute;
+  			/*position: absolute;
   			top: -9999px;
-  			left: -9999px;
+  			left: -9999px;*/
 		}
 		.tabs label {
   			display: block;
@@ -146,8 +146,8 @@ foreach($langs as $prio => $lang) {
   			text-transform: uppercase;
   			background: lightgrey;
   			cursor: pointer;
-  			position: relative;
-  			top: 4px;
+  			/*position: relative;
+  			top: 4px;-->*/
   			-moz-transition: all 0.2s ease-in-out;
   			-o-transition: all 0.2s ease-in-out;
   			-webkit-transition: all 0.2s ease-in-out;
