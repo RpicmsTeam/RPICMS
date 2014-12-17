@@ -140,7 +140,7 @@ foreach($langs as $prio => $lang) {
   			font-size: 20px;
   			font-weight: normal;
   			text-transform: uppercase;
-  			background: lightgrey;
+  			background: #222222;
   			cursor: pointer;
   			position: relative;
   			top: 4px;
@@ -150,7 +150,7 @@ foreach($langs as $prio => $lang) {
   			transition: all 0.2s ease-in-out;
 		}
 		.tabs label:hover {
-  			background: #b9b9b9;
+  			background: #090909;
 		}
 		.tabs .tab-content {
   			z-index: 2;
@@ -163,7 +163,7 @@ foreach($langs as $prio => $lang) {
   			position: absolute;
   			top: 53px;
   			left: 0;
-  			background: #adadad;
+  			background: #c8c8c8;
 		}
 		.tabs [id^="tab"]:checked + label {
  			top: 0;
@@ -197,7 +197,7 @@ foreach($langs as $prio => $lang) {
         		<input type="radio" name="tabs" id="tab2" />
         		<label for="tab2">2</label>
         	</div>
-          <!--</div>-->
+          </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
@@ -217,7 +217,7 @@ foreach($langs as $prio => $lang) {
     <div class="jumbotron">
       <div class="container">
       	<h1>Administration</h1>
-      	<!--<div class="tabs">-->
+      	<div class="tabs">
     		<div class="li">
         		<div id="tab-content1" class="tab-content">
           			<p>1</p>
