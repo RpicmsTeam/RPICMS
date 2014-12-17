@@ -188,8 +188,12 @@ foreach($langs as $prio => $lang) {
           <?php
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
-          	<input type="radio" name="tabs" id="tab1" checked />
-        	<label for="tab1">1</label>
+          <div class="tabs">
+          	<div class="li">
+          		<input type="radio" name="tabs" id="tab1" checked />
+        		<label for="tab1">1</label>
+        	</div>
+          </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
