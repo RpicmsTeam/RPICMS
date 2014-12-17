@@ -193,6 +193,10 @@ foreach($langs as $prio => $lang) {
           		<input type="radio" name="tabs" id="tab1" checked />
         		<label for="tab1">1</label>
         	</div>
+        	<div class="li">
+        		<input type="radio" name="tabs" id="tab2" />
+        		<label for="tab2">2</label>
+        	</div>
           </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -216,16 +220,12 @@ foreach($langs as $prio => $lang) {
       	<div class="tabs">
 		<!--<ul class="tabs">-->
     		<div class="li">
-       			<input type="radio" name="tabs" id="tab1" checked />
-        		<label for="tab1">1</label>
         		<div id="tab-content1" class="tab-content">
           			<p>1</p>
         		</div>
     		</div>
   
     		<div class="li">
-        		<input type="radio" name="tabs" id="tab2" />
-        		<label for="tab2">2</label>
         		<div id="tab-content2" class="tab-content">
           			<p>2</p>
         		</div>
