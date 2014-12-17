@@ -170,7 +170,7 @@ foreach($langs as $prio => $lang) {
   			padding-top: 17px;
   			background: #5a5a5a;
 		}
-		.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+		.tabs:checked {
   			display: block;
 		}
     </style>
