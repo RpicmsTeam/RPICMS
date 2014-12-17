@@ -197,7 +197,7 @@ foreach($langs as $prio => $lang) {
         		<input type="radio" name="tabs" id="tab2" />
         		<label for="tab2">2</label>
         	</div>
-          </div>
+          <!--</div>-->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
@@ -229,8 +229,8 @@ foreach($langs as $prio => $lang) {
           			<p>2</p>
         		</div>
     		</div>
-		<!--</div>
-		<br style="clear: both;" />-->
+		</div>
+		<br style="clear: both;" />
 
 
 
