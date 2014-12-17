@@ -217,8 +217,7 @@ foreach($langs as $prio => $lang) {
     <div class="jumbotron">
       <div class="container">
       	<h1>Administration</h1>
-      	<div class="tabs">
-		<!--<ul class="tabs">-->
+      	<!--<div class="tabs">-->
     		<div class="li">
         		<div id="tab-content1" class="tab-content">
           			<p>1</p>
@@ -230,9 +229,8 @@ foreach($langs as $prio => $lang) {
           			<p>2</p>
         		</div>
     		</div>
-		<!--</ul>-->
-		</div>
-		<br style="clear: both;" />
+		<!--</div>
+		<br style="clear: both;" />-->
 
 
 
