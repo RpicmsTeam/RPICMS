@@ -27,7 +27,7 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
           var divs = document.getElementsByClassName("hide_");
           for(var i=0;i<divs.length;i++) {
             divs[i].style.display = "none";
-            divs[1].style.display = "none";
+            divs[1].style.display = "block";
           }
           divid.style.display = "block";
         } 
