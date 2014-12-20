@@ -23,7 +23,7 @@ $filename = '../core/config/connect.db.inc.php';
 //  #Serverpfad
     $db_address = $_POST["db_address"];
     $var_str_sp = var_export($db_address, true);
-    $var_sp = "<?php\n\n\$db_serveraddress = $var_str_sp;\n";
+    $var_sp = "<?php\n\n\$db_servername = $var_str_sp;\n";
 
             // Schreibe $somecontent in die geöffnete Datei.
             if (!fwrite($handle, $var_sp)) {
