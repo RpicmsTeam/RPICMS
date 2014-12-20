@@ -78,7 +78,7 @@ foreach($langs as $prio => $lang) {
     <link href="jumbotron.css" rel="stylesheet">
 
     <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
-
+    <script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
