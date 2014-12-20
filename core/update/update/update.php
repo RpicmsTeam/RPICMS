@@ -20,7 +20,7 @@ if ($root_3[1] == 'core') {
 ini_set('max_execution_time', 60);
 
 define('UPDATE_DIR_TEMP', dirname(__FILE__).'/temp/');
-define('UPDATE_DIR_INSTALL', $root);
+define('UPDATE_DIR_INSTALL', $root . '/');
 
 class AutoUpdate {
 	/*
