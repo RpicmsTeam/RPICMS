@@ -148,12 +148,12 @@ foreach($langs as $prio => $lang) {
       	<hr class="one">
   		<!-- Tab panes -->
   		<div class="tab-content">
-  			<div role="tabpanel" class="tab-pane active" id="settings">
+  			<div role="tabpanel" class="tab-pane fade in active" id="settings">
   				<p>1</p>
   			</div>
 
-    		<div role="tabpanel" class="tab-pane" id="newpost">
-				<p>3</p>
+    		<div role="tabpanel" class="tab-pane fade" id="newpost">
+				<h2>New Post</h2>
 			</div>
   		</div>
       </div>
