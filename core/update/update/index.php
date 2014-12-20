@@ -7,7 +7,7 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 require('update.php');
 
 $update = new AutoUpdate(true);
-$update->currentVersion = 0.1; //Must be an integer - you can't compare strings
+$update->currentVersion = 1; //Must be an integer - you can't compare strings
 $update->updateUrl = 'https://media.nordgedanken.de/rpicms/update/server'; //Replace with your server update directory
 
 //Check for a new update
