@@ -123,10 +123,6 @@ foreach($langs as $prio => $lang) {
           <?php
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
-          <div role="tabpanel">
-  				<!-- Nav tabs -->
-  				<ul class="nav nav-pills" role="tablist">
-  					<li role="presentation"><a href="#Settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
   					<li role="presentation" class="dropdown">
     					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-controls="posts" >Posts<span class="caret"></span></a>
     					<ul class="dropdown-menu" role="menu">
@@ -137,6 +133,17 @@ foreach($langs as $prio => $lang) {
 			</div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+        	<ul class="nav navbar-nav">
+        		<li class="active"><a href="#settings">Settings <span class="sr-only">(current)</span></a></li>
+        		<li class="dropdown">
+        			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
+        			<ul class="dropdown-menu" role="menu">
+        				<li><a href="#posts">Posts</a></li>
+        				<li class="divider"></li>
+        				<li><a href="#newpost">New Post</a></li>
+        			</ul>
+        		</li>
+        	</ul>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -148,11 +155,15 @@ foreach($langs as $prio => $lang) {
       	<hr class="one">
   		<!-- Tab panes -->
   		<div class="tab-content">
-  			<div role="tabpanel" class="tab-pane fade in active" id="settings">
+  			<div id="settings">
   				<p>1</p>
   			</div>
 
-    		<div role="tabpanel" class="tab-pane fade" id="newpost">
+    		<div id="posts">
+				<h2>Posts</h2>
+			</div>
+
+    		<div id="newpost">
 				<h2>New Post</h2>
 			</div>
   		</div>
