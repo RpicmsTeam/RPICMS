@@ -47,7 +47,7 @@ class AutoUpdate {
 	/*
 	 * Url to the update folder on the server
 	 */
-	public $updateUrl = 'http://example.com/updates/';
+	public $updateUrl = 'http://media.nordgedanken.de/rpicms/update/server';
 	
 	/*
 	 * Version filename on the server
