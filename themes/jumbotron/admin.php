@@ -128,11 +128,11 @@ foreach($langs as $prio => $lang) {
         	<div role="tabpanel">
   				<!-- Nav tabs -->
   				<ul class="nav nav-tabs" role="tablist">
-  					<li role="presentation"><a href="#Settings" aria-controls="Settings" role="tab" data-toggle="tab">Settings</a></li>
+  					<li role="presentation"><a href="#Settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
   					<li role="presentation" class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-controls="posts" >Posts<span class="caret"></span></a>
+    					<a class="dropdown-toggle" data-toggle="dropdown" href="#posts" role="button" aria-expanded="false" aria-controls="posts" >Posts<span class="caret"></span></a>
     					<ul class="dropdown-menu" role="menu">
-      					xyz
+      					<li role="presentation"><a href="#newpost" aria-controls="newpost" role="tab" data-toggle="tab">New Post</a></li>
    						</ul>
    					</li>
   				</ul>
@@ -158,6 +158,7 @@ foreach($langs as $prio => $lang) {
   		<div class="tab-content">
   			<div role="tabpanel" class="tab-pane" id="settings">1</div>
     		<div role="tabpanel" class="tab-pane" id="posts">2</div>
+    		<div role="tabpanel" class="tab-pane" id="newpost">3</div>
   		</div>
       </div>
     </div>
