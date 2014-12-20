@@ -1,3 +1,9 @@
+<?php
+#######################
+# flush browser cache #
+#######################
+header("Cache-Control: no-cache, must-revalidate, no-store");
+?>
 <html>
 <head>
     <!-- Bootstrap core CSS -->
