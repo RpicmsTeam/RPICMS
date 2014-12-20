@@ -158,7 +158,7 @@ foreach($langs as $prio => $lang) {
   		<!-- Tab panes -->
   		<div class="tab-content">
   			<div class="hide_" id="settings">
-  				<p>1</p>
+  				<h2>Settings</h2>
   			</div>
 
     		<div class="hide_" id="posts">
@@ -167,6 +167,9 @@ foreach($langs as $prio => $lang) {
 
     		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
+					<form method="post" action="somepage">
+    					<textarea name="content" style="width:100%"></textarea>
+					</form>
 			</div>
   		</div>
       </div>
