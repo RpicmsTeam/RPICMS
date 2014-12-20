@@ -1,4 +1,8 @@
 <?php 
+#######################
+# flush browser cache #
+#######################
+header("Cache-Control: no-cache, must-revalidate, no-store");
 
 require('update.php');
 
