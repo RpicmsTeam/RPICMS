@@ -41,7 +41,7 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
     background:url('http://www.fillmurray.com/250/250');
     cursor:pointer;
 }
-.hide {
+.hide_ {
     display:none;
 }
 </style>
