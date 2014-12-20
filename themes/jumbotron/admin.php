@@ -156,7 +156,7 @@ foreach($langs as $prio => $lang) {
       	<h1>Administration</h1>
   		<!-- Tab panes -->
   		<div class="tab-content">
-  			<div role="tabpanel" class="tab-pane" id="settings">1</div>
+  			<div role="tabpanel" class="tab-pane active" id="settings">1</div>
     		<div role="tabpanel" class="tab-pane" id="posts">2</div>
     		<div role="tabpanel" class="tab-pane" id="newpost">3</div>
   		</div>
