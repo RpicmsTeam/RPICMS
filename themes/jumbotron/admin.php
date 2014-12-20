@@ -123,9 +123,7 @@ foreach($langs as $prio => $lang) {
           <?php
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-        	<div role="tabpanel">
+          <div role="tabpanel">
   				<!-- Nav tabs -->
   				<ul class="nav nav-pills" role="tablist">
   					<li role="presentation"><a href="#Settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
@@ -137,6 +135,8 @@ foreach($langs as $prio => $lang) {
    					</li>
   				</ul>
 			</div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
