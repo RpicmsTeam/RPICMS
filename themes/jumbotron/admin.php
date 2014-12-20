@@ -150,7 +150,11 @@ foreach($langs as $prio => $lang) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
-        		<li class="active" onclick="showhide('settings');"><a href="#">Settings <span class="sr-only">(current)</span></a></li>
+        		<li class="dropdown">
+        			<a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
+					<ul class="dropdown-menu" role="menu">
+        				<li onclick="showhide('update');"><a href="#">Update</a></li>
+        			</ul>
         		<li class="dropdown">
         			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
         			<ul class="dropdown-menu" role="menu">
@@ -171,6 +175,10 @@ foreach($langs as $prio => $lang) {
   		<div class="tab-content">
   			<div class="hide_" id="settings">
   				<h2>Settings</h2>
+  			</div>
+
+  			<div class="hide_" id="update">
+  				<h2>Updates</h2>
   			</div>
 
     		<div class="hide_" id="posts">
