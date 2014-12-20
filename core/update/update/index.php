@@ -8,7 +8,7 @@ require('update.php');
 
 $update = new AutoUpdate(true);
 $update->currentVersion = 1; //Must be an integer - you can't compare strings
-$update->updateUrl = 'https://media.nordgedanken.de/rpicms/update/server'; //Replace with your server update directory
+$update->updateUrl = 'http://media.nordgedanken.de/rpicms/update/server'; //Replace with your server update directory
 
 //Check for a new update
 $latest = $update->checkUpdate();
