@@ -17,3 +17,6 @@ hr.one{
 .hide_ {
     display:none;
 }
+.dropdown:hover .dropdown-menu {
+    display: block;
+ }
