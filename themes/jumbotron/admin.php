@@ -180,7 +180,7 @@ foreach($langs as $prio => $lang) {
   			<div class="hide_" id="update">
   				<h2>Updates</h2>
   				<?php
-  				require($root . '/core/update/update.php');
+  				require($root . '/core/update/update/update.php');
 
 				$update = new AutoUpdate(true);
 				$update->currentVersion = 1; //Must be an integer - you can't compare strings
