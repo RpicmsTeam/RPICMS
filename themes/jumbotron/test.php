@@ -4,6 +4,7 @@
 #######################
 header("Cache-Control: no-cache, must-revalidate, no-store");
 ?>
+<!DOCTYPE html>
 <html>
 <head>
     <!-- Bootstrap core CSS -->
