@@ -129,8 +129,7 @@ foreach($langs as $prio => $lang) {
         	"advlist autolink lists link image charmap print preview anchor",
         	"searchreplace visualblocks code fullscreen",
         	"insertdatetime media table contextmenu paste"
-    	],
-    	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+    	]
 	});
 	</script>
   </head>
@@ -180,7 +179,6 @@ foreach($langs as $prio => $lang) {
     		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
 					<form method="post">
-						<p>test</p>
     					<textarea name="content" style="width:100%"></textarea>
 					</form>
 			</div>
