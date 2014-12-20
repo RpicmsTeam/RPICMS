@@ -33,6 +33,18 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
         return false;
  	}
 </script>
+<<style type="text/css">
+	.bio_image {
+    display:inline-block;
+    height:250px;
+    width:250px;
+    background:url('http://www.fillmurray.com/250/250');
+    cursor:pointer;
+}
+.hide {
+    display:none;
+}
+</style>
 </head>
 <body>
 <div onclick="showhide('bill');" class="bio_image"><div class="name">Bill Murray</div></div>
