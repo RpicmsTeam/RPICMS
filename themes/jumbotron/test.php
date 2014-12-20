@@ -33,8 +33,8 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
         return false;
  	}
 </script>
-<<style type="text/css">
-	.bio_image {
+<style type="text/css">
+.bio_image {
     display:inline-block;
     height:250px;
     width:250px;
