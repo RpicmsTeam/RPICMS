@@ -103,12 +103,6 @@ foreach($langs as $prio => $lang) {
         }
       }
     </script>
-    <script type="text/javascript">
-    	$('#myTab a').click(function (e) {
-  			e.preventDefault()
-  			$(this).tab('show')
-		})
-    </script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
