@@ -14,32 +14,21 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
-	function hideElementByVisible(obj) {
-		document.getElementById(obj).style.visibility = "hidden";
-	}
+	$​('#w').live('click', function(){
+		$('#a').css('display','block');
+	});
 
-	function showElementByVisible(obj) {
-		document.getElementById(obj).style.visibility = "visible";
-	}
+	$('#x').live('click', function(){
+		$('#b').css('display','block');
+	});
 
-	function hideElementByDisplay(obj) {
-		document.getElementById(obj).style.display = "none";
-	}
+	$('#y').live('click', function(){
+		$('#c').css('display','block');
+	});
 
-	function showElementDisplay(obj) {
-		document.getElementById(obj).style.display = "inline";
-	}
-
-	function showElementByDisplay(obj,prop) {
-		if(prop == "block") {
-			document.getElementById(obj).style.display = "block";
-		}
-		else if(prop == "inline") {
-			document.getElementById(obj).style.display = "inline";
-		}
-	}
-
-
+	$('#z').live('click', function(){
+		$('#d').css('display','block');
+	});
 </script>
 </head>
 <body>
