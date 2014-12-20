@@ -19,14 +19,14 @@ if ($root_3[1] == 'core') {
  */
 ini_set('max_execution_time', 60);
 
-define('UPDATE_DIR_TEMP', dirname(__FILE__).'/temp/');
+define('UPDATE_DIR_TEMP', $root . '/');
 define('UPDATE_DIR_INSTALL', $root . '/');
 
 class AutoUpdate {
 	/*
 	 * Enable logging
 	 */
-	private $_log = false;
+	private $_log = true;
 	
 	/* 
 	 * Log file
@@ -86,7 +86,7 @@ class AutoUpdate {
 	/*
 	 * Create new folders with this privileges
 	 */
-	public $dirPermissions = 0755;
+	public $dirPermissions = 0775;
 	
 	/*
 	 * Update script filename
