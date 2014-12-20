@@ -127,7 +127,7 @@ foreach($langs as $prio => $lang) {
         <div id="navbar" class="navbar-collapse collapse">
         	<div role="tabpanel">
   				<!-- Nav tabs -->
-  				<ul class="nav nav-tabs" role="tablist">
+  				<ul class="nav nav-pills" role="tablist">
   					<li role="presentation"><a href="#Settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
   					<li role="presentation" class="dropdown">
     					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-controls="posts" >Posts<span class="caret"></span></a>
