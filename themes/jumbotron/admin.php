@@ -123,14 +123,6 @@ foreach($langs as $prio => $lang) {
           <?php
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
-  					<li role="presentation" class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-controls="posts" >Posts<span class="caret"></span></a>
-    					<ul class="dropdown-menu" role="menu">
-      					<li role="presentation"><a href="#newpost" aria-controls="newpost" role="tab" data-toggle="tab">New Post</a></li>
-   						</ul>
-   					</li>
-  				</ul>
-			</div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
