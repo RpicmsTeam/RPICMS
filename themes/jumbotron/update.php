@@ -52,11 +52,11 @@ if ($latest !== false) {
 else {
 	echo $update->getLastError();
 }
-}
 // dauerhafte PHP-Weiterleitung (Statuscode 301)
 header("HTTP/1.1 301 Moved Permanently");
 // Weiterleitungsziel. Wohin soll eine permanente Weiterleitung erfolgen?
 header("Location:admin.php");
 // zur Sicherheit ein exit-Aufruf, falls Probleme aufgetreten sind
 exit;
+}
 ?>
