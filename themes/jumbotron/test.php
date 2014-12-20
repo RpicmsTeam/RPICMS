@@ -7,8 +7,8 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Bootstrap core CSS 
-    <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- Bootstrap core CSS -->
+    <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
 
@@ -24,7 +24,7 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 	function showhide(id){
         if (document.getElementById) {
           var divid = document.getElementById(id);
-          var divs = document.getElementsByClassName("hide");
+          var divs = document.getElementsByClassName("hide_");
           for(var i=0;i<divs.length;i++) {
             divs[i].style.display = "none";
           }
@@ -50,8 +50,8 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 <div onclick="showhide('bill');" class="bio_image"><div class="name">Bill Murray</div></div>
 <div onclick="showhide('bill2');" class="bio_image"><div class="name">Bill Murray</div></div>
 <div onclick="showhide('bill3');" class="bio_image"><div class="name">Bill Murray</div></div>
-<div class="hide" id="bill">BILL</div>
-<div class="hide" id="bill2">BILL2</div>
-<div class="hide" id="bill3">BILL3</div>
+<div class="hide_" id="bill">BILL</div>
+<div class="hide_" id="bill2">BILL2</div>
+<div class="hide_" id="bill3">BILL3</div>
 </body>
 </html>
