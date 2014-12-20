@@ -137,23 +137,14 @@ foreach($langs as $prio => $lang) {
    					</li>
   				</ul>
 			</div>
-        <!--<form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
-            <div class="form-group">
-              <input type="email" placeholder="Email" class="form-control" name="username" required="required" title="Please insert a valid Email (example@email.com)" x-moz-errormessage="Please insert a valid Email (example@email.com)">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control" name="password" required="required">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>-->
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
+    	<h1>Administration</h1>
       <div class="container">
-      	<h1>Administration</h1>
   		<!-- Tab panes -->
   		<div class="tab-content">
   			<div role="tabpanel" class="tab-pane active" id="settings">1</div>
