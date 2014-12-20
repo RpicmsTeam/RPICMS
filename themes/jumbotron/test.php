@@ -24,12 +24,14 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 	function showhide(id){
         if (document.getElementById) {
           var divid = document.getElementById(id);
+          var divid1 = document.getElementById(bill);
           var divs = document.getElementsByClassName("hide_");
           for(var i=0;i<divs.length;i++) {
             divs[i].style.display = "none";
-            divs[1].style.display = "block";
+            divid1.style.display = "block";
           }
           divid.style.display = "block";
+
         } 
         return false;
  	}
