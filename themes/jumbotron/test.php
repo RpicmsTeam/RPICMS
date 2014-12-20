@@ -7,10 +7,10 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Bootstrap core CSS -->
-    <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template 
-    <link href="jumbotron.css" rel="stylesheet">-->
+    <!-- Bootstrap core CSS 
+    <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
 
     <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
     <script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>
