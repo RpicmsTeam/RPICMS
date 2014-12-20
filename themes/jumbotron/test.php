@@ -20,32 +20,26 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
-	$​('#w').live('click', function(){
-		$('#a').css('display','block');
-	});
+	$('div.buttons').on('click', 'input', function() {
+    	var divs = $('div.showThese').children();
 
-	$('#x').live('click', function(){
-		$('#b').css('display','block');
-	});
-
-	$('#y').live('click', function(){
-		$('#c').css('display','block');
-	});
-
-	$('#z').live('click', function(){
-		$('#d').css('display','block');
+    	divs.eq($(this).index()).show().siblings().hide();
 	});
 </script>
 </head>
 <body>
-<div id="a" style="display:none">1</div>
-<div id="b" style="display:none">2</div>
-<div id="c" style="display:none">3</div>
-<div id="d" style="display:none" >4</div>
+<div class="showThese">
+    <div id="a" style="display:none">1</div>
+    <div id="b" style="display:none">2</div>
+    <div id="c" style="display:none">3</div>
+    <div id="d" style="display:none" >4</div>
+</div>
 
-<input type="button" value="1" id="w">
-<input type="button" value="2" id="x">
-<input type="button" value="3" id="y">
-<input type="button" value="4" id="z">
+<div class="buttons">
+    <input type="button" value="1" id="w">
+    <input type="button" value="2" id="x">
+    <input type="button" value="3" id="y">
+    <input type="button" value="4" id="z">
+</div>
 </body>
 </html>
