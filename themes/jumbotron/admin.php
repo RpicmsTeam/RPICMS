@@ -145,7 +145,7 @@ foreach($langs as $prio => $lang) {
     <div class="jumbotron">
       <div class="container">
       	<h1>Administration</h1>
-      	<hr>
+      	<hr class="one">
   		<!-- Tab panes -->
   		<div class="tab-content">
   			<div role="tabpanel" class="tab-pane active" id="settings">
