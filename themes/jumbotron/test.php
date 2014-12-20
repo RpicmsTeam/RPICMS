@@ -21,20 +21,23 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
-	function showhide(id){
-        if (document.getElementById) {
-          var divid = document.getElementById(id);
-          var divid1 = document.getElementById(bill);
-          var divs = document.getElementsByClassName("hide_");
-          for(var i=0;i<divs.length;i++) {
-            divs[i].style.display = "none";
-            divid1.style.display = "block";
-          }
-          divid.style.display = "block";
+	function showhide(id) {
+    	if (document.getElementById) {
+        	var divid = document.getElementById(id);
+        	var divs = document.getElementsByClassName("hide_");
+        	for (var i = 0; i < divs.length; i++) {
+           		divs[i].style.display = "none";
+        	}
+        	divid.style.display = "block";
+    	}
+    return false;
+	}
 
-        } 
-        return false;
- 	}
+	function foo() {
+    	var divid1 = document.getElementById("bill");
+    	divid1.style.display = "block";
+	}
+	onload = foo;
 </script>
 <style type="text/css">
 .bio_image {

@@ -103,6 +103,24 @@ foreach($langs as $prio => $lang) {
         }
       }
     </script>
+    <script type="text/javascript">
+		function showhide(id) {
+    		if (document.getElementById) {
+        		var divid = document.getElementById(id);
+        		var divs = document.getElementsByClassName("hide_");
+        		for (var i = 0; i < divs.length; i++) {
+           			divs[i].style.display = "none";
+        		}
+        		divid.style.display = "block";
+    		}
+    	return false;
+		}
+		function foo() {
+    		var divid1 = document.getElementById("settings");
+    		divid1.style.display = "block";
+		}
+		onload = foo;
+	</script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -120,13 +138,13 @@ foreach($langs as $prio => $lang) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
-        		<li class="active"><a href="#settings">Settings <span class="sr-only">(current)</span></a></li>
+        		<li class="active" onclick="showhide('settings');"><a href="#settings">Settings <span class="sr-only">(current)</span></a></li>
         		<li class="dropdown">
-        			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
+        			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
         			<ul class="dropdown-menu" role="menu">
-        				<li><a href="#posts">Posts</a></li>
+        				<li onclick="showhide('posts');"><a href="#posts">Posts</a></li>
         				<li class="divider"></li>
-        				<li><a href="#newpost">New Post</a></li>
+        				<li onclick="showhide('newpost');"><a href="#newpost">New Post</a></li>
         			</ul>
         		</li>
         	</ul>
@@ -141,15 +159,15 @@ foreach($langs as $prio => $lang) {
       	<hr class="one">
   		<!-- Tab panes -->
   		<div class="tab-content">
-  			<div id="settings">
+  			<div class="hide_" id="settings">
   				<p>1</p>
   			</div>
 
-    		<div id="posts">
+    		<div class="hide_" id="posts">
 				<h2>Posts</h2>
 			</div>
 
-    		<div id="newpost">
+    		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
 			</div>
   		</div>
