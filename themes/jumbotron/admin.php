@@ -124,14 +124,14 @@ foreach($langs as $prio => $lang) {
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
         </div>
-        <div role="tabpanel">
-  			<!-- Nav tabs -->
-  			<ul class="nav-pills" role="tablist">
-  				<li role="presentation" class="active"><a href="#Settings" aria-controls="Settings" role="tab" data-toggle="tab">Settings</a></li>
-    			<li role="presentation"><a href="#posts" aria-controls="posts" role="tab" data-toggle="tab">Posts</a></li>
-  			</ul>
-		</div>
         <div id="navbar" class="navbar-collapse collapse">
+        	<div role="tabpanel">
+  				<!-- Nav tabs -->
+  				<ul class="nav nav-pills" role="tablist">
+  					<li role="presentation"><a href="#Settings" aria-controls="Settings" role="tab" data-toggle="tab">Settings</a></li>
+    				<li role="presentation"><a href="#posts" aria-controls="posts" role="tab" data-toggle="tab">Posts</a></li>
+  				</ul>
+			</div>
         <form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
             <div class="form-group">
               <input type="email" placeholder="Email" class="form-control" name="username" required="required" title="Please insert a valid Email (example@email.com)" x-moz-errormessage="Please insert a valid Email (example@email.com)">
