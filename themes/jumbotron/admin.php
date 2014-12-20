@@ -179,7 +179,7 @@ foreach($langs as $prio => $lang) {
 
     		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
-					<form method="post" action="somepage">
+					<form method="post">
     					<textarea name="content" style="width:100%"></textarea>
 					</form>
 			</div>
