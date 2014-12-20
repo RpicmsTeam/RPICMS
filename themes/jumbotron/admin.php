@@ -143,8 +143,9 @@ foreach($langs as $prio => $lang) {
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-    	<h1>Administration</h1>
       <div class="container">
+      	<h1>Administration</h1>
+      	<hr>
   		<!-- Tab panes -->
   		<div class="tab-content">
   			<div role="tabpanel" class="tab-pane active" id="settings">1</div>
