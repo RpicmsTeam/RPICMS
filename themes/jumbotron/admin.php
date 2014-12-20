@@ -77,10 +77,8 @@ foreach($langs as $prio => $lang) {
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    
-    <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../core/libs/theme_engine/BootStrap/js/ie-emulation-modes-warning.js"></script>
+    <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -105,75 +103,6 @@ foreach($langs as $prio => $lang) {
         }
       }
     </script>
-    <style type="text/css">
-		/*@import url("http://fonts.googleapis.com/css?family=Lato");*/
-		
-
-		.tabs {
-  			text-align: left;
-  			color: #fff;
-		}
-		.tabs {
-			padding-top: 31px;
-  			padding-bottom: 31px;
-  			width: 100%;
-  			height: auto;
-  			float: none;
-  			list-style: none;
-  			position: relative;
-  			margin: 0 0 0 10px;
-  			text-align: left;
-		}
-		.tabs .li {
-  			float: left;
-  			display: block;
-		}
-		.tabs input[type="radio"] {
-  			position: absolute;
-  			top: -9999px;
-  			left: -9999px;
-		}
-		.tabs label {
-  			display: block;
-  			padding: 14px 21px;
-  			border-radius: 2px 2px 0 0;
-  			font-size: 20px;
-  			font-weight: normal;
-  			text-transform: uppercase;
-  			background: #222222;
-  			cursor: pointer;
-  			position: relative;
-  			top: 4px;
-  			/*-moz-transition: all 0.2s ease-in-out;
-  			-o-transition: all 0.2s ease-in-out;
-  			-webkit-transition: all 0.2s ease-in-out;
-  			transition: all 0.2s ease-in-out;*/
-		}
-		.tabs label:hover {
-  			background: #090909;
-		}
-		.tabs .tab-content {
-  			z-index: 2;
-  			display: none;
-  			overflow: hidden;
-  			width: 100%;
-  			font-size: 17px;
-  			line-height: 25px;
-  			padding: 25px;
-  			position: absolute;
-  			top: 53px;
-  			left: 0;
-  			background: #c8c8c8;
-		}
-		.tabs [id^="tab"]:checked + label {
- 			top: 0;
-  			padding-top: 17px;
-  			background: #5a5a5a;
-		}
-		.tabs:checked {
-  			display: block;
-		}
-    </style>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -188,16 +117,6 @@ foreach($langs as $prio => $lang) {
           <?php
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
-          <div class="tabs">
-          	<div class="li">
-          		<input type="radio" name="tabs" id="tab1" checked />
-        		<label for="tab1">1</label>
-        	</div>
-        	<div class="li">
-        		<input type="radio" name="tabs" id="tab2" />
-        		<label for="tab2">2</label>
-        	</div>
-          </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         <form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
@@ -217,22 +136,6 @@ foreach($langs as $prio => $lang) {
     <div class="jumbotron">
       <div class="container">
       	<h1>Administration</h1>
-      	<div class="tabs">
-    		<div class="li">
-        		<div id="tab-content1" class="tab-content">
-          			<p>1</p>
-        		</div>
-    		</div>
-  
-    		<div class="li">
-        		<div id="tab-content2" class="tab-content">
-          			<p>2</p>
-        		</div>
-    		</div>
-		</div>
-		<br style="clear: both;" />
-
-
 
       </div>
     </div>
