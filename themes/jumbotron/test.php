@@ -21,26 +21,25 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <script type="text/javascript">
-	$('div.buttons').on('click', 'input', function() {
-    	var divs = $('div.showThese').children();
-
-    	divs.eq($(this).index()).show().siblings().hide();
-	});
+	function showhide(id){
+        if (document.getElementById) {
+          var divid = document.getElementById(id);
+          var divs = document.getElementsByClassName("hide");
+          for(var i=0;i<divs.length;i++) {
+            divs[i].style.display = "none";
+          }
+          divid.style.display = "block";
+        } 
+        return false;
+ 	}
 </script>
 </head>
 <body>
-<div class="showThese">
-    <div id="a" style="display:none">1</div>
-    <div id="b" style="display:none">2</div>
-    <div id="c" style="display:none">3</div>
-    <div id="d" style="display:none" >4</div>
-</div>
-
-<div class="buttons">
-    <input type="button" value="1" id="w">
-    <input type="button" value="2" id="x">
-    <input type="button" value="3" id="y">
-    <input type="button" value="4" id="z">
-</div>
+<div onclick="showhide('bill');" class="bio_image"><div class="name">Bill Murray</div></div>
+<div onclick="showhide('bill2');" class="bio_image"><div class="name">Bill Murray</div></div>
+<div onclick="showhide('bill3');" class="bio_image"><div class="name">Bill Murray</div></div>
+<div class="hide" id="bill">BILL</div>
+<div class="hide" id="bill2">BILL2</div>
+<div class="hide" id="bill3">BILL3</div>
 </body>
 </html>
