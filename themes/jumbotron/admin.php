@@ -129,7 +129,8 @@ foreach($langs as $prio => $lang) {
         	"advlist autolink lists link image charmap print preview anchor",
         	"searchreplace visualblocks code fullscreen",
         	"insertdatetime media table contextmenu paste"
-    	]
+    	],
+    	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 	});
 	</script>
   </head>
@@ -149,11 +150,11 @@ foreach($langs as $prio => $lang) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
-        		<li class="active" onclick="showhide('settings');"><a href="#settings">Settings <span class="sr-only">(current)</span></a></li>
+        		<li class="active" onclick="showhide('settings');"><a href="#">Settings <span class="sr-only">(current)</span></a></li>
         		<li class="dropdown">
         			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
         			<ul class="dropdown-menu" role="menu">
-        				<li onclick="showhide('newpost');"><a href="#newpost">New Post</a></li>
+        				<li onclick="showhide('newpost');"><a href="#">New Post</a></li>
         			</ul>
         		</li>
         	</ul>
