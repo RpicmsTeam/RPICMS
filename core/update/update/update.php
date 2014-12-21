@@ -188,6 +188,8 @@ class AutoUpdate {
 							$latest = $version['version'];
 							$update = $version['url'];
 						}
+					}else{
+						echo "xxxxx";
 					}
 				}
 				
