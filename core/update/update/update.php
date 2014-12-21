@@ -165,6 +165,7 @@ class AutoUpdate {
 	 * @return string The latest version
 	 */
 	public function checkUpdate() {
+		global $branch;
 		$this->log('Checking for a new update. . .');
 		
 		$updateFile = $this->updateUrl.'/update.ini';
@@ -180,11 +181,8 @@ class AutoUpdate {
 				$keyOld = 0;
 				$latest = 0;
 				$update = '';
-				var_dump($versions);
 				foreach ($versions as $key => $version) {
-					var_dump($key);
-					var_dump($version);
-					if ($branch == $versions['branch']){
+					if ($branch == $version['branch']){
 						if ($key > $keyOld) {
 							$keyOld = $key;
 							$latest = $version['version'];
