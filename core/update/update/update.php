@@ -46,7 +46,7 @@ class AutoUpdate {
 	/*
 	 * Current Branch
 	 */
-	public $branch = 'nightly';
+	#public $branch = 'nightly';
 
 	/*
 	 * Name of the latest version
