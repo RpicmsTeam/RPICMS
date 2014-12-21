@@ -64,9 +64,6 @@ else {
 		<meta name="author" content="">
     
 		<link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
-		<?php
-			echo "<title>$blog_name</title>";
-		?>
 
 		<!-- Bootstrap core CSS -->
 		<link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
