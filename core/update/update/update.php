@@ -183,7 +183,7 @@ class AutoUpdate {
 				var_dump($versions);
 				foreach ($versions as $key => $version) {
 					var_dump($key);
-					var_dump($version)
+					var_dump($version);
 					if ($branch == $versions['branch']){
 						if ($key > $keyOld) {
 							$keyOld = $key;
