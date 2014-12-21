@@ -180,9 +180,9 @@ class AutoUpdate {
 				$keyOld = 0;
 				$latest = 0;
 				$update = '';
-				
+				var_dump($versions);
 				foreach ($versions as $key => $version) {
-					if ($branch == $version['branch']){
+					if ($branch == $versions['branch']){
 						if ($key > $keyOld) {
 							$keyOld = $key;
 							$latest = $version['version'];
