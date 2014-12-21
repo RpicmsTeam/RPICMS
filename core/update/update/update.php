@@ -346,7 +346,7 @@ class AutoUpdate {
 			}
 			
 			$updateFile = $this->tempDir.'/'.$this->latestVersion.'.zip';
-			$updateUrl = $this->updateUrl.'/'.$this->latestVersion.'.zip';
+			$updateUrl = $this->updateUrl.'/'.$this->branch.$this->latestVersion.'.zip';
 			
 			//Download update
 			if (!is_file($updateFile)) {
