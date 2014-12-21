@@ -44,6 +44,11 @@ class AutoUpdate {
 	public $currentVersion = 0;
 	
 	/*
+	 * Current Branch
+	 */
+	public $branch = 'stable';
+
+	/*
 	 * Name of the latest version
 	 */
 	public $latestVersionName = '';
