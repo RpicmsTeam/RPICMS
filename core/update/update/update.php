@@ -188,8 +188,6 @@ class AutoUpdate {
 							$latest = $version['version'];
 							$update = $version['url'];
 						}
-					}else {
-						echo "missing branch";
 					}
 				}
 				
@@ -215,6 +213,7 @@ class AutoUpdate {
 	 */
 	public function downloadUpdate($updateUrl, $updateFile) {
 		$this->log('Downloading update...');
+		$updateUrl = $updateUrl . $branch;
 		$update = @file_get_contents($updateUrl);
 		
 		if ($update === false) {

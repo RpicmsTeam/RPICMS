@@ -28,6 +28,7 @@ require($root . '/core/update/update/update.php');
 
 $update = new AutoUpdate(true);
 $update->currentVersion = 1; //Must be an integer - you can't compare strings
+$update->branch = 'stable';
 $update->updateUrl = 'http://media.nordgedanken.de/rpicms/server'; //Replace with your server update directory
 
 //Check for a new update
