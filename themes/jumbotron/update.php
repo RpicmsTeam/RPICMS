@@ -34,6 +34,7 @@ $update->updateUrl = 'http://media.nordgedanken.de/rpicms/server'; //Replace wit
 //Check for a new update
 $latest = $update->checkUpdate();
 if ($latest !== false) {
+	echo $update->branch;
 	if ($latest > $update->currentVersion) {
 		//Install new update
 		echo "New Version: ".$update->latestVersionName."<br>";
