@@ -165,7 +165,6 @@ class AutoUpdate {
 	 * @return string The latest version
 	 */
 	public function checkUpdate() {
-		global $branch;
 		$this->log('Checking for a new update. . .');
 		
 		$updateFile = $this->updateUrl.'/update.ini';
@@ -182,7 +181,7 @@ class AutoUpdate {
 				$latest = 0;
 				$update = '';
 				foreach ($versions as $key => $version) {
-					if ($branch = $version['branch']){
+					if ($this->branch = $version['branch']){
 						if ($key > $keyOld) {
 							$keyOld = $key;
 							$latest = $version['version'];
@@ -215,7 +214,7 @@ class AutoUpdate {
 	 */
 	public function downloadUpdate($updateUrl, $updateFile) {
 		$this->log('Downloading update...');
-		$updateUrl = $updateUrl . $branch;
+		$updateUrl = $updateUrl . $this->branch;
 		$update = @file_get_contents($updateUrl);
 		
 		if ($update === false) {
