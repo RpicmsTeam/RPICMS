@@ -212,9 +212,8 @@ class AutoUpdate {
 	 * @param string $updateUrl Url where to download from
 	 * @param string $updateFile Path where to save the download
 	 */
-	public function downloadUpdate($updateUrl, $updateFile) {
+	public function downloadUpdate($updateUrl . $this->branch;, $updateFile) {
 		$this->log('Downloading update...');
-		$updateUrl = $updateUrl . $this->branch;
 		$update = @file_get_contents($updateUrl);
 		
 		if ($update === false) {
