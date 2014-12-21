@@ -197,7 +197,6 @@ class AutoUpdate {
 				$this->latestVersion = $keyOld;
 				$this->latestVersionName = $latest;
 				$this->latestUpdate = $update;
-				$this->latestBranch = $branch;
 				
 				return $keyOld;
 			}
