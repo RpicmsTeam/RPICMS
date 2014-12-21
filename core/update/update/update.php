@@ -214,7 +214,6 @@ class AutoUpdate {
 	 */
 	public function downloadUpdate($updateUrl, $updateFile) {
 		$this->log('Downloading update...');
-		echo "$updateUrl";
 		$update = @file_get_contents($updateUrl);
 		
 		if ($update === false) {
@@ -346,7 +345,7 @@ class AutoUpdate {
 			}
 			
 			$updateFile = $this->tempDir.'/'.$this->latestVersion.'.zip';
-			$updateUrl = $this->updateUrl.'/'.$this->branch.$this->latestVersion.'.zip';
+			$updateUrl = $this->updateUrl.'/'.$this->branch.'/'.$this->latestVersion.'.zip';
 			
 			//Download update
 			if (!is_file($updateFile)) {
