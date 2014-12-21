@@ -81,7 +81,7 @@ else {
 	</head>
 	<body>
 		<form action="admin.php">
-    		<button type="submit" value="Zurück">Zurück</button>
+    		<button type="submit" value="Zurück" class="btn btn-danger">Zurück</button>
 		</form>
 	</body>
 </html>
