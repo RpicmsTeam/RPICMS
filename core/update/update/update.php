@@ -46,7 +46,7 @@ class AutoUpdate {
 	/*
 	 * Current Branch
 	 */
-	public $branch = 'stable';
+	public $branch = 'nightly';
 
 	/*
 	 * Name of the latest version
@@ -182,7 +182,7 @@ class AutoUpdate {
 				$update = '';
 				
 				foreach ($versions as $key => $version) {
-					if ($version['branch'] == $branch){
+					if ($branch == $version['branch']){
 						if ($key > $keyOld) {
 							$keyOld = $key;
 							$latest = $version['version'];
