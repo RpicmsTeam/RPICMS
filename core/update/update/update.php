@@ -182,14 +182,14 @@ class AutoUpdate {
 				$update = '';
 				
 				foreach ($versions as $key => $version) {
-					if ($version['branch'] = $branch){
+					if ($version['branch'] == $branch){
 						if ($key > $keyOld) {
 							$keyOld = $key;
 							$latest = $version['version'];
 							$update = $version['url'];
-						}else {
-							echo "missing branch";
 						}
+					}else {
+						echo "missing branch";
 					}
 				}
 				
