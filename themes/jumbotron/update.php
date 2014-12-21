@@ -1,15 +1,15 @@
 <?php
+#######################
+# flush browser cache #
+#######################
+header("Cache-Control: no-cache, must-revalidate, no-store");
 
 if(isset($_GET['update']) && function_exists($_GET['update']))
 call_user_func($_GET['update']);
 else
 echo "Function not found or wrong input";
 
-#######################
-# flush browser cache #
-#######################
-header("Cache-Control: no-cache, must-revalidate, no-store");
-
+function update(){
 ###############################
 # include files from root dir #
 ###############################
@@ -24,8 +24,6 @@ if ($root_3[1] == 'core') {
   $root = $root_1 . '/' . $root_3[1];
 }
 
-function update(){
-global $root, $root_3, $root_2, $currentdir, $root_1;
 require($root . '/core/update/update/update.php');
 
 $update = new AutoUpdate(true);
