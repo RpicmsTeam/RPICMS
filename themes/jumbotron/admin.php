@@ -179,9 +179,9 @@ foreach($langs as $prio => $lang) {
 
   			<div class="hide_" id="update">
   				<h2>Updates</h2>
-  				<from action="update.php?update=update" method="get">
+  				<form action="update.php?update=" method="get">
   					<button type="submit" value="update">Update</button> 
-  				</from>
+  				</form>
 
   			</div>
 
