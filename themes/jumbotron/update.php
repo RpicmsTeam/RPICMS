@@ -25,7 +25,7 @@ if ($root_3[1] == 'core') {
 }
 
 function update(){
-global $root;
+global $root $root_3 $root_2 $currentdir $root_1;
 require($root . '/core/update/update/update.php');
 
 $update = new AutoUpdate(true);
