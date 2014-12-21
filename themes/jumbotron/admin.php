@@ -180,7 +180,7 @@ foreach($langs as $prio => $lang) {
   			<div class="hide_" id="update">
   				<h2>Updates</h2>
   				<form action="update.php">
-  					<button type="submit" value="update">Update</button> 
+  					<button type="submit" value="update" name="update">Update</button> 
   				</form>
 
   			</div>
