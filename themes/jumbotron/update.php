@@ -23,6 +23,7 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
+
 function update(){
 global $root;
 require($root . '/core/update/update/update.php');
