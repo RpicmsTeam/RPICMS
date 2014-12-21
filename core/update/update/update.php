@@ -177,10 +177,14 @@ class AutoUpdate {
 				$update = '';
 				
 				foreach ($versions as $key => $version) {
-					if ($key > $keyOld) {
-						$keyOld = $key;
-						$latest = $version['version'];
-						$update = $version['url']; 
+					if ($version['branch'] = $branch){
+						if ($key > $keyOld) {
+							$keyOld = $key;
+							$latest = $version['version'];
+							$update = $version['url'];
+						}else {
+							echo "missing branch";
+						}
 					}
 				}
 				
@@ -188,6 +192,7 @@ class AutoUpdate {
 				$this->latestVersion = $keyOld;
 				$this->latestVersionName = $latest;
 				$this->latestUpdate = $update;
+				$this->latestBranch = $branch;
 				
 				return $keyOld;
 			}
