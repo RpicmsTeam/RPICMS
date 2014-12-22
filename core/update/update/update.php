@@ -42,11 +42,6 @@ class AutoUpdate {
 	 * Current version
 	 */
 	public $currentVersion = 0;
-	
-	/*
-	 * Current Branch
-	 */
-	public $branch = 'nightly';
 
 	/*
 	 * Name of the latest version
@@ -181,15 +176,11 @@ class AutoUpdate {
 				$latest = 0;
 				$update = '';
 				foreach ($versions as $key => $version) {
-					if ($this->branch = $version['branch']){
 						if ($key > $keyOld) {
 							$keyOld = $key;
 							$latest = $version['version'];
 							$update = $version['url'];
 						}
-					}else{
-						echo "xxxxx";
-					}
 				}
 				
 				$this->log('New version found `'.$latest.'`.');
@@ -345,7 +336,7 @@ class AutoUpdate {
 			}
 			
 			$updateFile = $this->tempDir.'/'.$this->latestVersion.'.zip';
-			$updateUrl = $this->updateUrl.'/'.$this->branch.'/'.$this->latestVersion.'.zip';
+			$updateUrl = $this->updateUrl.'/'.$this->latestVersion.'.zip';
 			
 			//Download update
 			if (!is_file($updateFile)) {

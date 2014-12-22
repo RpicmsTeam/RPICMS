@@ -25,11 +25,11 @@ if ($root_3[1] == 'core') {
 }
 
 require($root . '/core/update/update/update.php');
-
+$branch = "stable";
 $update = new AutoUpdate(true);
 $update->currentVersion = 1; //Must be an integer - you can't compare strings
-$update->branch = 'stable';
 $update->updateUrl = 'http://media.nordgedanken.de/rpicms/server'; //Replace with your server update directory
+$update->updateIni = 'update.ini.'.$branch;
 
 //Check for a new update
 $latest = $update->checkUpdate();
