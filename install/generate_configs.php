@@ -125,8 +125,18 @@ $filename = '../core/config/variables.config.php';
 
     print "Fertig, in Datei $filename wurde $var_str_bn geschrieben";
         print "</br>";
-    fclose($handle);
 
+    $updatebranch = "stable";
+    $var_str_ub = var_export($updatebranch, true);
+    $var_ub = "\$updatebranch = $var_str_ub;\n\n";
+    if (!fwrite($handle, $var_th)) {
+        print "Kann in die Datei $filename nicht schreiben";
+        exit;
+    }
+
+    print "Fertig, in Datei $filename wurde $var_str_ub geschrieben";
+        print "</br>";
+    fclose($handle);
 
 //############################
 //# Pass zwischenspeicherung #

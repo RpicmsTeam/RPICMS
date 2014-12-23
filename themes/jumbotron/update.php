@@ -23,13 +23,13 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-
+include($root . '/core/config/variables.config.php');
 require($root . '/core/update/update/update.php');
-$branch = "stable";
 $update = new AutoUpdate(true);
+$update->branch = $updatebranch;
 $update->currentVersion = 1; //Must be an integer - you can't compare strings
-$update->updateUrl = 'http://media.nordgedanken.de/rpicms/server'; //Replace with your server update directory
-$update->updateIni = 'update.ini.'.$branch;
+$update->updateUrl = 'http://media.nordgedanken.de/rpicms/server/'; //Replace with your server update directory
+$update->updateIni = 'update.ini.'.$update->branch;
 
 //Check for a new update
 $latest = $update->checkUpdate();
