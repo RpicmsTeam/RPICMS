@@ -66,7 +66,7 @@ class AutoUpdate {
 	/*
 	 * Version filename on the server
 	 */
-	public $updateIni = 'update.ini';
+	public $updateIni = 'update.ini.stable';
 	
 	/*
 	 * Temporary download directory
