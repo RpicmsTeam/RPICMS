@@ -167,8 +167,6 @@ class AutoUpdate {
 	public function checkUpdate() {
 		$this->log('Checking for a new update. . .');
 		
-		$updateFile = $this->updateUrl.'/'.$this->updateIni;
-		
 		$update = @file_get_contents($updateFile);
 		if ($update === false) {
 			$this->log('Could not retrieve update file `'.$updateFile.'`!');
@@ -342,7 +340,7 @@ class AutoUpdate {
 			}
 			
 			$updateFile = $this->tempDir.'/'.$this->latestVersion.'.zip';
-			$updateUrl = $this->updateUrl.'/'.$this->latestVersion.'.zip';
+			$updateUrl = $this->updateUrl.'/'.$this->branch.'/'.$this->latestVersion.'.zip';
 			
 			//Download update
 			if (!is_file($updateFile)) {
