@@ -3,7 +3,7 @@
 <script type="text/javascript">
 	function loadquery(){
 		var login_module = "modul_g-plus-login";
-    	$('#DisplayDiv').load("../../modules/" + login_module + "/login.pho" + email_result);
+    	$('#DisplayDiv').load("../../modules/" + login_module + "/login.php");
     }
 </script>
 </head>
