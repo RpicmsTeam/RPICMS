@@ -14,5 +14,5 @@
 	}
 	$login_module = "modul_g-plus-login";
 	$content = file($root."/core/backend/admin/modules/".$login_module."/login.php");
-	echo $content;
+	var_dump($content);
 ?>
