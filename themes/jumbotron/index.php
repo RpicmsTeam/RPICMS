@@ -141,7 +141,7 @@ if ($root_3[1] == 'core') {
           ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <div id="login"></div>
+          <!--<div id="login"></div>-->
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
