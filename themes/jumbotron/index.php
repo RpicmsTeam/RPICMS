@@ -124,9 +124,8 @@ if ($root_3[1] == 'core') {
         }
       }
     </script>
-    <?php include($root . '/core/backend/admin/user/login/login.php'); ?>
   </head>
-  <body onload="loadquery();>
+  <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -140,8 +139,9 @@ if ($root_3[1] == 'core') {
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <!--<div id="login"></div>-->
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
+        <form class="navbar-form " role="form" action="../../core/backend/admin/user/login_check.php" method="post">
+            <div id="login"><?php include($root . '/core/backend/admin/user/login/login.php') ?></div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
