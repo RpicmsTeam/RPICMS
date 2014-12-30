@@ -124,7 +124,7 @@ if ($root_3[1] == 'core') {
         }
       }
     </script>
-    <?php include($root . '/core/backend/admin/user/login/login.php'); ?>
+    <!--<?php include($root . '/core/backend/admin/user/login/login.php'); ?>-->
   </head>
   <body onload="loadquery();>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
