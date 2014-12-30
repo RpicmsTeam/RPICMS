@@ -140,7 +140,6 @@ if ($root_3[1] == 'core') {
           ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
-        <form class="navbar-form " role="form" action="../../core/backend/admin/user/login_check.php" method="post">
             <div id="login"><?php include($root . '/core/backend/admin/user/login/login.php') ?></div>
         </div><!--/.navbar-collapse -->
       </div>
