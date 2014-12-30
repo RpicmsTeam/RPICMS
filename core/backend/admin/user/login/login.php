@@ -13,6 +13,6 @@
   		$root = $root_1 . '/' . $root_3[1];
 	}
 	$login_module = "module_google-plus-login";
-	$content = file($root."/core/backend/admin/module/".$login_module."/login.php");
+	$content = file($root."/core/backend/admin/modules/".$login_module."/login.php");
 	echo $content;
 ?>
