@@ -124,8 +124,9 @@ if ($root_3[1] == 'core') {
         }
       }
     </script>
+    <?php include($root . '/core/backend/admin/user/login/login.php'); ?>
   </head>
-  <body>
+  <body onload="loadquery();>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -140,15 +141,7 @@ if ($root_3[1] == 'core') {
           ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        <form class="navbar-form navbar-right" role="form" action="../../core/backend/admin/user/login_check.php" method="post">
-            <div class="form-group">
-              <input type="email" placeholder="Email" class="form-control" name="username" required="required" title="Please insert a valid Email (example@email.com)" x-moz-errormessage="Please insert a valid Email (example@email.com)">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control" name="password" required="required">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+          <div id="DisplayDiv"></div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
