@@ -428,10 +428,10 @@ class LightOpenID
 
         # We'll jump a maximum of 5 times, to avoid endless redirections.
         for ($i = 0; $i < 5; $i ++) {
-            echo "Schleife";
+            echo "1";
             if ($yadis) {
                 $headers = $this->request($url, 'HEAD', array(), true);
-
+                echo "2";
                 $next = false;
                 if (isset($headers['x-xrds-location'])) {
                     $url = $this->build_url(parse_url($url), parse_url(trim($headers['x-xrds-location'])));
