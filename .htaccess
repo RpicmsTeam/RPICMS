@@ -2,3 +2,4 @@ RewriteEngine on
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule /^([^\.]+)$ %{REQUEST_URI}.php [NC,L]
+Redirect 301 /oauth2callback /core/backend/admin/modules/modul_g-plus-login/login.php
