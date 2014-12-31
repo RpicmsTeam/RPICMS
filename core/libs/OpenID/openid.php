@@ -434,7 +434,6 @@ class LightOpenID
                 echo "2";
                 $next = false;
                 if (isset($headers['x-xrds-location'])) {
-                    echo "3";
                     $url = $this->build_url(parse_url($url), parse_url(trim($headers['x-xrds-location'])));
                     $next = true;
                 }
@@ -443,6 +442,7 @@ class LightOpenID
                     && (strpos($headers['content-type'], 'application/xrds+xml') !== false
                         || strpos($headers['content-type'], 'text/xml') !== false)
                 ) {
+                    echo "3";
                     # Apparently, some providers return XRDS documents as text/html.
                     # While it is against the spec, allowing this here shouldn't break
                     # compatibility with anything.
