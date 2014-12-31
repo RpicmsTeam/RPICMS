@@ -516,14 +516,13 @@ class LightOpenID
 
                 $location = $this->htmlTag($content, 'meta', 'http-equiv', 'X-XRDS-Location', 'content');
                 if ($location) {
-                    echo "4";
                     $url = $this->build_url(parse_url($url), parse_url($location));
                     continue;
                 }
             }
 
             if (!$content) $content = $this->request($url, 'GET');
-
+            echo "4";
             # At this point, the YADIS Discovery has failed, so we'll switch
             # to openid2 HTML discovery, then fallback to openid 1.1 discovery.
             $server   = $this->htmlTag($content, 'link', 'rel', 'openid2.provider', 'href');
