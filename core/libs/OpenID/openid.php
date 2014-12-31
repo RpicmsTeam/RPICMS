@@ -510,6 +510,7 @@ class LightOpenID
                 $content = $this->request($url, 'GET', array(), true);
 
                 if (isset($this->headers['x-xrds-location'])) {
+                    echo "4";
                     $url = $this->build_url(parse_url($url), parse_url(trim($this->headers['x-xrds-location'])));
                     continue;
                 }
