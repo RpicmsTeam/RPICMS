@@ -442,7 +442,6 @@ class LightOpenID
                     && (strpos($headers['content-type'], 'application/xrds+xml') !== false
                         || strpos($headers['content-type'], 'text/xml') !== false)
                 ) {
-                    echo "3";
                     # Apparently, some providers return XRDS documents as text/html.
                     # While it is against the spec, allowing this here shouldn't break
                     # compatibility with anything.
@@ -506,7 +505,7 @@ class LightOpenID
                     break;
                 }
                 if ($next) continue;
-
+                echo "3";
                 # There are no relevant information in headers, so we search the body.
                 $content = $this->request($url, 'GET', array(), true);
 
