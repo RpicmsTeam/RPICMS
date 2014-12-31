@@ -76,14 +76,14 @@ class LightOpenID
 
 
 
-        echo "1.2";
+        echo "1.2<br>";
 
 
 
 
 
 
-        
+
         $this->trustRoot = (strpos($host, '://') ? $host : 'http://' . $host);
         if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off')
             || (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])
@@ -445,7 +445,7 @@ class LightOpenID
 
 
 
-            echo "1.1";
+            echo "1.1<br>";
 
 
 
@@ -463,7 +463,7 @@ class LightOpenID
 
 
 
-                echo "2.1";
+                echo "2.1<br>";
 
 
 
@@ -550,7 +550,7 @@ class LightOpenID
 
 
 
-                echo "3.1";
+                echo "3.1<br>";
 
 
 
@@ -578,7 +578,7 @@ class LightOpenID
 
 
 
-            echo "4.1";
+            echo "4.1<br>";
 
 
 
@@ -599,7 +599,7 @@ class LightOpenID
 
 
 
-                echo "5.1";
+                echo "5.1<br>";
 
 
 
