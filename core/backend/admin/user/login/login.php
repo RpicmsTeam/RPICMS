@@ -14,6 +14,6 @@ if ($root_3[1] == 'core') {
 }
 
 	$login_module = "modul_g-plus-login";
-	include($root . '/core/backend/admin/modules/'.$login_module. '/login.php');
+	include($root . '/core/backend/admin/modules/'.$login_module. '/index.php');
 
  ?>
