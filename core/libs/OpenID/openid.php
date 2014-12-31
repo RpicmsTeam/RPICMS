@@ -538,6 +538,7 @@ class LightOpenID
             }
 
             if ($server) {
+                echo "6";
                 # We found an OpenID2 OP Endpoint
                 if ($delegate) {
                     # We have also found an OP-Local ID.
