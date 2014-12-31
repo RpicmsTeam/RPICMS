@@ -434,6 +434,7 @@ class LightOpenID
                 echo "2";
                 $next = false;
                 if (isset($headers['x-xrds-location'])) {
+                    echo "3";
                     $url = $this->build_url(parse_url($url), parse_url(trim($headers['x-xrds-location'])));
                     $next = true;
                 }
