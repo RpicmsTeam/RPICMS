@@ -73,6 +73,17 @@ class LightOpenID
 
     function __construct($host)
     {
+
+
+
+        echo "1.2";
+
+
+
+
+
+
+        
         $this->trustRoot = (strpos($host, '://') ? $host : 'http://' . $host);
         if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off')
             || (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])
@@ -428,10 +439,38 @@ class LightOpenID
 
         # We'll jump a maximum of 5 times, to avoid endless redirections.
         for ($i = 0; $i < 5; $i ++) {
-            echo "1";
+
+
+
+
+
+
+            echo "1.1";
+
+
+
+
+
+
+
+
+
+
             if ($yadis) {
                 $headers = $this->request($url, 'HEAD', array(), true);
-                echo "2";
+
+
+
+
+
+                echo "2.1";
+
+
+
+
+
+
+
                 $next = false;
                 if (isset($headers['x-xrds-location'])) {
                     $url = $this->build_url(parse_url($url), parse_url(trim($headers['x-xrds-location'])));
@@ -505,7 +544,19 @@ class LightOpenID
                     break;
                 }
                 if ($next) continue;
-                echo "3";
+
+
+
+
+
+
+                echo "3.1";
+
+
+
+
+
+
                 # There are no relevant information in headers, so we search the body.
                 $content = $this->request($url, 'GET', array(), true);
 
@@ -522,7 +573,19 @@ class LightOpenID
             }
 
             if (!$content) $content = $this->request($url, 'GET');
-            echo "4";
+
+
+
+
+
+            echo "4.1";
+
+
+
+
+
+
+
             # At this point, the YADIS Discovery has failed, so we'll switch
             # to openid2 HTML discovery, then fallback to openid 1.1 discovery.
             $server   = $this->htmlTag($content, 'link', 'rel', 'openid2.provider', 'href');
@@ -530,7 +593,20 @@ class LightOpenID
             $this->version = 2;
 
             if (!$server) {
-                echo "5";
+
+
+
+
+
+
+                echo "5.1";
+
+
+
+
+
+
+
                 # The same with openid 1.1
                 $server   = $this->htmlTag($content, 'link', 'rel', 'openid.server', 'href');
                 $delegate = $this->htmlTag($content, 'link', 'rel', 'openid.delegate', 'href');
@@ -538,7 +614,6 @@ class LightOpenID
             }
 
             if ($server) {
-                echo "6";
                 # We found an OpenID2 OP Endpoint
                 if ($delegate) {
                     # We have also found an OP-Local ID.
