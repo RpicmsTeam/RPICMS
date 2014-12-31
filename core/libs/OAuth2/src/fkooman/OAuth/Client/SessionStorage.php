@@ -137,11 +137,9 @@ class SessionStorage implements StorageInterface
 
     public function getState($clientConfigId, $state)
     {
-        echo "test";
-        if (!isset($_SESSION['php-oauth-client']['state'])) {
-            echo "test2";
-            return false;
-        }
+        //if (!isset($_SESSION['php-oauth-client']['state'])) {
+        //    return false;
+        //}
         echo "test1";
         foreach ($_SESSION['php-oauth-client']['state'] as $s) {
             $sessionState = unserialize($s);
