@@ -354,8 +354,18 @@ class LightOpenID
 
     protected function request($url, $method='GET', $params=array(), $update_claimed_id=false)
     {
-        if (function_exists('curl_init')
-            && (!in_array('https', stream_get_wrappers()) || !ini_get('safe_mode') && !ini_get('open_basedir'))
+        //if (function_exists('curl_init')
+        //    && (!in_array('https', stream_get_wrappers()) || !ini_get('safe_mode') && !ini_get('open_basedir'))
+        //) {
+        if (
+            function_exists( 'curl_init' ) &&
+            (
+                !in_array( 'https', stream_get_wrappers() ) ||
+                (
+                    !ini_get( 'safe_mode' ) &&
+                    !ini_get( 'open_basedir' )
+                )
+            )
         ) {
             return $this->request_curl($url, $method, $params, $update_claimed_id);
         }
@@ -418,6 +428,7 @@ class LightOpenID
 
         # We'll jump a maximum of 5 times, to avoid endless redirections.
         for ($i = 0; $i < 5; $i ++) {
+            echo "Schleife";
             if ($yadis) {
                 $headers = $this->request($url, 'HEAD', array(), true);
 
