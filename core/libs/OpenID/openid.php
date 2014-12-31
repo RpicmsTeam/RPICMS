@@ -530,6 +530,7 @@ class LightOpenID
             $this->version = 2;
 
             if (!$server) {
+                echo "5";
                 # The same with openid 1.1
                 $server   = $this->htmlTag($content, 'link', 'rel', 'openid.server', 'href');
                 $delegate = $this->htmlTag($content, 'link', 'rel', 'openid.delegate', 'href');
