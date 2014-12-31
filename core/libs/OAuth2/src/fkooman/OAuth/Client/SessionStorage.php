@@ -139,7 +139,7 @@ class SessionStorage implements StorageInterface
     {
         if (!isset($_SESSION['php-oauth-client']['state'])) {
             return false;
-            echo "if"
+            echo "if";
         }
 
         foreach ($_SESSION['php-oauth-client']['state'] as $s) {
