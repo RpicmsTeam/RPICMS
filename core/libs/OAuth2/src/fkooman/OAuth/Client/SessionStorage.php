@@ -141,7 +141,7 @@ class SessionStorage implements StorageInterface
         //    return false;
         //}
         echo "test1";
-        foreach ($_SESSION['php-oauth-client']['state'] as $s) {
+        foreach ($state as $s) {
             $sessionState = unserialize($s);
 
 
