@@ -96,7 +96,7 @@ class Callback
             throw new CallbackException("state parameter missing");
         }
         $state = $this->tokenStorage->getState($this->clientConfigId, $queryState);
-        echo $state;
+
         if (false === $state) {
             throw new CallbackException("state not found");
         }
