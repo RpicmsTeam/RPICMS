@@ -64,6 +64,7 @@ class SessionStorage implements StorageInterface
 
     public function deleteAccessToken(AccessToken $accessToken)
     {
+        echo $_SESSION;
         if (!isset($_SESSION['php-oauth-client']['access_token'])) {
             return false;
         }
