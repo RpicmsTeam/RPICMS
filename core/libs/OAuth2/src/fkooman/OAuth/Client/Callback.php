@@ -87,8 +87,8 @@ class Callback
 
     public function handleCallback(array $query)
     {
-        var_dump($query);
         $queryState = isset($query['state']) ? $query['state'] : null;
+        echo $queryState;
         $queryCode = isset($query['code']) ? $query['code'] : null;
         $queryError = isset($query['error']) ? $query['error'] : null;
         $queryErrorDescription = isset($query['error_description']) ? $query['error_description'] : null;
