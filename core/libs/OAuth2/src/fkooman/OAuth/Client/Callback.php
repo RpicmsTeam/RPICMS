@@ -88,7 +88,6 @@ class Callback
     public function handleCallback(array $query)
     {
         $queryState = isset($query['state']) ? $query['state'] : null;
-        echo $queryState;
         $queryCode = isset($query['code']) ? $query['code'] : null;
         $queryError = isset($query['error']) ? $query['error'] : null;
         $queryErrorDescription = isset($query['error_description']) ? $query['error_description'] : null;
@@ -97,6 +96,7 @@ class Callback
             throw new CallbackException("state parameter missing");
         }
         $state = $this->tokenStorage->getState($this->clientConfigId, $queryState);
+        echo $state;
         if (false === $state) {
             throw new CallbackException("state not found");
         }
