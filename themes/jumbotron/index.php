@@ -173,10 +173,15 @@ if ($root_3[1] == 'core') {
                   $post_text_short</br>
                 </p>
               </div>
-                <p>
-                  <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
-                </p>
-              ";
+               <div>
+                    ";
+                    include($root . '/core/backend/admin/modules/post_footer.php');
+                    echo "
+                      </div>
+                    <p>
+                      <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
+                    </p>
+                  ";
             $x = $x+1;
             $id = $id+1;
             next_id_only();
@@ -208,6 +213,11 @@ if ($root_3[1] == 'core') {
                       $post_text_short</br>
                     </p>
                   </div>
+                   <div>
+                    ";
+                    include($root . '/core/backend/admin/modules/post_footer.php');
+                    echo "
+                      </div>
                     <p>
                       <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
                     </p>
@@ -243,6 +253,11 @@ if ($root_3[1] == 'core') {
                       <p>
                         $post_text_short</br>
                       </p>
+                     <div>
+                    ";
+                    include($root . '/core/backend/admin/modules/post_footer.php');
+                    echo "
+                      </div>
                     <p>
                       <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
                     </p>
