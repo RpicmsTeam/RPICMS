@@ -95,7 +95,8 @@ if ($root_3[1] == 'core') {
     <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
-    <script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-socialbootstrap-social.css">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     
     <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
