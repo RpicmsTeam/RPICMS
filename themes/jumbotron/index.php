@@ -97,6 +97,7 @@ if ($root_3[1] == 'core') {
     <link href="jumbotron.css" rel="stylesheet">
     <link rel="stylesheet" href="../../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.css">
+    <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     
     <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -141,7 +142,7 @@ if ($root_3[1] == 'core') {
           ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
-            <div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php') ?></div>
+            <div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php'); ?></div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -172,10 +173,15 @@ if ($root_3[1] == 'core') {
                   $post_text_short</br>
                 </p>
               </div>
-              <p>
-                <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
-              </p>
-            ";
+               <div>
+                    ";
+                    include($root . '/core/backend/admin/modules/page_footer.php');
+                    echo "
+                      </div>
+                    <p>
+                      <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
+                    </p>
+                  ";
             $x = $x+1;
             $id = $id+1;
             next_id_only();
@@ -207,10 +213,15 @@ if ($root_3[1] == 'core') {
                       $post_text_short</br>
                     </p>
                   </div>
-                  <p>
-                    <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
-                  </p>
-                ";
+                   <div>
+                    ";
+                    include($root . '/core/backend/admin/modules/page_footer.php');
+                    echo "
+                      </div>
+                    <p>
+                      <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
+                    </p>
+                  ";
                 $x = $x+1;
                 $id = $id+1;
                 next_id_category();
@@ -242,7 +253,11 @@ if ($root_3[1] == 'core') {
                       <p>
                         $post_text_short</br>
                       </p>
-                    </div>
+                     <div>
+                    ";
+                    include($root . '/core/backend/admin/modules/page_footer.php');
+                    echo "
+                      </div>
                     <p>
                       <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
                     </p>
@@ -270,7 +285,12 @@ if ($root_3[1] == 'core') {
                     $post_text</br>
                   </p>
                 </div>
+                <div>
               ";
+              include($root . '/core/backend/admin/modules/page_footer.php');
+              echo "
+                </div>
+              "
             }
           }
         }
@@ -316,6 +336,7 @@ if ($root_3[1] == 'core') {
 
       <footer>
         <p>&copy; RpicmsTeam 2014</p>
+        <?php include($root . '/core/backend/admin/modules/footer.php'); ?>
       </footer>
     </div> <!-- /container -->
 
