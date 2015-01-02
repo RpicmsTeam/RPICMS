@@ -290,7 +290,7 @@ if ($root_3[1] == 'core') {
               include($root . '/core/backend/admin/modules/page_footer.php');
               echo "
                 </div>
-              "
+              ";
             }
           }
         }
