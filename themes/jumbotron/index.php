@@ -175,7 +175,7 @@ if ($root_3[1] == 'core') {
               </div>
                <div>
                     ";
-                    include($root . '/core/backend/admin/modules/page_footer.php');
+                    include($root . '/core/backend/admin/modules/post_footer.php');
                     echo "
                       </div>
                     <p>
@@ -215,7 +215,7 @@ if ($root_3[1] == 'core') {
                   </div>
                    <div>
                     ";
-                    include($root . '/core/backend/admin/modules/page_footer.php');
+                    include($root . '/core/backend/admin/modules/post_footer.php');
                     echo "
                       </div>
                     <p>
@@ -255,7 +255,7 @@ if ($root_3[1] == 'core') {
                       </p>
                      <div>
                     ";
-                    include($root . '/core/backend/admin/modules/page_footer.php');
+                    include($root . '/core/backend/admin/modules/post_footer.php');
                     echo "
                       </div>
                     <p>
@@ -287,7 +287,7 @@ if ($root_3[1] == 'core') {
                 </div>
                 <div>
               ";
-              include($root . '/core/backend/admin/modules/page_footer.php');
+              include($root . '/core/backend/admin/modules/post_footer.php');
               echo "
                 </div>
               ";
