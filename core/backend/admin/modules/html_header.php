@@ -4,6 +4,17 @@
     jQuery(document).ready(function($){
       if($('#socialshareprivacy').length > 0){
         $('#socialshareprivacy').socialSharePrivacy({
+          services : {
+            facebook : {
+              'perma_option' : 'off'
+            }, 
+            twitter : {
+              'status' : 'off'
+            },
+            gplus : {
+              'dummy_img' : '../../core/backend/admin/modules/share_buttons/socialshareprivacy/images/dummy_gplus_variante.png'
+            }
+          },
           "css_path"  : "../../core/backend/admin/modules/share_buttons/socialshareprivacy/socialshareprivacy.css",
           "lang_path" : "../../core/backend/admin/modules/share_buttons/socialshareprivacy/lang/",
           "language"  : "de"
