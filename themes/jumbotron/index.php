@@ -94,7 +94,7 @@ if ($root_3[1] == 'core') {
     <!-- Bootstrap core CSS -->
     <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    <link href="jumbotron.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.css">
     <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
