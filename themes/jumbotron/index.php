@@ -96,7 +96,7 @@ if ($root_3[1] == 'core') {
     <!-- Custom styles for this template -->
     <link href="jumbotron.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
     <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     
@@ -280,6 +280,7 @@ if ($root_3[1] == 'core') {
               echo "
                 <script  type=\"text/javascript\">
                 document.title = \"$blog_name | $post_title\";
+                document.getElementById(\"author\").setAttribute(\"content\", \"$post_author\");
                 </script>
                 <h1>
                   <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
