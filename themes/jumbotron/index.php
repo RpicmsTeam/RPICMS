@@ -159,7 +159,7 @@ if ($root_3[1] == 'core') {
             include($root . '/core/config/connect.db.inc.php');
             echo "
             <script  type=\"text/javascript\">
-                document.title = \"$blog_name\";
+                document.title = \"$blog_name | Home\";
                 </script>
               <h1>
                 <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
@@ -202,7 +202,7 @@ if ($root_3[1] == 'core') {
               }else{
                 echo "
                 <script  type=\"text/javascript\">
-                document.title = \"$post_category\";
+                document.title = \"$blog_name | $post_category\";
                 </script>
                   <h1>
                     <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
@@ -246,7 +246,7 @@ if ($root_3[1] == 'core') {
                 }else{
                   echo "
                     <script  type=\"text/javascript\">
-                    document.title = \"$post_author\";
+                    document.title = \"$blog_name | $post_author\";
                     </script>
                     <h1>
                       <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
@@ -280,7 +280,7 @@ if ($root_3[1] == 'core') {
               include($root . '/core/backend/blog/posts.php');
               echo "
                 <script  type=\"text/javascript\">
-                document.title = \"$post_title\";
+                document.title = \"$blog_name | $post_title\";
                 </script>
                 <h1>
                   <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
