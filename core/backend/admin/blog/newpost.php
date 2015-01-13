@@ -17,6 +17,7 @@ if ($root_3[1] == 'core') {
   $root = $root_1 . '/' . $root_3[1];
 }
 include($root . '/core/config/variables.config.php');
+include($root . '/core/config/connect.db.inc.php');
 
 if ($resultat = $connection->query('SELECT id FROM posts')) {
 	while($daten = $resultat->fetch_object() ){

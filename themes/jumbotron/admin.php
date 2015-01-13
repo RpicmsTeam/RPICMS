@@ -197,7 +197,7 @@ foreach($langs as $prio => $lang) {
 
     		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
-					<form method="post" action="core/backend/admin/blog/newpost.php">
+					<form method="post" action="../../core/backend/admin/blog/newpost.php">
 						<div class="form-group">
 							<label for="post_title">Title</label>
 							<input type="text" name="title" class="form-control" id="post_title">
