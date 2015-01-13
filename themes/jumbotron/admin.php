@@ -116,8 +116,15 @@ foreach($langs as $prio => $lang) {
     	return false;
 		}
 		function foo() {
-    		var divid1 = document.getElementById("settings");
-    		divid1.style.display = "block";
+    		if(window.location.hash) {
+      			var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+      			alert (hash);
+      			var divid1 = document.getElementById(hash);
+    			divid1.style.display = "block";
+  			} else {
+     			var divid1 = document.getElementById("settings");
+    			divid1.style.display = "block";
+  			}
 		}
 		onload = foo;
 	</script>
@@ -191,8 +198,10 @@ foreach($langs as $prio => $lang) {
 
     		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
-					<form method="post">
+					<form method="post" action="">
+						<input type="text" name="title">
     					<textarea name="content" style="width:100%"></textarea>
+    					<button></button>
 					</form>
 			</div>
   		</div>
