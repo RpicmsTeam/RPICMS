@@ -33,8 +33,9 @@ $title = $_GET["title"];
 $text = $_GET["content"];
 $category = $_GET["category"];
 
-if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
-  	$resultat->close();
+if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
+	if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
+  		$resultat->close();
+	}
 }
-
 ?>
