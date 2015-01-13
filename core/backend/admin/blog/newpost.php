@@ -19,7 +19,7 @@ if ($root_3[1] == 'core') {
 }
 include($root . '/core/config/variables.config.php');
 include($root . '/core/config/connect.db.inc.php');
-$url = $root;
+$url = $_SERVER["DOCUMENT_ROOT"];
 
 while (ob_get_status()) {
 if ($resultat = $connection->query('SELECT id FROM posts')) {
