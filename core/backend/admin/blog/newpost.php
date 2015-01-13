@@ -1,4 +1,5 @@
 <?php
+ob_start();
 #######################
 # flush browser cache #
 #######################
@@ -18,7 +19,9 @@ if ($root_3[1] == 'core') {
 }
 include($root . '/core/config/variables.config.php');
 include($root . '/core/config/connect.db.inc.php');
+$url = $root;
 
+while (ob_get_status()) {
 if ($resultat = $connection->query('SELECT id FROM posts')) {
 	while($daten = $resultat->fetch_object() ){
  		$post_id_clean = $daten->id;
@@ -38,4 +41,7 @@ if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
   		$resultat->close();
 	}
 }
+ob_end_clean();
+}
+header( "Location: $url" );
 ?>
