@@ -27,9 +27,12 @@ if ($resultat = $connection->query('SELECT id FROM posts')) {
   	#$resultat->close();
 }
 
-$author = "not implemented yet";
+$author = $_GET["author"];
+$title = $_GET["title"];
+$text = $_GET["content"];
+$category = $_GET["category"];
 
-if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', '$date', '$category')")) {
+if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
   	$resultat->close();
 }
 

@@ -118,7 +118,6 @@ foreach($langs as $prio => $lang) {
 		function foo() {
     		if(window.location.hash) {
       			var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-      			alert (hash);
       			var divid1 = document.getElementById(hash);
     			divid1.style.display = "block";
   			} else {
@@ -198,10 +197,18 @@ foreach($langs as $prio => $lang) {
 
     		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
-					<form method="post" action="">
+					<form method="post" action="core/backend/admin/blog/newpost.php">
 						<div class="form-group">
 							<label for="post_title">Title</label>
 							<input type="text" name="title" class="form-control" id="post_title">
+						</div>
+						<div class="form-group">
+							<label for="post_author">Author</label><!-- will later be check with login ;) -->
+							<input type="text" name="author" class="form-control" id="post_author">
+						</div>
+						<div class="form-group">
+							<label for="post_category">Category</label><!-- will later be check with login ;) -->
+							<input type="text" name="category" class="form-control" id="post_category">
 						</div>
 						<div class="form-group">
 						<label for="post_content">Content</label>
