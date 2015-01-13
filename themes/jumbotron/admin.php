@@ -158,14 +158,14 @@ foreach($langs as $prio => $lang) {
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
         		<li class="dropdown">
-        			<a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
+        			<a href="#settings" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
 					<ul class="dropdown-menu" role="menu">
-        				<li onclick="showhide('update');"><a href="#">Update</a></li>
+        				<li onclick="showhide('update');"><a href="#update">Update</a></li>
         			</ul>
         		<li class="dropdown">
-        			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
+        			<a href="#posts" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
         			<ul class="dropdown-menu" role="menu">
-        				<li onclick="showhide('newpost');"><a href="#">New Post</a></li>
+        				<li onclick="showhide('newpost');"><a href="#newpost">New Post</a></li>
         			</ul>
         		</li>
         	</ul>
@@ -199,9 +199,15 @@ foreach($langs as $prio => $lang) {
     		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
 					<form method="post" action="">
-						<input type="text" name="title">
-    					<textarea name="content" style="width:100%"></textarea>
-    					<button></button>
+						<div class="form-group">
+							<label for="post_title">Title</label>
+							<input type="text" name="title" class="form-control" id="post_title">
+						</div>
+						<div class="form-group">
+						<label for="post_content">Content</label>
+    						<textarea name="content" style="width:100%"></textarea>
+    					</div>
+    					<button type="submit" class="btn btn-default">Save</button>
 					</form>
 			</div>
   		</div>
