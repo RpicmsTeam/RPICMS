@@ -33,7 +33,7 @@ $context = new Context("mtrnord1@gmail.com", array("https://www.googleapis.com/a
 $accessToken = $api->getAccessToken($context);
 
 
-if(isset($_COOKIE['PHPSESSID'])) {
+if(isset($_COOKIE['PHPSESSID']) || $_COOKIE['PHPSESSID'] == $accessToken) {
 #######################
 # flush browser cache #
 #######################
