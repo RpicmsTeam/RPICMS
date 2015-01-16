@@ -30,11 +30,11 @@ if ($resultat = $connection->query('SELECT id FROM posts')) {
 	}
   	#$resultat->close();
 }
-if (isset($_GET['author']) && isset($_GET['title']) &&  isset($_GET['content']) &&  isset($_GET['category'])) {
-	$author = $_GET['author'];
-	$title = $_GET['title'];
-	$text = $_GET['content'];
-	$category = $_GET['category'];
+if (isset($_POST['author']) && isset($_POST['title']) &&  isset($_POST['content']) &&  isset($_POST['category'])) {
+	$author = $_POST['author'];
+	$title = $_POST['title'];
+	$text = $_POST['content'];
+	$category = $_POST['category'];
 }
 
 echo $author;
