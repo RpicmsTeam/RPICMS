@@ -22,7 +22,7 @@ if ($root_3[1] == 'core') {
 $user = "test";
 $user_allowed = "test1";
 foreach ($user_allowed as $subarray){
-if(in_array($user, $subarray) {
+if(in_array($user, $subarray)){
 #######################
 # flush browser cache #
 #######################
