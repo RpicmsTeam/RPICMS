@@ -20,7 +20,7 @@ if ($root_3[1] == 'core') {
 }
 
 $user = "test";
-$user_allowed = "test";
+$user_allowed = "test1";
 
 if($user_allowed = true) {
 #######################
