@@ -22,7 +22,7 @@ if ($root_3[1] == 'core') {
 $user = "test";
 $user_allowed = "test1";
 
-if($user_allowed = true) {
+if($user_allowed == $user) {
 #######################
 # flush browser cache #
 #######################
