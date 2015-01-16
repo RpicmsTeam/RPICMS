@@ -1,11 +1,11 @@
-<!--<?php
-print_r($_POST);
-echo "test";
-//ob_start();
+<?php
 #######################
 # flush browser cache #
 #######################
 header("Cache-Control: no-cache, must-revalidate, no-store");
+echo "test";
+
+ob_start();
 
 ###############################
 # include files from root dir #
@@ -52,8 +52,4 @@ while (ob_get_status()) {
 	ob_end_clean();
 }
 //header( "Location: ../../../../" );
-?>-->
-
-<?php
-	echo "test";
 ?>
