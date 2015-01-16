@@ -44,11 +44,11 @@ while (ob_get_status()) {
 	echo $category;
 	echo "test";
 
-	if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
+	//if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
 		if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
   			$resultat->close();
 		}
-	}
+	//}
 	ob_end_clean();
 }
 header( "Location: ../../../../" );
