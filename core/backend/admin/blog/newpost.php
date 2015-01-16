@@ -1,6 +1,7 @@
 <?php
 print_r($_POST);
-ob_start();
+echo "test";
+//ob_start();
 #######################
 # flush browser cache #
 #######################
