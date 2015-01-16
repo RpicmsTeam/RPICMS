@@ -19,36 +19,35 @@ if ($root_3[1] == 'core') {
 }
 include($root . '/core/config/variables.config.php');
 include($root . '/core/config/connect.db.inc.php');
-$url = $_SERVER["DOCUMENT_ROOT"];
 
 while (ob_get_status()) {
-if ($resultat = $connection->query('SELECT id FROM posts')) {
-	while($daten = $resultat->fetch_object() ){
- 		$post_id_clean = $daten->id;
- 		$ids = $post_id_clean+1;
- 		#var_dump($daten);
+	if ($resultat = $connection->query('SELECT id FROM posts')) {
+		while($daten = $resultat->fetch_object() ){
+ 			$post_id_clean = $daten->id;
+ 			$ids = $post_id_clean+1;
+ 			var_dump($daten);
+		}
+  		#$resultat->close();
 	}
-  	#$resultat->close();
-}
-if (isset($_POST['author']) && isset($_POST['title']) &&  isset($_POST['content']) &&  isset($_POST['category'])) {
+
+	$author = $_POST["author"];
 	$author = $_POST['author'];
 	$title = $_POST['title'];
 	$text = $_POST['content'];
 	$category = $_POST['category'];
-}
 
-echo $author;
-echo $title;
-echo $text;
-echo $category;
-echo "test";
+	echo $author;
+	echo $title;
+	echo $text;
+	echo $category;
+	echo "test";
 
-if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
-	if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
-  		$resultat->close();
+	if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
+		if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
+  			$resultat->close();
+		}
 	}
-}
-ob_end_clean();
+	ob_end_clean();
 }
 //header( "Location: ../../../../" );
 ?>
