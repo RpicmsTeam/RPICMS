@@ -41,7 +41,7 @@ while (ob_get_status()) {
 	$text = $_POST['content'];
 	$category = $_POST['category'];
 
-	if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'Now();', '$category')")) {
+	if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'DATE(date);', '$category')")) {
 	}
 	$connection->close();
 	ob_end_clean();
