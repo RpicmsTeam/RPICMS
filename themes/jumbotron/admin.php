@@ -1,4 +1,5 @@
 <?php 
+if(isset($_COOKIE['PHPSESSID']) || $_COOKIE['PHPSESSID'] == $accessToken) {
 /**
 * Jumbotron Theme for RPICMS
 *
@@ -268,3 +269,8 @@ foreach($langs as $prio => $lang) {
     <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
   </body>
 </html>
+<?php
+}else{
+	echo "You not logged in!";
+}
+?>
