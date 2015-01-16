@@ -5,7 +5,7 @@
 //header("Cache-Control: no-cache, must-revalidate, no-store");
 echo "test";
 
-//ob_start();
+ob_start();
 
 ###############################
 # include files from root dir #
@@ -22,12 +22,12 @@ if ($root_3[1] == 'core') {
 include($root . '/core/config/variables.config.php');
 include($root . '/core/config/connect.db.inc.php');
 
-//while (ob_get_status()) {
+while (ob_get_status()) {
 	if ($resultat = $connection->query('SELECT id FROM posts')) {
 		while($daten = $resultat->fetch_object() ){
  			$post_id_clean = $daten->id;
  			$ids = $post_id_clean+1;
- 			var_dump($daten);
+ 			//var_dump($daten);
 		}
   		#$resultat->close();
 	}
@@ -49,7 +49,7 @@ include($root . '/core/config/connect.db.inc.php');
   			$resultat->close();
 		}
 	}
-	//ob_end_clean();
-//}
-//header( "Location: ../../../../" );
+	ob_end_clean();
+}
+header( "Location: ../../../../" );
 ?>
