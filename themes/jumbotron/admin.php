@@ -69,7 +69,7 @@ foreach($langs as $prio => $lang) {
     
     <link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
     <?php
-    echo "<title>$blog_name</title>";
+    echo "<title>$blog_name | Admin</title>";
     ?>
 
     <!-- Bootstrap core CSS -->
