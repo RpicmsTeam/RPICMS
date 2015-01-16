@@ -78,7 +78,8 @@ foreach($langs as $prio => $lang) {
     <link href="jumbotron.css" rel="stylesheet">
 
     <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
-    <script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>
+    <!--<script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -228,7 +229,7 @@ foreach($langs as $prio => $lang) {
             <div class="col-md-4">
               <h2>'.$name_themes.'</h2>
               <form action=".">
-                <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%"">
+                <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%" class="form-control">
                   <option value="leer" selected="selected">[ bitte auswählen! ]</option>
                   <option value="leer">------------------------</option>
                   <option value="../jumbotron">Jumbotron</option>

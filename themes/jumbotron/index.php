@@ -97,6 +97,9 @@ if ($root_3[1] == 'core') {
     <link href="jumbotron.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
+    <!--<script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
     <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     
