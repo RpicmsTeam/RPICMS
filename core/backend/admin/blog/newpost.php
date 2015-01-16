@@ -43,5 +43,5 @@ if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
 }
 ob_end_clean();
 }
-header( "Location: $url" );
+header( "Location: ../../../../" );
 ?>
