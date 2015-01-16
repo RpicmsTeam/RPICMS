@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 print_r($_POST);
 echo "test";
 //ob_start();
@@ -52,4 +52,8 @@ while (ob_get_status()) {
 	ob_end_clean();
 }
 //header( "Location: ../../../../" );
+?>-->
+
+<?php
+	echo "test";
 ?>
