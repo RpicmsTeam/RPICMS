@@ -41,6 +41,7 @@ echo $author;
 echo $title;
 echo $text;
 echo $category;
+echo "test";
 
 if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
 	if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
