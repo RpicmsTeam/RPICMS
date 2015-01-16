@@ -21,8 +21,8 @@ if ($root_3[1] == 'core') {
 
 $user = "test";
 $user_allowed = "test1";
-
-if($user_allowed == $user) {
+foreach ($user_allowed as $subarray){
+if(in_array($user, $subarray) {
 #######################
 # flush browser cache #
 #######################
@@ -276,5 +276,6 @@ foreach($langs as $prio => $lang) {
 <?php
 }else{
 	echo "You not logged in!";
+}
 }
 ?>
