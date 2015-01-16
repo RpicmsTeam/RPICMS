@@ -27,6 +27,7 @@ while (ob_get_status()) {
 		while($daten = $resultat->fetch_object() ){
  			$post_id_clean = $daten->id;
  			$ids = $post_id_clean+1;
+ 			echo $ids;
  			//var_dump($daten);
 		}
   		#$resultat->close();
@@ -45,11 +46,11 @@ while (ob_get_status()) {
 	echo "test";
 
 	//if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
-		if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
+		if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'Now()', '$category')")) {
   			$resultat->close();
 		}
 	//}
 	ob_end_clean();
 }
-header( "Location: ../../../../" );
+//header( "Location: ../../../../" );
 ?>
