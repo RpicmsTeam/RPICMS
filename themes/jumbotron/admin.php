@@ -38,7 +38,7 @@ if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
 	while($daten = $resultat->fetch_object() ){
 		$allowed_user = $daten;
 	}
-  	$resultat->close();
+  	#$resultat->close();
 }
 $user = "test";
 foreach ($resultat->fetch_object() as $subarray){
