@@ -37,8 +37,6 @@ if (isset($_GET['author']) && isset($_GET['title']) &&  isset($_GET['content']) 
 	$category = $_GET['category'];
 }
 
-phpquery();
-
 echo $author;
 echo $title;
 echo $text;
