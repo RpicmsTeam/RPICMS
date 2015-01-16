@@ -22,6 +22,10 @@ include($root . '/core/config/variables.config.php');
 include($root . '/core/config/connect.db.inc.php');
 
 while (ob_get_status()) {
+	if (mysqli_connect_errno()) {
+		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
+		exit();
+	}
 	if ($resultat = $connection->query('SELECT id FROM posts')) {
 		while($daten = $resultat->fetch_object() ){
  			$post_id_clean = $daten->id;
@@ -37,11 +41,9 @@ while (ob_get_status()) {
 	$text = $_POST['content'];
 	$category = $_POST['category'];
 
-	//if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
-		if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'Now();', '$category')")) {
-  			$resultat->close();
-		}
-	//}
+	if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'Now();', '$category')")) {
+	}
+	$connection->close();
 	ob_end_clean();
 }
 //header( "Location: ../../../../" );
