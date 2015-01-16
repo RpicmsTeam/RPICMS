@@ -3,7 +3,6 @@
 # flush browser cache #
 #######################
 //header("Cache-Control: no-cache, must-revalidate, no-store");
-echo "test";
 
 ob_start();
 
@@ -27,7 +26,6 @@ while (ob_get_status()) {
 		while($daten = $resultat->fetch_object() ){
  			$post_id_clean = $daten->id;
  			$ids = $post_id_clean+1;
- 			echo $ids;
  			//var_dump($daten);
 		}
   		#$resultat->close();
@@ -39,14 +37,8 @@ while (ob_get_status()) {
 	$text = $_POST['content'];
 	$category = $_POST['category'];
 
-	echo $author;
-	echo $title;
-	echo $text;
-	echo $category;
-	echo "test";
-
 	//if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
-		if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'Now()', '$category')")) {
+		if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'Now();', '$category')")) {
   			$resultat->close();
 		}
 	//}
