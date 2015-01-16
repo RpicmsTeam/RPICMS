@@ -2,10 +2,10 @@
 #######################
 # flush browser cache #
 #######################
-header("Cache-Control: no-cache, must-revalidate, no-store");
+//header("Cache-Control: no-cache, must-revalidate, no-store");
 echo "test";
 
-ob_start();
+//ob_start();
 
 ###############################
 # include files from root dir #
