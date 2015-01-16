@@ -36,6 +36,11 @@ $title = $_GET["title"];
 $text = $_GET["content"];
 $category = $_GET["category"];
 
+echo $author;
+echo $title;
+echo $text;
+echo $category;
+
 if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
 	if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', 'date('Y-m-d H:i:s')', '$category')")) {
   		$resultat->close();
@@ -43,5 +48,5 @@ if (!empty($author) || !empty($title) || !empty($text) || !empty($category)) {
 }
 ob_end_clean();
 }
-header( "Location: ../../../../" );
+//header( "Location: ../../../../" );
 ?>
