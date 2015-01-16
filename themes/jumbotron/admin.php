@@ -18,11 +18,6 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-
-$user = "test";
-$user_allowed = "test1";
-foreach ($user_allowed as $subarray){
-if(in_array($user, $subarray)){
 #######################
 # flush browser cache #
 #######################
@@ -32,6 +27,23 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 # include required files #
 ##########################
 include($root . '/core/config/variables.config.php');
+include($root . '/core/config/connect.db.inc.php');
+
+if (mysqli_connect_errno()) {
+	printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
+	exit();
+}
+
+if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
+	while($daten = $resultat->fetch_object() ){
+		$allowed_user = $daten;
+	}
+  	$resultat->close();
+}
+$user = "test";
+foreach ($allowed_user as $subarray){
+if(in_array($user, $subarray)){
+
 
 ################
 # lang support #
