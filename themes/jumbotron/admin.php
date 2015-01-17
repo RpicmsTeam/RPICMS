@@ -43,8 +43,7 @@ if ($resultat = $connection->query("SELECT * FROM allowed_user WHERE email LIKE 
 #if (empty($allowed_user)) {
 #	echo "You not logged in!";
 #}else{
-foreach ($allowed_user as $subarray){
-if(in_array($user, $subarray)){
+if($allowed_user == $user){
 
 ################
 # lang support #
