@@ -40,8 +40,9 @@ if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
 	}
   	#$resultat->close();
 }
+var_dump($allowed_user);
 $user = "test";
-foreach ($resultat->fetch_object() as $subarray){
+foreach ($allowed_user as $subarray){
 if(in_array($user, $subarray)){
 
 
