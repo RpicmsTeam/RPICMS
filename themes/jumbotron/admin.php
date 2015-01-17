@@ -41,7 +41,7 @@ if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
 	}
   	#$resultat->close();
 }
-var_dump($allowed_user)
+var_dump($allowed_user);
 $allowed_user = array_filter($allowed_user);
 if (empty($allowed_user)) {
 	echo "You not logged in!";
