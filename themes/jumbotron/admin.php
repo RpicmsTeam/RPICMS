@@ -35,13 +35,8 @@ if (mysqli_connect_errno()) {
 }
 $user = "test";
 if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
-	#while($daten = $resultat->fetch_object() ){
-		#$allowed_user = $resultat->fetch_array(MYSQLI_NUM);
-		#$allowed_user = $daten["email"];
-	#}
-  	#$resultat->close();
+		$allowed_user = $resultat->fetch_array(MYSQLI_NUM);
 }
-while ($allowed_user = $resultat->fetch_array(MYSQLI_NUM)) {
 var_dump($allowed_user);
 $allowed_user = array_filter($allowed_user);
 if (empty($allowed_user)) {
@@ -294,7 +289,6 @@ foreach($langs as $prio => $lang) {
 <?php
 }else{
 	echo "You not logged in!";
-}
 }
 }
 }
