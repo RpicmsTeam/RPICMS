@@ -33,9 +33,20 @@ if (mysqli_connect_errno()) {
 	printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 	exit();
 }
+if ($resultat = $connection->query('SELECT id FROM allowed_user')) {
+	while($daten = $resultat->fetch_object() ){
+ 		$user_ids = $daten->id;
+ 		//var_dump($daten);
+	}
+  	$resultat->close();
+}
+$x = 1;
 $user = "test";
 if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
+	while ($x < $user_ids+1){
 		$allowed_user = $resultat->fetch_array(MYSQLI_NUM);
+		$x = $x+1;
+	}
 }
 var_dump($allowed_user);
 $allowed_user = array_filter($allowed_user);
