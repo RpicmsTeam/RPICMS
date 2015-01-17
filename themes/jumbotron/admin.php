@@ -34,15 +34,15 @@ if (mysqli_connect_errno()) {
 	exit();
 }
 $user = "test";
-if ($resultat = $connection->query('SELECT * FROM allowed_user WHERE email LIKE '.$user)) {
+if ($resultat = $connection->query("SELECT * FROM allowed_user WHERE email LIKE '$user'")) {
 	while($daten = $resultat->fetch_object() ){
  		$allowed_user = $daten->email;
  		var_dump($daten);
 	}
 }
-if (empty($allowed_user)) {
-	echo "You not logged in!";
-}else{
+#if (empty($allowed_user)) {
+#	echo "You not logged in!";
+#}else{
 foreach ($allowed_user as $subarray){
 if(in_array($user, $subarray)){
 
@@ -291,5 +291,5 @@ foreach($langs as $prio => $lang) {
 	echo "You not logged in!";
 }
 }
-}
+#}
 ?>
