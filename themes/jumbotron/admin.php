@@ -43,11 +43,11 @@ if ($resultat = $connection->query('SELECT id FROM allowed_user')) {
 $x = 1;
 $user = "test";
 if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
-	while ($x < $user_ids+1){
+	while ($x < $user_ids){
 		$allowed_user = $resultat->fetch_array(MYSQLI_NUM);
 		$x = $x+1;
-#	}
-#}
+	}
+}
 var_dump($allowed_user);
 $allowed_user = array_filter($allowed_user);
 if (empty($allowed_user)) {
@@ -299,8 +299,6 @@ foreach($langs as $prio => $lang) {
 <?php
 }else{
 	echo "You not logged in!";
-}
-}
 }
 }
 }
