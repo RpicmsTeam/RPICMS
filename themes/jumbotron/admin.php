@@ -35,13 +35,15 @@ if (mysqli_connect_errno()) {
 }
 
 if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
+	$allowed_user = $resultat;
 	while($daten = $resultat->fetch_object() ){
 		$allowed_user = $resultat;
 	}
   	#$resultat->close();
 }
-var_dump($allowed_user);
-$user = "test";
+if (!isset($allowed_user)) {
+	echo "You not logged in!";
+}
 foreach ($allowed_user as $subarray){
 if(in_array($user, $subarray)){
 
