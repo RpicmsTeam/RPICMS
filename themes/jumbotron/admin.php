@@ -41,7 +41,7 @@ if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
 	}
   	#$resultat->close();
 }
-if (!isset($allowed_user)) {
+if (empty($allowed_user)) {
 	echo "You not logged in!";
 }else{
 foreach ($allowed_user as $subarray){
