@@ -289,6 +289,4 @@ foreach($langs as $prio => $lang) {
 }else{
 	echo "You not logged in!";
 }
-}
-#}
 ?>
