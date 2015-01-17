@@ -37,7 +37,6 @@ $user = "test";
 if ($resultat = $connection->query("SELECT * FROM allowed_user WHERE email LIKE '$user'")) {
 	while($daten = $resultat->fetch_object() ){
  		$allowed_user = $daten->email;
- 		var_dump($daten);
 	}
 }
 #if (empty($allowed_user)) {
