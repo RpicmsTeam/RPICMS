@@ -36,7 +36,7 @@ if (mysqli_connect_errno()) {
 $user = "test";
 if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
 	#while($daten = $resultat->fetch_object() ){
-		$allowed_user = $resultat->result_array();
+		$allowed_user = $resultat->result_array(MYSQLI_NUM);
 		#$allowed_user = $daten["email"];
 	#}
   	#$resultat->close();
