@@ -288,6 +288,6 @@ foreach($langs as $prio => $lang) {
 <?php
 }else{
 	echo "You not logged in!";
-	header("HTTP/1.1 401 Unauthorized");
+	header('HTTP/1.1 401 Unauthorized', true, 401);
 }
 ?>
