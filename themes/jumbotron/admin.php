@@ -42,10 +42,10 @@ if ($resultat = $connection->query('SELECT id FROM allowed_user')) {
 }
 $x = 1;
 $user = "test";
-if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
-	while ($x < $user_ids){
-		$allowed_user = $resultat->fetch_array(MYSQLI_NUM);
-		$x = $x+1;
+if ($resultat = $connection->query('SELECT email FROM allowed_user LIKE $user')) {
+	while($daten = $resultat->fetch_object() ){
+ 		$allowed_user = $daten->email;
+ 		//var_dump($daten);
 	}
 }
 var_dump($allowed_user);
