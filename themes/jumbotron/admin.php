@@ -33,7 +33,7 @@ if (mysqli_connect_errno()) {
 	printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 	exit();
 }
-
+$user = "test";
 if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
 	$allowed_user = $resultat;
 	while($daten = $resultat->fetch_object() ){
