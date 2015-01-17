@@ -42,7 +42,7 @@ if ($resultat = $connection->query('SELECT id FROM allowed_user')) {
 }
 $x = 1;
 $user = "test";
-if ($resultat = $connection->query('SELECT email FROM allowed_user LIKE '.$user)) {
+if ($resultat = $connection->query('SELECT * FROM allowed_user WHERE email LIKE '.$user)) {
 	while($daten = $resultat->fetch_object() ){
  		$allowed_user = $daten->email;
  		var_dump($daten);
