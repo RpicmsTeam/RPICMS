@@ -46,5 +46,6 @@ while (ob_get_status()) {
 	$connection->close();
 	ob_end_clean();
 }
+header("HTTP/1.1 301 Moved Permanently");
 header( "Location: ../../../../" );
 ?>
