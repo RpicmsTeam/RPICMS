@@ -43,7 +43,7 @@ if ($resultat = $connection->query('SELECT email FROM allowed_user')) {
 }
 if (!isset($allowed_user)) {
 	echo "You not logged in!";
-}
+}else{
 foreach ($allowed_user as $subarray){
 if(in_array($user, $subarray)){
 
@@ -291,6 +291,7 @@ foreach($langs as $prio => $lang) {
 <?php
 }else{
 	echo "You not logged in!";
+}
 }
 }
 ?>
