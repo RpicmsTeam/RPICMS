@@ -175,9 +175,6 @@ foreach($langs as $prio => $lang) {
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
         </div>
-        <div id="navbar" class="navbar-collapse collapse navbar-right">
-            <div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php'); ?></div>
-        </div><!--/.navbar-collapse -->
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
         		<li class="dropdown">
@@ -192,6 +189,9 @@ foreach($langs as $prio => $lang) {
         			</ul>
         		</li>
         	</ul>
+        </div><!--/.navbar-collapse -->
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
+            <div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php'); ?></div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
