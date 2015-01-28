@@ -17,6 +17,8 @@ if ($root_3[1] == 'core') {
 
 
 
+$wysiwyg = "modul_simple_bootstrap-wysiwyg";//need to get extra config for modules
+include($root.'/core/backend/admin/modules/'.$wysiwyg. '/index.php');
 
   
 
