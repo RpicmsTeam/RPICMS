@@ -233,9 +233,11 @@ foreach($langs as $prio => $lang) {
 						</div>
 						<div class="form-group">
 						<label for="post_content">Content</label>
+              <div>
     						<textarea name="content" style="width:100%" id="editor"></textarea>
-    					</div>
-    					<button type="submit" class="btn btn-default">Save</button>
+              </div>
+    				</div>
+    				<button type="submit" class="btn btn-default">Save</button>
 					</form>
 			</div>
   		</div>
