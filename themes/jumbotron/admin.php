@@ -94,7 +94,7 @@ foreach($langs as $prio => $lang) {
     <link href="jumbotron.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <!--<script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>-->
 
     <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
