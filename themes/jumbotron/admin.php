@@ -143,7 +143,7 @@ foreach($langs as $prio => $lang) {
 		onload = foo;
 	</script>
 	<script type="text/javascript" src="../../core/libs/theme_engine/tinymce/tinymce.min.js"></script>
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 	tinymce.init({
     	selector: "textarea",
     	plugins: [
@@ -153,7 +153,7 @@ foreach($langs as $prio => $lang) {
     	],
     	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 	});
-	</script>
+	</script>-->
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -227,7 +227,7 @@ foreach($langs as $prio => $lang) {
 						</div>
 						<div class="form-group">
 						<label for="post_content">Content</label>
-    						<textarea name="content" style="width:100%"></textarea>
+    						<textarea name="content" style="width:100%" id="editor"></textarea>
     					</div>
     					<button type="submit" class="btn btn-default">Save</button>
 					</form>
