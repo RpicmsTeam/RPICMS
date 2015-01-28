@@ -17,8 +17,11 @@ if ($root_3[1] == 'core') {
 
 
 
-  $share = "share_buttons";//need to get extra config for modules
-  include($root.'/core/backend/admin/modules/'.$share. '/html_header.php');
+$share = "share_buttons";//need to get extra config for modules
+include($root.'/core/backend/admin/modules/'.$share. '/html_header.php');
+
+$wysiwyg = "modul_simple_bootstrap-wysiwyg";//need to get extra config for modules
+include($root.'/core/backend/admin/modules/'.$wysiwyg. '/html_header.php');
 
   
 

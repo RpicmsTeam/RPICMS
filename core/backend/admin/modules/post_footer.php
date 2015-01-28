@@ -17,8 +17,8 @@ if ($root_3[1] == 'core') {
 
 
 
-  $share = "share_buttons";//need to get extra config for modules
-  include($root.'/core/backend/admin/modules/'.$share. '/post_footer.php');
+$share = "share_buttons";//need to get extra config for modules
+include($root.'/core/backend/admin/modules/'.$share. '/post_footer.php');
 
   
 
