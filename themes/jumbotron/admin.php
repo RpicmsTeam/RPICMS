@@ -79,7 +79,7 @@ foreach($langs as $prio => $lang) {
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
     
@@ -91,9 +91,15 @@ foreach($langs as $prio => $lang) {
     <!-- Bootstrap core CSS -->
     <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
-
+    <link href="jumbotron.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
     <!--<script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>-->
+
+    <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    
+    <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -169,6 +175,9 @@ foreach($langs as $prio => $lang) {
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
         </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
+            <div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php'); ?></div>
+        </div><!--/.navbar-collapse -->
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
         		<li class="dropdown">
@@ -272,7 +281,8 @@ foreach($langs as $prio => $lang) {
       <hr>
 
       <footer>
-        <p>&copy; RpicmsTeam 2014</p>
+        <p>&copy; RpicmsTeam 2014 &amp; 2015</p>
+        <?php include($root . '/core/backend/admin/modules/footer.php'); ?>
       </footer>
     </div> <!-- /container -->
 
