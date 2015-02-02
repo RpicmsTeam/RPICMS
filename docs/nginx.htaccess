@@ -1,0 +1,11 @@
+location /oauth2callback {
+rewrite ^(.*)$ [PFAD_TO_PROJECT]/core/backend/admin/modules/modul_g-plus-login/handle.php redirect;
+}
+location / {
+if (!-e $request_filename){
+rewrite /^([^\.]+)$ /$request_uri.php;
+}
+if (!-e $request_filename){
+rewrite api/v1/(.*)$ [PFAD_TO_PROJECT]/core/api/v1/api.php?request=$1 break;
+}
+}
