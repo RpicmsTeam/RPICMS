@@ -1,5 +1,6 @@
 <?php
 require_once 'api.class.php';
+require_once 'MyApi.class.php';
 class MyAPI extends API
 {
     protected $User;
