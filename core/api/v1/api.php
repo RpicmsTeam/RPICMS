@@ -82,6 +82,7 @@ function echoRespnse($status_code, $response) {
  
     echo json_encode($response);
 }
+$app->run();
  /**
  * User Registration
  * url - /register
@@ -197,5 +198,4 @@ function authenticate(\Slim\Route $route) {
         $app->stop();
     }
 }
-$app->run();
 ?>
