@@ -23,7 +23,7 @@ class DbHandler {
     private $conn;
  
     function __construct() {
-        require_once $root . '/core/api/v1/DbConnect.php';
+        require_once $root . '/core/api/v1/DbConnect.class.php';
         // opening db connection
         $db = new DbConnect();
         $this->conn = $db->connect();

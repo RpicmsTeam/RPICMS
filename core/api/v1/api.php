@@ -12,8 +12,8 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-require_once $root . '/core/api/v1/DbHandler.php';
-require_once $root . '/core/api/v1/PassHash.php';
+require_once $root . '/core/api/v1/DbHandler.class.php';
+require_once $root . '/core/api/v1/PassHash.class.php';
 require_once $root . '/core/libs/Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
  
