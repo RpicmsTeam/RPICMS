@@ -8,8 +8,8 @@ class MyAPI extends API
         parent::__construct($request);
 
         // Abstracted out for example
-        $APIKey = new Models\APIKey();
-        $User = new Models\User();
+        $APIKey = ""
+        $User = ""
 
         if (!array_key_exists('apiKey', $this->request)) {
             throw new Exception('No API Key provided');
