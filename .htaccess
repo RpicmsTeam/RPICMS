@@ -5,5 +5,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule /^([^\.]+)$ %{REQUEST_URI}.php [NC]
 Redirect 301 /oauth2callback /core/backend/admin/modules/modul_g-plus-login/handle.php
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule api/v1/(.*)$ api/v1/api.php [QSA,L]
+RewriteRule api/v1/(.*)$ /coreapi/v1/api.php [QSA,L]
 </IfModule>

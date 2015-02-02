@@ -6,5 +6,5 @@ if (!-e $request_filename){
 rewrite /^([^\.]+)$ /$request_uri.php;
 }
 if (!-e $request_filename){
-rewrite api/v1/(.*)$ /api/v1/api.php break;
+rewrite api/v1/(.*)$ /core/api/v1/api.php break;
 }
