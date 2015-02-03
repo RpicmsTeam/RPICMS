@@ -13,9 +13,6 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-echo "$root_1";
-echo "$root_2";
-var_dump($root_3);
 $check = !file_exists($root . 'core/config/connect.db.inc.php');
 echo $check;
 if (!file_exists('core/config/connect.db.inc.php')) {
@@ -43,7 +40,7 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 
 
 		//header("HTTP/1.1 301 Moved Permanently");
-		//header("Location:/core/api/v1/api.php" . $Api['PATH_INFO']);
+		header("Location:" . $root_3[1] . "/core/api/v1/api.php" . $Api['PATH_INFO']);
 	}
 
 ?>
