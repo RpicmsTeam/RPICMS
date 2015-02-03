@@ -17,7 +17,10 @@ require_once $root . '/core/api/v1/PassHash.class.php';
 require_once $root . '/core/libs/Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 
-$app = new \Slim\Slim();
+$app = new \Slim\Slim((array(
+    'debug' => true,
+    'mode' => 'development'
+));
 
 // User id from db - Global Variable
 $user_id = NULL;
