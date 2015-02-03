@@ -20,7 +20,6 @@ require_once $root . '/core/libs/Slim/Slim.php';
 $app = new \Slim\Slim(array(
     'debug' => true,
     'mode' => 'development',
-    'log.writer' => new \My\LogWriter(),
     'log.enabled' => true
 ));
 
