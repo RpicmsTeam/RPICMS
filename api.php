@@ -40,7 +40,7 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 
 
 		//header("HTTP/1.1 301 Moved Permanently");
-		header("Location:" . $root_3[1] . "/core/api/v1/api.php" . $Api['PATH_INFO']);
+		header("Location:/" . $root_3[1] . "/core/api/v1/api.php" . $Api['PATH_INFO']);
 	}
 
 ?>
