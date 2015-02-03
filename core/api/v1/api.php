@@ -20,7 +20,8 @@ require_once $root . '/core/libs/Slim/Slim.php';
 $app = new \Slim\Slim(array(
     'debug' => true,
     'mode' => 'development',
-    'log.enabled' => true
+    'log.enabled' => true,
+    'log.level' => \Slim\Log::DEBUG
 ));
 
 
@@ -73,7 +74,7 @@ function authenticate(\Slim\Route $route) {
  * method - POST
  * params - name, email, password
  */
-$app->post('/register', function() use ($app) {
+$app->post('/register', function() {
             // check for required params
             verifyRequiredParams(array('name', 'email', 'password'));
 
