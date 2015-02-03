@@ -19,7 +19,9 @@ require_once $root . '/core/libs/Slim/Slim.php';
 
 $app = new \Slim\Slim(array(
     'debug' => true,
-    'mode' => 'development'
+    'mode' => 'development',
+    'log.writer' => new \My\LogWriter(),
+    'log.enabled' => true
 ));
 
 
@@ -350,6 +352,6 @@ function echoRespnse($status_code, $response) {
 
     echo json_encode($response);
 }
-
+$log = $app->getLog();
 $app->run();
 ?>

@@ -30,7 +30,7 @@ class DbConnect {
      * @return database connection handler
      */
     function connect() {
-        include_once $root . '/core/config/Config.php';
+        include_once $root . '/core/config/api.php';
  
         // Connecting to mysql database
         $this->conn = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
