@@ -38,7 +38,7 @@ class DbHandler {
      * @param String $password User login password
      */
     public function createUser($name, $email, $password) {
-        require_once 'PassHash.php';
+        require_once 'PassHash.class.php';
         $response = array();
  
         // First check if user already existed in db
