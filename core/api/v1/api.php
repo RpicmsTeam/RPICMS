@@ -17,13 +17,7 @@ require_once $root . '/core/api/v1/PassHash.class.php';
 require_once $root . '/core/libs/Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 
-$app = new \Slim\Slim(array(
-    'debug' => true,
-    'mode' => 'development',
-    'log.enabled' => true,
-    'log.level' => \Slim\Log::DEBUG
-));
-
+$app = new \Slim\Slim();
 
 // User id from db - Global Variable
 $user_id = NULL;
@@ -75,12 +69,6 @@ function authenticate(\Slim\Route $route) {
  * params - name, email, password
  */
 $app->post('/register', function() use ($app) {
-            try {
-                $obj->thisMightThrowException();
-            } catch(Exception $e) {
-                $app->flash('error', $e->getMessage());
-            }
-            echo "Debug";
             // check for required params
             verifyRequiredParams(array('name', 'email', 'password'));
 
@@ -109,7 +97,6 @@ $app->post('/register', function() use ($app) {
             }
             // echo json response
             echoRespnse(201, $response);
-
         });
 
 /**
@@ -359,6 +346,6 @@ function echoRespnse($status_code, $response) {
 
     echo json_encode($response);
 }
-$log = $app->getLog();
+
 $app->run();
 ?>
