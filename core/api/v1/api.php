@@ -80,6 +80,7 @@ $app->post('/register', function() use ($app) {
             } catch(Exception $e) {
                 $app->flash('error', $e->getMessage());
             }
+            echo "Debug";
             // check for required params
             verifyRequiredParams(array('name', 'email', 'password'));
 
