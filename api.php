@@ -23,8 +23,9 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 		//$Api = substr($request, strrpos($request, 'v1/') + 3);
 
 		$scriptName = $_SERVER['SCRIPT_NAME'];
+		$requestUri = $_SERVER['REQUEST_URI'];
 		$queryString = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
-		
+
 		// Physical path
         if (strpos($requestUri, $scriptName) !== false) {
             $physicalPath = $scriptName; // <-- Without rewriting
