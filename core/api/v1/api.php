@@ -74,8 +74,7 @@ function authenticate(\Slim\Route $route) {
  * method - POST
  * params - name, email, password
  */
-$app->post('/core/api/v1/register', function() use ($app) {
-            echo ("DEBUG!");
+$app->post('/register', function() use ($app) {
             try {
                 $obj->thisMightThrowException();
             } catch(Exception $e) {
