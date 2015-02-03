@@ -37,7 +37,6 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 		$Api['PATH_INFO'] = substr_replace($requestUri, '', 0, strlen($physicalPath)); // <-- Remove physical path
         $Api['PATH_INFO'] = str_replace('?' . $queryString, '', $Api['PATH_INFO']); // <-- Remove query string
         $Api['PATH_INFO'] = '/' . ltrim($Api['PATH_INFO'], '/'); // <-- Ensure leading slash
-		print_r($Api);
 
 
 		//header("HTTP/1.1 301 Moved Permanently");
