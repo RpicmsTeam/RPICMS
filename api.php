@@ -14,8 +14,10 @@ if ($root_3[1] == 'core') {
   $root = $root_1 . '/' . $root_3[1];
 }
 echo $root_1;
-echo $root_2;
-echo $root_3;
+echo "<br>";
+var_dump($root_2);
+echo "<br>";
+var_dump($root_3);
 $check = !file_exists('core/config/connect.db.inc.php');
 echo $check;
 if (!file_exists('core/config/connect.db.inc.php')) {
