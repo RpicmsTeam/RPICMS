@@ -8,7 +8,7 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 	header("Location:".$root."install/index.php");
 	}else{
 			$request = $_SERVER['REQUEST_URI'];
-			if (($pos = strpos($request, "api/v1/")) !== FALSE) { 
+			if (($pos = strpos($request, "/")) !== FALSE) { 
     			$Api = substr($request, $pos+1); 
 			}
 			echo $request;
