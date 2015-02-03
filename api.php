@@ -12,7 +12,9 @@ if (!file_exists('core/config/connect.db.inc.php')) {
     			$Api = substr($request, $pos+1); 
 			}
 			echo $request;
+			echo "</br>";
 			echo $pos;
+			echo "</br>";
 			echo $Api;
 			//header("HTTP/1.1 301 Moved Permanently");
 			//header("Location:api/v1/api.php/$Api");
