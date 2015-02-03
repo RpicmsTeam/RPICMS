@@ -15,7 +15,7 @@ if ($root_3[1] == 'core') {
 }
 echo "$root_1";
 echo "$root_2";
-echo "$root_3";
+var_dump($root_3);
 $check = !file_exists($root . 'core/config/connect.db.inc.php');
 echo $check;
 if (!file_exists('core/config/connect.db.inc.php')) {
