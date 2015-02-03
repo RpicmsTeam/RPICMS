@@ -17,7 +17,7 @@ $check = !file_exists('core/config/connect.db.inc.php');
 echo $check;
 if (!file_exists('core/config/connect.db.inc.php')) {
 	header("HTTP/1.1 301 Moved Permanently");
-	header("Location:".$root."install/index.php");
+	header("Location:install/index.php");
 	}else{
 		//$request = $_SERVER['REQUEST_URI'];
 		//$Api = substr($request, strrpos($request, 'v1/') + 3);
@@ -40,9 +40,8 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 		print_r($Api);
 
 
-		header("HTTP/1.1 301 Moved Permanently");
-		
-		header("Location:".$root."api/v1/api.php" . $Api['PATH_INFO']);
+		//header("HTTP/1.1 301 Moved Permanently");
+		//header("Location:api/v1/api.php" . $Api['PATH_INFO']);
 	}
 
 ?>
