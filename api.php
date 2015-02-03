@@ -21,7 +21,7 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 	}else{
 		//$request = $_SERVER['REQUEST_URI'];
 		//$Api = substr($request, strrpos($request, 'v1/') + 3);
-		$Api = $_SERVER['QUERY_STRING'];
+		$Api = $_SERVER['PATH_INFO'];
 		print_r($Api);
 		//header("HTTP/1.1 301 Moved Permanently");
 		//header("Location:api/v1/api.php/$Api");
