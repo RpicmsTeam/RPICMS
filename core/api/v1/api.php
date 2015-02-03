@@ -74,7 +74,7 @@ function authenticate(\Slim\Route $route) {
  * method - POST
  * params - name, email, password
  */
-$app->post('/api/v1/register', function() use ($app) {
+$app->post('/register', function() use ($app) {
             try {
                 $obj->thisMightThrowException();
             } catch(Exception $e) {
@@ -118,7 +118,7 @@ $app->post('/api/v1/register', function() use ($app) {
  * method - POST
  * params - email, password
  */
-$app->post('/api/v1/login', function() use ($app) {
+$app->post('/login', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('email', 'password'));
 
@@ -162,7 +162,7 @@ $app->post('/api/v1/login', function() use ($app) {
  * method GET
  * url /tasks          
  */
-$app->get('/api/v1/tasks', 'authenticate', function() {
+$app->get('/tasks', 'authenticate', function() {
             global $user_id;
             $response = array();
             $db = new DbHandler();
@@ -192,7 +192,7 @@ $app->get('/api/v1/tasks', 'authenticate', function() {
  * url /tasks/:id
  * Will return 404 if the task doesn't belongs to user
  */
-$app->get('/api/v1/tasks/:id', 'authenticate', function($task_id) {
+$app->get('/tasks/:id', 'authenticate', function($task_id) {
             global $user_id;
             $response = array();
             $db = new DbHandler();
@@ -220,7 +220,7 @@ $app->get('/api/v1/tasks/:id', 'authenticate', function($task_id) {
  * params - name
  * url - /tasks/
  */
-$app->post('/api/v1/tasks', 'authenticate', function() use ($app) {
+$app->post('/tasks', 'authenticate', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('task'));
 
@@ -251,7 +251,7 @@ $app->post('/api/v1/tasks', 'authenticate', function() use ($app) {
  * params task, status
  * url - /tasks/:id
  */
-$app->put('/api/v1/tasks/:id', 'authenticate', function($task_id) use($app) {
+$app->put('/tasks/:id', 'authenticate', function($task_id) use($app) {
             // check for required params
             verifyRequiredParams(array('task', 'status'));
 
@@ -281,7 +281,7 @@ $app->put('/api/v1/tasks/:id', 'authenticate', function($task_id) use($app) {
  * method DELETE
  * url /tasks
  */
-$app->delete('/api/v1/tasks/:id', 'authenticate', function($task_id) use($app) {
+$app->delete('/tasks/:id', 'authenticate', function($task_id) use($app) {
             global $user_id;
 
             $db = new DbHandler();
