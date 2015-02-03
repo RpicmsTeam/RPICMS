@@ -75,7 +75,12 @@ function authenticate(\Slim\Route $route) {
  * params - name, email, password
  */
 echo ("DEBUG!");
-$app->post('/register', function() {
+$app->post('/register', function() use ($app) {
+            try {
+                $obj->thisMightThrowException();
+            } catch(Exception $e) {
+                $app->flash('error', $e->getMessage());
+            }
             // check for required params
             verifyRequiredParams(array('name', 'email', 'password'));
 
@@ -104,6 +109,7 @@ $app->post('/register', function() {
             }
             // echo json response
             echoRespnse(201, $response);
+
         });
 
 /**
