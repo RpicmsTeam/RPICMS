@@ -76,7 +76,7 @@ class AutoUpdate
 	 *
 	 * @var string
 	 */
-	protected $_updateFile = "update.json.$this->branch";
+	protected $_updateFile = 'update.json.$this->branch';
 
 	/**
 	 * Current version.
