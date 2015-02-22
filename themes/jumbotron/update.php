@@ -36,7 +36,7 @@ $update->setCurrentVersion('1.0.0');
 $update->setUpdateUrl('http://media.nordgedanken.de/rpicms/server');
 
 // Optional:
-$update->addLogHandler(new Monolog\Handler\StreamHandler($root . 'core/update/update.log'));
+$update->addLogHandler(new Monolog\Handler\StreamHandler($root . '/core/update/update.log'));
 
 
 //Check for a new update
