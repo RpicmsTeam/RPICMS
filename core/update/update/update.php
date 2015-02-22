@@ -66,17 +66,17 @@ class AutoUpdate
 	 */
 	protected $_updateUrl = 'http://media.nordgedanken.de/rpicms/update/server/';
 
+	/*
+	 * branch on the server
+	 */
+	public $branch = 'stable';
+	
 	/**
 	 * Version filename on the server.
 	 *
 	 * @var string
 	 */
 	protected $_updateFile = 'update.json.$this->branch';
-
-	/*
-	 * branch on the server
-	 */
-	public $branch = 'stable';
 
 	/**
 	 * Current version.
