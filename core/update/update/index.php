@@ -4,7 +4,7 @@
 #######################
 header("Cache-Control: no-cache, must-revalidate, no-store");
 
-require('update.php');
+require('vendor/autoload.php');
 
 use \VisualAppeal\AutoUpdate;
 

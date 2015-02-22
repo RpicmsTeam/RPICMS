@@ -4,10 +4,11 @@
 #######################
 header("Cache-Control: no-cache, must-revalidate, no-store");
 
-if(isset($_GET['update']) && function_exists($_GET['update']))
-call_user_func($_GET['update']);
-else
-echo "Function not found or wrong input";
+if(isset($_GET['update']) && function_exists($_GET['update'])){
+	call_user_func($_GET['update']);
+}else{
+	echo "Function not found or wrong input";
+}
 
 function update(){
 ###############################
@@ -23,8 +24,9 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
+
 include($root . '/core/config/variables.config.php');
-include($root . '/core/update/update/update.php');
+include($root . '/core/update/update/vendor/autoload.php');
 use \VisualAppeal\AutoUpdate;
 
 $update = new AutoUpdate($root . '/temp/', $root . '/', 60);
