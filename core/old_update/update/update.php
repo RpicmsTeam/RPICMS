@@ -66,7 +66,7 @@ class AutoUpdate {
 	/*
 	 * Version filename on the server
 	 */
-	public $updateIni = 'update.ini' . $this->branch;
+	public $updateIni = 'update.ini.$this->branch';
 
 	/*
 	 * branch on the server
