@@ -24,7 +24,7 @@ if ($root_3[1] == 'core') {
   $root = $root_1 . '/' . $root_3[1];
 }
 include($root . '/core/config/variables.config.php');
-require($root . '/core/update/update/update.php');
+include($root . '/core/update/update/update.php');
 use \VisualAppeal\AutoUpdate;
 
 $update = new AutoUpdate($root . '/temp/', $root . '/', 60);
