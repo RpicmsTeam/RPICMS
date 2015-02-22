@@ -13,8 +13,9 @@ if ($root_3[1] == 'core') {
   $root = $root_1 . '/' . $root_3[1];
 }
 
-include($root . '/core/config/variables.config.php');
-include($root . '/core/update/update/vendor/autoload.php');
+require($root . '/core/config/variables.config.php');
+require($root . '/core/update/update/vendor/autoload.php');
+require($root . '/core/update/update/update.php');
 use \VisualAppeal\AutoUpdate;
 #######################
 # flush browser cache #
