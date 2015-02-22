@@ -63,7 +63,7 @@ if ($update->newVersionAvailable()) {
 } else {
 	echo 'Current Version is up to date<br>';
 }
-}
+
 ?>
 
 <!DOCTYPE html>
