@@ -176,10 +176,10 @@ $app->get('/tasks', 'authenticate', function() {
 /**
  * Listing single task of particual user
  * method GET
- * url /tasks/:id
+ * url /posts/:id
  * Will return 404 if the task doesn't belongs to user
  */
-$app->get('/tasks/:id', 'authenticate', function($task_id) {
+$app->get('/posts/:id', 'authenticate', function($task_id) {
             global $user_id;
             $response = array();
             $db = new DbHandler();
@@ -205,9 +205,9 @@ $app->get('/tasks/:id', 'authenticate', function($task_id) {
  * Creating new task in db
  * method POST
  * params - name
- * url - /tasks/
+ * url - /post/
  */
-$app->post('/tasks', 'authenticate', function() use ($app) {
+$app->post('/post', 'authenticate', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('task'));
 
@@ -238,7 +238,7 @@ $app->post('/tasks', 'authenticate', function() use ($app) {
  * params task, status
  * url - /tasks/:id
  */
-$app->put('/tasks/:id', 'authenticate', function($task_id) use($app) {
+$app->put('/posts/:id', 'authenticate', function($task_id) use($app) {
             // check for required params
             verifyRequiredParams(array('task', 'status'));
 
@@ -268,7 +268,7 @@ $app->put('/tasks/:id', 'authenticate', function($task_id) use($app) {
  * method DELETE
  * url /tasks
  */
-$app->delete('/tasks/:id', 'authenticate', function($task_id) use($app) {
+$app->delete('/posts/:id', 'authenticate', function($task_id) use($app) {
             global $user_id;
 
             $db = new DbHandler();
