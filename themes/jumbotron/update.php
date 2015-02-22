@@ -1,17 +1,4 @@
 <?php
-#######################
-# flush browser cache #
-#######################
-header("Cache-Control: no-cache, must-revalidate, no-store");
-
-if(isset($_GET['update']) && function_exists($_GET['update'])){
-	call_user_func($_GET['update']);
-	echo "test";
-}else{
-	echo "Function not found or wrong input";
-}
-
-function update(){
 ###############################
 # include files from root dir #
 ###############################
@@ -29,7 +16,19 @@ if ($root_3[1] == 'core') {
 include($root . '/core/config/variables.config.php');
 include($root . '/core/update/update/vendor/autoload.php');
 use \VisualAppeal\AutoUpdate;
+#######################
+# flush browser cache #
+#######################
+header("Cache-Control: no-cache, must-revalidate, no-store");
 
+if(isset($_GET['update']) && function_exists($_GET['update'])){
+	call_user_func($_GET['update']);
+	echo "test";
+}else{
+	echo "Function not found or wrong input";
+}
+
+function update(){
 $update = new AutoUpdate($root . '/temp/', $root . '/', 60);
 $update->setCurrentVersion('1.0.0');
 $update->setUpdateUrl('http://media.nordgedanken.de/rpicms/server');
