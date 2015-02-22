@@ -30,7 +30,7 @@ if(isset($_GET['update']) && function_exists($_GET['update'])){
 }
 
 function update(){
-global $root $root_1 $root_2 $root_3;
+global $root, $root_1, $root_2, $root_3;
 $update = new AutoUpdate($root . '/temp/', $root . '/', 60);
 $update->setCurrentVersion('1.0.0');
 $update->setUpdateUrl('http://media.nordgedanken.de/rpicms/server');
