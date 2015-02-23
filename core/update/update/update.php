@@ -78,7 +78,7 @@ class AutoUpdate
 	 *
 	 * @var string
 	 */
-   private $_updateFile = "update.json.".$_branch;
+   private $_updateFile = "update.json.", '$_branch';
 
 	/**
 	 * Current version.
