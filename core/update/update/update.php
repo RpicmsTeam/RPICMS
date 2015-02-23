@@ -71,14 +71,14 @@ class AutoUpdate
    *
    * @var string
 	 */
-   private $branch = "stable";
+   private $_branch = "stable";
 
 	/**
 	 * Version filename on the server.
 	 *
 	 * @var string
 	 */
-   private $_updateFile = "update.json.".$this->{$branch};
+   private $_updateFile = "update.json.".$_branch;
 
 	/**
 	 * Current version.
