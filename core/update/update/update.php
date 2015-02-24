@@ -78,7 +78,7 @@ class AutoUpdate
 	 *
 	 * @var string
 	 */
-   private $_updateFile = 'update.json.'
+   private $_updateFile = 'update.json.';
 
 	/**
 	 * Current version.
