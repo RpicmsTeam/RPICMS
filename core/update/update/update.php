@@ -233,7 +233,7 @@ class AutoUpdate
 	 */
 	public function setUpdateFile($updateFile)
 	{
-		$this->_updateFile = $updateFile . $this->$_branch;
+		$this->_updateFile = $updateFile . $this->_branch;
 	}
 
 	/**
@@ -364,7 +364,7 @@ class AutoUpdate
 
 		// Check if cache is empty
 		if ($versions === false) {
-			$updateFile = $this->_updateUrl . '/' . $this->_updateFile . $this->$_branch;
+			$updateFile = $this->_updateUrl . '/' . $this->_updateFile . $this->_branch;
 			$this->_log->addDebug(sprintf('Get new updates from %s', $updateFile));
 
 			// Read update file from update server
@@ -375,7 +375,7 @@ class AutoUpdate
 			}
 
 			// Parse update file
-			$updateFileExtension = substr(strrchr($this->_updateFile . $this->$_branch, '.'), 1);
+			$updateFileExtension = substr(strrchr($this->_updateFile . $this->_branch, '.'), 1);
 			switch ($updateFileExtension) {
 				case 'ini':
 					$versions = parse_ini_string($update, true);
