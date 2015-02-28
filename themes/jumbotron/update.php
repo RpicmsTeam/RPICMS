@@ -164,17 +164,6 @@ foreach($langs as $prio => $lang) {
 		onload = foo;
 	</script>
 	<script type="text/javascript" src="../../core/libs/theme_engine/tinymce/tinymce.min.js"></script>
-	<!--<script type="text/javascript">
-	tinymce.init({
-    	selector: "textarea",
-    	plugins: [
-        	"advlist autolink lists link image charmap print preview anchor",
-        	"searchreplace visualblocks code fullscreen",
-        	"insertdatetime media table contextmenu paste"
-    	],
-    	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-	});
-	</script>-->
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -193,14 +182,14 @@ foreach($langs as $prio => $lang) {
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
         		<li class="dropdown">
-        			<a href="#settings" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
+        			<a href="admin.php#settings" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings</a>
 					<ul class="dropdown-menu" role="menu">
-        				<li onclick="showhide('update');"><a href="#update">Update</a></li>
+        				<li><a href="admin.php#update" onclick="showhide('update');" class="active">Update <span class="sr-only">(current)</span></a></li>
         			</ul>
         		<li class="dropdown">
-        			<a href="#posts" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
+        			<a href="admin.php#posts" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
         			<ul class="dropdown-menu" role="menu">
-        				<li onclick="showhide('newpost');"><a href="#newpost">New Post</a></li>
+        				<li><a href="admin.php#newpost">New Post</a></li>
         			</ul>
         		</li>
         	</ul>
@@ -215,9 +204,6 @@ foreach($langs as $prio => $lang) {
       	<hr class="one">
   		<!-- Tab panes -->
   		<div class="tab-content">
-  			<div class="hide_" id="settings">
-  				<h2>Settings</h2>
-  			</div>
 
   			<div class="hide_" id="update">
   				<h2>Updates</h2>
