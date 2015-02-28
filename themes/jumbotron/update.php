@@ -34,18 +34,18 @@ global $root, $root_1, $root_2, $root_3;
 $update = new AutoUpdate($root . '/temp/', $root . '/', 60);
 $update->setCurrentVersion('1.0.0');
 $update->setUpdateUrl('http://media.nordgedanken.de/rpicms/server');
-public function BranchStable()
+function BranchStable()
 {
-  $this->_update->setUpdateFile('update.json');
-  $this->_update->setBranch('stable');
-  $response = $this->_update->checkUpdate();
+  $update->setUpdateFile('update.json');
+  $update->setBranch('stable');
+  $response = $update->checkUpdate();
   $this->assertTrue($response);
 }
-public function BranchDevelop()
+function BranchDevelop()
 {
-  $this->_update->setUpdateFile('update.json');
-  $this->_update->setBranch('nightly');
-  $response = $this->_update->checkUpdate();
+  $update->setUpdateFile('update.json');
+  $update->setBranch('nightly');
+  $response = $update>checkUpdate();
   $this->assertTrue($response);
 }
 
