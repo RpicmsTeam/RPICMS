@@ -215,8 +215,20 @@ foreach($langs as $prio => $lang) {
   			</div>
 
     		<div class="hide_" id="posts">
-				<h2>Posts</h2>
-			</div>
+				      <h2>Posts</h2>
+              <table class="table table-striped table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Short Description</th>
+                </tr>
+                <tr>
+                  <td>Eve</td>
+                  <td>Jackson</td>
+                  <td>94</td>
+                </tr>
+              </table>
+			  </div>
 
     		<div class="hide_" id="newpost">
 				<h2>New Post</h2>
