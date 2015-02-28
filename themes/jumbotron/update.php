@@ -157,7 +157,7 @@ foreach($langs as $prio => $lang) {
       			var divid1 = document.getElementById(hash);
     			divid1.style.display = "block";
   			} else {
-     			var divid1 = document.getElementById("settings");
+     			var divid1 = document.getElementById("update");
     			divid1.style.display = "block";
   			}
 		}
@@ -184,7 +184,7 @@ foreach($langs as $prio => $lang) {
         		<li class="dropdown">
         			<a href="admin.php#settings" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings</a>
 					<ul class="dropdown-menu" role="menu">
-        				<li><a href="admin.php#update" onclick="showhide('update');" class="active">Update <span class="sr-only">(current)</span></a></li>
+        				<li><a href="admin.php#update" class="active">Update <span class="sr-only">(current)</span></a></li>
         			</ul>
         		<li class="dropdown">
         			<a href="admin.php#posts" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
