@@ -234,10 +234,10 @@ foreach($langs as $prio => $lang) {
                       echo "<td>94</td>";
                       echo "</tr>";
                       $x = $x+1;
-                      if($x == 1){
-                        $id = $id+2;
-                      }else{
+                      if($x < 1){
                         $id = $id+1;
+                      }else{
+                        $id = $id+2;
                       }
                       next_id_only();
                     }
