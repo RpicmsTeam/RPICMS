@@ -227,7 +227,7 @@ foreach($langs as $prio => $lang) {
                     while ($x < $post_id_clean+1){
                       include($root . '/core/config/connect.db.inc.php');
                       echo "<tr>";
-                      echo "<td>$post_id_clean</td>";
+                      echo "<td>$post_id</td>";
                       echo "<td>Jackson</td>";
                       echo "<td>94</td>";
                       echo "</tr>";
