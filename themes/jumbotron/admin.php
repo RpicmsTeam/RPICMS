@@ -225,11 +225,14 @@ foreach($langs as $prio => $lang) {
                 <tr>
                   <?php
                     include($root . '/core/backend/blog/posts.php');
-                    include($root . '/core/config/connect.db.inc.php');
-                    foreach ($post_id_clean as $id){
+                    while ($x < $post_id_clean+1){
+                      include($root . '/core/config/connect.db.inc.php');
                       echo "<td>$id</td>";
                       echo "<td>Jackson</td>";
                       echo "<td>94</td>";
+                      $x = $x+1;
+                      $id = $id+1;
+                      next_id_only();
                     }
                     ?>
                 </tr>
