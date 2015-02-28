@@ -34,20 +34,8 @@ global $root, $root_1, $root_2, $root_3;
 $update = new AutoUpdate($root . '/temp/', $root . '/', 60);
 $update->setCurrentVersion('1.0.0');
 $update->setUpdateUrl('http://media.nordgedanken.de/rpicms/server');
-function BranchStable()
-{
-  $update->setUpdateFile('update.json');
-  $update->setBranch('stable');
-  $response = $update->checkUpdate();
-  $this->assertTrue($response);
-}
-function BranchDevelop()
-{
-  $update->setUpdateFile('update.json');
-  $update->setBranch('nightly');
-  $response = $update>checkUpdate();
-  $this->assertTrue($response);
-}
+$update->setUpdateFile('update.json');
+$update->setBranch('stable');
 
 // Optional:
 $update->addLogHandler(new Monolog\Handler\StreamHandler($root . '/core/update/update.log'));
