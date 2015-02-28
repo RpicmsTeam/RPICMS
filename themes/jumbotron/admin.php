@@ -223,9 +223,15 @@ foreach($langs as $prio => $lang) {
                   <th>Short Description</th>
                 </tr>
                 <tr>
-                  <td>Eve</td>
-                  <td>Jackson</td>
-                  <td>94</td>
+                  <?php
+                    include($root . '/core/backend/blog/posts.php');
+                    include($root . '/core/config/connect.db.inc.php');
+                    foreach $post_id_clean as $id{
+                      echo "<td>$id</td>";
+                      echo "<td>Jackson</td>";
+                      echo "<td>94</td>";
+                    }
+                    ?>
                 </tr>
               </table>
 			  </div>
