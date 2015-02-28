@@ -182,13 +182,13 @@ foreach($langs as $prio => $lang) {
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav">
         		<li class="dropdown">
-        			<a href="admin.php#settings" class="dropdown-toggle" style="z-index: 1000;" data-toggle="dropdown" role="button" aria-expanded="false">Settings <span class="caret"></span></a>
+        			<a href="admin.php#settings" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-expanded="false">Settings <span class="caret"></span></a>
 					    <ul class="dropdown-menu" role="menu">
         				<li><a href="admin.php#update" class="active">Update <span class="sr-only">(current)</span></a></li>
         			</ul>
             </li>
         		<li class="dropdown">
-        			<a href="admin.php#posts" class="dropdown-toggle" style="z-index: 1000;" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
+        			<a href="admin.php#posts" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
         			<ul class="dropdown-menu" role="menu">
         				<li><a href="admin.php#newpost">New Post</a></li>
         			</ul>
