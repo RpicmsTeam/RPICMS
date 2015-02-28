@@ -232,6 +232,7 @@ foreach($langs as $prio => $lang) {
                         echo (string)"<td>Jackson</td>";
                         echo (string)"<td>94</td>";
                         echo (string)"</tr>";
+                        echo $post_id;
                       $x = $x+1;
                       next_id_only();
                     }
