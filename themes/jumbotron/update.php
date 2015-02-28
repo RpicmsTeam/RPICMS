@@ -24,7 +24,6 @@ header("Cache-Control: no-cache, must-revalidate, no-store");
 
 if(isset($_GET['update']) && function_exists($_GET['update'])){
 	call_user_func($_GET['update']);
-	echo "test";
 }else{
 	echo "Function not found or wrong input";
 }
