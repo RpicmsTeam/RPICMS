@@ -47,32 +47,32 @@ if($allowed_user == $user){
 ################
 # lang support #
 ################
-function getBrowserLangs() {  
-  $langs[0] = $langs[1] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);  
-  $langs[0] = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);  
-  foreach($langs[0] as $l) {  
-    $q = explode(';', $l);  
-    $lang = substr($q[0], 0, 2);  
-    $q = (isset($q[1])) ? (float)substr($q[1], 2) : 1;  
-    $result[$lang] = $q;   
-  }  
-  if(isset($result) && is_array($result)) {  
-    arsort($result, SORT_NUMERIC);    
-    return $result;  
-  }   
-  return $result[$langs[1]] = 1;    
-}  
-$langs = getBrowserLangs();  
-foreach($langs as $prio => $lang) {  
-  if($lang = 'de') {  
-    include('lang/de-DE.php');  
-    break;  
-  } elseif($lang = 'en') {  
-    include('lang/en-US.php');  
-    break;   
-  }   
-  // AND SO ON .................  
-}  
+function getBrowserLangs() {
+  $langs[0] = $langs[1] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+  $langs[0] = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+  foreach($langs[0] as $l) {
+    $q = explode(';', $l);
+    $lang = substr($q[0], 0, 2);
+    $q = (isset($q[1])) ? (float)substr($q[1], 2) : 1;
+    $result[$lang] = $q;
+  }
+  if(isset($result) && is_array($result)) {
+    arsort($result, SORT_NUMERIC);
+    return $result;
+  }
+  return $result[$langs[1]] = 1;
+}
+$langs = getBrowserLangs();
+foreach($langs as $prio => $lang) {
+  if($lang = 'de') {
+    include('lang/de-DE.php');
+    break;
+  } elseif($lang = 'en') {
+    include('lang/en-US.php');
+    break;
+  }
+  // AND SO ON .................
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,7 +82,7 @@ foreach($langs as $prio => $lang) {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
     <?php
     echo "<title>$blog_name | Admin</title>";
@@ -99,7 +99,7 @@ foreach($langs as $prio => $lang) {
 
     <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    
+
     <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -121,7 +121,7 @@ foreach($langs as $prio => $lang) {
           } else {
             location.href = wert;
 
-          } 
+          }
         }
       }
     </script>
@@ -180,9 +180,10 @@ foreach($langs as $prio => $lang) {
         	<ul class="nav navbar-nav">
         		<li class="dropdown">
         			<a href="#settings" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
-					<ul class="dropdown-menu" role="menu">
+					    <ul class="dropdown-menu" role="menu">
         				<li onclick="showhide('update');"><a href="#update">Update</a></li>
         			</ul>
+            </li>
         		<li class="dropdown">
         			<a href="#posts" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
         			<ul class="dropdown-menu" role="menu">
@@ -208,7 +209,7 @@ foreach($langs as $prio => $lang) {
   			<div class="hide_" id="update">
   				<h2>Updates</h2>
   				<form action="update.php">
-  					<button type="submit" value="update" name="update" class="btn btn-danger">Update</button> 
+  					<button type="submit" value="update" name="update" class="btn btn-danger">Update</button>
   				</form>
 
   			</div>

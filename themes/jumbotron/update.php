@@ -183,7 +183,7 @@ foreach($langs as $prio => $lang) {
         	<ul class="nav navbar-nav">
         		<li class="dropdown">
         			<a href="admin.php#settings" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings</a>
-					<ul class="dropdown-menu" role="menu">
+					    <ul class="dropdown-menu" role="menu">
         				<li><a href="admin.php#update" class="active">Update <span class="sr-only">(current)</span></a></li>
         			</ul>
             </li>
