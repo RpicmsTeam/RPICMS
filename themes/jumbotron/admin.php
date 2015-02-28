@@ -224,10 +224,10 @@ foreach($langs as $prio => $lang) {
                 </tr>
                   <?php
                     include($root . '/core/backend/blog/posts.php');
-                    while ($x < $post_id_clean+2){
+                    while ($x <= $post_id_clean+1){
                       include($root . '/core/config/connect.db.inc.php');
                       echo (string)"<tr>";
-                      echo (string)"<td>$post_id</td>";
+                      echo (string)"<td>$id</td>";
                       echo (string)"<td>Jackson</td>";
                       echo (string)"<td>94</td>";
                       echo (string)"</tr>";
