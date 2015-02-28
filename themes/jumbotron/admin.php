@@ -234,7 +234,11 @@ foreach($langs as $prio => $lang) {
                       echo "<td>94</td>";
                       echo "</tr>";
                       $x = $x+1;
-                      $id = $id+1;
+                      if($x = 1){
+                        $id = $id+2;
+                      }else{
+                        $id = $id+1;
+                      }
                       next_id_only();
                     }
                     ?>
