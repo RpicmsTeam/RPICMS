@@ -1,14 +1,14 @@
 <?php namespace VisualAppeal;
 
-use vierbergenlars\SemVer\version;
-use vierbergenlars\SemVer\expression;
-use vierbergenlars\SemVer\SemVerException;
+use \vierbergenlars\SemVer\version;
+use \vierbergenlars\SemVer\expression;
+use \vierbergenlars\SemVer\SemVerException;
 
-use Desarrolla2\Cache\Cache;
-use Desarrolla2\Cache\Adapter\NotCache;
+use \Desarrolla2\Cache\Cache;
+use \Desarrolla2\Cache\Adapter\NotCache;
 
-use Monolog\Logger;
-use Monolog\Handler\NullHandler;
+use \Monolog\Logger;
+use \Monolog\Handler\NullHandler;
 
 
 ###############################
@@ -24,7 +24,6 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-
 
 /**
  * Auto update class.
@@ -60,34 +59,6 @@ class AutoUpdate
 	private $_simulationResults = array();
 
 	/**
-	 * Url to the update folder on the server.
-	 *
-	 * @var string
-	 */
-	protected $_updateUrl = 'http://media.nordgedanken.de/rpicms/update/server/';
-
-	/*
-	 * branch on the server
-   *
-   * @var string
-	 */
-   protected $_branch = 'stable';
-
-	/**
-	 * Version filename on the server.
-	 *
-	 * @var string
-	 */
-   protected $_updateFile = 'update.json.';
-
-	/**
-	 * Current version.
-	 *
-	 * @var vierbergenlars\SemVer\version
-	 */
-	protected $_currentVersion = null;
-
-	/**
 	 * Temporary download directory.
 	 *
 	 * @var string
@@ -100,6 +71,34 @@ class AutoUpdate
 	 * @var string
 	 */
 	private $_installDir = '';
+
+	/**
+	 * Update branch.
+	 *
+	 * @var string
+	 */
+	private $_branch = '';
+
+	/**
+	 * Url to the update folder on the server.
+	 *
+	 * @var string
+	 */
+	protected $_updateUrl = 'http://media.nordgedanken.de/rpicms/update/server/';
+
+	/**
+	 * Version filename on the server.
+	 *
+	 * @var string
+	 */
+	protected $_updateFile = 'update.json';
+
+	/**
+	 * Current version.
+	 *
+	 * @var vierbergenlars\SemVer\version
+	 */
+	protected $_currentVersion = null;
 
 	/**
 	 * Create new folders with this privileges.
@@ -203,6 +202,7 @@ class AutoUpdate
 		}
 
 		$this->_tempDir = $dir;
+		return $this;
 	}
 
 	/**
@@ -224,6 +224,7 @@ class AutoUpdate
 		}
 
 		$this->_installDir = $dir;
+		return $this;
 	}
 
 	/**
@@ -233,7 +234,8 @@ class AutoUpdate
 	 */
 	public function setUpdateFile($updateFile)
 	{
-		$this->_updateFile = $updateFile . $this->_branch;
+		$this->_updateFile = $updateFile;
+		return $this;
 	}
 
 	/**
@@ -244,6 +246,18 @@ class AutoUpdate
 	public function setUpdateUrl($updateUrl)
 	{
 		$this->_updateUrl = $updateUrl;
+		return $this;
+	}
+
+	/**
+	 * Set the update branch.
+	 *
+	 * @param string branch
+	 */
+	public function setBranch($branch)
+	{
+		$this->_branch = $branch;
+		return $this;
 	}
 
 	/**
@@ -256,6 +270,7 @@ class AutoUpdate
 	{
 		$adapter->setOption('ttl', $ttl);
 		$this->_cache = new Cache($adapter);
+		return $this;
 	}
 
 	/**
@@ -274,7 +289,7 @@ class AutoUpdate
 		}
 
 		$this->_currentVersion = $version;
-		return true;
+		return $this;
 	}
 
 	/**
@@ -285,6 +300,7 @@ class AutoUpdate
 	public function addLogHandler(\Monolog\Handler\HandlerInterface $handler)
 	{
 		$this->_log->pushHandler($handler);
+		return $this;
 	}
 
 	/**
@@ -364,7 +380,11 @@ class AutoUpdate
 
 		// Check if cache is empty
 		if ($versions === false) {
-			$updateFile = $this->_updateUrl . '/' . $this->_updateFile . $this->_branch;
+			// Create absolute url to update file
+			$updateFile = $this->_updateUrl . '/' . $this->_updateFile;
+			if (!empty($this->_branch))
+				$updateFile .= '.' . $this->_branch;
+
 			$this->_log->addDebug(sprintf('Get new updates from %s', $updateFile));
 
 			// Read update file from update server
@@ -375,12 +395,12 @@ class AutoUpdate
 			}
 
 			// Parse update file
-			$updateFileExtension = substr(strrchr($this->_updateFile . $this->_branch, '.'), 1);
+			$updateFileExtension = substr(strrchr($this->_updateFile, '.'), 1);
 			switch ($updateFileExtension) {
 				case 'ini':
-					$versions = parse_ini_string($update, true);
+					$versions = @parse_ini_string($update, true);
 					if (!is_array($versions)) {
-						$this->_log->addInfo('Unable to parse update file!');
+						$this->_log->addInfo('Unable to parse ini update file!');
 						return false;
 					}
 
@@ -390,7 +410,11 @@ class AutoUpdate
 
 					break;
 				case 'json':
-					$versions = json_decode($update);
+					$versions = (array) @json_decode($update);
+					if (!is_array($versions)) {
+						$this->_log->addInfo('Unable to parse json update file!');
+						return false;
+					}
 
 					break;
 				default:

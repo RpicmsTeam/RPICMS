@@ -34,6 +34,20 @@ global $root, $root_1, $root_2, $root_3;
 $update = new AutoUpdate($root . '/temp/', $root . '/', 60);
 $update->setCurrentVersion('1.0.0');
 $update->setUpdateUrl('http://media.nordgedanken.de/rpicms/server');
+public function BranchStable()
+{
+  $this->_update->setUpdateFile('update.json');
+  $this->_update->setBranch('stable');
+  $response = $this->_update->checkUpdate();
+  $this->assertTrue($response);
+}
+public function BranchDevelop()
+{
+  $this->_update->setUpdateFile('update.json');
+  $this->_update->setBranch('nightly');
+  $response = $this->_update->checkUpdate();
+  $this->assertTrue($response);
+}
 
 // Optional:
 $update->addLogHandler(new Monolog\Handler\StreamHandler($root . '/core/update/update.log'));
@@ -76,7 +90,7 @@ if ($update->newVersionAvailable()) {
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-    
+
 		<link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
 
 		<!-- Bootstrap core CSS -->
