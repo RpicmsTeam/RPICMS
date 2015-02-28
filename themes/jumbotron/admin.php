@@ -238,6 +238,7 @@ foreach($langs as $prio => $lang) {
                         $id = $id+1;
                       }else{
                         $id = $id+2;
+                        echo "test";
                       }
                       next_id_only();
                     }
