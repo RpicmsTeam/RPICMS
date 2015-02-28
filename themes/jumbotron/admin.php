@@ -228,6 +228,7 @@ foreach($langs as $prio => $lang) {
                       include($root . '/core/config/connect.db.inc.php');
                       echo (string)"<tr>";
                       echo (string)"<td>$post_id</td>";
+                      print $post_id;
                       echo (string)"<td>Jackson</td>";
                       echo (string)"<td>94</td>";
                       echo (string)"</tr>";
