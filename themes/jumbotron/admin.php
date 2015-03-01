@@ -221,6 +221,7 @@ foreach($langs as $prio => $lang) {
                   <th>ID</th>
                   <th>Title</th>
                   <th>Short Description</th>
+                  <th><span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span></th>
                 </tr>
                   <?php
                     $id = 1;
