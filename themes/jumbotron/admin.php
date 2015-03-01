@@ -233,6 +233,7 @@ foreach($langs as $prio => $lang) {
                       echo "<td>$id</td>";
                       echo "<td>$post_title</td>";
                       echo "<td></td>";
+                      echo "<td><a href=\"#\" title=\"Edit\">Edit</a></td>";
                       echo "</tr>";
                       $x = $x+1;
                       $id = $id+1;
