@@ -140,6 +140,34 @@ $app->post('/login', function() use ($app) {
             echoRespnse(200, $response);
         });
 
+/**
+* Listing single task of particual user
+* method GET
+* url /posts/:id
+* Will return 404 if the task doesn't belongs to user
+*/
+$app->get('/posts/:id', function($task_id) {
+  global $user_id;
+  $response = array();
+  $db = new DbHandler();
+
+  // fetch task
+  $result = $db->getTask($task_id, $user_id);
+
+  if ($result != NULL) {
+      $response["error"] = false;
+      $response["id"] = $result["id"];
+      $response["task"] = $result["task"];
+      $response["status"] = $result["status"];
+      $response["createdAt"] = $result["created_at"];
+      echoRespnse(200, $response);
+  } else {
+      $response["error"] = true;
+      $response["message"] = "The requested resource doesn't exists";
+      echoRespnse(404, $response);
+  }
+});
+
 /*
  * ------------------------ METHODS WITH AUTHENTICATION ------------------------
  */
@@ -147,7 +175,7 @@ $app->post('/login', function() use ($app) {
 /**
  * Listing all tasks of particual user
  * method GET
- * url /tasks          
+ * url /tasks
  */
 $app->get('/tasks', 'authenticate', function() {
             global $user_id;
@@ -173,33 +201,6 @@ $app->get('/tasks', 'authenticate', function() {
             echoRespnse(200, $response);
         });
 
-/**
- * Listing single task of particual user
- * method GET
- * url /posts/:id
- * Will return 404 if the task doesn't belongs to user
- */
-$app->get('/posts/:id', 'authenticate', function($task_id) {
-            global $user_id;
-            $response = array();
-            $db = new DbHandler();
-
-            // fetch task
-            $result = $db->getTask($task_id, $user_id);
-
-            if ($result != NULL) {
-                $response["error"] = false;
-                $response["id"] = $result["id"];
-                $response["task"] = $result["task"];
-                $response["status"] = $result["status"];
-                $response["createdAt"] = $result["created_at"];
-                echoRespnse(200, $response);
-            } else {
-                $response["error"] = true;
-                $response["message"] = "The requested resource doesn't exists";
-                echoRespnse(404, $response);
-            }
-        });
 
 /**
  * Creating new task in db
@@ -229,7 +230,7 @@ $app->post('/post', 'authenticate', function() use ($app) {
                 $response["error"] = true;
                 $response["message"] = "Failed to create task. Please try again";
                 echoRespnse(200, $response);
-            }            
+            }
         });
 
 /**
@@ -242,7 +243,7 @@ $app->put('/posts/:id', 'authenticate', function($task_id) use($app) {
             // check for required params
             verifyRequiredParams(array('task', 'status'));
 
-            global $user_id;            
+            global $user_id;
             $task = $app->request->put('task');
             $status = $app->request->put('status');
 
