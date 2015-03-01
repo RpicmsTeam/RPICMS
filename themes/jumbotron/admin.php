@@ -233,7 +233,7 @@ foreach($langs as $prio => $lang) {
                       echo "<td>$id</td>";
                       echo "<td>$post_title</td>";
                       echo "<td></td>";
-                      echo "<td><a href=\"#\" title=\"Edit\">Edit</a><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> | <a href=\"#\" title=\"Delete\">Delete</a><span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></td>";
+                      echo "<td><a href=\"#\" title=\"Edit\">Edit</a>  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>  |  <a href=\"#\" title=\"Delete\">Delete</a>  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></td>";
                       echo "</tr>";
                       $x = $x+1;
                       $id = $id+1;
