@@ -230,18 +230,11 @@ foreach($langs as $prio => $lang) {
                       include($root . '/core/config/connect.db.inc.php');
                       echo "<tr>";
                       echo "<td>$id</td>";
-                      echo "<td>Jackson</td>";
-                      echo "<td>94</td>";
+                      echo "<td>$post_title</td>";
+                      echo "<td></td>";
                       echo "</tr>";
                       $x = $x+1;
-                      if($x > 2){
-                        $id = $id+1;
-                        echo $x;
-                      }else{
-                        $id = $id+2;
-                        echo "test";
-                        echo $x;
-                      }
+                      $id = $id+1;
                       next_id_only();
                     }
                     ?>
