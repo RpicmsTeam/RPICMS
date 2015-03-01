@@ -221,7 +221,7 @@ foreach($langs as $prio => $lang) {
                   <th>ID</th>
                   <th>Title</th>
                   <th>Short Description</th>
-                  <th><span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true" style="text-align:center;"></span></th>
+                  <th><span class="glyphicon glyphicon-cog" aria-hidden="true" style="text-align:center;"></span></th>
                 </tr>
                   <?php
                     $id = 1;
@@ -233,7 +233,7 @@ foreach($langs as $prio => $lang) {
                       echo "<td>$id</td>";
                       echo "<td>$post_title</td>";
                       echo "<td></td>";
-                      echo "<td><a href=\"#\" title=\"Edit\">Edit</a></td>";
+                      echo "<td><a href=\"#\" title=\"Edit\">Edit</a><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> | <a href=\"#\" title=\"Delete\">Delete</a><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>";
                       echo "</tr>";
                       $x = $x+1;
                       $id = $id+1;
