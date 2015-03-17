@@ -19,18 +19,19 @@ if ($root_3[1] == 'core') {
  * @author Ravi Tamada
  */
 class DbHandler {
- 
+
     private $conn;
- 
+
     function __construct() {
+        global $root;
         require_once $root . '/core/api/v1/DbConnect.class.php';
         // opening db connection
         $db = new DbConnect();
         $this->conn = $db->connect();
     }
- 
+
     /* ------------- `users` table method ------------------ */
- 
+
     /**
      * Creating new user
      * @param String $name User full name
@@ -40,23 +41,23 @@ class DbHandler {
     public function createUser($name, $email, $password) {
         require_once 'PassHash.class.php';
         $response = array();
- 
+
         // First check if user already existed in db
         if (!$this->isUserExists($email)) {
             // Generating password hash
             $password_hash = PassHash::hash($password);
- 
+
             // Generating API key
             $api_key = $this->generateApiKey();
- 
+
             // insert query
             $stmt = $this->conn->prepare("INSERT INTO users(name, email, password_hash, api_key, status) values(?, ?, ?, ?, 1)");
             $stmt->bind_param("ssss", $name, $email, $password_hash, $api_key);
- 
+
             $result = $stmt->execute();
- 
+
             $stmt->close();
- 
+
             // Check for successful insertion
             if ($result) {
                 // User successfully inserted
@@ -69,10 +70,10 @@ class DbHandler {
             // User with same email already existed in the db
             return USER_ALREADY_EXISTED;
         }
- 
+
         return $response;
     }
- 
+
     /**
      * Checking user login
      * @param String $email User login email id
@@ -82,23 +83,23 @@ class DbHandler {
     public function checkLogin($email, $password) {
         // fetching user by email
         $stmt = $this->conn->prepare("SELECT password_hash FROM users WHERE email = ?");
- 
+
         $stmt->bind_param("s", $email);
- 
+
         $stmt->execute();
- 
+
         $stmt->bind_result($password_hash);
- 
+
         $stmt->store_result();
- 
+
         if ($stmt->num_rows > 0) {
             // Found user with the email
             // Now verify the password
- 
+
             $stmt->fetch();
- 
+
             $stmt->close();
- 
+
             if (PassHash::check_password($password_hash, $password)) {
                 // User password is correct
                 return TRUE;
@@ -108,12 +109,12 @@ class DbHandler {
             }
         } else {
             $stmt->close();
- 
+
             // user not existed with the email
             return FALSE;
         }
     }
- 
+
     /**
      * Checking for duplicate user by email address
      * @param String $email email to check in db
@@ -128,7 +129,7 @@ class DbHandler {
         $stmt->close();
         return $num_rows > 0;
     }
- 
+
     /**
      * Fetching user by email
      * @param String $email User email id
@@ -144,7 +145,7 @@ class DbHandler {
             return NULL;
         }
     }
- 
+
     /**
      * Fetching user api key
      * @param String $user_id user id primary key in user table
@@ -160,7 +161,7 @@ class DbHandler {
             return NULL;
         }
     }
- 
+
     /**
      * Fetching user id by api key
      * @param String $api_key user api key
@@ -176,7 +177,7 @@ class DbHandler {
             return NULL;
         }
     }
- 
+
     /**
      * Validating user api key
      * If the api key is there in db, it is a valid key
@@ -192,27 +193,27 @@ class DbHandler {
         $stmt->close();
         return $num_rows > 0;
     }
- 
+
     /**
      * Generating random Unique MD5 String for user Api key
      */
     private function generateApiKey() {
         return md5(uniqid(rand(), true));
     }
- 
+
     /* ------------- `tasks` table method ------------------ */
- 
+
     /**
      * Creating new task
      * @param String $user_id user id to whom task belongs to
      * @param String $task task text
      */
-    public function createTask($user_id, $task) {        
+    public function createTask($user_id, $task) {
         $stmt = $this->conn->prepare("INSERT INTO tasks(task) VALUES(?)");
         $stmt->bind_param("s", $task);
         $result = $stmt->execute();
         $stmt->close();
- 
+
         if ($result) {
             // task row created
             // now assign the task to user
@@ -230,7 +231,7 @@ class DbHandler {
             return NULL;
         }
     }
- 
+
     /**
      * Fetching single task
      * @param String $task_id id of the task
@@ -246,7 +247,7 @@ class DbHandler {
             return NULL;
         }
     }
- 
+
     /**
      * Fetching all user tasks
      * @param String $user_id id of the user
@@ -259,7 +260,7 @@ class DbHandler {
         $stmt->close();
         return $tasks;
     }
- 
+
     /**
      * Updating task
      * @param String $task_id id of the task
@@ -274,7 +275,7 @@ class DbHandler {
         $stmt->close();
         return $num_affected_rows > 0;
     }
- 
+
     /**
      * Deleting a task
      * @param String $task_id id of the task to delete
@@ -287,9 +288,9 @@ class DbHandler {
         $stmt->close();
         return $num_affected_rows > 0;
     }
- 
+
     /* ------------- `user_tasks` table method ------------------ */
- 
+
     /**
      * Function to assign a task to user
      * @param String $user_id id of the user
@@ -302,7 +303,7 @@ class DbHandler {
         $stmt->close();
         return $result;
     }
- 
+
 }
- 
+
 ?>
