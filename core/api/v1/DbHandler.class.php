@@ -122,7 +122,7 @@ class DbHandler {
      */
     private function isUserExists($email) {
         $stmt = $this->conn->prepare("SELECT id from users WHERE email = ?");
-        echo $email;
+        echo $stmt;
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $stmt->store_result();
