@@ -146,20 +146,22 @@ $app->post('/login', function() use ($app) {
 * url /posts/:id
 * Will return 404 if the task doesn't belongs to user
 */
-$app->get('/posts/:id', function($task_id) {
+$app->get('/posts/:id', function($post_id) {
   global $user_id;
   $response = array();
   $db = new DbHandler();
 
   // fetch task
-  $result = $db->getPosts($task_id);
+  $result = $db->getPosts($post_id);
 
   if ($result != NULL) {
       $response["error"] = false;
       $response["id"] = $result["id"];
-      $response["task"] = $result["task"];
-      $response["status"] = $result["status"];
-      $response["createdAt"] = $result["created_at"];
+      $response["title"] = $result["title"];
+      $response["text"] = $result["text"];
+      $response["author"] = $result["author"];
+      $response["category"] = $result["category"];
+      $response["date"] = $result["date"];
       echoRespnse(200, $response);
   } else {
       $response["error"] = true;

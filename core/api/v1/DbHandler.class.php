@@ -204,7 +204,7 @@ class DbHandler {
         return md5(uniqid(rand(), true));
     }
 
-    /* ------------- `tasks` table method ------------------ */
+    /* ------------- `posts` table method ------------------ */
 
     /**
      * Creating new task
@@ -239,16 +239,21 @@ class DbHandler {
      * Fetching single task
      * @param String $task_id id of the task
      */
-    public function getPosts($task_id) {
-        $stmt = $this->conn->prepare("SELECT t.id, t.task, t.status, t.created_at from tasks t, user_tasks ut WHERE t.id = ? AND ut.task_id = t.id AND ut.user_id = ?");
-        $stmt->bind_param("ii", $task_id);
+    public function getPosts($post_id) {
+      if ($post_id = NULL){
+        return $all;
+      }else{
+        $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id LIKE '$post_id'");
+        $stmt->bind_param("ii", $post_id);
         if ($stmt->execute()) {
-            $task = $stmt->get_result()->fetch_assoc();
+            $post = $stmt->get_result()->fetch_assoc();
             $stmt->close();
-            return $task;
+            return $post;
         } else {
             return NULL;
         }
+      }
+
     }
 
     /**
