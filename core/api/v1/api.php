@@ -151,8 +151,6 @@ $app->get('/posts/:id', function($post_id) {
   $response = array();
   $db = new DbHandler();
 
-  echo "$post_id";
-
   // fetch task
   $result = $db->getPosts($post_id);
   var_dump($result);
