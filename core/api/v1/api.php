@@ -209,7 +209,7 @@ $app->get('/tasks', 'authenticate', function() {
  * params - name
  * url - /addpost/
  */
-$app->addPost('/addpost', 'authenticate', function() use ($app) {
+$app->Post('/addpost', 'authenticate', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('task'));
 
