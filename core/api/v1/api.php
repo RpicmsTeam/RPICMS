@@ -153,6 +153,7 @@ $app->get('/posts/:id', function($post_id) {
 
   // fetch task
   $result = $db->getPosts($post_id);
+  var_dump($result);
 
   if ($result != NULL) {
       $response["error"] = false;
