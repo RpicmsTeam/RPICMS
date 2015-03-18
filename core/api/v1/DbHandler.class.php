@@ -240,7 +240,7 @@ class DbHandler {
      * @param String $task_id id of the task
      */
     public function getPosts($post_id) {
-      if ($post_id = NULL){
+      if ($post_id == NULL) {
         echo "id=null";
         return $all;
       }else{
