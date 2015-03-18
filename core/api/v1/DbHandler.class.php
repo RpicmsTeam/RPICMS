@@ -240,12 +240,13 @@ class DbHandler {
      * @param String $task_id id of the task
      */
     public function getPosts($post_id) {
-      echo $post_id;
       if ($post_id = NULL){
         echo "id=null";
         return $all;
       }else{
-        echo "id=$post_id";
+        #echo "id=$post_id";
+
+        echo $post_id;
 
         $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
         $stmt->bind_param("i", $post_id);
