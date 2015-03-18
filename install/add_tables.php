@@ -1,7 +1,7 @@
 <?php
 /**
 * Add Tables
-* 
+*
 * This script configure the the database tables for the CMS
 *
 * @author	Marcel Radzio <info@nordgedanken.de>
@@ -27,13 +27,17 @@
 
 	require_once ('../core/config/connect.db.inc.php');
 	$sql = "
-		CREATE TABLE IF NOT EXISTS `user` (
-  			`id` int(11) NOT NULL AUTO_INCREMENT,
-  			`name` varchar(50) NOT NULL,
-  			`passwdhash` varchar(140) NOT NULL,
-  			`ga_secret` varchar(20) NOT NULL,
-  			PRIMARY KEY (`id`)
-		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+	CREATE TABLE IF NOT EXISTS `users` (
+		`id` int(11) NOT NULL AUTO_INCREMENT,
+		`name` varchar(250) DEFAULT NULL,
+		`email` varchar(255) NOT NULL,
+		`password_hash` text NOT NULL,
+		`api_key` varchar(32) NOT NULL,
+		`status` int(1) NOT NULL DEFAULT '1',
+		`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		PRIMARY KEY (`id`),
+		UNIQUE KEY `email` (`email`)
+	)ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
 	";
 	$result = mysqli_query($connection, $sql)
 	or die("Anfrage fehlgeschlagen: " . mysql_error());
