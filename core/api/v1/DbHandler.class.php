@@ -250,6 +250,7 @@ class DbHandler {
         if ($stmt->execute()) {
             $post = $stmt->get_result()->fetch_assoc();
             $stmt->close();
+            echo $post;
             return $post;
         } else {
             return NULL;
