@@ -162,6 +162,7 @@ $app->get('/posts/:id', function($task_id) {
       $response["createdAt"] = $result["created_at"];
       echoRespnse(200, $response);
   } else {
+      echo $response;
       $response["error"] = true;
       $response["message"] = "The requested resource doesn't exists";
       echoRespnse(404, $response);
@@ -203,12 +204,12 @@ $app->get('/tasks', 'authenticate', function() {
 
 
 /**
- * Creating new task in db
+ * Creating new Post in db
  * method POST
  * params - name
- * url - /post/
+ * url - /addpost/
  */
-$app->post('/post', 'authenticate', function() use ($app) {
+$app->addPost('/addpost', 'authenticate', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('task'));
 
@@ -234,10 +235,10 @@ $app->post('/post', 'authenticate', function() use ($app) {
         });
 
 /**
- * Updating existing task
+ * Updating existing Post
  * method PUT
  * params task, status
- * url - /tasks/:id
+ * url - /posts/:id
  */
 $app->put('/posts/:id', 'authenticate', function($task_id) use($app) {
             // check for required params
@@ -265,9 +266,9 @@ $app->put('/posts/:id', 'authenticate', function($task_id) use($app) {
         });
 
 /**
- * Deleting task. Users can delete only their tasks
+ * Deleting Posts. Users can delete only their tasks
  * method DELETE
- * url /tasks
+ * url /posts
  */
 $app->delete('/posts/:id', 'authenticate', function($task_id) use($app) {
             global $user_id;
