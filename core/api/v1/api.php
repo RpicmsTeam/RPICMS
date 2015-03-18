@@ -152,7 +152,7 @@ $app->get('/posts/:id', function($task_id) {
   $db = new DbHandler();
 
   // fetch task
-  $result = $db->getTask($task_id, $user_id);
+  $result = $db->getPosts($task_id, $user_id);
 
   if ($result != NULL) {
       $response["error"] = false;
@@ -162,10 +162,9 @@ $app->get('/posts/:id', function($task_id) {
       $response["createdAt"] = $result["created_at"];
       echoRespnse(200, $response);
   } else {
-      echo $response;
       $response["error"] = true;
       $response["message"] = "The requested resource doesn't exists";
-      echoRespnse(200, $response);
+      echoRespnse(404, $response);
   }
 });
 
@@ -181,7 +180,7 @@ $app->get('/posts/', function() {
   $db = new DbHandler();
 
   // fetch task
-  $result = $db->getTask($task_id, $user_id);
+  $result = $db->getPosts(Null, $user_id);
 
   if ($result != NULL) {
       $response["error"] = false;
@@ -191,45 +190,15 @@ $app->get('/posts/', function() {
       $response["createdAt"] = $result["created_at"];
       echoRespnse(200, $response);
   } else {
-      echo $response;
       $response["error"] = true;
       $response["message"] = "The requested resource doesn't exists";
-      echoRespnse(200, $response);
+      echoRespnse(404, $response);
   }
 });
 
 /*
  * ------------------------ METHODS WITH AUTHENTICATION ------------------------
  */
-
-/**
- * Listing all tasks of particual user
- * method GET
- * url /tasks
- */
-$app->get('/tasks', 'authenticate', function() {
-            global $user_id;
-            $response = array();
-            $db = new DbHandler();
-
-            // fetching all user tasks
-            $result = $db->getAllUserTasks($user_id);
-
-            $response["error"] = false;
-            $response["tasks"] = array();
-
-            // looping through result and preparing tasks array
-            while ($task = $result->fetch_assoc()) {
-                $tmp = array();
-                $tmp["id"] = $task["id"];
-                $tmp["task"] = $task["task"];
-                $tmp["status"] = $task["status"];
-                $tmp["createdAt"] = $task["created_at"];
-                array_push($response["tasks"], $tmp);
-            }
-
-            echoRespnse(200, $response);
-        });
 
 
 /**
@@ -238,7 +207,7 @@ $app->get('/tasks', 'authenticate', function() {
  * params - name
  * url - /addpost/
  */
-$app->Post('/addpost', 'authenticate', function() use ($app) {
+$app->Post('/createposts', 'authenticate', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('task'));
 
@@ -249,7 +218,7 @@ $app->Post('/addpost', 'authenticate', function() use ($app) {
             $db = new DbHandler();
 
             // creating new task
-            $task_id = $db->createTask($user_id, $task);
+            $task_id = $db->createPost($user_id, $task);
 
             if ($task_id != NULL) {
                 $response["error"] = false;
@@ -281,7 +250,7 @@ $app->put('/posts/:id', 'authenticate', function($task_id) use($app) {
             $response = array();
 
             // updating task
-            $result = $db->updateTask($user_id, $task_id, $task, $status);
+            $result = $db->updatePost($user_id, $task_id, $task, $status);
             if ($result) {
                 // task updated successfully
                 $response["error"] = false;
@@ -304,7 +273,7 @@ $app->delete('/posts/:id', 'authenticate', function($task_id) use($app) {
 
             $db = new DbHandler();
             $response = array();
-            $result = $db->deleteTask($user_id, $task_id);
+            $result = $db->deletePost($user_id, $task_id);
             if ($result) {
                 // task deleted successfully
                 $response["error"] = false;

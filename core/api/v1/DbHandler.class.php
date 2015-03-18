@@ -211,7 +211,7 @@ class DbHandler {
      * @param String $user_id user id to whom task belongs to
      * @param String $task task text
      */
-    public function createTask($user_id, $task) {
+    public function createPost($user_id, $task) {
         $stmt = $this->conn->prepare("INSERT INTO tasks(task) VALUES(?)");
         $stmt->bind_param("s", $task);
         $result = $stmt->execute();
@@ -239,7 +239,7 @@ class DbHandler {
      * Fetching single task
      * @param String $task_id id of the task
      */
-    public function getTask($task_id, $user_id) {
+    public function getPosts($task_id, $user_id) {
         $stmt = $this->conn->prepare("SELECT t.id, t.task, t.status, t.created_at from tasks t, user_tasks ut WHERE t.id = ? AND ut.task_id = t.id AND ut.user_id = ?");
         $stmt->bind_param("ii", $task_id, $user_id);
         if ($stmt->execute()) {
@@ -252,25 +252,12 @@ class DbHandler {
     }
 
     /**
-     * Fetching all user tasks
-     * @param String $user_id id of the user
-     */
-    public function getAllUserTasks($user_id) {
-        $stmt = $this->conn->prepare("SELECT t.* FROM tasks t, user_tasks ut WHERE t.id = ut.task_id AND ut.user_id = ?");
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-        $tasks = $stmt->get_result();
-        $stmt->close();
-        return $tasks;
-    }
-
-    /**
      * Updating task
      * @param String $task_id id of the task
      * @param String $task task text
      * @param String $status task status
      */
-    public function updateTask($user_id, $task_id, $task, $status) {
+    public function updatePost($user_id, $task_id, $task, $status) {
         $stmt = $this->conn->prepare("UPDATE tasks t, user_tasks ut set t.task = ?, t.status = ? WHERE t.id = ? AND t.id = ut.task_id AND ut.user_id = ?");
         $stmt->bind_param("siii", $task, $status, $task_id, $user_id);
         $stmt->execute();
@@ -283,7 +270,7 @@ class DbHandler {
      * Deleting a task
      * @param String $task_id id of the task to delete
      */
-    public function deleteTask($user_id, $task_id) {
+    public function deletePost($user_id, $task_id) {
         $stmt = $this->conn->prepare("DELETE t FROM tasks t, user_tasks ut WHERE t.id = ? AND ut.task_id = t.id AND ut.user_id = ?");
         $stmt->bind_param("ii", $task_id, $user_id);
         $stmt->execute();
@@ -292,20 +279,6 @@ class DbHandler {
         return $num_affected_rows > 0;
     }
 
-    /* ------------- `user_tasks` table method ------------------ */
-
-    /**
-     * Function to assign a task to user
-     * @param String $user_id id of the user
-     * @param String $task_id id of the task
-     */
-    public function createUserTask($user_id, $task_id) {
-        $stmt = $this->conn->prepare("INSERT INTO user_tasks(user_id, task_id) values(?, ?)");
-        $stmt->bind_param("ii", $user_id, $task_id);
-        $result = $stmt->execute();
-        $stmt->close();
-        return $result;
-    }
 
 }
 
