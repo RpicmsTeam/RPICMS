@@ -169,6 +169,35 @@ $app->get('/posts/:id', function($task_id) {
   }
 });
 
+/**
+* Listing all posts
+* method GET
+* url /posts/
+* Will return 404 if the task doesn't belongs to user
+*/
+$app->get('/posts/', function() {
+  global $user_id;
+  $response = array();
+  $db = new DbHandler();
+
+  // fetch task
+  $result = $db->getTask($task_id, $user_id);
+
+  if ($result != NULL) {
+      $response["error"] = false;
+      $response["id"] = $result["id"];
+      $response["task"] = $result["task"];
+      $response["status"] = $result["status"];
+      $response["createdAt"] = $result["created_at"];
+      echoRespnse(200, $response);
+  } else {
+      echo $response;
+      $response["error"] = true;
+      $response["message"] = "The requested resource doesn't exists";
+      echoRespnse(200, $response);
+  }
+});
+
 /*
  * ------------------------ METHODS WITH AUTHENTICATION ------------------------
  */
