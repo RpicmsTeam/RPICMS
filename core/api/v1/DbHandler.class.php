@@ -239,9 +239,9 @@ class DbHandler {
      * Fetching single task
      * @param String $task_id id of the task
      */
-    public function getPosts($task_id, $user_id) {
+    public function getPosts($task_id) {
         $stmt = $this->conn->prepare("SELECT t.id, t.task, t.status, t.created_at from tasks t, user_tasks ut WHERE t.id = ? AND ut.task_id = t.id AND ut.user_id = ?");
-        $stmt->bind_param("ii", $task_id, $user_id);
+        $stmt->bind_param("ii", $task_id);
         if ($stmt->execute()) {
             $task = $stmt->get_result()->fetch_assoc();
             $stmt->close();

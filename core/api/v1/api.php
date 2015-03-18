@@ -152,7 +152,7 @@ $app->get('/posts/:id', function($task_id) {
   $db = new DbHandler();
 
   // fetch task
-  $result = $db->getPosts($task_id, $user_id);
+  $result = $db->getPosts($task_id);
 
   if ($result != NULL) {
       $response["error"] = false;
@@ -180,7 +180,7 @@ $app->get('/posts/', function() {
   $db = new DbHandler();
 
   // fetch task
-  $result = $db->getPosts(Null, $user_id);
+  $result = $db->getPosts(Null);
 
   if ($result != NULL) {
       $response["error"] = false;
@@ -205,9 +205,9 @@ $app->get('/posts/', function() {
  * Creating new Post in db
  * method POST
  * params - name
- * url - /addpost/
+ * url - /createpost/
  */
-$app->Post('/createposts', 'authenticate', function() use ($app) {
+$app->Post('/createpost', 'authenticate', function() use ($app) {
             // check for required params
             verifyRequiredParams(array('task'));
 
