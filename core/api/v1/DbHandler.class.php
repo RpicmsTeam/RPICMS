@@ -241,18 +241,14 @@ class DbHandler {
      */
     public function getPosts($post_id) {
       if ($post_id == NULL) {
-        echo "id=null";
         return $all;
       }else{
-        echo "id=$post_id";
 
         $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
         $stmt->bind_param("i", $post_id);
-        print_r($stmt);
         if ($stmt->execute()) {
             $post = $stmt->get_result()->fetch_assoc();
             $stmt->close();
-            echo $post;
             return $post;
         } else {
             return NULL;
