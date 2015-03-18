@@ -247,6 +247,7 @@ class DbHandler {
         echo "id!=null";
         $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
         $stmt->bind_param("i", $post_id);
+        echo $stmt;
         if ($stmt->execute()) {
             $post = $stmt->get_result()->fetch_assoc();
             $stmt->close();
