@@ -165,7 +165,7 @@ $app->get('/posts/:id', function($task_id) {
       echo $response;
       $response["error"] = true;
       $response["message"] = "The requested resource doesn't exists";
-      echoRespnse(404, $response);
+      echoRespnse(200, $response);
   }
 });
 
