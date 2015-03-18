@@ -248,7 +248,11 @@ class DbHandler {
         $stmt->bind_param("i", $post_id);
         if ($stmt->execute()) {
             $post = $stmt->get_result()->fetch_assoc();
-            $post["text"] = html_entity_decode($post["text"]);
+            if ($post["text"] != NULL){
+              $post["text"] = html_entity_decode($post["text"]);
+            }else{
+              $post["text"] = NULL;
+            }
             $stmt->close();
             return $post;
         } else {
