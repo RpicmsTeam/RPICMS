@@ -243,8 +243,8 @@ class DbHandler {
       if ($post_id = NULL){
         return $all;
       }else{
-        $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = $post_id");
-        $stmt->bind_param("s", $post_id);
+        $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
+        $stmt->bind_param("i", $post_id);
         if ($stmt->execute()) {
             $post = $stmt->get_result()->fetch_assoc();
             $stmt->close();
