@@ -241,8 +241,10 @@ class DbHandler {
      */
     public function getPosts($post_id) {
       if ($post_id = NULL){
+        echo "id=null";
         return $all;
       }else{
+        echo "id!=null";
         $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
         $stmt->bind_param("i", $post_id);
         if ($stmt->execute()) {
