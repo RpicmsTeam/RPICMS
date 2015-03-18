@@ -251,7 +251,7 @@ class DbHandler {
             if ($post["text"] != NULL){
               $post["text"] = html_entity_decode($post["text"]);
             }else{
-              $post["text"] = NULL;
+              $post = NULL;
             }
             $stmt->close();
             return $post;
