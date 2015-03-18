@@ -244,7 +244,8 @@ class DbHandler {
         echo "id=null";
         return $all;
       }else{
-        echo "id!=null";
+        echo "id=$post_id";
+
         $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
         $stmt->bind_param("i", $post_id);
         print_r($stmt);
