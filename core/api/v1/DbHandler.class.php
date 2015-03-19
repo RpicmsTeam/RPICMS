@@ -241,7 +241,7 @@ class DbHandler {
      */
     public function getPosts($post_id) {
       $id = $this->conn->prepare("SELECT id FROM posts");
-      if ($stmt->execute()) {
+      if ($id->execute()) {
    				$post_id_clean = $id->get_result()->fetch_assoc();
       }
       if ($post_id == NULL) {
