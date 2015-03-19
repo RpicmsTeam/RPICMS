@@ -240,10 +240,9 @@ class DbHandler {
      * @param String $task_id id of the task
      */
     public function getPosts($post_id) {
-      if ($resultat = $connection->query('SELECT id FROM posts')) {
-  			while($daten = $resultat->fetch_object() ){
-   				$post_id_clean = $daten->id;
-  			}
+      $id = $this->conn->prepare("SELECT id FROM posts");
+      if ($stmt->execute()) {
+   				$post_id_clean = $id->get_result()->fetch_assoc();
       }
       if ($post_id == NULL) {
         $x = 1;
