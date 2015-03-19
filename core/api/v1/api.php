@@ -187,9 +187,11 @@ $app->get('/posts/', function() {
   if ($result != NULL) {
       $response["error"] = false;
       $response["id"] = $result["id"];
-      $response["task"] = $result["task"];
-      $response["status"] = $result["status"];
-      $response["createdAt"] = $result["created_at"];
+      $response["title"] = $result["title"];
+      $response["text"] = $result["text"];
+      $response["author"] = $result["author"];
+      $response["category"] = $result["category"];
+      $response["date"] = $result["date"];
       echoRespnse(200, $response);
   } else {
       $response["error"] = true;
