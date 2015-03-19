@@ -244,6 +244,7 @@ class DbHandler {
   			while($daten = $resultat->fetch_object() ){
    				$post_id_clean = $daten->id;
   			}
+      }
       if ($post_id == NULL) {
         $x = 1;
         while ($x < $post_id_clean+1){
