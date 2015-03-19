@@ -240,10 +240,31 @@ class DbHandler {
      * @param String $task_id id of the task
      */
     public function getPosts($post_id) {
+      if ($resultat = $connection->query('SELECT id FROM posts')) {
+  			while($daten = $resultat->fetch_object() ){
+   				$post_id_clean = $daten->id;
+  			}
       if ($post_id == NULL) {
-        return $all;
+        $x = 1;
+        while ($x < $post_id_clean+1){
+          $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
+          $stmt->bind_param("i", $id);
+          if ($stmt->execute()) {
+              $post["$x"] = $stmt->get_result()->fetch_assoc();
+              if ($post["$x"]["text"] != NULL){
+                $post["$x"]["text"] = html_entity_decode($post["text"]);
+              }else{
+                $post["$x"] = NULL;
+              }
+              $stmt->close();
+              return $post;
+            } else {
+              return NULL;
+          }
+          $x = $x+1;
+          $id = $id+1;
+        }
       }else{
-
         $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
         $stmt->bind_param("i", $post_id);
         if ($stmt->execute()) {
