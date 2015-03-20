@@ -185,7 +185,7 @@ $app->get('/posts/', function() {
   $result = $db->getPosts(NULL);
   if ($result != NULL) {
     $x = 1;
-    $id = 0;
+    $id = 1;
     while ($x < $result["post_id_clean"]+1){
 
       $response["$id"]["error"] = false;
