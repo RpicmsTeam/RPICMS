@@ -184,13 +184,19 @@ $app->get('/posts/', function() {
   // fetch task
   $result = $db->getPosts(NULL);
   if ($result != NULL) {
-      $response["error"] = false;
-      $response["id"] = $result["id"];
-      $response["title"] = $result["title"];
-      $response["text"] = $result["text"];
-      $response["author"] = $result["author"];
-      $response["category"] = $result["category"];
-      $response["date"] = $result["date"];
+    $x = 1;
+    $id = 1;
+    while ($x < $response["post_id_clean"]+1){
+      $response["$x"]["error"] = false;
+      $response["$x"]["id"] = $result["id"];
+      $response["$x"]["title"] = $result["title"];
+      $response["$x"]["text"] = $result["text"];
+      $response["$x"]["author"] = $result["author"];
+      $response["$x"]["category"] = $result["category"];
+      $response["$x"]["date"] = $result["date"];
+      $x = $x+1;
+      $id = $id+1;
+    }
       echoRespnse(200, $response);
   } else {
       $response["error"] = true;
