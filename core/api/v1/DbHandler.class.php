@@ -258,6 +258,7 @@ class DbHandler {
 
             if ($post["$x"]["text"] != NULL){
               $post["$x"]["text"] = html_entity_decode($post["$x"]["text"]);
+              $post["$x"]["text"] = strip_tags($post["$x"]["text"]);
             }else{
               $post["$x"]["text"] = NULL;
             }
