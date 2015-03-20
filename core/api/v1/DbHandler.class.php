@@ -266,11 +266,13 @@ class DbHandler {
 
           }
         }
-
+        echo $id;
         if ($id == $post_id_clean){
           return $post;
+          echo "test";
         }else{
           return NULL;
+          echo "test2";
         }
 
       }else{
