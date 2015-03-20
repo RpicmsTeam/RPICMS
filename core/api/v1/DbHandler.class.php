@@ -249,33 +249,30 @@ class DbHandler {
         $x = 1;
         $id = 1;
         while ($x < $post_id_clean+1){
-          echo $x;
-          echo "</br>";
-          echo $id;
-          echo "</br>";
-          echo $post_id_clean;
-          echo "</br>";
           $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
           $stmt->bind_param("i", $id);
-          $test = is_int($x);
-          echo $test;
-          echo "</br>";
+
           $x = $x+1;
-          echo $x;
           $id = $id+1;
           if ($stmt->execute()) {
-              $post["$x"] = $stmt->get_result()->fetch_assoc();
-              if ($post["$x"]["text"] != NULL){
-                $post["$x"]["text"] = html_entity_decode($post["text"]);
-              }else{
-                $post["$x"] = NULL;
-              }
-              $stmt->close();
-              return $post;
-          } else {
-            return NULL;
+            $post["$x"] = $stmt->get_result()->fetch_assoc();
+
+            if ($post["$x"]["text"] != NULL){
+              $post["$x"]["text"] = html_entity_decode($post["text"]);
+            }else{
+              $post["$x"] = NULL;
+            }
+            $stmt->close();
+
           }
         }
+
+        if ($stmt->execute()){
+          return $post;
+        }else{
+          return NULL;
+        }
+
       }else{
         $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
         $stmt->bind_param("i", $post_id);
