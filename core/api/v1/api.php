@@ -182,8 +182,7 @@ $app->get('/posts/', function() {
   $db = new DbHandler();
 
   // fetch task
-  $result = $db->getPosts(Null);
-  echo "falsch";
+  $result = $db->getPosts(NULL);
   if ($result != NULL) {
       $response["error"] = false;
       $response["id"] = $result["id"];
