@@ -247,9 +247,9 @@ class DbHandler {
           $post["post_id_clean"] = $post_id_clean;
       }
       if ($post_id == NULL) {
-        $x = 1;
+        $x = 0;
         $id = 1;
-        while ($x < $post_id_clean+1){
+        while ($x < $post_id_clean){
           $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
           $stmt->bind_param("i", $id);
 
@@ -267,7 +267,7 @@ class DbHandler {
           $x = $x+1;
           $id = $id+1;
         }
-        if ($id == $post_id_clean+1){
+        if ($id == $post_id_clean){
           return $post;
         }else{
           return NULL;
