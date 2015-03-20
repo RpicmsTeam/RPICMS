@@ -241,9 +241,10 @@ class DbHandler {
      */
     public function getPosts($post_id) {
       $id = $this->conn->prepare("SELECT id FROM posts");
-      if ($id->execute()) {
-   				$post_id_clean_array = $id->get_result()->fetch_object();
-          $post_id_clean = $post_id_clean_array["id"];
+      while ($id->execute()) {
+   				#$post_id_clean_array = $id->get_result()->fetch_object();
+          #$post_id_clean = $post_id_clean_array["id"];
+          $post_id_clean = $id->get_result()->fetch_object();
       }
       if ($post_id == NULL) {
         $x = 1;
