@@ -268,7 +268,7 @@ class DbHandler {
         }
         echo $id;
         echo "sssss";
-        echo $post_id_clean
+        echo $post_id_clean;
         if ($id == $post_id_clean+1){
           echo "test";
           return $post;
