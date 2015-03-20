@@ -269,6 +269,9 @@ class DbHandler {
           } else {
             return NULL;
           }
+          $test = is_int($x);
+          echo $test;
+          echo "</br>";
           $x = $x+1;
           echo $x;
           $id = $id+1;
