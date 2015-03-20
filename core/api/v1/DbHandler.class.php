@@ -252,6 +252,7 @@ class DbHandler {
           $stmt->bind_param("i", $id);
           if ($stmt->execute()) {
               $post["$x"] = $stmt->get_result()->fetch_assoc();
+              var_dump($post);
               if ($post["$x"]["text"] != NULL){
                 $post["$x"]["text"] = html_entity_decode($post["text"]);
               }else{
