@@ -240,11 +240,10 @@ class DbHandler {
      * @param String $task_id id of the task
      */
     public function getPosts($post_id) {
-      $id = $this->conn->prepare("SELECT id FROM posts");
+      $id = $this->conn->prepare("SELECT COUNT(*) FROM posts");
       if ($id->execute()) {
-   				#$post_id_clean_array = $id->get_result()->fetch_object();
-          #$post_id_clean = $post_id_clean_array["id"];
-          $post_id_clean = $id->get_result()->fetch_object();
+   				$post_id_clean_array = $id->get_result()->fetch_assoc();
+          $post_id_clean = $post_id_clean_array["id"];
       }
       if ($post_id == NULL) {
         $x = 1;
