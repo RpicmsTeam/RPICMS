@@ -257,8 +257,10 @@ class DbHandler {
             $post["$x"] = $stmt->get_result()->fetch_assoc();
 
             if ($post["$x"]["text"] != NULL){
+              echo "0";
               $post["$x"]["text"] = html_entity_decode($post["text"]);
             }else{
+              echo "1";
               $post["$x"] = NULL;
             }
             $stmt->close();
