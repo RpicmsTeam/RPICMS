@@ -241,13 +241,13 @@ class DbHandler {
      */
     public function getPosts($post_id) {
       $id = $this->conn->prepare("SELECT id FROM posts");
-      while ($id->execute()) {
+      if ($id->execute()) {
    				$post_id_clean_array = $id->get_result()->fetch_assoc();
           $post_id_clean = $post_id_clean_array["id"];
       }
       if ($post_id == NULL) {
         $x = 1;
-        echo $post_id_clean;
+        echo $post_id_clean_array;
         while ($x < $post_id_clean+1){
           $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
           $stmt->bind_param("i", $id);
