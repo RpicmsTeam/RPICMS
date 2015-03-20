@@ -248,24 +248,24 @@ class DbHandler {
       }
       if ($post_id == NULL) {
         $x = 1;
-        $id = 1;
+        $id = 0;
         while ($x < $post_id_clean+1){
           $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
           $stmt->bind_param("i", $id);
 
-          $x = $x+1;
-          $id = $id+1;
           if ($stmt->execute()) {
-            $post["$x"] = $stmt->get_result()->fetch_assoc();
+            $post["$id"] = $stmt->get_result()->fetch_assoc();
 
-            if ($post["$x"]["text"] != NULL){
-              $post["$x"]["text"] = html_entity_decode($post["text"]);
+            if ($post["$id"]["text"] != NULL){
+              $post["$id"]["text"] = html_entity_decode($post["text"]);
             }else{
-              $post["$x"] = NULL;
+              $post["$id"] = NULL;
             }
             $stmt->close();
 
           }
+          $x = $x+1;
+          $id = $id+1;
         }
         if ($id == $post_id_clean+1){
           return $post;
