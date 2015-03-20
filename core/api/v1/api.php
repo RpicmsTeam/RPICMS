@@ -187,7 +187,7 @@ $app->get('/posts/', function() {
     $x = 1;
     $id = 1;
     while ($x < $result["post_id_clean"]+1){
-      echo $x;
+
       $response["$x"]["error"] = false;
       $response["$x"]["id"] = $result["$x"]["id"];
       $response["$x"]["title"] = $result["$x"]["title"];
