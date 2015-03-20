@@ -243,8 +243,7 @@ class DbHandler {
       $id = $this->conn->prepare("SELECT COUNT(*) FROM posts");
       if ($id->execute()) {
    				$post_id_clean_array = $id->get_result()->fetch_assoc();
-          $post_id_clean = $post_id_clean_array["id"];
-          var_dump($post_id_clean_array);
+          $post_id_clean = $post_id_clean_array["COUNT(*)"];
       }
       if ($post_id == NULL) {
         $x = 1;
