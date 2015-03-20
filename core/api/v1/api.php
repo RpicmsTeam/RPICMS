@@ -185,16 +185,16 @@ $app->get('/posts/', function() {
   $result = $db->getPosts(NULL);
   if ($result != NULL) {
     $x = 1;
-    $id = 1;
+    $id = 2;
     while ($x < $result["post_id_clean"]+1){
 
-      $response["$x"]["error"] = false;
-      $response["$x"]["id"] = $result["$x"]["id"];
-      $response["$x"]["title"] = $result["$x"]["title"];
-      $response["$x"]["text"] = $result["$x"]["text"];
-      $response["$x"]["author"] = $result["$x"]["author"];
-      $response["$x"]["category"] = $result["$x"]["category"];
-      $response["$x"]["date"] = $result["$x"]["date"];
+      $response["$id"]["error"] = false;
+      $response["$id"]["id"] = $result["$id"]["id"];
+      $response["$id"]["title"] = $result["$id"]["title"];
+      $response["$id"]["text"] = $result["$id"]["text"];
+      $response["$id"]["author"] = $result["$id"]["author"];
+      $response["$id"]["category"] = $result["$id"]["category"];
+      $response["$id"]["date"] = $result["$id"]["date"];
       $x = $x+1;
       $id = $id+1;
     }
