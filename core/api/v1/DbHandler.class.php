@@ -254,6 +254,7 @@ class DbHandler {
           echo $id;
           echo "</br>";
           echo $post_id_clean;
+          echo "</br>";
           $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
           $stmt->bind_param("i", $id);
           if ($stmt->execute()) {
@@ -269,6 +270,7 @@ class DbHandler {
             return NULL;
           }
           $x = $x+1;
+          echo $x;
           $id = $id+1;
         }
       }else{
