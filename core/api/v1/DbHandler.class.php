@@ -247,15 +247,16 @@ class DbHandler {
       }
       if ($post_id == NULL) {
         $x = 1;
-        #var_dump($post_id_clean_array);
-        echo $post_id_clean;
         while ($x < $post_id_clean+1){
           $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
           $stmt->bind_param("i", $id);
           if ($stmt->execute()) {
               $post["$x"] = $stmt->get_result()->fetch_assoc();
               echo $x;
-              var_dump($post);
+              echo "</br>";
+              echo $id;
+              echo "</br>";
+              echo $post_id_clean;
               if ($post["$x"]["text"] != NULL){
                 $post["$x"]["text"] = html_entity_decode($post["text"]);
               }else{
