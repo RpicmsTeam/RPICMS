@@ -257,7 +257,7 @@ class DbHandler {
             $post["$x"] = $stmt->get_result()->fetch_assoc();
 
             if ($post["$x"]["text"] != NULL){
-              $post["$x"]["text"] = html_entity_decode($post["text"]);
+              $post["$x"]["text"] = html_entity_decode($post["$x"]["text"]);
             }else{
               $post["$x"]["text"] = NULL;
             }
@@ -267,7 +267,6 @@ class DbHandler {
           $x = $x+1;
           $id = $id+1;
         }
-        var_dump($post);
         if ($id == $post_id_clean+1){
           return $post;
         }else{
