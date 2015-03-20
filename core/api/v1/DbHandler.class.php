@@ -267,7 +267,7 @@ class DbHandler {
           }
         }
 
-        if ($stmt->execute()){
+        if ($id == $post_id_clean){
           return $post;
         }else{
           return NULL;
