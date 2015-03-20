@@ -260,7 +260,7 @@ class DbHandler {
               echo $x;
               $post["$x"]["text"] = html_entity_decode($post["text"]);
             }else{
-              $post["$x"] = NULL;
+              $post["$x"]["text"] = NULL;
             }
             $stmt->close();
 
@@ -268,6 +268,7 @@ class DbHandler {
           $x = $x+1;
           $id = $id+1;
         }
+        var_dump($post);
         if ($id == $post_id_clean+1){
           return $post;
         }else{
