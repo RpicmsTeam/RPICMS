@@ -257,6 +257,12 @@ class DbHandler {
           echo "</br>";
           $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
           $stmt->bind_param("i", $id);
+          $test = is_int($x);
+          echo $test;
+          echo "</br>";
+          $x = $x+1;
+          echo $x;
+          $id = $id+1;
           if ($stmt->execute()) {
               $post["$x"] = $stmt->get_result()->fetch_assoc();
               if ($post["$x"]["text"] != NULL){
@@ -269,12 +275,6 @@ class DbHandler {
           } else {
             return NULL;
           }
-          $test = is_int($x);
-          echo $test;
-          echo "</br>";
-          $x = $x+1;
-          echo $x;
-          $id = $id+1;
         }
       }else{
         $stmt = $this->conn->prepare("SELECT id,title,text,author,category,date FROM posts WHERE id = ?");
