@@ -228,16 +228,15 @@ $app->Post('/createpost', 'authenticate', function() use ($app) {
             $db = new DbHandler();
 
             // creating new task
-            $task_id = $db->createPost($user_id, $task);
+            $task_id = $db->createPost($id, $text, $title, $author, $category);
 
             if ($task_id != NULL) {
                 $response["error"] = false;
-                $response["message"] = "Task created successfully";
-                $response["task_id"] = $task_id;
+                $response["message"] = "Post created successfully";
                 echoRespnse(201, $response);
             } else {
                 $response["error"] = true;
-                $response["message"] = "Failed to create task. Please try again";
+                $response["message"] = "Failed to create Post. Please try again";
                 echoRespnse(200, $response);
             }
         });

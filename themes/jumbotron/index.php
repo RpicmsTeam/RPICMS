@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 * Jumbotron Theme for RPICMS
 *
@@ -21,7 +21,7 @@ if ($root_3[1] == 'core') {
   #######################
   # flush browser cache #
   #######################
-  header("Cache-Control: no-cache, must-revalidate, no-store");
+  #header("Cache-Control: no-cache, must-revalidate, no-store");
   ##########################
   # include required files #
   ##########################
@@ -49,33 +49,33 @@ if ($root_3[1] == 'core') {
   ################
   # lang support #
   ################
-  function getBrowserLangs() {  
-    $langs[0] = $langs[1] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);  
-    $langs[0] = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);  
-    foreach($langs[0] as $l) {  
-      $q = explode(';', $l);  
-      $lang = substr($q[0], 0, 2);  
-      $q = (isset($q[1])) ? (float)substr($q[1], 2) : 1;  
-      $result[$lang] = $q;   
-    }  
-    if(isset($result) && is_array($result)) {  
-      arsort($result, SORT_NUMERIC);    
-      return $result;  
-    }   
-      return $result[$langs[1]] = 1;    
-  }  
+  function getBrowserLangs() {
+    $langs[0] = $langs[1] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    $langs[0] = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    foreach($langs[0] as $l) {
+      $q = explode(';', $l);
+      $lang = substr($q[0], 0, 2);
+      $q = (isset($q[1])) ? (float)substr($q[1], 2) : 1;
+      $result[$lang] = $q;
+    }
+    if(isset($result) && is_array($result)) {
+      arsort($result, SORT_NUMERIC);
+      return $result;
+    }
+      return $result[$langs[1]] = 1;
+  }
 
-    $langs = getBrowserLangs();  
-    foreach($langs as $prio => $lang) {  
-      if($lang = 'de') {  
-        include('lang/de-DE.php');  
-        break;  
-      } elseif($lang = 'en') {  
-        include('lang/en-US.php');  
-        break;   
-      }   
-       // AND SO ON .................  
-    }  
+    $langs = getBrowserLangs();
+    foreach($langs as $prio => $lang) {
+      if($lang = 'de') {
+        include('lang/de-DE.php');
+        break;
+      } elseif($lang = 'en') {
+        include('lang/en-US.php');
+        break;
+      }
+       // AND SO ON .................
+    }
   ?>
 <!DOCTYPE html>
 <html>
@@ -85,7 +85,7 @@ if ($root_3[1] == 'core') {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
     <?php
     echo "<title>$blog_name</title>";
@@ -101,7 +101,7 @@ if ($root_3[1] == 'core') {
 
     <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    
+
     <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -123,7 +123,7 @@ if ($root_3[1] == 'core') {
           } else {
             location.href = wert;
 
-          } 
+          }
         }
       }
     </script>
@@ -167,8 +167,8 @@ if ($root_3[1] == 'core') {
               </h1>
               <div>
                 <h4>
-                  <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | 
-                  <time>$post_date</time> | 
+                  <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> |
+                  <time>$post_date</time> |
                   <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
                 </h4>
               </div>
@@ -210,8 +210,8 @@ if ($root_3[1] == 'core') {
                   </h1>
                   <div>
                     <h4>
-                      <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | 
-                      <time>$post_date</time> | 
+                      <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> |
+                      <time>$post_date</time> |
                       <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
                     </h4>
                   </div>
@@ -233,7 +233,7 @@ if ($root_3[1] == 'core') {
                 $id = $id+1;
                 next_id_category();
               }
-            }  
+            }
           }else{
             if ($author){
               $id = 1;
@@ -254,8 +254,8 @@ if ($root_3[1] == 'core') {
                     </h1>
                     <div>
                       <h4>
-                        <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | 
-                        <time>$post_date</time> | 
+                        <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> |
+                        <time>$post_date</time> |
                         <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
                       </h4>
                     </div>
@@ -277,7 +277,7 @@ if ($root_3[1] == 'core') {
                   next_id_author();
                 }
               }
-            }else{  
+            }else{
               include($root . '/core/backend/blog/posts.php');
               echo "
                 <script  type=\"text/javascript\">
@@ -289,8 +289,8 @@ if ($root_3[1] == 'core') {
                 </h1>
                 <div>
                   <h4>
-                    <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | 
-                    <time>$post_date</time> | 
+                    <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> |
+                    <time>$post_date</time> |
                     <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
                   </h4>
                 </div>

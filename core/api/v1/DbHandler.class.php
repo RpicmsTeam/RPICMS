@@ -211,24 +211,18 @@ class DbHandler {
      * @param String $user_id user id to whom task belongs to
      * @param String $task task text
      */
-    public function createPost($user_id, $task) {
-        $stmt = $this->conn->prepare("INSERT INTO tasks(task) VALUES(?)");
-        $stmt->bind_param("s", $task);
+    public function createPost($id, $text, $title, $author, $category) {
+        $stmt = $this->conn->prepare("INSERT INTO posts (text,title,author,date,category) VALUES (?, ?, ?, NOW(), ?)");
+        $stmt->bind_param("ssss", $text, $title, $author, $category);
         $result = $stmt->execute();
         $stmt->close();
 
         if ($result) {
             // task row created
             // now assign the task to user
-            $new_task_id = $this->conn->insert_id;
-            $res = $this->createUserTask($user_id, $new_task_id);
-            if ($res) {
-                // task created successfully
-                return $new_task_id;
-            } else {
-                // task failed to create
-                return NULL;
-            }
+            $new_post_id = $this->conn->insert_id;
+            // task created successfully
+            return $new_post_id;
         } else {
             // task failed to create
             return NULL;
