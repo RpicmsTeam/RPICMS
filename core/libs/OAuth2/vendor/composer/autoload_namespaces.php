@@ -8,4 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'fkooman\\OAuth\\Common\\' => array($vendorDir . '/fkooman/oauth-common/src'),
     'fkooman\\OAuth\\Client' => array($baseDir . '/src'),
+    'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
+    'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
 );
