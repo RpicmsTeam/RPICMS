@@ -321,18 +321,23 @@ if ($root_3[1] == 'core') {
           $ausnahmen["2"] = ".";
           $ausnahmen["3"] = "..";
           $dirs = array_diff($dirs, $ausnahmen);
-          var_dump($dirs);
+          #var_dump($dirs);
           echo '
             <div class="col-md-4">
               <h2>'.$name_themes.'</h2>
               <form action=".">
                 <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%"">
                   <option value="leer" selected="selected">[ bitte auswählen! ]</option>
-                  <option value="leer">------------------------</option>
-                  <option value="../jumbotron">Jumbotron</option>
-                  <option value="../accentbox">Accentbox</option>
-                  <option value="../parkzone">ParkZone</option>
-                  <option value="../zResponsiv">zResponsiv</option>
+                  <option value="leer">------------------------</option>';
+                  foreach($dirs as $dir){
+                  echo "
+                  <option value=\"../$dir\">$dir</option>
+                  ";
+                  #<option value="../accentbox">Accentbox</option>
+                  #<option value="../parkzone">ParkZone</option>
+                  #<option value="../zResponsiv">zResponsiv</option>
+                }
+              echo '
                   <option value="ende">Beenden</option>
                 </select></p>
               </form>
