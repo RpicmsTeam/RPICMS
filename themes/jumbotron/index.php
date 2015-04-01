@@ -99,7 +99,7 @@ if ($root_3[1] == 'core') {
     <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
     <!--<script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>-->
 
-    <!--<?php include($root . '/core/backend/admin/modules/html_header.php'); ?>-->
+    <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 
     <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -143,7 +143,8 @@ if ($root_3[1] == 'core') {
           ?>
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
-            <div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php'); ?></div>
+            <!--<div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php'); ?></div>
+        -->
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
