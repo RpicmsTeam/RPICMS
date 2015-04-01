@@ -88,7 +88,7 @@ if ($root_3[1] == 'core') {
 
     <link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
     <?php
-    #echo "<title>$blog_name</title>";
+    echo "<title>$blog_name</title>";
     ?>
 
     <!-- Bootstrap core CSS -->
