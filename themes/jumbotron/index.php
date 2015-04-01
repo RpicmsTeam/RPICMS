@@ -363,7 +363,7 @@ if ($root_3[1] == 'core') {
 
       <footer>
         <p>&copy; RpicmsTeam 2014 &amp; 2015</p>
-        <!--<?php include($root . '/core/backend/admin/modules/footer.php'); ?>-->
+        <?php include($root . '/core/backend/admin/modules/footer.php'); ?>
       </footer>
     </div> <!-- /container -->
 
@@ -373,6 +373,6 @@ if ($root_3[1] == 'core') {
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
-    <?php include($root . '/core/backend/admin/modules/script_footer.php'); ?>
+    <!--<?php include($root . '/core/backend/admin/modules/script_footer.php'); ?>-->
   </body>
 </html>
