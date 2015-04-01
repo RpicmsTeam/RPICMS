@@ -349,7 +349,7 @@ class Client implements ClientInterface
             ];
         } elseif (!Core::hasHeader($this->defaults, 'User-Agent')) {
             // Add the User-Agent header if one was not already set
-            $this->defaults['headers']['User-Agent'] = static::getDefaultUserAgent();
+            //$this->defaults['headers']['User-Agent'] = static::getDefaultUserAgent();
         }
     }
 
