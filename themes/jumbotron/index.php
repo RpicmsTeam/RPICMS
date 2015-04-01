@@ -179,7 +179,7 @@ if ($root_3[1] == 'core') {
               </div>
                <div>
                     ";
-                    #include($root . '/core/backend/admin/modules/post_footer.php');
+                    include($root . '/core/backend/admin/modules/post_footer.php');
                     echo "
                       </div>
                     <p>
@@ -363,7 +363,7 @@ if ($root_3[1] == 'core') {
 
       <footer>
         <p>&copy; RpicmsTeam 2014 &amp; 2015</p>
-        <?php include($root . '/core/backend/admin/modules/footer.php'); ?>
+        <!--<?php include($root . '/core/backend/admin/modules/footer.php'); ?>-->
       </footer>
     </div> <!-- /container -->
 
