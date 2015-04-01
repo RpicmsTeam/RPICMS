@@ -88,7 +88,7 @@ if ($root_3[1] == 'core') {
 
     <link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
     <?php
-    echo "<title>$blog_name</title>";
+    #echo "<title>$blog_name</title>";
     ?>
 
     <!-- Bootstrap core CSS -->
@@ -155,7 +155,7 @@ if ($root_3[1] == 'core') {
         $x = 1;
         if ($empty_id && $empty_category && $empty_author){
           #$id = 1;
-          #include($root . '/core/backend/blog/posts.php');
+          include($root . '/core/backend/blog/posts.php');
           while ($x < $post_id_clean+1){
             include($root . '/core/config/connect.db.inc.php');
             echo "
