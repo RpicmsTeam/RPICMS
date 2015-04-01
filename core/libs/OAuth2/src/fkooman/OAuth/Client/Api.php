@@ -33,9 +33,9 @@ class Api
     private $tokenStorage;
     private $httpClient;
 
-    public function __construct($clientConfigId, ClientConfigInterface $clientConfig, StorageInterface $tokenStorage, \Guzzle\Http\Client $httpClient)
+    public function __construct($clientConfigId, ClientConfigInterface $clientConfig, StorageInterface $tokenStorage, \GuzzleHttp\Client $httpClient)
     {
-        
+
         $this->setClientConfigId($clientConfigId);
         $this->setClientConfig($clientConfig);
         $this->setTokenStorage($tokenStorage);
