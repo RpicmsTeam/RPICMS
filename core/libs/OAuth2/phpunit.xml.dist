@@ -6,8 +6,8 @@
         </testsuite>
     </testsuites>
     <php>
-        <var name="DB_DSN" value="mysql:dbname=RPICMS;host=localhost" />
-        <var name="DB_USER" value="root" />
+        <var name="DB_DSN" value="sqlite::memory:" />
+        <var name="DB_USER" value="" />
         <var name="DB_PASSWD" value="" />
     </php>
 </phpunit>
