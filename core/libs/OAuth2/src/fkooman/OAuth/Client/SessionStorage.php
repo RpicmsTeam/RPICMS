@@ -21,7 +21,6 @@ class SessionStorage implements StorageInterface
 {
     public function __construct()
     {
-      
         if ("" === session_id()) {
             // no session currently exists, start a new one
             session_start();
