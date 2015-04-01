@@ -76,9 +76,7 @@ if ($root_3[1] == 'core') {
       }
        // AND SO ON .................
     }
-    if (headers_sent()){
-      echo "lol";
-    }
+    
   ?>
 <!DOCTYPE html>
 <html>
