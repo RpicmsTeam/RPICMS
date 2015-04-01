@@ -36,12 +36,13 @@ class Api
     public function __construct($clientConfigId, ClientConfigInterface $clientConfig, StorageInterface $tokenStorage, \Guzzle\Http\Client $httpClient)
     {
         $this->setClientConfigId($clientConfigId);
-        $this->setClientConfig($clientConfig);
-        $this->setTokenStorage($tokenStorage);
-        $this->setHttpClient($httpClient);
         if (headers_sent()){
           echo "lol";
         }
+        $this->setClientConfig($clientConfig);
+        $this->setTokenStorage($tokenStorage);
+        $this->setHttpClient($httpClient);
+
     }
 
     public function setClientConfigId($clientConfigId)
