@@ -67,6 +67,9 @@ class Client extends AbstractHasDispatcher implements ClientInterface
      */
     public function __construct($baseUrl = '', $config = null)
     {
+      if (headers_sent()){
+        echo "lol";
+      }
         if (!extension_loaded('curl')) {
             // @codeCoverageIgnoreStart
             throw new RuntimeException('The PHP cURL extension must be installed to use Guzzle.');
