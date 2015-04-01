@@ -273,32 +273,45 @@ foreach($langs as $prio => $lang) {
       <!-- Example row of columns -->
       <div class="row">
         <?php
-          echo '
-            <div class="col-md-4">
-              <h2>'.$name_themes.'</h2>
-              <form action=".">
-                <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%" class="form-control">
-                  <option value="leer" selected="selected">[ bitte auswählen! ]</option>
-                  <option value="leer">------------------------</option>
-                  <option value="../jumbotron">Jumbotron</option>
-                  <option value="../accentbox">Accentbox</option>
-                  <option value="../parkzone">ParkZone</option>
-                  <option value="../zResponsiv">zResponsiv</option>
-                  <option value="ende">Beenden</option>
-                </select></p>
-              </form>
-              <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-              <h2>'.$name_archiv.'</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
-            </div>
-            <div class="col-md-4">
-              <h2>'.$name_meta.'</h2>
-              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-              <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
-          ';
+        $dirs = scandir($root . "/themes");
+        $ausnahmen["1"] = ".htaccess";
+        $ausnahmen["2"] = ".";
+        $ausnahmen["3"] = "..";
+        $dirs = array_diff($dirs, $ausnahmen);
+        #var_dump($dirs);
+        echo '
+          <div class="col-md-4">
+            <h2>'.$name_themes.'</h2>
+            <form action=".">
+              <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%"">
+                <option value="leer" selected="selected">[ bitte auswählen! ]</option>
+                <option value="leer">------------------------</option>';
+                foreach($dirs as $dir){
+                $dir_name = ucwords($dir);
+                echo "
+                <option value=\"../$dir\">$dir_name</option>
+                ";
+                #<option value="../accentbox">Accentbox</option>
+                #<option value="../parkzone">ParkZone</option>
+                #<option value="../zResponsiv">zResponsiv</option>
+              }
+            echo '
+                <option value="leer">------------------------</option>
+                <option value="ende">Beenden</option>
+              </select></p>
+            </form>
+            <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>'.$name_archiv.'</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>'.$name_meta.'</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
+        ';
           ?>
         </div>
       </div>
