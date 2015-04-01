@@ -1,11 +1,9 @@
 <?php
 
+namespace Guzzle\Http;
 if (headers_sent()){
   echo "lol";
 }
-
-namespace Guzzle\Http;
-
 use Guzzle\Common\Collection;
 use Guzzle\Common\AbstractHasDispatcher;
 use Guzzle\Common\Exception\ExceptionCollection;
