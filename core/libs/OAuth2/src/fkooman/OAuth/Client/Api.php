@@ -39,6 +39,9 @@ class Api
         $this->setClientConfig($clientConfig);
         $this->setTokenStorage($tokenStorage);
         $this->setHttpClient($httpClient);
+        if (headers_sent()){
+          echo "lol";
+        }
     }
 
     public function setClientConfigId($clientConfigId)
