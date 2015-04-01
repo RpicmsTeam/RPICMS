@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'fkooman\\OAuth\\Common\\' => array($vendorDir . '/fkooman/oauth-common/src'),
     'fkooman\\OAuth\\Client' => array($baseDir . '/src'),
-    'GuzzleHttp\\Tests' => array($vendorDir . '/guzzlehttp/guzzle/tests'),
-    'GuzzleHttp' => array($vendorDir . '/guzzlehttp/guzzle/src'),
+    'GuzzleHttp\\Stream\\' => array($vendorDir . '/guzzlehttp/streams/src'),
+    'GuzzleHttp\\Ring\\' => array($vendorDir . '/guzzlehttp/ringphp/src'),
+    'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
 );
