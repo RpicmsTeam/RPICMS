@@ -330,14 +330,16 @@ if ($root_3[1] == 'core') {
                   <option value="leer" selected="selected">[ bitte auswählen! ]</option>
                   <option value="leer">------------------------</option>';
                   foreach($dirs as $dir){
+                  $dir_name = ucwords($dir);
                   echo "
-                  <option value=\"../$dir\">$dir</option>
+                  <option value=\"../$dir\">$dir_name</option>
                   ";
                   #<option value="../accentbox">Accentbox</option>
                   #<option value="../parkzone">ParkZone</option>
                   #<option value="../zResponsiv">zResponsiv</option>
                 }
               echo '
+                  <option value="leer">------------------------</option>
                   <option value="ende">Beenden</option>
                 </select></p>
               </form>
