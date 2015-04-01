@@ -21,7 +21,7 @@ if ($root_3[1] == 'core') {
 #######################
 # flush browser cache #
 #######################
-header("Cache-Control: no-cache, must-revalidate, no-store");
+#header("Cache-Control: no-cache, must-revalidate, no-store");
 
 ##########################
 # include required files #
