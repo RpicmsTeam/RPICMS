@@ -314,7 +314,7 @@ if ($root_3[1] == 'core') {
 
     <div class="container">
       <!-- Example row of columns -->
-      <div class="row">
+      <div class="row" style="overflow: hidden;">
         <?php
           $dirs = scandir($root . "/themes");
           $ausnahmen["1"] = ".htaccess";
@@ -323,7 +323,7 @@ if ($root_3[1] == 'core') {
           $dirs = array_diff($dirs, $ausnahmen);
           #var_dump($dirs);
           echo '
-            <div class="col-md-4" style="overflow: hidden;">
+            <div class="col-md-4" style="padding-bottom: 1000px; margin-bottom: -1000px;">
               <h2>'.$name_themes.'</h2>
               <form action=".">
                 <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%" class="form-control">
@@ -343,17 +343,17 @@ if ($root_3[1] == 'core') {
                   <option value="ende">Beenden</option>
                 </select></p>
               </form>
-              <p><a class="btn btn-default" href="#" role="button" style="padding-bottom: 1000px; margin-bottom: -1000px;">'.$name_details.' &raquo;</a></p>
+              <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" style="padding-bottom: 1000px; margin-bottom: -1000px;">
               <h2>'.$name_archiv.'</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button" style="padding-bottom: 1000px; margin-bottom: -1000px;">'.$name_details.' &raquo;</a></p>
+              <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" style="padding-bottom: 1000px; margin-bottom: -1000px;">
               <h2>'.$name_meta.'</h2>
               <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-              <p><a class="btn btn-default" href="#" role="button" style="padding-bottom: 1000px; margin-bottom: -1000px;">'.$name_details.' &raquo;</a></p>
+              <p><a class="btn btn-default" href="#" role="button">'.$name_details.' &raquo;</a></p>
           ';
           ?>
         </div>
