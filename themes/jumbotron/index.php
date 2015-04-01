@@ -155,7 +155,7 @@ if ($root_3[1] == 'core') {
         $x = 1;
         if ($empty_id && $empty_category && $empty_author){
           #$id = 1;
-          include($root . '/core/backend/blog/posts.php');
+          #include($root . '/core/backend/blog/posts.php');
           while ($x < $post_id_clean+1){
             include($root . '/core/config/connect.db.inc.php');
             echo "
@@ -373,6 +373,6 @@ if ($root_3[1] == 'core') {
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
-    <!--<?php include($root . '/core/backend/admin/modules/script_footer.php'); ?>-->
+    <?php include($root . '/core/backend/admin/modules/script_footer.php'); ?>
   </body>
 </html>
