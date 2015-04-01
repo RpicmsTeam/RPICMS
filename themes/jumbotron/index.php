@@ -316,6 +316,10 @@ if ($root_3[1] == 'core') {
       <!-- Example row of columns -->
       <div class="row">
         <?php
+          $dirs = scandir($root . "/themes");
+          $ausnahmen["1"] = ".htaccess";
+          $dirs = array_diff($dirs, $ausnahmen);
+          var_dump($dirs);
           echo '
             <div class="col-md-4">
               <h2>'.$name_themes.'</h2>
