@@ -318,6 +318,8 @@ if ($root_3[1] == 'core') {
         <?php
           $dirs = scandir($root . "/themes");
           $ausnahmen["1"] = ".htaccess";
+          $ausnahmen["2"] = ".";
+          $ausnahmen["3"] = "..";
           $dirs = array_diff($dirs, $ausnahmen);
           var_dump($dirs);
           echo '
