@@ -61,7 +61,7 @@ class Api
         $this->tokenStorage = $tokenStorage;
     }
 
-    public function setHttpClient(\Guzzle\Http\Client $httpClient)
+    public function setHttpClient(\GuzzleHttp\Client $httpClient)
     {
         $this->httpClient = $httpClient;
     }
