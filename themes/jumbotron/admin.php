@@ -18,6 +18,7 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
+if (!securePage($_SERVER['PHP_SELF'])){die();}
 #######################
 # flush browser cache #
 #######################
@@ -33,16 +34,6 @@ if (mysqli_connect_errno()) {
 	printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 	exit();
 }
-$user = "test";
-if ($resultat = $connection->query("SELECT * FROM allowed_user WHERE email LIKE '$user'")) {
-	while($daten = $resultat->fetch_object() ){
- 		$allowed_user = $daten->email;
-	}
-}
-#if (empty($allowed_user)) {
-#	echo "You not logged in!";
-#}else{
-if($allowed_user == $user){
 
 ################
 # lang support #
@@ -317,9 +308,3 @@ foreach($langs as $prio => $lang) {
     <?php include($root . '/core/backend/admin/modules/script_footer.php'); ?>
   </body>
 </html>
-<?php
-}else{
-	echo "You not logged in!";
-	header('HTTP/1.1 401 Unauthorized', true, 401);
-}
-?>
