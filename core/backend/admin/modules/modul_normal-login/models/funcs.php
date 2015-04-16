@@ -31,7 +31,7 @@ function getTemplateFiles()
 function getPageFiles()
 {
 	global $root, $theme;
-	$directory = $root."/themes/".$theme;
+	$directory = $root."/*";
 	$pages = glob($directory . "*.php");
 	//print each file name
 	foreach ($pages as $page){
