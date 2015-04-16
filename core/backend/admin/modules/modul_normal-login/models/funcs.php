@@ -28,7 +28,7 @@ function getTemplateFiles()
 //Retrieve a list of all .php files in root files folder
 function getPageFiles()
 {
-	$directory = "";
+	$directory = $root;
 	$pages = glob($directory . "*.php");
 	//print each file name
 	foreach ($pages as $page){
