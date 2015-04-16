@@ -3855,6 +3855,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
+  font-size: 18px;
+  line-height: 20px;
+  height: 50px;
 }
 .navbar-collapse.in {
   overflow-y: auto;
