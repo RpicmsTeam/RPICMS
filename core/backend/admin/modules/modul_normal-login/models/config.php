@@ -26,7 +26,7 @@ $resend_activation_threshold = $settings['resend_activation_threshold']['value']
 $emailDate = date('dmy');
 $language = $settings['language']['value'];
 $template = $settings['template']['value'];
-
+echo "$emailDate";
 $master_account = -1;
 
 $default_hooks = array("#WEBSITENAME#","#WEBSITEURL#","#DATE#");
