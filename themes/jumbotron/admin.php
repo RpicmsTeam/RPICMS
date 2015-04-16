@@ -167,11 +167,18 @@ foreach($langs as $prio => $lang) {
               <li class="dropdown">
                 <a href="#settings" class="dropdown-toggle active disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li onclick="showhide('update');"><a href="#update">Update</a></li><li class="divider"></li>
-                  <li onclick="showhide('usercenter');"><a href="#usercenter">User-Center</a></li>
-                  <li onclick="showhide('user_permissions');"><a href="#user_permissions">User-Permissions</a></li>
+                  <li onclick="showhide('update');"><a href="#update">Update</a></li>
                 </ul>
               </li>
+            <li class="dropdown">
+              <a href="#modules" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('modules');">Modules <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li onclick="showhide('user_configuration');"><a href="#user_configuration">User-Configuration</a></li>
+                <li onclick="showhide('usercenter');"><a href="#usercenter">User-Center</a></li>
+                <li onclick="showhide('user_permissions');"><a href="#user_permissions">User-Permissions</a></li>
+                <li onclick="showhide('user_pages');"><a href="#user_pages">User-Pages</a></li>
+              </ul>
+            </li>
               <li class="dropdown">
                 <a href="#posts" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
@@ -194,6 +201,21 @@ foreach($langs as $prio => $lang) {
   				<h2>Settings</h2>
   			</div>
 
+  			<div class="hide_" id="update">
+  				<h2>Updates</h2>
+  				<form action="update.php">
+  					<button type="submit" value="update" name="update" class="btn btn-danger">Update</button>
+  				</form>
+  			</div>
+
+        <div class="hide_" id="modules">
+          <h2>Modules</h2>
+        </div>
+
+        <div class="hide_" id="user_configuration">
+          <h2>User-Configuration</h2>
+        </div>
+
         <div class="hide_" id="usercenter">
   				<h2>User-Center</h2>
   			</div>
@@ -201,14 +223,6 @@ foreach($langs as $prio => $lang) {
         <div class="hide_" id="user_permissions">
           <h2>User-Permissions</h2>
         </div>
-
-  			<div class="hide_" id="update">
-  				<h2>Updates</h2>
-  				<form action="update.php">
-  					<button type="submit" value="update" name="update" class="btn btn-danger">Update</button>
-  				</form>
-
-  			</div>
 
     		<div class="hide_" id="posts">
 				      <h2>Posts</h2>
