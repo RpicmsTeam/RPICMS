@@ -6,10 +6,11 @@ http://usercake.com
 
 //Functions that do not interact with DB
 //------------------------------------------------------------------------------
-
+include($root . '/core/config/connect.db.inc.php');
 //Retrieve a list of all .php files in models/languages
 function getLanguageFiles()
 {
+	global $root;
 	$directory = $root."/core/backend/admin/modules/modul_normal-login/models/languages/";
 	$languages = glob($directory . "*.php");
 	//print each file name
@@ -19,6 +20,7 @@ function getLanguageFiles()
 //Retrieve a list of all .css files in models/site-templates
 function getTemplateFiles()
 {
+	global $root;
 	$directory = $root."/core/backend/admin/modules/modul_normal-login/models/site-templates/";
 	$languages = glob($directory . "*.css");
 	//print each file name
@@ -28,6 +30,7 @@ function getTemplateFiles()
 //Retrieve a list of all .php files in root files folder
 function getPageFiles()
 {
+	global $root, $theme;
 	$directory = $root."/themes/".$theme;
 	$pages = glob($directory . "*.php");
 	//print each file name
@@ -339,6 +342,13 @@ function fetchUserDetails($username=NULL,$token=NULL, $id=NULL)
 		LIMIT 1");
 		$stmt->bind_param("s", $data);
 
+	$stmt->execute();
+	$stmt->bind_result($id, $user, $display, $password, $email, $token, $activationRequest, $passwordRequest, $active, $title, $signUp, $signIn);
+	while ($stmt->fetch()){
+		$row = array('id' => $id, 'user_name' => $user, 'display_name' => $display, 'password' => $password, 'email' => $email, 'activation_token' => $token, 'last_activation_request' => $activationRequest, 'lost_password_request' => $passwordRequest, 'active' => $active, 'title' => $title, 'sign_up_stamp' => $signUp, 'last_sign_in_stamp' => $signIn);
+	}
+	$stmt->close();
+	return ($row);
 	$stmt->execute();
 	$stmt->bind_result($id, $user, $display, $password, $email, $token, $activationRequest, $passwordRequest, $active, $title, $signUp, $signIn);
 	while ($stmt->fetch()){
