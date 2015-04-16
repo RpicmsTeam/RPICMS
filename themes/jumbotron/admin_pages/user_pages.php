@@ -35,6 +35,7 @@ if (count($deletions) > 0) {
 //Update DB pages
 $dbpages = fetchAllPages();
 ?>
+<table class="table table-striped">
 <tr><th>Id</th><th>Page</th><th>Access</th></tr>
 <?php
 //Display list of pages
