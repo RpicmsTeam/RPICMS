@@ -161,7 +161,7 @@ foreach($langs as $prio => $lang) {
             <span class="icon-bar"></span>
           </button>
           <?php
-          echo '<a class="navbar-brand" href="index.php" style="float:left;">'.$blog_name.'</a> ';
+          echo '<a class="navbar-brand" href="admin.php" style="float:left;">'.$blog_name.'</a> ';
           ?>
             <ul class="nav navbar-nav" style="float:left;font-size:18px;line-height: 20px;height:50px; padding-top:4px;">
               <li class="dropdown">
