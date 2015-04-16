@@ -175,23 +175,23 @@ foreach($langs as $prio => $lang) {
           <?php
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
           ?>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#settings" class="dropdown-toggle active disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li onclick="showhide('update');"><a href="#update">Update</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#posts" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li onclick="showhide('newpost');"><a href="#newpost">New Post</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.navbar-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-        	<ul class="nav navbar-nav">
-        		<li class="dropdown">
-        			<a href="#settings" class="dropdown-toggle active disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
-					    <ul class="dropdown-menu" role="menu">
-        				<li onclick="showhide('update');"><a href="#update">Update</a></li>
-        			</ul>
-            </li>
-        		<li class="dropdown">
-        			<a href="#posts" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('posts');">Posts <span class="caret"></span></a>
-        			<ul class="dropdown-menu" role="menu">
-        				<li onclick="showhide('newpost');"><a href="#newpost">New Post</a></li>
-        			</ul>
-        		</li>
-        	</ul>
-        </div><!--/.navbar-collapse -->
       </div>
     </nav>
 
