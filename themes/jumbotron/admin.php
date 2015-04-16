@@ -163,7 +163,7 @@ foreach($langs as $prio => $lang) {
 	</script>-->
   </head>
   <body>
-    <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top navbar-collapse collapse" role="navigation">
+    <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header" style="float:left;">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -173,9 +173,9 @@ foreach($langs as $prio => $lang) {
             <span class="icon-bar"></span>
           </button>
           <?php
-          echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a> ';
+          echo '<a class="navbar-brand" href="index.php" style="float:left;">'.$blog_name.'</a> ';
           ?>
-            <ul class="nav navbar-nav" style="clear:both;">
+            <ul class="nav navbar-nav" style="float:left;font-size:18px;line-height: 20px;height:50px;">
               <li class="dropdown">
                 <a href="#settings" class="dropdown-toggle active disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
                 <ul class="dropdown-menu" role="menu">
