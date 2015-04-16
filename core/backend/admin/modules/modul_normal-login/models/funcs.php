@@ -10,7 +10,7 @@ http://usercake.com
 //Retrieve a list of all .php files in models/languages
 function getLanguageFiles()
 {
-	$directory = $root."/core/backend/admin/modules/modul_normal-login/models/models/languages/";
+	$directory = $root."/core/backend/admin/modules/modul_normal-login/models/languages/";
 	$languages = glob($directory . "*.php");
 	//print each file name
 	return $languages;
@@ -19,7 +19,7 @@ function getLanguageFiles()
 //Retrieve a list of all .css files in models/site-templates
 function getTemplateFiles()
 {
-	$directory = $root."/core/backend/admin/modules/modul_normal-login/models/models/site-templates/";
+	$directory = $root."/core/backend/admin/modules/modul_normal-login/models/site-templates/";
 	$languages = glob($directory . "*.css");
 	//print each file name
 	return $languages;
