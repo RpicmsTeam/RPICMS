@@ -18,7 +18,7 @@
 			`author` TEXT NOT NULL ,
 			`date` DATETIME NOT NULL ,
 			`category` TEXT NOT NULL
-		) ENGINE = MYISAM ;
+		) ENGINE = MYISAM;
 	";
 	$result = mysqli_query($connection, $sql)
 	or die("Anfrage fehlgeschlagen: " . mysql_error());
@@ -31,7 +31,7 @@
 		`id` int(11) NOT NULL AUTO_INCREMENT,
 		`name` varchar(150) NOT NULL,
 		PRIMARY KEY (`id`)
-		) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+		) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3;
 	";
 	$result = mysqli_query($connection, $sql)
 	or die("Anfrage fehlgeschlagen: " . mysql_error());
@@ -65,7 +65,7 @@
 			`sign_up_stamp` int(11) NOT NULL,
 			`last_sign_in_stamp` int(11) NOT NULL,
 			PRIMARY KEY (`id`)
-			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 		";
 		$result = mysqli_query($connection, $sql)
 		or die("Anfrage fehlgeschlagen: " . mysql_error());
@@ -79,7 +79,7 @@
 			`user_id` int(11) NOT NULL,
 			`permission_id` int(11) NOT NULL,
 			PRIMARY KEY (`id`)
-			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2;
 		";
 		$result = mysqli_query($connection, $sql)
 		or die("Anfrage fehlgeschlagen: " . mysql_error());
@@ -88,7 +88,7 @@
 	//user_permission_matches Table füllen
 		require_once ('../core/config/connect.db.inc.php');
 		$sql = "
-		INSERT INTO  `rpicms_user_permission_matches` (`id`, `user_id`, `permission_id`) VALUES
+		INSERT INTO `rpicms_user_permission_matches` (`id`, `user_id`, `permission_id`) VALUES
 		(1, 1, 2);
 		";
 		$result = mysqli_query($connection, $sql)
@@ -103,7 +103,7 @@
 		`name` varchar(150) NOT NULL,
 		`value` varchar(150) NOT NULL,
 		PRIMARY KEY (`id`)
-		) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+		) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8;
 		";
 		$result = mysqli_query($connection, $sql)
 		or die("Anfrage fehlgeschlagen: " . mysql_error());
@@ -128,12 +128,12 @@
 	//pages Table erstellen
 		require_once ('../core/config/connect.db.inc.php');
 		$sql = "
-		CREATE TABLE IF NOT EXISTS  `rpicms_pages (
+		CREATE TABLE IF NOT EXISTS  `rpicms_pages` (
 		`id` int(11) NOT NULL AUTO_INCREMENT,
 		`page` varchar(150) NOT NULL,
 		`private` tinyint(1) NOT NULL DEFAULT '0',
 		PRIMARY KEY (`id`)
-		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18;
 		";
 		$result = mysqli_query($connection, $sql)
 		or die("Anfrage fehlgeschlagen: " . mysql_error());
@@ -142,7 +142,7 @@
 	//pages Table füllen
 		require_once ('../core/config/connect.db.inc.php');
 		$sql = "
-		INSERT INTO `rpicms_pages (`id`, `page`, `private`) VALUES
+		INSERT INTO `rpicms_pages` (`id`, `page`, `private`) VALUES
 		(1, '$theme/account.php', 1),
 		(2, '$theme/activate-account.php', 0),
 		(3, '$theme/admin_configuration.php', 1),
@@ -168,12 +168,12 @@
 	//permission_page_matches Table erstellen
 		require_once ('../core/config/connect.db.inc.php');
 		$sql = "
-		CREATE TABLE IF NOT EXISTS  `rpicms_permission_page_matches (
+		CREATE TABLE IF NOT EXISTS  `rpicms_permission_page_matches` (
 		`id` int(11) NOT NULL AUTO_INCREMENT,
 		`permission_id` int(11) NOT NULL,
 		`page_id` int(11) NOT NULL,
 		PRIMARY KEY (`id`)
-		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23;
 		";
 		$result = mysqli_query($connection, $sql)
 		or die("Anfrage fehlgeschlagen: " . mysql_error());
@@ -182,7 +182,7 @@
 	//permission_page_matches Table füllen
 		require_once ('../core/config/connect.db.inc.php');
 		$sql = "
-		INSERT INTO `rpicms_permission_page_matches (`id`, `permission_id`, `page_id`) VALUES
+		INSERT INTO `rpicms_permission_page_matches` (`id`, `permission_id`, `page_id`) VALUES
 		(1, 1, 1),
 		(2, 1, 14),
 		(3, 1, 17),
