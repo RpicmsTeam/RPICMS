@@ -175,7 +175,7 @@ foreach($langs as $prio => $lang) {
           <?php
           echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a> ';
           ?>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" style="clear:both;">
               <li class="dropdown">
                 <a href="#settings" class="dropdown-toggle active disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
                 <ul class="dropdown-menu" role="menu">
