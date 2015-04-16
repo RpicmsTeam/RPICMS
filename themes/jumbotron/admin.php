@@ -224,6 +224,10 @@ foreach($langs as $prio => $lang) {
           <h2>User-Permissions</h2>
         </div>
 
+        <div class="hide_" id="user_pages">
+          <h2>User-Pages</h2>
+        </div>
+
     		<div class="hide_" id="posts">
 				      <h2>Posts</h2>
               <table class="table table-striped table-hover">
