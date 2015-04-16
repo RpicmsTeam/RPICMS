@@ -35,6 +35,7 @@ function getPageFiles()
 	$pages = glob($directory . "*.php");
 	//print each file name
 	foreach ($pages as $page){
+		$page = trim($page, $root."/themes/");
 		$row[$page] = $page;
 	}
 	return $row;
