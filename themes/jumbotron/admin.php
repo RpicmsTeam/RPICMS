@@ -18,6 +18,7 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
+require_once($root."/core/backend/admin/modules/modul_normal-login/models/config.php");
 if (!securePage($_SERVER['PHP_SELF'])){die();}
 #######################
 # flush browser cache #
