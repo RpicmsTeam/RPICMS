@@ -198,88 +198,58 @@ foreach($langs as $prio => $lang) {
   		<!-- Tab panes -->
   		<div class="tab-content">
   			<div class="hide_" id="settings">
-  				<h2>Settings</h2>
-  			</div>
+  				<?php
+          include($root."/themes/jumbotron/admin_pages/settings.php");
+          ?>
+        </div>
 
   			<div class="hide_" id="update">
-  				<h2>Updates</h2>
-  				<form action="update.php">
-  					<button type="submit" value="update" name="update" class="btn btn-danger">Update</button>
-  				</form>
+          <?php
+          include($root."/themes/jumbotron/admin_pages/updates.php");
+          ?>
   			</div>
 
         <div class="hide_" id="modules">
-          <h2>Modules</h2>
+          <?php
+          include($root."/themes/jumbotron/admin_pages/modules.php");
+          ?>
         </div>
 
         <div class="hide_" id="user_configuration">
-          <h2>User-Configuration</h2>
+          <?php
+          include($root."/themes/jumbotron/admin_pages/user_configuration.php");
+          ?>
         </div>
 
         <div class="hide_" id="usercenter">
-  				<h2>User-Center</h2>
+          <?php
+          include($root."/themes/jumbotron/admin_pages/usercenter.php");
+          ?>
   			</div>
 
         <div class="hide_" id="user_permissions">
-          <h2>User-Permissions</h2>
+          <?php
+          include($root."/themes/jumbotron/admin_pages/user_permissions.php");
+          ?>
         </div>
 
         <div class="hide_" id="user_pages">
-          <h2>User-Pages</h2>
+          <?php
+          include($root."/themes/jumbotron/admin_pages/user_pages.php");
+          ?>
         </div>
 
     		<div class="hide_" id="posts">
-				      <h2>Posts</h2>
-              <table class="table table-striped table-hover">
-                <tr>
-                  <th>ID</th>
-                  <th>Title</th>
-                  <th>Short Description</th>
-                  <th><span class="glyphicon glyphicon-cog" aria-hidden="true" style="text-align:center;"></span></th>
-                </tr>
-                  <?php
-                    $id = 1;
-                    $x = 1;
-                    include($root . '/core/backend/blog/posts.php');
-                    while ($x < $post_id_clean+1){
-                      include($root . '/core/config/connect.db.inc.php');
-                      echo "<tr>";
-                      echo "<td>$id</td>";
-                      echo "<td>$post_title</td>";
-                      echo "<td></td>";
-                      echo "<td><a href=\"#\" title=\"Edit\">Edit</a>  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>  |  <a href=\"#\" title=\"Delete\">Delete</a>  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></td>";
-                      echo "</tr>";
-                      $x = $x+1;
-                      $id = $id+1;
-                      next_id_only();
-                    }
-                    ?>
-              </table>
+          <?php
+          include($root."/themes/jumbotron/admin_pages/posts.php");
+          ?>
 			  </div>
 
     		<div class="hide_" id="newpost">
-				<h2>New Post</h2>
-					<form action="../../core/backend/admin/blog/newpost.php" method="post">
-						<div class="form-group">
-							<label for="post_title">Title</label>
-							<input type="text" name="title" class="form-control" id="post_title">
-						</div>
-						<div class="form-group">
-							<label for="post_author">Author</label><!-- will later be check with login ;) -->
-							<input type="text" name="author" class="form-control" id="post_author">
-						</div>
-						<div class="form-group">
-							<label for="post_category">Category</label><!-- will later be check with login ;) -->
-							<input type="text" name="category" class="form-control" id="post_category">
-						</div>
-						<div class="form-group">
-						<label for="post_content">Content</label>
-                <div id="toolbar"></div>
-    						<input name="content" style="width:100%" id="editor"></input>
-    				</div>
-    				<button type="submit" class="btn btn-default">Save</button>
-					</form>
-			</div>
+          <?php
+          include($root."/themes/jumbotron/admin_pages/newpost.php");
+          ?>
+        </div>
   		</div>
       </div>
     </div>
