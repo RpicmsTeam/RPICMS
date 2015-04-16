@@ -1,77 +1,125 @@
-<html>
-	<head>
-		<title>login</title>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>!-->
-		<script type="text/javascript" src="../../../../libs/security/sha.js"></script>
-		<script type="text/javascript">
-			window.setTimeout("reload_timeout()", 295000);
-			function reload_timeout() {
-				var token = document.getElementById('token').innerHTML;
-				self.location.href='./del_token.php?token='+token;
+<?php
+/*
+UserCake Version: 2.0.2
+http://usercake.com
+*/
+
+require_once("models/config.php");
+if (!securePage($_SERVER['PHP_SELF'])){die();}
+
+//Prevent the user visiting the logged in page if he/she is already logged in
+if(isUserLoggedIn()) { header("Location: account.php"); die(); }
+
+//Forms posted
+if(!empty($_POST))
+{
+	$errors = array();
+	$username = sanitize(trim($_POST["username"]));
+	$password = trim($_POST["password"]);
+	
+	//Perform some validation
+	//Feel free to edit / change as required
+	if($username == "")
+	{
+		$errors[] = lang("ACCOUNT_SPECIFY_USERNAME");
+	}
+	if($password == "")
+	{
+		$errors[] = lang("ACCOUNT_SPECIFY_PASSWORD");
+	}
+
+	if(count($errors) == 0)
+	{
+		//A security note here, never tell the user which credential was incorrect
+		if(!usernameExists($username))
+		{
+			$errors[] = lang("ACCOUNT_USER_OR_PASS_INVALID");
+		}
+		else
+		{
+			$userdetails = fetchUserDetails($username);
+			//See if the user's account is activated
+			if($userdetails["active"]==0)
+			{
+				$errors[] = lang("ACCOUNT_INACTIVE");
 			}
-			function go() {
-				var token = document.getElementById('token').innerHTML;
-				var username = document.getElementById('username').value;
-				var passwd = document.getElementById('passwd').value;
-				var ga_token = document.getElementById('ga_token').value;
-				var shaObj = new jsSHA(passwd+username, "TEXT");
-				var hash = shaObj.getHash("SHA-512", "HEX");
-				//document.write(hash);
-				var shaObj1 = new jsSHA(hash+token, "TEXT");
-				var hash = shaObj1.getHash("SHA-512", "HEX");
-				//document.write('<br/>');
-				//document.write(hash);
-				//alert("test")
-				var anfragestr = './login_handling.php?username='+username+'&token='+token+'&hash='+hash+'&ga_token='+ga_token;
-				self.location.href=anfragestr;
+			else
+			{
+				//Hash the password and use the salt from the database to compare the password.
+				$entered_pass = generateHash($password,$userdetails["password"]);
+				
+				if($entered_pass != $userdetails["password"])
+				{
+					//Again, we know the password is at fault here, but lets not give away the combination incase of someone bruteforcing
+					$errors[] = lang("ACCOUNT_USER_OR_PASS_INVALID");
+				}
+				else
+				{
+					//Passwords match! we're good to go'
+					
+					//Construct a new logged in user object
+					//Transfer some db data to the session object
+					$loggedInUser = new loggedInUser();
+					$loggedInUser->email = $userdetails["email"];
+					$loggedInUser->user_id = $userdetails["id"];
+					$loggedInUser->hash_pw = $userdetails["password"];
+					$loggedInUser->title = $userdetails["title"];
+					$loggedInUser->displayname = $userdetails["display_name"];
+					$loggedInUser->username = $userdetails["user_name"];
+					
+					//Update last sign in
+					$loggedInUser->updateLastSignIn();
+					$_SESSION["userCakeUser"] = $loggedInUser;
+					
+					//Redirect to user account page
+					header("Location: account.php");
+					die();
+				}
 			}
-		</script>
-	</head>
-	<body>
-		<div id='token' style="display:none">
-			<?php
-				###############################
-				# include files from root dir #
-				###############################
-				$root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
-				$currentdir = getcwd();
-				$root_2 = str_replace($root_1, '', $currentdir);
-				$root_3 = explode("/", $root_2);
-				if ($root_3[1] == 'core') {
-			  		$root = realpath($_SERVER["DOCUMENT_ROOT"]);
-				}else{
-			  		$root = $root_1 . '/' . $root_3[1];
-				}
-				include($root . '/core/config/connect.db.inc.php');
-				//Check if Database connection established
-				if (mysqli_connect_errno()) {
-					printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
-					exit();
-				}
-				$token = hash('sha512',rand().time());
- 				$time = time();
- 				$eintrag = "INSERT INTO hashtoken(token, time)VALUES('$token', '$time')";
-				$eintragen = mysqli_query($connection, $eintrag);
-				print($token);
-			?>
-		</div>
-		<?php
-			include_once('./navi.php');
-		?>
-		<h1>Login ohne Klartext-Passwort übertragung</h1>
-		Username:
-		<br/>
-		<input type='text' id='username' name='username'/>
-		<br/>
-		Passwort:
-		<br/>
-		<input type="password" id='passwd' name="passwd"/>
-		<br/>
-		Token:
-		<br/>
-		<input type="text" id='ga_token' name="ga_token"/>
-		<br/>
-		<input type='submit' name="go" value="go" onClick='go()'/>
-	</body>
-</html>
+		}
+	}
+}
+
+require_once("models/header.php");
+
+echo "
+<body>
+<div id='wrapper'>
+<div id='top'><div id='logo'></div></div>
+<div id='content'>
+<h1>UserCake</h1>
+<h2>Login</h2>
+<div id='left-nav'>";
+
+include("left-nav.php");
+
+echo "
+</div>
+<div id='main'>";
+
+echo resultBlock($errors,$successes);
+
+echo "
+<div id='regbox'>
+<form name='login' action='".$_SERVER['PHP_SELF']."' method='post'>
+<p>
+<label>Username:</label>
+<input type='text' name='username' />
+</p>
+<p>
+<label>Password:</label>
+<input type='password' name='password' />
+</p>
+<p>
+<label>&nbsp;</label>
+<input type='submit' value='Login' class='submit' />
+</p>
+</form>
+</div>
+</div>
+<div id='bottom'></div>
+</div>
+</body>
+</html>";
+
+?>
