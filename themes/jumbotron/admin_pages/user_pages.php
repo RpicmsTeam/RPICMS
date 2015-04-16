@@ -1,6 +1,6 @@
 <h2>User-Pages</h2>
 <?php
-require_once($root."/core/backend/admin/modules/module_normal-login/models/config.php");
+require_once($root."/core/backend/admin/modules/modul_normal-login/models/config.php");
 $pages = getPageFiles(); //Retrieve list of pages in root usercake folder
 $dbpages = fetchAllPages(); //Retrieve list of pages in pages table
 $creations = array();
