@@ -61,5 +61,5 @@ foreach ($dbpages as $page){
 	</td>
 	</tr>";
 }
-
+?>
 </table>
