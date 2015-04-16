@@ -180,6 +180,10 @@ foreach($langs as $prio => $lang) {
                 <a href="#settings" class="dropdown-toggle active disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('settings');">Settings <span class="sr-only">(current)</span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li onclick="showhide('update');"><a href="#update">Update</a></li>
+                  <li onclick="showhide('usercenter');"><a href="#usercenter">User-Center</a></li>
+                  <ul class="dropdown-menu" role="menu">
+                    <li onclick="showhide('user_permissions');"><a href="#user_permissions">User-Permissions</a></li>
+                  </ul>
                 </ul>
               </li>
               <li class="dropdown">
@@ -201,8 +205,16 @@ foreach($langs as $prio => $lang) {
   		<!-- Tab panes -->
   		<div class="tab-content">
   			<div class="hide_" id="settings">
+  				<h2>User-Center</h2>
+  			</div>
+
+        <div class="hide_" id="usercenter">
   				<h2>Settings</h2>
   			</div>
+
+        <div class="hide_" id="user_permissions">
+          <h2>User-Permissions</h2>
+        </div>
 
   			<div class="hide_" id="update">
   				<h2>Updates</h2>
