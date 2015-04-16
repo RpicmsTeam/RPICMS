@@ -18,7 +18,7 @@ $stmt->close();
 
 //Set Settings
 $emailActivation = $settings['activation']['value'];
-$mail_templates_dir = "models/mail-templates/";
+$mail_templates_dir = $root."/core/backend/admin/modules/modul_normal-login/models/models/mail-templates/";
 $websiteName = $settings['website_name']['value'];
 $websiteUrl = $settings['website_url']['value'];
 $emailAddress = $settings['email']['value'];
@@ -33,17 +33,17 @@ $default_hooks = array("#WEBSITENAME#","#WEBSITEURL#","#DATE#");
 $default_replace = array($websiteName,$websiteUrl,$emailDate);
 
 if (!file_exists($language)) {
-	$language = "models/languages/en.php";
+	$language = $root."/core/backend/admin/modules/modul_normal-login/models/models/languages/en.php";
 }
 
 if(!isset($language)) $language = "models/languages/en.php";
 
 //Pages to require
 require_once($language);
-require_once("class.mail.php");
-require_once("class.user.php");
-require_once("class.newuser.php");
-require_once("funcs.php");
+require_once($root."/core/backend/admin/modules/modul_normal-login/models/class.mail.php");
+require_once($root."/core/backend/admin/modules/modul_normal-login/models/class.user.php");
+require_once($root."/core/backend/admin/modules/modul_normal-login/models/class.newuser.php");
+require_once($root."/core/backend/admin/modules/modul_normal-login/models/funcs.php");
 
 session_start();
 

@@ -39,12 +39,5 @@ if(mysqli_connect_errno()) {
 	exit();
 }
 
-//Direct to install directory, if it exists
-if(is_dir("install/"))
-{
-	header("Location: install/");
-	die();
-
-}
 
 ?>
