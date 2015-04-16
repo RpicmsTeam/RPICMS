@@ -163,7 +163,7 @@ foreach($langs as $prio => $lang) {
 	</script>-->
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-collapse collapse" role="navigation">
+    <nav id="navbar" class="navbar navbar-fixed-top navbar-collapse collapse" role="navigation">
       <div class="container">
         <div class="navbar-header" style="float:left;">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
