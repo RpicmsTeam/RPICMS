@@ -62,5 +62,4 @@ foreach ($dbpages as $page){
 	</tr>";
 }
 
-echo "
 </table>
