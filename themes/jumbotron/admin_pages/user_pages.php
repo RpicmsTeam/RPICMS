@@ -46,7 +46,7 @@ foreach ($dbpages as $page){
 	".$page['id']."
 	</td>
 	<td>
-	<a onclick=\"showhide('usercenter');\" href='admin.php#usercenter?page_id=".$page['id']."'>".$page['page']."</a>
+	<a onclick=\"showhide('usercenter');\" href='admin.php?page_id=".$page['id']."#usercenter'>".$page['page']."</a>
 	</td>
 	<td>";
 
