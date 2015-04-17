@@ -39,6 +39,7 @@ $dbpages = fetchAllPages();
 <tr><th>Id</th><th>Page</th><th>Access</th></tr>
 <?php
 //Display list of pages
+var_dump($dbpages);
 foreach ($dbpages as $page){
 	echo "
 	<tr>
@@ -46,7 +47,7 @@ foreach ($dbpages as $page){
 	".$page['id']."
 	</td>
 	<td>
-	<a href ='admin_page.php?id=".$page['id']."'>".$page['page']."</a>
+	<a href ='admin.php?page_id=".$page['id']."'>".$page['page']."</a>
 	</td>
 	<td>";
 
