@@ -215,7 +215,8 @@ foreach($langs as $prio => $lang) {
 
         <div class="hide_" id="usercenter">
           <?php
-          if (isset($_GET['page_id'])){
+          $page_id = $_GET['page_id'];
+          if (!empty($page_id)){
             include($root."/themes/jumbotron/admin_pages/usercenter.php");
           }
           ?>
