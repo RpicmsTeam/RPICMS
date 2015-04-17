@@ -166,7 +166,7 @@ foreach($langs as $prio => $lang) {
               <a href="#modules" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-expanded="false" onclick="showhide('modules');">Modules <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li onclick="showhide('user_configuration');"><a href="#user_configuration">User-Configuration</a></li>
-                <li onclick="showhide('usercenter');"><a href="#usercenter">User-Center</a></li>
+                <!--<li onclick="showhide('usercenter');"><a href="#usercenter">User-Center</a></li>-->
                 <li onclick="showhide('user_permissions');"><a href="#user_permissions">User-Permissions</a></li>
                 <li onclick="showhide('user_pages');"><a href="#user_pages">User-Pages</a></li>
               </ul>
@@ -215,7 +215,9 @@ foreach($langs as $prio => $lang) {
 
         <div class="hide_" id="usercenter">
           <?php
-          include($root."/themes/jumbotron/admin_pages/usercenter.php");
+          if (isset($_GET['page_id'])){
+            include($root."/themes/jumbotron/admin_pages/usercenter.php");
+          }
           ?>
   			</div>
 
