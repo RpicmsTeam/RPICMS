@@ -32,14 +32,14 @@ if ($root_3[1] == 'core') {
 ################################
 if (!extension_loaded('mysqli')) {
 	if (!dl('mysqli.so')) {
-		echo "<span style=\"color:red;\">MySQLi</span> is not installed! Please install this module!</br>";
+		echo "<p><span style=\"color:red;\">MySQLi</span> is not installed! Please install this module!</p></br>";
 		$mysql = 0;
 	}else{
-		echo "<span style=\"color:red;\">MySQLi</span> has been successfully loaded</br>";
+		echo "<p><span style=\"color:green;\">MySQLi</span> has been successfully loaded</p></br>";
 		$mysql = 1;
 	}
 }else{
-	echo "<span style=\"color:red;\">MySQLi</span> has been successfully loaded</br>";
+	echo "<p><span style=\"color:green;\">MySQLi</span> has been successfully loaded</p></br>";
 	$mysql = 1;
 }
 
@@ -47,10 +47,10 @@ if (!extension_loaded('mysqli')) {
 # Check if Directory is writeable #
 ###################################
 if ( ! is_writable($root)) {
-	echo "<p> style=\"color:red;\"" . $root . '</p><p> must writable!!!</br>';
+	echo "<p><span style=\"color:red;\">" . $root . '</span> must writable!!!</p></br>';
 	$dir = 1;
 } else {
-	echo "<p style=\"color:red;\">" . $root . "</p><p> is writeable!</p></br>";
+	echo "<p><span style=\"color:green;\">" . $root . "</span> is writeable!</p></br>";
 	$dir = 1;
 }
 
