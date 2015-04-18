@@ -6,6 +6,7 @@
 * @author	Marcel Radzio <info@nordgedanken.de>
 * @version	0.2 18/08/2014 18:45
 */-->
+<h1>Check for requirements</h1>
 <?php
 ###############################
 # include files from root dir #
@@ -26,14 +27,14 @@ if ($root_3[1] == 'core') {
 ################################
 if (!extension_loaded('mysqli')) {
 	if (!dl('mysqli.so')) {
-		echo "MySQLi is not installed! Please install this module!";
+		echo "MySQLi is not installed! Please install this module!</br>";
 		$mysql = 0;
 	}else{
-		echo "MySQLi has been successfully loaded";
+		echo "MySQLi has been successfully loaded</br>";
 		$mysql = 1;
 	}
 }else{
-	echo "MySQLi has been successfully loaded";
+	echo "MySQLi has been successfully loaded</br>";
 	$mysql = 1;
 }
 
@@ -41,10 +42,10 @@ if (!extension_loaded('mysqli')) {
 # Check if Directory is writeable #
 ###################################
 if ( ! is_writable($root)) {
-	echo $root . ' must writable!!!';
+	echo $root . ' must writable!!!</br>';
 	$dir = 1;
 } else {
-	echo $root . "Is writeable!";
+	echo $root . "Is writeable!</br>";
 	$dir = 1;
 }
 
@@ -54,6 +55,6 @@ if ($mysql == 1 && $dir == 1){
 		<input type=\"submit\" name=\"send\" value=\"Go on!\" />
 	</form>";
 }else{
-	echo "Can't proceed!";
+	echo "Can't proceed!</br>";
 }
 ?>
