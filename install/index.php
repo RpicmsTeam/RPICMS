@@ -6,6 +6,11 @@
 * @author	Marcel Radzio <info@nordgedanken.de>
 * @version	0.2 18/08/2014 18:45
 */-->
+<html>
+<head>
+	<title>Installer | Check for requirements</title>
+</head>
+<body>
 <h1>Check for requirements</h1>
 <?php
 ###############################
@@ -58,3 +63,5 @@ if ($mysql == 1 && $dir == 1){
 	echo "Can't proceed!</br>";
 }
 ?>
+</body>
+</html>

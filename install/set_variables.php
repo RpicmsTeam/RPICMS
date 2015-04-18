@@ -9,7 +9,7 @@
 <!Doctype html>
 <html>
 <head>
-<title>Installieren</title>
+<title>Installer | Set Variables</title>
 </head>
 <body>
 <h1>Set Variables</h1>
