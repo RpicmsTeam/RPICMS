@@ -20,6 +20,8 @@
 		}else{
 			echo "MySQL has been successfully loaded";
 		}
+	}else{
+		echo "MySQL has been successfully loaded";
 	}
 ?>
 <h1>Installer</h1>
