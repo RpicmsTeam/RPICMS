@@ -1,6 +1,6 @@
 <!--/**
 * Module Check
-* 
+*
 * This script checks for requiered modules.
 *
 * @author	Marcel Radzio <info@nordgedanken.de>
@@ -15,10 +15,10 @@
 <?php
 	if (!extension_loaded('mysql')) {
 		if (!dl('mysql.so')) {
-			print ("MySQL is not installed! Please install this module!");
+			echo "MySQL is not installed! Please install this module!";
 			exit;
 		}else{
-			print("MySQL has been successfully loaded");
+			echo "MySQL has been successfully loaded";
 		}
 	}
 ?>
@@ -28,15 +28,15 @@
 #################
 #Database Config#
 #################
-unlink('../core/config/connect.db.inc.php');
+//unlink('../core/config/connect.db.inc.php');
 ######################
 #Blog Basics Config  #
 ######################
-unlink('../core/config/variables.config.php');
+//unlink('../core/config/variables.config.php');
 ######################
 #temp pass           #
 ######################
-unlink('../core/config/pass.tmp.php')
+//unlink('../core/config/pass.tmp.php')
 ?>
 <!-- Form to give data to config-generator -->
 <form action="generate_configs.php" method="post">
