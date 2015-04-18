@@ -27,12 +27,14 @@ if ($root_3[1] == 'core') {
 if (!extension_loaded('mysqli')) {
 	if (!dl('mysqli.so')) {
 		echo "MySQLi is not installed! Please install this module!";
-		exit;
+		$mysql = 0;
 	}else{
 		echo "MySQLi has been successfully loaded";
+		$mysql = 1;
 	}
 }else{
 	echo "MySQLi has been successfully loaded";
+	$mysql = 1;
 }
 
 ###################################
@@ -40,8 +42,10 @@ if (!extension_loaded('mysqli')) {
 ###################################
 if ( ! is_writable($root)) {
 	echo $root . ' must writable!!!';
+	$dir = 1;
 } else {
 	echo $root . "Is writeable!";
+	$dir = 1;
 }
 
 if ($mysql == 1 && $dir == 1){
@@ -50,6 +54,6 @@ if ($mysql == 1 && $dir == 1){
 		<input type=\"submit\" name=\"send\" value=\"Go on!\" />
 	</form>";
 }else{
-	echo "Can't proceed!"
+	echo "Can't proceed!";
 }
 ?>
