@@ -38,7 +38,6 @@
           return $.trim(this.value) === "";
         });
         if (!$emptyFields.length) {
-          alert ("test2");
           button.style.display = "block";
         }
       });
