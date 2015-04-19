@@ -86,7 +86,8 @@
 			}
 			?>
 		</div>
-		
+	</div>
+	<div class="container">
 		<hr>
 
 		<footer>
