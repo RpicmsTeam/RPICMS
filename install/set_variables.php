@@ -51,25 +51,20 @@
       <h1>Set Variables</h1>
       <!-- Form to give data to config-generator -->
       <form action="generate_configs.php" method="post">
-        <table cellpadding="1" cellspacing="4">
+        <div class="form-group">
           <h3>MySQL</h3>
-          <tr>
-            <td><p>Datenbank Adresse: </p></td>
-            <td><input type="name" name="db_address" required="required" placeholder="Datenbank Adresse" maxlength="255" /></td>
-          </tr>
-          <tr>
-            <td><p>Nutzername: </p></td>
-            <td><input type="name" name="db_username" required="required" placeholder="Nutzername" maxlength="255" /></td>
-          </tr>
-          <tr>
-            <td><p>Passwort: </p></td>
-            <td><input type="password" name="db_password" required="required" placeholder="Passwort" maxlength="50" /></td>
-          </tr>
-          <tr>
-            <td><p>Datenbank Name:    </p></td>
-            <td><input type="name" name="db_name" required="required" placeholder="Datenbank Name" maxlength="255" /></td>
-          </tr>
-        </table>
+            <label for="db_address">Datenbank Adresse:</label>
+            <input type="name" name="db_address" required="required" placeholder="Datenbank Adresse" maxlength="255" class="form-control" id="db_address">
+
+            <label for="db_username">Datenbank Nutzername:</label>
+            <input type="name" name="db_username" required="required" placeholder="Datenbank Nutzername" maxlength="255" class="form-control" id="db_username">
+
+            <label for="db_password">Datenbank Passwort:</label>
+            <input type="password" name="db_password" required="required" placeholder="Datenbank Passwort" maxlength="50" class="form-control" id="db_username">
+
+            <label for="db_name">Datenbank Name:</label>
+            <input type="name" name="db_name" required="required" placeholder="Datenbank Name" maxlength="255" class="form-control" id="db_username">
+        </div>
 
         <h3>Basics</h3>
         <table cellpadding="1" cellspacing="4">
