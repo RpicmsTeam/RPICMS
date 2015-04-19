@@ -30,7 +30,7 @@
 	<link href="../themes/jumbotron/jumbotron.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
-  <script>
+  <script type="text/javascript">
     $(".form-horizontal > :input").keyup(function() {
       var button = document.getElementById("button");
       var $emptyFields = $('.form-horizontal :input').filter(function() {
