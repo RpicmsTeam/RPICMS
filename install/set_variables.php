@@ -50,7 +50,7 @@
     <div class="container">
       <h1>Set Variables</h1>
       <!-- Form to give data to config-generator -->
-      <form action="generate_configs.php" method="post">
+      <form action="generate_configs.php" method="post" class="form-horizontal">
         <div class="form-group">
           <h3>MySQL</h3>
             <label for="db_address">Datenbank Adresse:</label>
@@ -85,7 +85,7 @@
         <div class="form-group">
           <h3>Design</h3>
             <label for="theme">Theme</label>
-            <select name="theme" size="3" class="form-control" id="theme">
+            <select name="theme" class="form-control" id="theme">
               <option>accentbox</option>
               <option>jumbotron</option>
               <option>parkzone</option>
