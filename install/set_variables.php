@@ -105,10 +105,19 @@
             <label for="theme" class="col-sm-2 control-label">Theme</label>
             <div class="col-sm-10">
               <select name="theme" class="form-control" id="theme">
-                <option>accentbox</option>
-                <option>jumbotron</option>
-                <option>parkzone</option>
-                <option>zResponsive</option>
+                <?php
+                  $dirs = scandir($root . "/themes");
+                  $ausnahmen["1"] = ".htaccess";
+                  $ausnahmen["2"] = ".";
+                  $ausnahmen["3"] = "..";
+                  $dirs = array_diff($dirs, $ausnahmen);
+                  foreach($dirs as $dir){
+                    $dir_name = ucwords($dir);
+                    echo "
+                      <option>$dir_name</option>
+                    ";
+                  }
+                ?>
               </select>
             </div>
         </div>
