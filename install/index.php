@@ -17,7 +17,8 @@
 	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
 </head>
 <body>
-<div  class="container-fluid center-block">
+<div class="container-fluid center-block">
+<div class="center-block">
 <h1>Check for requirements</h1>
 <?php
 ###############################
@@ -70,6 +71,7 @@ if ($mysql == 1 && $dir == 1){
 	echo "Can't proceed!</br>";
 }
 ?>
+</div>
 </div>
 <!-- Bootstrap core JavaScript
 ================================================== -->
