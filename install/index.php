@@ -79,10 +79,10 @@
 			if ($mysql == 1 && $dir == 1){
 				echo "
 				<form action=\"set_variables.php\" method=\"post\">
-					<input type=\"submit\" name=\"send\" value=\"Go on!\" />
+					<button type=\"submit\" name=\"send\" class=\"btn btn-success\">Go On!</button>
 				</form>";
 			}else{
-				echo "Can't proceed!</br>";
+				echo "<span class=\"text-danger\">Can't proceed!</span></br>";
 			}
 			?>
 		</div>
