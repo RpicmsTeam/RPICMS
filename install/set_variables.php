@@ -32,13 +32,13 @@
 	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
   <script type="text/javascript">
     function foo() {
-      alert ("test");
       $(".col-sm-10 > :input").keyup(function() {
         var button = document.getElementById("button");
         var $emptyFields = $('.col-sm-10 :input').filter(function() {
           return $.trim(this.value) === "";
         });
         if (!$emptyFields.length) {
+          alert ("test2");
           button.style.display = "block";
         }
       });
