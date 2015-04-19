@@ -91,7 +91,7 @@
               <option>parkzone</option>
               <option>zResponsive</option>
             </select>
-            <button type=\"submit\" name=\"send\" class=\"btn btn-success\">Go On!</button>
+            <button type="submit" name="send" class="btn btn-success">Go On!</button>
         </div>
       </form>
     </div>
