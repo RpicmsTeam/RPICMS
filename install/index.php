@@ -17,8 +17,8 @@
 	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
 </head>
 <body>
-<div class="container-fluid center-block">
-<div class="center-block">
+<div class="jumbotron">
+<div class="container">
 <h1>Check for requirements</h1>
 <?php
 ###############################
