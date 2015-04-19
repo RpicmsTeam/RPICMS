@@ -1,30 +1,33 @@
 <?php
-/**
-* Jumbotron Theme for RPICMS
-*
-* @author Marcel Radzio <info@nordgedanken.de>
-* @version  1.0dev 1/12/2014 17:16
-*/
-###############################
-# include files from root dir #
-###############################
-$root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
-$currentdir = getcwd();
-$root_2 = str_replace($root_1, '', $currentdir);
-$root_3 = explode("/", $root_2);
-if ($root_3[1] == 'core') {
-  echo $root_3[1];
-  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-}else{
-  $root = $root_1 . '/' . $root_3[1];
-}
+  /**
+  * Jumbotron Theme for RPICMS
+  *
+  * @author Marcel Radzio <info@nordgedanken.de>
+  * @version  1.0dev 1/12/2014 17:16
+  */
+
+  ###############################
+  # include files from root dir #
+  ###############################
+  $root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
+  $currentdir = getcwd();
+  $root_2 = str_replace($root_1, '', $currentdir);
+  $root_3 = explode("/", $root_2);
+  if ($root_3[1] == 'core') {
+    echo $root_3[1];
+    $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+  }else{
+    $root = $root_1 . '/' . $root_3[1];
+  }
+
   #######################
   # flush browser cache #
   #######################
-  #header("Cache-Control: no-cache, must-revalidate, no-store");
-  ##########################
-  # include required files #
-  ##########################
+  header("Cache-Control: no-cache, must-revalidate, no-store");
+
+  ###################
+  # check variables #
+  ###################
   $error = "0";
   $empty_id = empty($_GET["id"]);
   $empty_category = empty($_GET["category"]);
@@ -44,6 +47,10 @@ if ($root_3[1] == 'core') {
   }else{
     $author = "";
   }
+
+  ##########################
+  # include required files #
+  ##########################
   include($root . '/core/config/variables.config.php');
 
   ################
@@ -76,8 +83,8 @@ if ($root_3[1] == 'core') {
       }
        // AND SO ON .................
     }
-    
-  ?>
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -88,9 +95,7 @@ if ($root_3[1] == 'core') {
     <meta name="author" content="">
 
     <link rel="icon" href="../../core/libs/theme_engine/BootStrap/favicon.ico">
-    <?php
-    echo "<title>$blog_name</title>";
-    ?>
+    <?php echo "<title>$blog_name</title>";?>
 
     <!-- Bootstrap core CSS -->
     <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
@@ -98,19 +103,15 @@ if ($root_3[1] == 'core') {
     <link href="jumbotron.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
-    <!--<script src="../../core/libs/theme_engine/jquery/jquery-1.11.2.min.js"></script>-->
 
-    <?php include($root . '/core/backend/admin/modules/html_header.php'); ?>
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <?php include($root . '/core/backend/admin/modules/html_header.php');?>
 
     <!--[if lt IE 9]><script src="../../core/libs/theme_engine/BootStrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
     <script type="text/javascript">
       function Go (select) {
         var wert = select.options[select.options.selectedIndex].value;
@@ -139,12 +140,10 @@ if ($root_3[1] == 'core') {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <?php
-          echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
-          ?>
+          <?php echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';?>
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
-            <div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php'); ?></div>
+          <div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php');?></div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -152,164 +151,148 @@ if ($root_3[1] == 'core') {
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-      <?php
-        $x = 1;
-        if ($empty_id && $empty_category && $empty_author){
-          #$id = 1;
-          include($root . '/core/backend/blog/posts.php');
-          while ($x < $post_id_clean+1){
-            include($root . '/core/config/connect.db.inc.php');
-            echo "
-            <script  type=\"text/javascript\">
-                document.title = \"$blog_name | Home\";
-                </script>
-              <h1>
-                <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
-              </h1>
-              <div>
-                <h4>
-                  <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> |
-                  <time>$post_date</time> |
-                  <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
-                </h4>
-              </div>
-              <div>
-                <p>
-                  $post_text_short</br>
-                </p>
-              </div>
-               <div>
-                    ";
-                    include($root . '/core/backend/admin/modules/post_footer.php');
-                    echo "
-                      </div>
-                    <p>
-                      <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
-                    </p>
-                  ";
-            $x = $x+1;
-            $id = $id+1;
-            next_id_only();
-          }
-        }else{
-          if ($category){
-            $id = 1;
+        <?php
+          $x = 1;
+          if ($empty_id && $empty_category && $empty_author){
             include($root . '/core/backend/blog/posts.php');
-            while ($x < $category_id_clean+1){
+            while ($x < $post_id_clean+1){
               include($root . '/core/config/connect.db.inc.php');
-              if($post_category != $category){
-                $x = $x+1;
-                $id = $id+1;
-                next_id_category();
-              }else{
-                echo "
-                <script  type=\"text/javascript\">
-                document.title = \"$blog_name | $post_category\";
-                </script>
-                  <h1>
-                    <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
-                  </h1>
-                  <div>
-                    <h4>
-                      <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> |
-                      <time>$post_date</time> |
-                      <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
-                    </h4>
-                  </div>
-                  <div>
-                    <p>
-                      $post_text_short</br>
-                    </p>
-                  </div>
-                   <div>
-                    ";
-                    include($root . '/core/backend/admin/modules/post_footer.php');
-                    echo "
-                      </div>
-                    <p>
-                      <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
-                    </p>
-                  ";
-                $x = $x+1;
-                $id = $id+1;
-                next_id_category();
-              }
-            }
-          }else{
-            if ($author){
-              $id = 1;
-              include($root . '/core/backend/blog/posts.php');
-             while ($x < $author_id_clean+1){
-              include($root . '/core/config/connect.db.inc.php');
-                if($post_author != $author){
-                  $x = $x+1;
-                  $id = $id+1;
-                  next_id_author();
-                }else{
-                  echo "
-                    <script  type=\"text/javascript\">
-                    document.title = \"$blog_name | $post_author\";
-                    </script>
-                    <h1>
-                      <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
-                    </h1>
-                    <div>
-                      <h4>
-                        <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> |
-                        <time>$post_date</time> |
-                        <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
-                      </h4>
-                    </div>
-                    <div>
-                      <p>
-                        $post_text_short</br>
-                      </p>
-                     <div>
-                    ";
-                    include($root . '/core/backend/admin/modules/post_footer.php');
-                    echo "
-                      </div>
-                    <p>
-                      <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
-                    </p>
-                  ";
-                  $x = $x+1;
-                  $id = $id+1;
-                  next_id_author();
-                }
-              }
-            }else{
-              include($root . '/core/backend/blog/posts.php');
               echo "
                 <script  type=\"text/javascript\">
-                document.title = \"$blog_name | $post_title\";
-                document.getElementById(\"author\").setAttribute(\"content\", \"$post_author\");
+                  document.title = \"$blog_name | Home\";
                 </script>
                 <h1>
                   <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
                 </h1>
                 <div>
                   <h4>
-                    <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> |
-                    <time>$post_date</time> |
-                    <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
+                    <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | <time>$post_date</time> | <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
                   </h4>
                 </div>
                 <div>
-                  <p>
-                    $post_text</br>
-                  </p>
+                  <p>$post_text_short</br></p>
                 </div>
                 <div>
               ";
               include($root . '/core/backend/admin/modules/post_footer.php');
               echo "
                 </div>
+                <p>
+                  <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
+                </p>
               ";
+              $x = $x+1;
+              $id = $id+1;
+              next_id_only();
+            }
+          }else{
+            if ($category){
+              $id = 1;
+              include($root . '/core/backend/blog/posts.php');
+              while ($x < $category_id_clean+1){
+                include($root . '/core/config/connect.db.inc.php');
+                if($post_category != $category){
+                  $x = $x+1;
+                  $id = $id+1;
+                  next_id_category();
+                }else{
+                  echo "
+                    <script  type=\"text/javascript\">
+                      document.title = \"$blog_name | $post_category\";
+                    </script>
+                    <h1>
+                      <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+                    </h1>
+                    <div>
+                      <h4>
+                        <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | <time>$post_date</time> | <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
+                      </h4>
+                    </div>
+                    <div>
+                      <p>$post_text_short</br></p>
+                    </div>
+                    <div>
+                  ";
+                  include($root . '/core/backend/admin/modules/post_footer.php');
+                  echo "
+                    </div>
+                    <p>
+                      <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
+                    </p>
+                  ";
+                  $x = $x+1;
+                  $id = $id+1;
+                  next_id_category();
+                }
+              }
+            }else{
+              if ($author){
+                $id = 1;
+                include($root . '/core/backend/blog/posts.php');
+                  while ($x < $author_id_clean+1){
+                  include($root . '/core/config/connect.db.inc.php');
+
+                  if($post_author != $author){
+                    $x = $x+1;
+                    $id = $id+1;
+                    next_id_author();
+                  }else{
+                    echo "
+                      <script  type=\"text/javascript\">
+                        document.title = \"$blog_name | $post_author\";
+                      </script>
+                      <h1>
+                        <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+                      </h1>
+                      <div>
+                        <h4>
+                          <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | <time>$post_date</time> | <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
+                        </h4>
+                      </div>
+                      <div>
+                        <p>$post_text_short</br></p>
+                      <div>
+                    ";
+                    include($root . '/core/backend/admin/modules/post_footer.php');
+                    echo "
+                      </div>
+                      <p>
+                        <a class='btn btn-primary btn-lg' href='index.php?id=$id' role='button'>$name_more &raquo;</a>
+                      </p>
+                    ";
+                    $x = $x+1;
+                    $id = $id+1;
+                    next_id_author();
+                  }
+                }
+              }else{
+                include($root . '/core/backend/blog/posts.php');
+                echo "
+                  <script  type=\"text/javascript\">
+                    document.title = \"$blog_name | $post_title\";
+                    document.getElementById(\"author\").setAttribute(\"content\", \"$post_author\");
+                  </script>
+                  <h1>
+                    <a href='index.php?id=$id' rel='bookmark'> $post_title </a>
+                  </h1>
+                  <div>
+                    <h4>
+                      <span class='theauthor'><a href='index.php?author=$post_author' rel='author'>$post_author</a></span> | <time>$post_date</time> | <span class='thecategory'><a href='index.php?category=$post_category' rel='category tag'>$post_category</a></span></br>
+                    </h4>
+                  </div>
+                  <div>
+                    <p>$post_text</br></p>
+                  </div>
+                  <div>
+                ";
+                include($root . '/core/backend/admin/modules/post_footer.php');
+                echo "
+                  </div>
+                ";
+              }
             }
           }
-        }
-      ?>
+        ?>
       </div>
     </div>
 
@@ -322,24 +305,22 @@ if ($root_3[1] == 'core') {
           $ausnahmen["2"] = ".";
           $ausnahmen["3"] = "..";
           $dirs = array_diff($dirs, $ausnahmen);
-          #var_dump($dirs);
+
           echo '
             <div class="col-md-4" style="padding-bottom: 1000px; margin-bottom: -1000px; float:left;">
               <h2>'.$name_themes.'</h2>
               <form action=".">
                 <p><select size="1" name="Auswahl" onchange="Go(this);" width="100%" class="form-control">
                   <option value="leer" selected="selected">[ bitte auswählen! ]</option>
-                  <option value="leer">------------------------</option>';
-                  foreach($dirs as $dir){
-                  $dir_name = ucwords($dir);
-                  echo "
-                  <option value=\"../$dir\">$dir_name</option>
-                  ";
-                  #<option value="../accentbox">Accentbox</option>
-                  #<option value="../parkzone">ParkZone</option>
-                  #<option value="../zResponsiv">zResponsiv</option>
-                }
-              echo '
+                  <option value="leer">------------------------</option>
+          ';
+          foreach($dirs as $dir){
+            $dir_name = ucwords($dir);
+            echo "
+              <option value=\"../$dir\">$dir_name</option>
+            ";
+          }
+          echo '
                   <option value="leer">------------------------</option>
                   <option value="ende">Beenden</option>
                 </select></p>
