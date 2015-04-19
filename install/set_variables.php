@@ -32,9 +32,9 @@
 	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
   <script type="text/javascript">
     function foo() {
-      $(".col-sm-10 > :input").keyup(function() {
+      $(".check > :input").keyup(function() {
         var button = document.getElementById("button");
-        var $emptyFields = $('.col-sm-10 :input').filter(function() {
+        var $emptyFields = $('.check :input').filter(function() {
           return $.trim(this.value) === "";
         });
         if (!$emptyFields.length) {
@@ -69,49 +69,49 @@
         <div class="form-group">
           <h3>MySQL</h3>
             <label for="db_address" class="col-sm-2 control-label">Datenbank Adresse:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="name" name="db_address" required="required" placeholder="Datenbank Adresse" maxlength="255" class="form-control" id="db_address">
             </div>
 
             <label for="db_username" class="col-sm-2 control-label">Datenbank Nutzername:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="name" name="db_username" required="required" placeholder="Datenbank Nutzername" maxlength="255" class="form-control" id="db_username">
             </div>
 
             <label for="db_password" class="col-sm-2 control-label">Datenbank Passwort:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="password" name="db_password" required="required" placeholder="Datenbank Passwort" maxlength="50" class="form-control" id="db_username">
             </div>
 
             <label for="db_name" class="col-sm-2 control-label">Datenbank Name:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="name" name="db_name" required="required" placeholder="Datenbank Name" maxlength="255" class="form-control" id="db_username">
             </div>
         </div>
         <div class="form-group">
           <h3>Basics</h3>
             <label for="blog_name" class="col-sm-2 control-label">Website Name:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="name" name="blog_name" required="required" placeholder="Website Name" maxlength="255" class="form-control" id="blog_name">
             </div>
 
             <label for="undertitle" class="col-sm-2 control-label">Untertitel:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="name" name="undertitle" required="required" placeholder="Untertitel" maxlength="255" class="form-control" id="undertitle">
             </div>
 
             <label for="keywords" class="col-sm-2 control-label">Schlagw&ouml;rter:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="name" name="keywords" placeholder="Schlagw&ouml;rter" maxlength="50" class="form-control" id="keywords">
             </div>
 
             <label for="admin_username" class="col-sm-2 control-label">Admin Username:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="name" name="admin_username" required="required" placeholder="Admin Username" maxlength="255" class="form-control" id="admin_username">
             </div>
 
             <label for="admin_password" class="col-sm-2 control-label">Admin Password:</label>
-            <div class="col-sm-10">
+            <div class="col-sm-10 check">
               <input type="password" name="admin_password" required="required" placeholder="Admin Password" maxlength="50" class="form-control" id="admin_password">
             </div>
         </div>
