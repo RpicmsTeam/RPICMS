@@ -53,45 +53,69 @@
       <form action="generate_configs.php" method="post" class="form-horizontal">
         <div class="form-group">
           <h3>MySQL</h3>
-            <label for="db_address">Datenbank Adresse:</label>
-            <input type="name" name="db_address" required="required" placeholder="Datenbank Adresse" maxlength="255" class="form-control" id="db_address">
+            <label for="db_address" class="col-sm-2 control-label">Datenbank Adresse:</label>
+            <div class="col-sm-10">
+              <input type="name" name="db_address" required="required" placeholder="Datenbank Adresse" maxlength="255" class="form-control" id="db_address">
+            </div>
 
-            <label for="db_username">Datenbank Nutzername:</label>
-            <input type="name" name="db_username" required="required" placeholder="Datenbank Nutzername" maxlength="255" class="form-control" id="db_username">
+            <label for="db_username" class="col-sm-2 control-label">Datenbank Nutzername:</label>
+            <div class="col-sm-10">
+              <input type="name" name="db_username" required="required" placeholder="Datenbank Nutzername" maxlength="255" class="form-control" id="db_username">
+            </div>
 
-            <label for="db_password">Datenbank Passwort:</label>
-            <input type="password" name="db_password" required="required" placeholder="Datenbank Passwort" maxlength="50" class="form-control" id="db_username">
+            <label for="db_password" class="col-sm-2 control-label">Datenbank Passwort:</label>
+            <div class="col-sm-10">
+              <input type="password" name="db_password" required="required" placeholder="Datenbank Passwort" maxlength="50" class="form-control" id="db_username">
+            </div>
 
-            <label for="db_name">Datenbank Name:</label>
-            <input type="name" name="db_name" required="required" placeholder="Datenbank Name" maxlength="255" class="form-control" id="db_username">
+            <label for="db_name" class="col-sm-2 control-label">Datenbank Name:</label>
+            <div class="col-sm-10">
+              <input type="name" name="db_name" required="required" placeholder="Datenbank Name" maxlength="255" class="form-control" id="db_username">
+            </div>
         </div>
         <div class="form-group">
           <h3>Basics</h3>
-            <label for="blog_name">Website Name:</label>
-            <input type="name" name="blog_name" required="required" placeholder="Website Name" maxlength="255" class="form-control" id="blog_name">
+            <label for="blog_name" class="col-sm-2 control-label">Website Name:</label>
+            <div class="col-sm-10">
+              <input type="name" name="blog_name" required="required" placeholder="Website Name" maxlength="255" class="form-control" id="blog_name">
+            </div>
 
-            <label for="undertitle">Untertitel:</label>
-            <input type="name" name="undertitle" required="required" placeholder="Untertitel" maxlength="255" class="form-control" id="undertitle">
+            <label for="undertitle" class="col-sm-2 control-label">Untertitel:</label>
+            <div class="col-sm-10">
+              <input type="name" name="undertitle" required="required" placeholder="Untertitel" maxlength="255" class="form-control" id="undertitle">
+            </div>
 
-            <label for="keywords">Schlagw&ouml;rter:</label>
-            <input type="name" name="keywords" placeholder="Schlagw&ouml;rter" maxlength="50" class="form-control" id="keywords">
+            <label for="keywords" class="col-sm-2 control-label">Schlagw&ouml;rter:</label>
+            <div class="col-sm-10">
+              <input type="name" name="keywords" placeholder="Schlagw&ouml;rter" maxlength="50" class="form-control" id="keywords">
+            </div>
 
-            <label for="admin_username">Admin Username:</label>
-            <input type="name" name="admin_username" required="required" placeholder="Admin Username" maxlength="255" class="form-control" id="admin_username">
+            <label for="admin_username" class="col-sm-2 control-label">Admin Username:</label>
+            <div class="col-sm-10">
+              <input type="name" name="admin_username" required="required" placeholder="Admin Username" maxlength="255" class="form-control" id="admin_username">
+            </div>
 
-            <label for="admin_password">Admin Password:</label>
-            <input type="password" name="admin_password" required="required" placeholder="Admin Password" maxlength="50" class="form-control" id="admin_password">
+            <label for="admin_password" class="col-sm-2 control-label">Admin Password:</label>
+            <div class="col-sm-10">
+              <input type="password" name="admin_password" required="required" placeholder="Admin Password" maxlength="50" class="form-control" id="admin_password">
+            </div>
         </div>
         <div class="form-group">
           <h3>Design</h3>
-            <label for="theme">Theme</label>
-            <select name="theme" class="form-control" id="theme">
-              <option>accentbox</option>
-              <option>jumbotron</option>
-              <option>parkzone</option>
-              <option>zResponsive</option>
-            </select>
+            <label for="theme" class="col-sm-2 control-label">Theme</label>
+            <div class="col-sm-10">
+              <select name="theme" class="form-control" id="theme">
+                <option>accentbox</option>
+                <option>jumbotron</option>
+                <option>parkzone</option>
+                <option>zResponsive</option>
+              </select>
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" name="send" class="btn btn-success">Go On!</button>
+          </div>
         </div>
       </form>
     </div>
