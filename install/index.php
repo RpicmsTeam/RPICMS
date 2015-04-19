@@ -86,6 +86,13 @@
 			}
 			?>
 		</div>
+		
+		<hr>
+
+		<footer>
+			<p>&copy; RpicmsTeam 2014 &amp; 2015</p>
+			<?php include($root . '/core/backend/admin/modules/footer.php'); ?>
+		</footer>
 	</div>
 	<!-- Bootstrap core JavaScript
 	================================================== -->
