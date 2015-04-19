@@ -26,13 +26,8 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<?php
-				echo '<a class="navbar-brand" href="index.php">'.$blog_name.'</a>';
-				?>
+				<a class="navbar-brand" href="index.php">Installer</a>
 			</div>
-			<div id="navbar" class="navbar-collapse collapse navbar-right">
-					<div class="navbar-form navbar-right"><?php include($root . '/core/backend/admin/modules/navigation.php'); ?></div>
-			</div><!--/.navbar-collapse -->
 		</div>
 	</nav>
 
