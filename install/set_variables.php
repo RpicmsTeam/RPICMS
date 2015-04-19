@@ -31,15 +31,14 @@
 	<link rel="stylesheet" href="../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
   <script>
-    (document).ready(function() {
-      $(".form-horizontal > :input").keyup(function() {
-        var $emptyFields = $('.form-horizontal :input').filter(function() {
-          return $.trim(this.value) === "";
-        });
-        if (!$emptyFields.length) {
-          button.style.display = "block";
-        }
+    $(".form-horizontal > :input").keyup(function() {
+      var button = document.getElementById("button");
+      var $emptyFields = $('.form-horizontal :input').filter(function() {
+        return $.trim(this.value) === "";
       });
+      if (!$emptyFields.length) {
+        button.style.display = "block";
+      }
     });
   </script>
 </head>
