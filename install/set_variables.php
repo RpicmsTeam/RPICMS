@@ -65,48 +65,34 @@
             <label for="db_name">Datenbank Name:</label>
             <input type="name" name="db_name" required="required" placeholder="Datenbank Name" maxlength="255" class="form-control" id="db_username">
         </div>
+        <div class="form-group">
+          <h3>Basics</h3>
+            <label for="blog_name">Website Name:</label>
+            <input type="name" name="blog_name" required="required" placeholder="Website Name" maxlength="255" class="form-control" id="blog_name">
 
-        <h3>Basics</h3>
-        <table cellpadding="1" cellspacing="4">
-          <tr>
-            <td><p>Website Name: </p></td>
-            <td style="text-indent:40px;"><input type="name" name="blog_name" required="required" placeholder="Website Name" maxlength="255" /></td>
-          </tr>
-          <tr>
-            <td><p>Untertitel: </p></td>
-            <td style="text-indent:40px;"><input type="name" name="undertitle" required="required" placeholder="Untertitel" maxlength="255" /></td>
-          </tr>
-          <tr>
-            <td><p>Schlagw&ouml;rter: </p></td>
-            <td style="text-indent:40px;"><input type="name" name="keywords" placeholder="Schlagw&ouml;rter" maxlength="50" /></td>
-          </tr>
-          <tr>
-            <td><p>Admin Username: </p></td>
-            <td style="text-indent:40px;"><input type="name" name="admin_username" required="required" placeholder="Admin Username" maxlength="255" /></td>
-          </tr>
-          <tr>
-            <td><p>Admin Password: </p></td>
-            <td style="text-indent:40px;"><input type="password" name="admin_password" required="required" placeholder="Admin Password" maxlength="50" /></td>
-          </tr>
-        </table>
+            <label for="undertitle">Untertitel:</label>
+            <input type="name" name="undertitle" required="required" placeholder="Untertitel" maxlength="255" class="form-control" id="undertitle">
 
-        <h3>Design</h3>
-        <table cellpadding="1" cellspacing="4">
-          <tr>
-            <td><p>Theme</p></td>
-            <td style="text-indent:40px;">
-              <select name="theme" size="3">
-                <option>accentbox</option>
-                <option>jumbotron</option>
-                <option>parkzone</option>
-                <option>zResponsive</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2"><button type=\"submit\" name=\"send\" class=\"btn btn-success\">Go On!</button></td>
-          </tr>
-        </table>
+            <label for="keywords">Schlagw&ouml;rter:</label>
+            <input type="name" name="keywords" placeholder="Schlagw&ouml;rter" maxlength="50" class="form-control" id="keywords">
+
+            <label for="admin_username">Admin Username:</label>
+            <input type="name" name="admin_username" required="required" placeholder="Admin Username" maxlength="255" class="form-control" id="admin_username">
+
+            <label for="admin_password">Admin Password:</label>
+            <input type="password" name="admin_password" required="required" placeholder="Admin Password" maxlength="50" class="form-control" id="admin_password">
+        </div>
+        <div class="form-group">
+          <h3>Design</h3>
+            <label for="theme">Theme</label>
+            <select name="theme" size="3" class="form-control" id="theme">
+              <option>accentbox</option>
+              <option>jumbotron</option>
+              <option>parkzone</option>
+              <option>zResponsive</option>
+            </select>
+            <button type=\"submit\" name=\"send\" class=\"btn btn-success\">Go On!</button>
+        </div>
       </form>
     </div>
 	</div>
