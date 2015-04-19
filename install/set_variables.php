@@ -32,9 +32,10 @@
 	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
   <script type="text/javascript">
     function foo() {
-      $(".form-horizontal > :input").keyup(function() {
+      alert ("test");
+      $(".col-sm-10 > :input").keyup(function() {
         var button = document.getElementById("button");
-        var $emptyFields = $('.form-horizontal :input').filter(function() {
+        var $emptyFields = $('.col-sm-10 :input').filter(function() {
           return $.trim(this.value) === "";
         });
         if (!$emptyFields.length) {
