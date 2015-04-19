@@ -30,6 +30,18 @@
 	<link href="../themes/jumbotron/jumbotron.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
+  <script>
+    (document).ready(function() {
+      $(".form-horizontal > :input").keyup(function() {
+        var $emptyFields = $('.form-horizontal :input').filter(function() {
+          return $.trim(this.value) === "";
+        });
+        if (!$emptyFields.length) {
+          button.style.display = "block";
+        }
+      });
+    });
+  </script>
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -123,7 +135,7 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" name="send" class="btn btn-success">Go On!</button>
+            <button type="submit" name="send" class="btn btn-success" style="display:none;" id="button">Go On!</button>
           </div>
         </div>
       </form>
