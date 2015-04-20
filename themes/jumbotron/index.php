@@ -98,6 +98,7 @@
     <?php echo "<title>$blog_name</title>";?>
 
     <!-- Bootstrap core CSS -->
+    <script src="../../core/libs/theme_engine/jquery/jquery2.1.3.min.js"></script>
     <link href="../../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="jumbotron.min.css" rel="stylesheet">
@@ -353,7 +354,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../core/libs/theme_engine/jquery/jquery2.1.3.min.js"></script>
     <script src="../../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
     <?php include($root . '/core/backend/admin/modules/script_footer.php'); ?>
   </body>
