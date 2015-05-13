@@ -185,7 +185,12 @@ foreach($langs as $prio => $lang) {
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-      	<h1>Administration</h1>
+        <div class="hide_" id="newpost2">
+          <?php
+          echo "<div class=\"alert alert-success\" role=\"alert\">Post successfully created!<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>";
+          ?>
+        </div>
+        <h1>Administration</h1>
       	<hr class="one">
   		<!-- Tab panes -->
   		<div class="tab-content">
@@ -247,7 +252,6 @@ foreach($langs as $prio => $lang) {
         </div>
         <div class="hide_" id="newpost2">
           <?php
-          echo "<div class=\"alert alert-success\" role=\"alert\">Post successfully created!<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>";
           include($root."/themes/jumbotron/admin_pages/newpost.php");
           ?>
         </div>
