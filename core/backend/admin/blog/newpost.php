@@ -48,5 +48,5 @@ while (ob_get_status()) {
 	ob_end_clean();
 }
 header("HTTP/1.1 301 Moved Permanently", true, 301);
-header( "Location: ../../../../" );
+header( "Location: ../../../../admin.php" );
 ?>
