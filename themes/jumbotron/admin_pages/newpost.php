@@ -15,7 +15,7 @@
     <div class="form-group">
     <label for="post_content">Content</label>
         <div id="toolbar"></div>
-        <textarea name="content" style="width: 97%;" id="editor"></textarea>
+        <textarea name="content" style="width: 99%;" id="editor"></textarea>
     </div>
     <button type="submit" class="btn btn-default">Save</button>
   </form>
