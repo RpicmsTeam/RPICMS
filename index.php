@@ -12,9 +12,15 @@ if (!file_exists('core/config/connect.db.inc.php')) {
 			header("HTTP/1.1 301 Moved Permanently");
 			header("Location:themes/$theme");
 		}else{
-			require_once('core/config/variables.config.php');
-			header("HTTP/1.1 301 Moved Permanently");
-			header("Location:themes/$theme");
+			if (!empty($_GET["file"])) {
+				$file = $_GET["file"];
+				header("HTTP/1.1 301 Moved Permanently");
+				header("Location:themes/$theme/$file");
+			}else{
+				require_once('core/config/variables.config.php');
+				header("HTTP/1.1 301 Moved Permanently");
+				header("Location:themes/$theme");
+			}
 		}
 
 	}
