@@ -40,10 +40,11 @@ while (ob_get_status()) {
 	$title = $_POST['title'];
 	$text = $_POST['content'];
 	$category = $_POST['category'];
-
-	if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', NOW(), '$category')")) {
-	}
-	$connection->close();
+  if (!empty($title)){
+	   if ($resultat = $connection->query("INSERT INTO posts (id,text,title,author,date,category) VALUES ('$ids', '$text', '$title', '$author', NOW(), '$category')")) {
+	    }
+	     $connection->close();
+  }
 	ob_end_clean();
 }
 header("HTTP/1.1 301 Moved Permanently", true, 301);
