@@ -170,14 +170,17 @@ function shortText($string,$lenght) {
 //$longtext = $post_text;
 
 function deletePost($id) {
-  include($root . '/core/config/connect.db.inc.php');
   global $connection;
-  $stmt = $connection->prepare('DELETE FROM posts WHERE id=?');
-  $stmt->bind_param('i',$id);
-  if ($stmt === FALSE) {
-    die($mysqli->error);
+  if ($connection->query(DELETE FROM posts WHERE id=$id) === TRUE) {
+    echo "Record deleted successfully";
+  } else {
+    echo "Error deleting record: " . $connection->error;
   }
-  $stmt->execute();
+
+  $connection->close();
+
+
+
 
 }
 
