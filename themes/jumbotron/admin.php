@@ -66,6 +66,20 @@ foreach($langs as $prio => $lang) {
   // AND SO ON .................
 }
 ?>
+<?php
+if(!empty($_GET['function'])){
+  if(!empty($_GET['id'])){
+      $get_function = $_GET['function'];
+      $get_id = $_GET['id'];
+      if($get_function="edit"){
+
+      }else{
+        deletePost($get_id);
+      }
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
