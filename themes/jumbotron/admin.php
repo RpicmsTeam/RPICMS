@@ -78,6 +78,8 @@ if(!empty($_GET['function'])){
         #header("HTTP/1.1 301 Moved Permanently", true, 301);
         #header( "Location: ../../?file=admin.php#posts" );
       }else{
+        echo "function: $get_function";
+        echo "id: $get_id";
         deletePost($get_id);
         echo "3";
         #header("HTTP/1.1 301 Moved Permanently", true, 301);
