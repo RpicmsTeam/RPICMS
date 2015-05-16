@@ -74,12 +74,12 @@ if(!empty($_GET['function'])){
       include($root . '/core/backend/blog/posts.php');
       $get_function = $_GET['function'];
       $get_id = $_GET['id'];
+      echo "function: $get_function";
+      echo "id: $get_id";
       if($get_function="edit"){
         #header("HTTP/1.1 301 Moved Permanently", true, 301);
         #header( "Location: ../../?file=admin.php#posts" );
       }else{
-        echo "function: $get_function";
-        echo "id: $get_id";
         deletePost($get_id);
         echo "3";
         #header("HTTP/1.1 301 Moved Permanently", true, 301);
