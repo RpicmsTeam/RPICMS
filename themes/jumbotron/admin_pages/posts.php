@@ -16,7 +16,7 @@
         echo "<td>$id</td>";
         echo "<td>$post_title</td>";
         echo "<td></td>";
-        echo "<td><button formaction=\"posts.php?function=edit\" title=\"Edit\">Edit</button>  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>  |  <button formaction=\"posts.php?function=delete\" title=\"Delete\">Delete</button>  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></td>";
+        echo "<td><button style=\"background-color: transparent;text-decoration: underline;border: none;color: blue;cursor: pointer;\" formaction=\"posts.php?function=edit\" title=\"Edit\">Edit</button>  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>  |  <button style=\"background-color: transparent;text-decoration: underline;border: none;color: blue;cursor: pointer;\" formaction=\"posts.php?function=delete\" title=\"Delete\">Delete</button>  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></td>";
         echo "</tr>";
         $x = $x+1;
         $id = $id+1;
