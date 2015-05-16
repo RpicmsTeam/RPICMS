@@ -179,7 +179,6 @@ function shortText($string,$lenght) {
 function deletePost($id) {
   global $connection;
   $sql = "DELETE FROM posts WHERE id='$id'";
-  echo "connection: $connection";
   if (mysqli_query($connection, $sql)) {
     echo "Record deleted successfully";
   } else {
