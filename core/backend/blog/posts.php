@@ -171,7 +171,7 @@ function shortText($string,$lenght) {
 
 function deletePost($id) {
   global $connection;
-  if ($connection->query(DELETE FROM posts WHERE id=$id) === TRUE) {
+  if ($connection->query("DELETE FROM posts WHERE id=$id") === TRUE) {
     echo "Record deleted successfully";
   } else {
     echo "Error deleting record: " . $connection->error;
