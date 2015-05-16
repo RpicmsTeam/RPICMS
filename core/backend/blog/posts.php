@@ -31,6 +31,7 @@ if ($root_3[1] == 'core') {
  				#var_dump($daten);
 			}
   			#$resultat->close();
+        $connection->close();
 		}
 		if ($resultat = $connection->query("SELECT id FROM posts WHERE category LIKE '$category'")) {
 			while($daten = $resultat->fetch_object() ){
@@ -38,12 +39,14 @@ if ($root_3[1] == 'core') {
  				#var_dump($daten);
 			}
   			#$resultat->close();
+        $connection->close();
 		}
 		if ($resultat = $connection->query("SELECT id FROM posts WHERE author LIKE '$author'")) {
 			while($daten = $resultat->fetch_object() ){
  				$author_id_clean = $daten->id;
  				#var_dump($daten);
 			}
+      $connection->close();
 		}
 	next_id_only();
 	next_id_category();
@@ -88,6 +91,7 @@ if ($root_3[1] == 'core') {
 					$post_category = "Database error!";
 					$post_text_short =  "Database error!";
 		}
+    $connection->close();
 	}
 
 
@@ -122,6 +126,7 @@ if ($root_3[1] == 'core') {
 					$post_category = "Database error!";
 					$post_text_short =  "Database error!";
 		}
+    $connection->close();
 	}
 
 function read_author(){
@@ -155,6 +160,7 @@ function read_author(){
 					$post_category = "Database error!";
 					$post_text_short =  "Database error!";
 		}
+    $connection->close();
 	}
 
 
