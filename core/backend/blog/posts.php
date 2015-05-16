@@ -69,7 +69,6 @@ if ($root_3[1] == 'core') {
 				$post_category = $daten->category;
 				$post_text_short = shortText($post_text,300);
 			}
-  			$resultat->close();
 		} else {
 			global $id, $connection, $read, $post_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
@@ -84,6 +83,7 @@ if ($root_3[1] == 'core') {
       $post_category = "Database error!";
       $post_text_short =  "Database error!";
 		}
+
 	}
 
 
@@ -101,7 +101,6 @@ if ($root_3[1] == 'core') {
 				$post_category = $daten->category;
 				$post_text_short = shortText($post_text,300);
 			}
-  			$resultat->close();
 		} else {
 			global $id, $category, $connection, $read, $category_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
@@ -116,6 +115,7 @@ if ($root_3[1] == 'core') {
       $post_category = "Database error!";
       $post_text_short =  "Database error!";
 		}
+    $resultat->close();
 	}
 
 function read_author(){
@@ -132,7 +132,6 @@ function read_author(){
 				$post_category = $daten->category;
 				$post_text_short = shortText($post_text,300);
 			}
-  			$resultat->close();
 		} else {
 			global $id, $author, $connection, $read, $author_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
@@ -147,6 +146,7 @@ function read_author(){
       $post_category = "Database error!";
       $post_text_short =  "Database error!";
 		}
+    $resultat->close();
 	}
 
 
