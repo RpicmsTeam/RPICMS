@@ -171,12 +171,12 @@ function shortText($string,$lenght) {
 
 function deletePost($id) {
   global $connection;
-  if ($resultat = $connection->query("DELETE FROM posts WHERE id=$id") === TRUE) {
+  $sql = "DELETE FROM posts WHERE id='$id'";
+  if (mysqli_query($connection, $sql)) {
     echo "Record deleted successfully";
   } else {
-    echo "Error deleting record: " . $connection->error;
+    echo "Error deleting record: " . mysqli_error($connection);
   }
-  $$resultat->close();
 }
 // Close database connection
 $connection->close();
