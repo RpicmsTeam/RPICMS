@@ -68,7 +68,9 @@ foreach($langs as $prio => $lang) {
 ?>
 <?php
 if(!empty($_GET['function'])){
+  echo "1";
   if(!empty($_GET['id'])){
+    echo "2";
       include($root . '/core/backend/blog/posts.php');
       $get_function = $_GET['function'];
       $get_id = $_GET['id'];
@@ -77,6 +79,7 @@ if(!empty($_GET['function'])){
         #header( "Location: ../../?file=admin.php#posts" );
       }else{
         deletePost($get_id);
+        echo "3";
         #header("HTTP/1.1 301 Moved Permanently", true, 301);
         #header( "Location: ../../?file=admin.php#posts" );
       }
