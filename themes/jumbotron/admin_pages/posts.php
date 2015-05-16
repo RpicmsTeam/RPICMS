@@ -16,7 +16,7 @@
         echo "<td>$id</td>";
         echo "<td>$post_title</td>";
         echo "<td></td>";
-        echo "<td><a formaction=\"posts.php?function=edit&id=$id\" title=\"Edit\">Edit</a>  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>  |  <a formaction=\"posts.php?function=delete&id=$id\" title=\"Delete\">Delete</a>  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></td>";
+        echo "<td><button style=\"background-color: transparent;text-decoration: underline;border: none;color: blue;cursor: pointer;\" formaction=\"posts.php?function=edit\" title=\"Edit\">Edit</button>  <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>  |  <button style=\"background-color: transparent;text-decoration: underline;border: none;color: blue;cursor: pointer;\" formaction=\"posts.php?function=delete\" title=\"Delete\">Delete</button>  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span></td>";
         echo "</tr>";
         $x = $x+1;
         $id = $id+1;
@@ -30,7 +30,7 @@ if(!empty($_GET['function'])){
       $get_function = $_GET['function'];
       $get_id = $_GET['id'];
       if($get_function="edit"){
-        
+
       }else{
         deletePost($get_id);
       }
