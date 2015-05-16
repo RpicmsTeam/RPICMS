@@ -31,7 +31,6 @@ if ($root_3[1] == 'core') {
  				#var_dump($daten);
 			}
   			$resultat->close();
-        unset($resultat);
 		}
 		if ($resultat = $connection->query("SELECT id FROM posts WHERE category LIKE '$category'")) {
 			while($daten = $resultat->fetch_object() ){
@@ -39,7 +38,6 @@ if ($root_3[1] == 'core') {
  				#var_dump($daten);
 			}
   			$resultat->close();
-        unset($resultat);
 		}
 		if ($resultat = $connection->query("SELECT id FROM posts WHERE author LIKE '$author'")) {
 			while($daten = $resultat->fetch_object() ){
@@ -47,7 +45,6 @@ if ($root_3[1] == 'core') {
  				#var_dump($daten);
 			}
       $resultat->close();
-      unset($resultat);
 		}
 	next_id_only();
 	next_id_category();
@@ -78,7 +75,6 @@ if ($root_3[1] == 'core') {
 				$post_text_short = shortText($post_text,300);
 			}
   			$resultat->close();
-        unset($resultat);
 		} else {
 			global $id, $connection, $read, $post_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
@@ -113,7 +109,6 @@ if ($root_3[1] == 'core') {
 				$post_text_short = shortText($post_text,300);
 			}
   			$resultat->close();
-        unset($resultat);
 		} else {
 			global $id, $category, $connection, $read, $category_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
@@ -147,7 +142,6 @@ function read_author(){
 				$post_text_short = shortText($post_text,300);
 			}
   			$resultat->close();
-        unset($resultat);
 		} else {
 			global $id, $author, $connection, $read, $author_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
@@ -176,7 +170,6 @@ function shortText($string,$lenght) {
 }
 //$longtext = $post_text;
 $connection->close();
-unset($connection);
 function deletePost($id) {
   global $connection;
   $sql = "DELETE FROM posts WHERE id='$id'";
