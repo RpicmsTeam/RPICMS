@@ -170,11 +170,9 @@ function shortText($string,$lenght) {
 //$longtext = $post_text;
 
 function deletePost($id) {
-  if ($connection->query("DELETE FROM posts WHERE id=$id") === TRUE) {
-    echo "Record deleted successfully";
-  } else {
-    echo "Error deleting record: " . $conn->error;
-  }
+  $stmt = $connection->prepare('DELETE FROM posts WHERE id=?');
+  $stmt->bind_param('s',$id);
+  $stmt->execute();
 
   $connection->close();
 }
