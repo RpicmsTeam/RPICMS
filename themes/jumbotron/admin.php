@@ -76,7 +76,7 @@ if(!empty($_GET['function'])){
       $get_id = $_GET['id'];
       echo "function: $get_function";
       echo "id: $get_id";
-      if($get_function="edit"){
+      if($get_function = "edit"){
         #header("HTTP/1.1 301 Moved Permanently", true, 301);
         #header( "Location: ../../?file=admin.php#posts" );
       }else{
