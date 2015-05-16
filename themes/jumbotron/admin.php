@@ -69,6 +69,7 @@ foreach($langs as $prio => $lang) {
 <?php
 if(!empty($_GET['function'])){
   if(!empty($_GET['id'])){
+      include($root . '/core/backend/blog/posts.php');
       $get_function = $_GET['function'];
       $get_id = $_GET['id'];
       if($get_function="edit"){
