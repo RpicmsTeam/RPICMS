@@ -19,33 +19,30 @@ if ($root_3[1] == 'core') {
 }else{
   $root = $root_1 . '/' . $root_3[1];
 }
-	//include($root . '/core/config/connect.db.inc.php');
 	//Check if Database connection established
 	if (mysqli_connect_errno()) {
 		printf("Verbindung fehlgeschlagen: %s\n", mysqli_connect_error());
 		exit();
 	}
-		if ($resultat = $connection->query('SELECT id FROM posts')) {
-			while($daten = $resultat->fetch_object() ){
- 				$post_id_clean = $daten->id;
- 				#var_dump($daten);
-			}
-  			$resultat->close();
-		}
-		if ($resultat = $connection->query("SELECT id FROM posts WHERE category LIKE '$category'")) {
-			while($daten = $resultat->fetch_object() ){
- 				$category_id_clean = $daten->id;
- 				#var_dump($daten);
-			}
-  			$resultat->close();
-		}
-		if ($resultat = $connection->query("SELECT id FROM posts WHERE author LIKE '$author'")) {
-			while($daten = $resultat->fetch_object() ){
- 				$author_id_clean = $daten->id;
- 				#var_dump($daten);
-			}
-      $resultat->close();
-		}
+
+  if ($resultat = $connection->query('SELECT id FROM posts')) {
+    while($daten = $resultat->fetch_object() ){
+      $post_id_clean = $daten->id;
+    }
+    $resultat->close();
+  }
+  if ($resultat = $connection->query("SELECT id FROM posts WHERE category LIKE '$category'")) {
+    while($daten = $resultat->fetch_object() ){
+      $category_id_clean = $daten->id;
+    }
+    $resultat->close();
+  }
+  if ($resultat = $connection->query("SELECT id FROM posts WHERE author LIKE '$author'")) {
+    while($daten = $resultat->fetch_object() ){
+      $author_id_clean = $daten->id;
+    }
+    $resultat->close();
+  }
 	next_id_only();
 	next_id_category();
 	next_id_author();
@@ -62,10 +59,8 @@ if ($root_3[1] == 'core') {
 		global $id, $connection, $read, $post_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
 		if ($resultat = $connection->query("SELECT id,title,text,author,category,date FROM posts WHERE id LIKE '$id'")) {
-			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
- 				//var_dump ($daten);
  			 	$post_id = $daten->id;
 				$post_title = $daten->title;
 				$post_text = $daten->text;
@@ -78,16 +73,16 @@ if ($root_3[1] == 'core') {
 		} else {
 			global $id, $connection, $read, $post_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
-  					global $error;
-  					$error = "1";
-  					echo "Nothing to read from Database!";
-  					$post_id = "Database error!";
-					$post_title = "Database error!";
-					$post_text = "Database error!";
-					$post_author = "Database error!";
-					$post_date = "Database error!";
-					$post_category = "Database error!";
-					$post_text_short =  "Database error!";
+      global $error;
+      $error = "1";
+      echo "Nothing to read from Database!";
+      $post_id = "Database error!";
+      $post_title = "Database error!";
+      $post_text = "Database error!";
+      $post_author = "Database error!";
+      $post_date = "Database error!";
+      $post_category = "Database error!";
+      $post_text_short =  "Database error!";
 		}
 	}
 
@@ -96,10 +91,8 @@ if ($root_3[1] == 'core') {
 		global $id, $category, $connection, $read, $category_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
 		if ($resultat = $connection->query("SELECT id,title,text,author,category,date FROM posts WHERE category LIKE '$category' AND id LIKE '$id'")) {
-			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
- 				//var_dump ($daten);
  			 	$post_id = $daten->id;
 				$post_title = $daten->title;
 				$post_text = $daten->text;
@@ -112,16 +105,16 @@ if ($root_3[1] == 'core') {
 		} else {
 			global $id, $category, $connection, $read, $category_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
-  					global $error;
-  					$error = "1";
-  					echo "Nothing to read from Database!";
-  					$post_id = "Database error!";
-					$post_title = "Database error!";
-					$post_text = "Database error!";
-					$post_author = "Database error!";
-					$post_date = "Database error!";
-					$post_category = "Database error!";
-					$post_text_short =  "Database error!";
+      global $error;
+      $error = "1";
+      echo "Nothing to read from Database!";
+      $post_id = "Database error!";
+      $post_title = "Database error!";
+      $post_text = "Database error!";
+      $post_author = "Database error!";
+      $post_date = "Database error!";
+      $post_category = "Database error!";
+      $post_text_short =  "Database error!";
 		}
 	}
 
@@ -129,10 +122,8 @@ function read_author(){
 		global $id, $author, $connection, $read, $author_id_clean;
 		global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category, $post_text_short;
 		if ($resultat = $connection->query("SELECT id,title,text,author,category,date FROM posts WHERE author LIKE '$author' AND id LIKE '$id'")) {
-			//echo 'SELECT * FROM posts WHERE id LIKE '.$id;
 			//Put database data in variables
  			while($daten = $resultat->fetch_object() ){
- 				//var_dump ($daten);
  			 	$post_id = $daten->id;
 				$post_title = $daten->title;
 				$post_text = $daten->text;
@@ -145,16 +136,16 @@ function read_author(){
 		} else {
 			global $id, $author, $connection, $read, $author_id_clean;
 			global $post_id, $post_title, $post_text, $post_author, $post_date, $post_category;
-  					global $error;
-  					$error = "1";
-  					echo "Nothing to read from Database!";
-  					$post_id = "Database error!";
-					$post_title = "Database error!";
-					$post_text = "Database error!";
-					$post_author = "Database error!";
-					$post_date = "Database error!";
-					$post_category = "Database error!";
-					$post_text_short =  "Database error!";
+      global $error;
+      $error = "1";
+      echo "Nothing to read from Database!";
+      $post_id = "Database error!";
+      $post_title = "Database error!";
+      $post_text = "Database error!";
+      $post_author = "Database error!";
+      $post_date = "Database error!";
+      $post_category = "Database error!";
+      $post_text_short =  "Database error!";
 		}
 	}
 
@@ -168,7 +159,6 @@ function shortText($string,$lenght) {
     }
     return $string;
 }
-//$longtext = $post_text;
 function deletePost($id) {
   global $connection;
   echo "ID: $id";
