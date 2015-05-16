@@ -175,7 +175,8 @@ function shortText($string,$lenght) {
     return $string;
 }
 //$longtext = $post_text;
-
+$connection->close();
+unset($connection);
 function deletePost($id) {
   global $connection;
   $sql = "DELETE FROM posts WHERE id='$id'";
