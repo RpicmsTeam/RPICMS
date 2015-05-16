@@ -1,7 +1,7 @@
 <?php
 /**
 * Get posts from Database
-* 
+*
 * This script will the post variables with the database data.
 *
 * @author	Marcel Radzio <info@nordgedanken.de>
@@ -72,7 +72,7 @@ if ($root_3[1] == 'core') {
 				$post_date = $daten->date;
 				$post_category = $daten->category;
 				$post_text_short = shortText($post_text,300);
-			}  
+			}
   			$resultat->close();
 		} else {
 			global $id, $connection, $read, $post_id_clean;
@@ -106,7 +106,7 @@ if ($root_3[1] == 'core') {
 				$post_date = $daten->date;
 				$post_category = $daten->category;
 				$post_text_short = shortText($post_text,300);
-			}  
+			}
   			$resultat->close();
 		} else {
 			global $id, $category, $connection, $read, $category_id_clean;
@@ -139,7 +139,7 @@ function read_author(){
 				$post_date = $daten->date;
 				$post_category = $daten->category;
 				$post_text_short = shortText($post_text,300);
-			}  
+			}
   			$resultat->close();
 		} else {
 			global $id, $author, $connection, $read, $author_id_clean;
@@ -169,7 +169,15 @@ function shortText($string,$lenght) {
 }
 //$longtext = $post_text;
 
+function deletePost($id) {
+  if ($connection->query(DELETE FROM posts WHERE id=$id) === TRUE) {
+    echo "Record deleted successfully";
+  } else {
+    echo "Error deleting record: " . $conn->error;
+  }
 
+  $connection->close();
+}
 
 
 
@@ -178,4 +186,3 @@ function shortText($string,$lenght) {
 
 // Close database connection
 $connection->close();
-
