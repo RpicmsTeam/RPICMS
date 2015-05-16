@@ -170,7 +170,7 @@ function shortText($string,$lenght) {
 //$longtext = $post_text;
 
 function deletePost($id) {
-  echo "id: $id";
+  global $connection;
   $stmt = $connection->prepare('DELETE FROM posts WHERE id=?');
   $stmt->bind_param('i',$id);
   $stmt->execute();
