@@ -16,4 +16,4 @@ before_script:
   - chmod +x phpunit.phar
   - mysql -e 'create database RPICMS;'
 #RunTests
-script: php phpunit.phar --configuration phpunit_$DB.xml --verbose --filter tryDBConnection
+script: php phpunit.phar --configuration phpunit_$DB.xml --verbose

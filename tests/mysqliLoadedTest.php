@@ -1,6 +1,15 @@
 <?php
 class mysqliLoadedTest extends PHPUnit_Framework_TestCase
 {
+    public function __construct()
+    {
+      $obj = new Foobar();
+      $this->assertTrue($obj->testForMysqli());
+      $this->assertTrue($obj->tryDBConnection());
+    }
+
+
+
     public function testForMysqli()
     {
         if (!extension_loaded('mysqli')) {
