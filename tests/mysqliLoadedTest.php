@@ -7,7 +7,9 @@ class mysqliLoadedTest extends PHPUnit_Framework_TestCase
         if (!extension_loaded('mysqli')) {
             $this->markTestSkipped('[mysqliLoadedTest]->[testForMysqli()]: The MySQLi extension is not available');
         }else{
-            fwrite(STDERR, print_r('[mysqliLoadedTest]->[testForMysqli()]: The MySQLi extension is available', TRUE));
+            #fwrite(STDERR, print_r('[mysqliLoadedTest]->[testForMysqli()]: The MySQLi extension is available', TRUE));
+            $this->expectOutputString('[mysqliLoadedTest]->[testForMysqli()]: The MySQLi extension is available');
+            print '[mysqliLoadedTest]->[testForMysqli()]: The MySQLi extension is available';
         }
     }
 
@@ -22,7 +24,9 @@ class mysqliLoadedTest extends PHPUnit_Framework_TestCase
       {
         $this->markTestSkipped($mysqli->connect_error());
       }else{
-        fwrite(STDERR, print_r('[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi', TRUE));
+        #fwrite(STDERR, print_r('[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi', TRUE));
+        $this->expectOutputString('[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi');
+        print '[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi';
       }
     }
 }
