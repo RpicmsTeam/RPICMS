@@ -8,6 +8,20 @@ class mysqliLoadedTest extends PHPUnit_Framework_TestCase
         }else{
             fwrite(STDERR, print_r('[mysqliLoadedTest]->[testForMysqli()]: The MySQLi extension is available', TRUE));
         }
+
+    }
+
+    public function tryDBConnection()
+    {
+      $mysqli = new mysqli("localhost","root","","RPICMS");
+
+      // Check connection
+      if ($mysqli->connect_errno > 0)
+      {
+        $this->assertFalse($mysqli->connect_error());
+        fwrite(STDERR, print_r('[mysqliLoadedTest]->[testForMysqli()]: Failed to connect to MySQL: ' . $mysqli->connect_error(), TRUE));
+      }
+
     }
 }
 ?>
