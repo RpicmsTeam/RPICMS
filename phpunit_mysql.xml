@@ -7,7 +7,7 @@
         <var name="db_password" value=""/>
     </php>
     <testsuite name="mysqliLoadedTest">
-      <file>Tests/mysqliTest.php</file>
+      <file>Tests/mysqliLoadedTest.php</file>
     </testsuite>
     <filter>
         <whitelist>
