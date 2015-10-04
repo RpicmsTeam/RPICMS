@@ -15,7 +15,7 @@ class mysqliLoadedTest extends PHPUnit_Framework_TestCase
     /**
      * @depends testForMysqli
      */
-    public function DBConnectionTest()
+    public function testDBConnection()
     {
       $mysqli = new mysqli("localhost","root","","RPICMS");
       // Check connection
