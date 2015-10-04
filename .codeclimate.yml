@@ -35,16 +35,18 @@ engines:
 
 # Note: If the ratings key is not specified, this will result in a 0.0 GPA on your dashboard.
 
-# ratings:
-#   paths:
-#   - app/**
-#   - lib/**
-#   - "**.rb"
-#   - "**.go"
+ ratings:
+   paths:
+   - "**.js"
+   - "**.jsx"
+   - "**.css"
+   - "**.php"
+   - "**.module"
+   - "**.inc"
 
 # You can globally exclude files from being analyzed by any engine using the
 # exclude_paths key.
 
-#exclude_paths:
+exclude_paths: []
 #- spec/**/*
 #- vendor/**/*
