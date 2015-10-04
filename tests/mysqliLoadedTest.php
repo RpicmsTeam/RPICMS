@@ -1,15 +1,6 @@
 <?php
-require_once "PHPUnit/Autoload.php";
 class mysqliLoadedTest extends PHPUnit_Framework_TestCase
 {
-    public function startLoaderTest()
-    {
-      $obj = new mysqliLoadedTest();
-      $this->assertTrue($obj->testForMysqli());
-      $this->assertTrue($obj->tryDBConnection());
-      #fwrite(STDERR, print_r('[mysqliLoadedTest]->[startLoaderTest()]: TestFinished', TRUE));
-    }
-
     public function testForMysqli()
     {
         if (!extension_loaded('mysqli')) {
@@ -30,11 +21,8 @@ class mysqliLoadedTest extends PHPUnit_Framework_TestCase
       if ($mysqli->connect_errno > 0)
       {
         $this->markTestSkipped($mysqli->connect_error());
-        #fwrite(STDERR, print_r('[mysqliLoadedTest]->[tryDBConnection()]: Failed to connect to MySQLi: ' . $mysqli->connect_error(), TRUE));
       }else{
-        #$this->expectOutputString('[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi');
-        #print '[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi';
-        #fwrite(STDERR, print_r('[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi', TRUE));
+        fwrite(STDERR, print_r('[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi', TRUE));
       }
       return '[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi';
     }
