@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit colors="true" verbose="true">
+<phpunit bootstrap="tests/bootstrap.php" colors="true" verbose="true">
     <php>
         <var name="db_dsn" value="mysqli:dbname=RPICMS;host=localhost"/>
         <var name="db_username" value="root"/>
@@ -8,11 +8,6 @@
     </php>
     <testsuite name="mysqliLoadedTest">
       <file>tests/mysqliLoadedTest.php</file>
-    </testsuite>
-    <testsuite name="mysqliMakeDB">
       <file>tests/mysqliMakeDB.php</file>
-    </testsuite>
-    <testsuite name="mysqliConnectionTest">
-      <file>tests/mysqliConnectionTest.php</file>
     </testsuite>
 </phpunit>
