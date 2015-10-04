@@ -1,14 +1,12 @@
 <?php
 class mysqliLoadedTest extends PHPUnit_Framework_TestCase
 {
-    $obj = new mysqliLoadedTest();
-    $this->assertTrue($obj->testForMysqli());
-    $this->assertTrue($obj->tryDBConnection());
-    public function __construct()
+    public function startLoaderTest()
     {
+      $obj = new mysqliLoadedTest();
+      $this->assertTrue($obj->testForMysqli());
+      $this->assertTrue($obj->tryDBConnection());
     }
-
-
 
     public function testForMysqli()
     {
