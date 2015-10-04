@@ -1,5 +1,5 @@
 <?php
-require_once ('../tests/mysqliLoadedTest.php')
+require_once ('../tests/mysqliLoadedTest.php');
 class mysqliLoadedTest extends PHPUnit_Framework_TestCase
 {
     public function testForMysqli()
