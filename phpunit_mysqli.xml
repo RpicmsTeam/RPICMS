@@ -10,12 +10,4 @@
       <file>tests/mysqliLoadedTest.php</file>
       <file>tests/mysqliMakeDB.php</file>
     </testsuite>
-    <filter>
-        <whitelist>
-            <directory>./</directory>
-            <exclude>
-                <directory>./tests</directory>
-            </exclude>
-        </whitelist>
-    </filter>
 </phpunit>
