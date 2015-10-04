@@ -17,3 +17,4 @@ before_script:
   - mysql -e 'create database RPICMS;'
 #RunTests
 script: php phpunit.phar --configuration phpunit_$DB.xml --verbose
+cache: apt
