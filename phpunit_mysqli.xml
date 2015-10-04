@@ -8,6 +8,5 @@
     </php>
     <testsuite name="mysqliLoadedTest">
       <file>tests/mysqliLoadedTest.php</file>
-      <file>tests/mysqliMakeDB.php</file>
     </testsuite>
 </phpunit>
