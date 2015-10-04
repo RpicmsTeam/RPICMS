@@ -5,13 +5,15 @@ php:
   - 7.0
 #RequireDB
 env:
-  - DB=mysql
+  - DB=mysqli
 #Allow errors in php7
 matrix:
   allow_failures:
     - php: 7.0
 #Create Database
 before_script:
+  - wget https://phar.phpunit.de/phpunit.phar
+  - chmod +x phpunit.phar
   - mysql -e 'create database RPICMS;'
 #RunTests
-script: phpunit --configuration phpunit_$DB.xml --coverage-text
+script: php phpunit.phar --configuration phpunit_$DB.xml --verbose
