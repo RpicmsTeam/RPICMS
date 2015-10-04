@@ -8,9 +8,12 @@ class mysqliLoadedTest extends PHPUnit_Framework_TestCase
         }else{
             fwrite(STDERR, print_r('[mysqliLoadedTest]->[testForMysqli()]: The MySQLi extension is available', TRUE));
         }
-
+        return 0;
     }
 
+    /**
+    * @depends testForMysqli
+    */
     public function tryDBConnection()
     {
       $mysqli = new mysqli("localhost","root","","RPICMS");
@@ -23,7 +26,7 @@ class mysqliLoadedTest extends PHPUnit_Framework_TestCase
       }else{
         fwrite(STDERR, print_r('[mysqliLoadedTest]->[tryDBConnection()]: Could connect to MySQLi: ', TRUE));
       }
-
+      return 0;
     }
 }
 ?>
