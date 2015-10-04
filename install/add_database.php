@@ -8,7 +8,7 @@
 * @version	0.2 18/08/2014 18:51
 */
 
-	require_once ('../core/inc/db_connect.inc.php');
+	require_once ('../core/config/connect.db.inc.php');
 	$sql = "CREATE DATABASE $db_name";
  
 	$result = mysqli_query($connection, $sql);
@@ -16,7 +16,7 @@
 	echo 'Datenbank erfolgreich erstellt';
 
 
-	copy ('../core/inc/db_connect.inc.php','../core/inc/db_connect.inc.php.1');
+	copy ('../core/config/connect.db.inc.php','../core/config/connect.db.inc.php.1');
 
 
 //###################
@@ -24,19 +24,14 @@
 //###################
 
 //#Serverpfad
-require ('../core/inc/db_connect.inc.php.1');
-$filename = '../core/inc/db_connect.inc.php';
+require ('../core/config/connect.db.inc.php');
+$filename = '../core/config/connect.db.inc.php';
 
 if (!$handle = fopen($filename, "w")) {
          print "Kann die Datei $filename nicht öffnen";
          exit;
     }
 fclose($handle);
-// Sichergehen, dass die Datei existiert und beschreibbar ist
-if (is_writable($filename)) {
-
-    // Wir öffnen $filename im "Anhänge" - Modus.
-    // Der Dateizeiger befindet sich am Ende der Datei, und
     // dort wird $somecontent später mit fwrite() geschrieben.
     if (!$handle = fopen($filename, "a")) {
          print "Kann die Datei $filename nicht öffnen";
@@ -101,11 +96,8 @@ if (is_writable($filename)) {
 		print "</br>";
     fclose($handle);
 
-} else {
-    print "Die Datei $filename ist nicht schreibbar";
-}
 
-unlink('../core/inc/db_connect.inc.php.1')
+unlink('../core/config/connect.db.inc.php.1')
 
 
 

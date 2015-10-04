@@ -1,76 +1,103 @@
-/**
+<!--/**
 * Module Check
-* 
+*
 * This script checks for requiered modules.
 *
 * @author	Marcel Radzio <info@nordgedanken.de>
 * @version	0.2 18/08/2014 18:45
-*/
-<!Doctype html>
+*/-->
 <html>
 <head>
-<title>Installieren</title>
+	<title>Installer | Check for requirements</title>
+	<!-- Bootstrap core CSS -->
+	<link href="../core/libs/theme_engine/BootStrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="../themes/jumbotron/jumbotron.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../core/libs/theme_engine/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../core/libs/theme_engine/bootstrap-social/bootstrap-social.min.css">
 </head>
 <body>
-<?php
-	if (!extension_loaded('mysql')) {
-		if (!dl('mysql.so')) {
-			print ("MySQL is not installed! Please install this module!");
-			exit;
-		}else{print("MySQL has been successfully loaded");}
-	}
-?>
-<h1>Installer</h1>
-<h3>MySQL</h3>
-<!-- Reset Configs -->
-<?php
-#################
-#Database Config#
-#################
-unlink('../core/inc/db_connect.inc.php');
-#################
-#Blog Basics Config#
-#################
-unlink('../core/config/variables.config.php');
-?>
-<!-- Form to give data to config-generator -->
-<form action="generate_configs.php" method="post">
-	<table cellpadding="1" cellspacing="4">
-		<tr>
-			<td><p>Datenbank Adresse: </p></td>
-			<td><input type="name" name="serverpfad" required="required" placeholder="Datenbank Adresse" maxlength="255" /></td>
-		</tr>
-		<tr>
-			<td><p>Nutzername: </p></td>
-			<td><input type="name" name="username" required="required" placeholder="Nutzername" maxlength="255" /></td>
-		</tr>
-		<tr>
-			<td><p>Passwort: </p></td>
-			<td><input type="password" name="password" required="required" placeholder="Passwort" maxlength="50" /></td>
-		</tr>
-		<tr>
-			<td><p>Datenbank Name:    </p></td>
-			<td><input type="name" name="db_name" required="required" placeholder="Datenbank Name" maxlength="255" /></td>
-		</tr>
-	</table>
-<h3>Basics</h3>
-	<table cellpadding="1" cellspacing="4">
-		<tr>
-			<td><p>Website Name: </p></td>
-			<td style="text-indent:40px;"><input type="name" name="blog_name" required="required" placeholder="Website Name" maxlength="255" /></td>
-		</tr>
-		<tr>
-			<td><p>Untertitel: </p></td>
-			<td style="text-indent:40px;"><input type="text" name="admin_username" required="required" placeholder="Untertitel" maxlength="255" /></td>
-		</tr>
-		<tr>
-			<td><p>Schlagw&ouml;rter: </p></td>
-			<td style="text-indent:40px;"><input type="text" name="admin_password" required="required" placeholder="Schlagw&ouml;rter" maxlength="50" /></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="submit" name="send" value="Weiter" /></td>
-		</tr>
-	</table>
-</form>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.php">Installer</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Check for requirements</h1>
+			<?php
+			###############################
+			# include files from root dir #
+			###############################
+			$root_1 = realpath($_SERVER["DOCUMENT_ROOT"]);
+			$currentdir = getcwd();
+			$root_2 = str_replace($root_1, '', $currentdir);
+			$root_3 = explode("/", $root_2);
+			if ($root_3[1] == 'core') {
+  			echo $root_3[1];
+  			$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+			}else{
+  			$root = $root_1 . '/' . $root_3[1];
+			}
+
+			################################
+			# Check if mysqli is installed #
+			################################
+			if (!extension_loaded('mysqli')) {
+				if (!dl('mysqli.so')) {
+					echo "<p><span class=\"text-danger\">MySQLi</span> is not installed! Please install this module!</p></br>";
+					$mysql = 0;
+				}else{
+					echo "<p><span class=\"text-success\">MySQLi</span> has been successfully loaded</p></br>";
+					$mysql = 1;
+				}
+			}else{
+				echo "<p><span class=\"text-success\">MySQLi</span> has been successfully loaded</p></br>";
+				$mysql = 1;
+			}
+
+			###################################
+			# Check if Directory is writeable #
+			###################################
+			if ( ! is_writable($root)) {
+				echo "<p><span class=\"text-danger\">" . $root . '</span> must writable!!!</p></br>';
+				$dir = 1;
+			} else {
+				echo "<p><span class=\"text-success\">" . $root . "</span> is writeable!</p></br>";
+				$dir = 1;
+			}
+
+			if ($mysql == 1 && $dir == 1){
+				echo "
+				<form action=\"set_variables.php\" method=\"post\">
+					<button type=\"submit\" name=\"send\" class=\"btn btn-success\">Go On!</button>
+				</form>";
+			}else{
+				echo "<span class=\"text-danger\">Can't proceed!</span></br>";
+			}
+			?>
+		</div>
+	</div>
+	<div class="container">
+		<hr>
+		<footer>
+			<p>&copy; RpicmsTeam 2014 &amp; 2015</p>
+			<?php include($root . '/core/backend/admin/modules/footer.php'); ?>
+		</footer>
+	</div>
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="../core/libs/theme_engine/BootStrap/js/bootstrap.min.js"></script>
 </body>
 </html>
