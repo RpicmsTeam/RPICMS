@@ -1,6 +1,6 @@
 RPICMS
 ======
-
+No test at this time aviable:  [![Build Status](https://travis-ci.org/RpicmsTeam/RPICMS.svg)](https://travis-ci.org/RpicmsTeam/RPICMS)
 A CMS for the Raspberry Pi
 
 Mailinglist
