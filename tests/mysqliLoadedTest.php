@@ -21,5 +21,18 @@ class mysqliLoadedTest extends PHPUnit_Framework_TestCase
         $this->markTestSkipped($mysqli->connect_error());
       }
     }
+
+    /**
+     * @depends testForMysqli
+     * @depends testDBConnection
+     */
+     public function testCreateTestingTables()
+     {
+       $mysqli = new mysqli("localhost","root","","RPICMS");
+
+
+
+
+     }
 }
 ?>
