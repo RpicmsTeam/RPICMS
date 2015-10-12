@@ -10,4 +10,7 @@
       <file>tests/mysqliLoadedTest.php</file>
       <file>tests/mysqliMakeDB.php</file>
     </testsuite>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>
