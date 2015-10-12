@@ -17,6 +17,7 @@ before_script:
   - wget https://phar.phpunit.de/phpunit.phar
   - chmod +x phpunit.phar
   - mysql -e 'create database RPICMS;'
+  - composer require codeclimate/php-test-reporter --dev
 #RunTests
 script: php phpunit.phar --configuration phpunit_$DB.xml --verbose
 #Webhook for Gitter
