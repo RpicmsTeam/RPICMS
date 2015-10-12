@@ -19,7 +19,7 @@ before_script:
   - mysql -e 'create database RPICMS;'
   - composer require codeclimate/php-test-reporter --dev
 #RunTests
-script: php phpunit.phar --configuration phpunit_$DB.xml --verbose
+script: php phpunit.phar --configuration phpunit_$DB.xml --verbose && CODECLIMATE_REPO_TOKEN=ade1bcb53e705341208c7c5138a92b8bdf6babd489e6d43054e86ea097cb42b2 ./vendor/bin/test-reporter
 #Webhook for Gitter
 notifications:
   webhooks:
