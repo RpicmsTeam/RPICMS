@@ -3,6 +3,7 @@ language: php
 php:
   - 5.6
   - 7.0
+  - hhvm
 #RequireDB
 env:
   - DB=mysqli
@@ -10,6 +11,7 @@ env:
 matrix:
   allow_failures:
     - php: 7.0
+    - php: hhvm
 #Create Database
 before_script:
   - wget https://phar.phpunit.de/phpunit.phar
