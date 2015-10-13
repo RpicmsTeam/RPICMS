@@ -10,4 +10,15 @@
       <file>tests/mysqliLoadedTest.php</file>
       <file>tests/mysqliMakeDB.php</file>
     </testsuite>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
+    <filter>
+        <whitelist>
+            <directory>./</directory>
+            <exclude>
+                <directory>./tests</directory>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>

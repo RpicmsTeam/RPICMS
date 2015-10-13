@@ -3,6 +3,7 @@ language: php
 php:
   - 5.6
   - 7.0
+  - hhvm
 #RequireDB
 env:
   - DB=mysqli
@@ -10,10 +11,26 @@ env:
 matrix:
   allow_failures:
     - php: 7.0
+    - php: hhvm
 #Create Database
 before_script:
   - wget https://phar.phpunit.de/phpunit.phar
   - chmod +x phpunit.phar
   - mysql -e 'create database RPICMS;'
+  - composer require codeclimate/php-test-reporter --dev
 #RunTests
 script: php phpunit.phar --configuration phpunit_$DB.xml --verbose
+#after scripts
+after_script:
+  - CODECLIMATE_REPO_TOKEN=ade1bcb53e705341208c7c5138a92b8bdf6babd489e6d43054e86ea097cb42b2 php ./vendor/bin/test-reporter
+#Webhook for Gitter
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/2352a1a1d808a3b834cf
+    on_success: change  # options: [always|never|change] default: always
+    on_failure: always  # options: [always|never|change] default: always
+    on_start: never     # options: [always|never|change] default: always
+addons:
+    code_climate:
+        repo_token: ade1bcb53e705341208c7c5138a92b8bdf6babd489e6d43054e86ea097cb42b2
